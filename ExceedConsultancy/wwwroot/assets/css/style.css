@@ -49,7 +49,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 :root {
   --color-primary: #DF0A0A;
-  --color-primary-2: #0B4DF5;
+  --color-primary-2: #104e7e;
   --color-primary-3: #F64A00;
   --color-primary-4: #5264F3;
   --color-primary-5: #B00F0F;
@@ -18675,7 +18675,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 }
 
 .banner-two {
-  background-image: url(../images/banner/banner-05.png);
+  background-image: url(../images/banner/banner-05.jpg);
   height: 850px;
   background-repeat: no-repeat;
   position: relative;
@@ -18689,10 +18689,10 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
   }
 }
 .banner-two.slide-2 {
-  background-image: url(../images/banner/banner-06.png);
+  background-image: url(../images/banner/banner-06.jpg);
 }
 .banner-two.slide-3 {
-  background-image: url(../images/banner/banner-07.png);
+  background-image: url(../images/banner/banner-07.jpg);
 }
 
 .banner-two-content {
