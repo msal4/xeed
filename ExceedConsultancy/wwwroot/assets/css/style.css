@@ -124,6 +124,12 @@ html {
   scroll-behavior: auto !important;
 }
 
+
+.rts-sidebar-menu-desktop .logo{
+  width: 70%;
+}
+
+
 body {
   font-size: var(--font-size-b1);
   line-height: var(--line-height-b1);
@@ -15253,6 +15259,7 @@ body.sal-disabled [data-sal|=flip] {
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
   .header-two .main-header .nav-main ul li {
     margin-right: 25px !important;
+    padding: 0px 18px;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
@@ -15281,7 +15288,7 @@ body.sal-disabled [data-sal|=flip] {
   padding: 48px 0;
   display: block;
   color: #1C2539;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
   position: relative;
   transition: var(--transition);
@@ -15736,11 +15743,12 @@ body.sal-disabled [data-sal|=flip] {
   }
 }
 .header-two .main-header .content .header-left a.thumbnail img {
-  width: 100%;
+  width: 90%;
+  padding-left: 30px;
 }
 @media only screen and (max-width: 479px) {
   .header-two .main-header .content .header-left a.thumbnail img {
-    width: 73%;
+    /* width: 73%; */
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -19849,7 +19857,7 @@ p.disc.banner-para {
   padding-bottom: 0;
 }
 .rts-tab-style-one .button-area button.active {
-  color: #0B4DF5;
+  color: #104e7e;
 }
 .rts-tab-style-one .tab-content {
   margin-left: 30px;
@@ -22373,7 +22381,7 @@ p.disc.banner-para {
 .rts-business-case-s-2::after {
   content: "";
   position: absolute;
-  background-image: url(../images/business-case/icon/shape-1.png);
+  background-image: url(../images/business-case/icon/shape-12.png);
   height: 100%;
   width: 100%;
   top: -64%;
@@ -29698,8 +29706,8 @@ p.disc {
   left: 4px;
   right: 4px;
   bottom: 4px;
-  border: var(--line-width) solid transparent;
-  border-top-color: var(--inner-line-color);
+  border: #104e7e solid transparent;
+  border-top-color: #104e7e;
   border-radius: 100%;
   -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
@@ -29713,7 +29721,7 @@ p.disc {
   right: 14px;
   bottom: 14px;
   border: var(--line-width) solid transparent;
-  border-top-color: var(--middle-line-color);
+  border-top-color: #104e7e;
   border-radius: 100%;
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
@@ -29746,7 +29754,7 @@ p.disc {
 .loader-wrapper .loader-section {
   position: fixed;
   top: 0;
-  background: var(--curtain-color);
+  background: var(--curtain-color-color);
   width: 51%;
   height: 100%;
   z-index: 1000;
