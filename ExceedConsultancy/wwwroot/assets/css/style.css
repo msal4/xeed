@@ -50,10 +50,10 @@
 :root {
     --color-primary: #104e7e;
     --color-primary-2: #104e7e;
-    --color-primary-3: #F64A00;
+    --color-primary-3: #104e7e;
     --color-primary-4: #104e7e;
     --color-primary-5: #B00F0F;
-    --color-primary-6: #F64A00;
+    --color-primary-6: #104e7e;
     --color-primary-alta: #c2c2c3;
     --color-secondary: #111D5E;
     --color-terciary: #90FF03;
@@ -15082,16 +15082,16 @@ body.sal-disabled [data-sal|=flip] {
 .header-top-one .left .mail a:hover::after {
   width: 100%;
 }
-.header-top-one .left .mail::after {
-  position: absolute;
-  content: "";
-  width: 1px;
-  height: 14px;
-  background: #F36464;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    .header-top-one .left .mail::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 14px;
+        background: #7c7c7d;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 .header-top-one .left .working-time p {
   color: #fff;
   font-size: 14px;
@@ -20707,7 +20707,7 @@ p.disc.banner-para {
   top: 0;
   content: "";
   font-size: 18px;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 0 0 0 15px;
   height: 50px;
   width: 50px;
@@ -20817,6 +20817,7 @@ p.disc.banner-para {
 
 .padding-controler {
   margin-bottom: -75px;
+  padding-top: 80px;
 }
 
 .accordion-service-bg {
@@ -28191,15 +28192,18 @@ p.disc.banner-para {
 
 .appoinment-team {
   padding-bottom: 210px;
+  padding-top: 100px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .appoinment-team {
     padding-bottom: 80px;
+    padding-top: 80px;
   }
 }
 @media only screen and (max-width: 767px) {
   .appoinment-team {
     padding-bottom: 60px;
+    padding-top: 60px;
   }
 }
 

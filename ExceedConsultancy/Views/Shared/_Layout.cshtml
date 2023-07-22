@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marina Group</title>
+
+    <!-- Fav Icon -->
+ 
+
+
+    @*<link rel="shortcut icon" href="~/assets/Image/Capturelogo.ico" type="image/png">*@
+    <meta name="keywords" content="@ViewBag.MetaKeywords">
+    <meta name="description" content="@ViewBag.MetaDescription">
+
+</head>
+<body>
+
+    <div>
+
+        @{
+
+            await Html.RenderPartialAsync("StylesPartial");
+
+        }
+
+    <header class="header--sticky header-one ">
+        <div class="header-top header-top-one bg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 d-xl-block d-none">
+                        <div class="left">
+                            <div class="mail">
+                                <a href="mailto:info@exceedconsultancy.com"><i class="fal fa-envelope"></i> info@exceedconsultancy.com </a>
+                            </div>
+                            <div class="working-time">
+                                <p><i class="fal fa-clock"></i> Working: 8.00am - 5.00pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-xl-block d-none">
+                        <div class="right">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main-one bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
+                        <div class="thumbnail">
+                                <a asp-controller="Home" asp-action="index">
+                                <img src="assets/images/logo/logo.png" alt="finbiz-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class=" col-xl-9 col-lg-8 col-md-8 col-sm-8 col-8">
+                        <div class="main-header">
+                            <nav class="nav-main mainmenu-nav d-none d-xl-block">
+                                <ul class="mainmenu">
+                                  
+                                    <li><a asp-controller="About" asp-action="index">About Us</a></li>
+                                    <li class="has-droupdown">
+                                            <a class="nav-link" asp-controller="Services" asp-action="index">Services</a>
+                                        <ul class="submenu menu-link3">
+                                            <li class="sub-droupdown">
+                                                <a class="sub-menu-link" href="our-service.html">Our Service</a>
+                                                <ul class="submenu third-lvl">
+                                                        <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
+                                                        <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
+                                                        <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
+
+
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                        <li><a class="nav-item" asp-controller="Contact" asp-action="index">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <div class="button-area">
+                                <!--<button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>-->
+                                <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
+                                <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
+                                    <img class="menu-dark" src="assets/images/icon/menu.png" alt="Menu-icon">
+                                    <img class="menu-light" src="assets/images/icon/menu-light.png" alt="Menu-icon">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        <div id="side-bar" class="side-bar">
+            <button class="close-icon-menu"><i class="far fa-times"></i></button>
+            <!-- inner menu area desktop start -->
+            <div class="rts-sidebar-menu-desktop">
+                <a class="logo-1" href="index.html"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
+
+                <div class="body d-none d-xl-block">
+                    <p class="disc">
+                        We are a leading business and technology consultancy dedicated to helping businesses thrive in today's dynamic and digital landscape.
+                    </p>
+                    <div class="get-in-touch">
+                        <!-- title -->
+                        <div class="h6 title">Get In Touch</div>
+                        <!-- title End -->
+                        <div class="wrapper">
+                            <!-- single -->
+                            <!--<div class="single">
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="#">+8801234566789</a>
+                            </div>-->
+                            <!-- single ENd -->
+                            <!-- single -->
+                            <div class="single">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@exceedconsultancy.com">info@exceedconsultancy.com </a>
+                            </div>
+                            <!-- single ENd -->
+                            <!-- single -->
+                            <!-- single ENd -->
+                            <!-- single -->
+                            <div class="single">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <a href="#">Baghdad, Iraq</a>
+                            </div>
+                            <!-- single ENd -->
+                        </div>
+                        <!--<div class="social-wrapper-two menu">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>-->
+                        <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="body-mobile d-block d-xl-none">
+                    <nav class="nav-main mainmenu-nav">
+                        <ul class="mainmenu">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li class="has-droupdown">
+                                <a class="nav-link" href="#">Services</a>
+                                <ul class="submenu menu-link3">
+                                    <li class="sub-droupdown">
+                                        <a class="sub-menu-link" href="our-service.html">Our Service</a>
+                                        <ul class="submenu third-lvl">
+                                            <li><a href="service-2.html">Business Consultancy  </a></li>
+                                            <li><a href="service-2.html">Technology Consultancy  </a></li>
+                                            <li><a href="service-3.html">Project Management  </a></li>
+
+
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!--<div class="social-wrapper-two menu mobile-menu">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>-->
+                    <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+                    <!--</div>-->
+                    <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get Quote</a>
+                </div>
+            </div>
+            <!-- inner menu area desktop End -->
+        </div>
+
+       
+        @RenderBody()
+
+     
+
+    <!-- footer area start -->
+    <div class="rts-footer-area footer-one rts-section-gapTop bg-footer-one">
+        <div class="container bg-shape-f1 ">
+            <!-- footer call to action area -->
+
+            <!-- footer call to action area End -->
+            <!-- rts footer area -->
+            <div class="row pt--120 pt_sm--80 pb--80 pb_sm--40 ps-3">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="footer-two-single-wized left">
+                        <h3 class="title">
+                            <img src="assets/images/logo/logo.png" />
+                        </h3>
+                        <p class="disc">
+                            We are a leading business and technology consultancy dedicated to helping businesses thrive in today's dynamic and digital landscape.
+                        </p>
+                        <a class="rts-btn btn-primary-2 color-h-black" href="#">Get a Quote</a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
+                    <div class="footer-two-single-wized two">
+                        <div class="wized-title-area">
+                            <h5 class="wized-title">Our Services</h5>
+                            <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
+                        </div>
+                        <div class="wized-2-body">
+                            <ul>
+                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Business planning</a></li>
+                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Tax strategy</a></li>
+                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Financial advices</a></li>
+                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Insurance strategy</a></li>
+                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Manage investment</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- single wized -->
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
+                    <div class="footer-two-single-wized">
+                        <div class="wized-title-area">
+                            <h5 class="wized-title">Contact Us</h5>
+                            <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
+                        </div>
+                        <div class="wized-2-body  ">
+                            <div class="contact-info-1">
+                                <div class="icon ps-3">
+                                    <i class="fas fa-phone-alt" ></i>
+                                </div>
+                                <div class="disc">
+                                    <span>Call Us 24/7</span>
+                                    <a href="#">(+256) 2145.2156</a>
+                                </div>
+                            </div>
+                            <div class="contact-info-1">
+                                <div class="icon  ps-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="disc">
+                                    <span>Email</span>
+                                    <a href="#">info@finbiz.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single wized -->
+                <!-- single wized -->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="footer-two-single-wized">
+                        <div class="wized-title-area">
+                            <h5 class="wized-title">Address</h5>
+                            <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
+                        </div>
+                        <div class="wized-2-body">
+                            <div class="contact-info-1">
+                                <div class="icon  ps-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="disc">
+                                    <span>Our Location</span>
+                                    <a href="#">
+                                        XYZ Hilton Street, 125 Town <br>
+                                        United State
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer end area post end-->
+            </div>
+            <!-- rts footer area End -->
+        </div>
+        <!-- copyright area start -->
+        <div class="rts-copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <p>HyveOnline - Copyright 2022. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright area end -->
+    </div>
+    <!-- copyright-area end -->
+    <!-- ENd Header Area -->
+
+
+    <!-- start loader -->
+    <div class="loader-wrapper">
+        <div class="loader">
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- End loader -->
+
+    <!-- progress Back to top -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+        @{
+
+            await Html.RenderPartialAsync("ScriptsPartial");
+
+        }
+    </div>
+
+
+</body>
+</html>
