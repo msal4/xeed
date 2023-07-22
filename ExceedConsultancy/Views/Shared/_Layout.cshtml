@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marina Group</title>
+    <title>Exceed Consultancy</title>
 
     <!-- Fav Icon -->
  
@@ -66,7 +66,7 @@
                                             <a class="nav-link" asp-controller="Services" asp-action="index">Services</a>
                                         <ul class="submenu menu-link3">
                                             <li class="sub-droupdown">
-                                                <a class="sub-menu-link" href="our-service.html">Our Service</a>
+                                                <a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>
                                                 <ul class="submenu third-lvl">
                                                         <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
                                                         <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
@@ -149,7 +149,7 @@
                                 <a class="nav-link" href="#">Services</a>
                                 <ul class="submenu menu-link3">
                                     <li class="sub-droupdown">
-                                        <a class="sub-menu-link" href="our-service.html">Our Service</a>
+                                        <a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>
                                         <ul class="submenu third-lvl">
                                             <li><a href="service-2.html">Business Consultancy  </a></li>
                                             <li><a href="service-2.html">Technology Consultancy  </a></li>
@@ -208,11 +208,10 @@
                         </div>
                         <div class="wized-2-body">
                             <ul>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Business planning</a></li>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Tax strategy</a></li>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Financial advices</a></li>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Insurance strategy</a></li>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Manage investment</a></li>
+                                    <li><a asp-controller="Business" asp-action="index"><i class="fal fa-chevron-double-right"></i>Business Consultancy</a></li>
+                                    <li><a asp-controller="Technology" asp-action="index"><i class="fal fa-chevron-double-right"></i>Technology Consultancy </a></li>
+                                    <li><a asp-controller="Management" asp-action="index"><i class="fal fa-chevron-double-right"></i>Project Management </a></li>
+                               
                             </ul>
                         </div>
                     </div>
@@ -225,7 +224,7 @@
                             <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
                         </div>
                         <div class="wized-2-body  ">
-                            <div class="contact-info-1">
+                        @*    <div class="contact-info-1">
                                 <div class="icon ps-3">
                                     <i class="fas fa-phone-alt" ></i>
                                 </div>
@@ -233,7 +232,7 @@
                                     <span>Call Us 24/7</span>
                                     <a href="#">(+256) 2145.2156</a>
                                 </div>
-                            </div>
+                            </div>*@
                             <div class="contact-info-1">
                                 <div class="icon  ps-3">
                                     <i class="fas fa-envelope"></i>
@@ -248,12 +247,12 @@
                 </div>
                 <!-- single wized -->
                 <!-- single wized -->
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="footer-two-single-wized">
-                        <div class="wized-title-area">
-                            <h5 class="wized-title">Address</h5>
-                            <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
-                        </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
+                        <div class="footer-two-single-wized">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title">Address</h5>
+                                <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
+                            </div>
                         <div class="wized-2-body">
                             <div class="contact-info-1">
                                 <div class="icon  ps-3">
@@ -262,8 +261,7 @@
                                 <div class="disc">
                                     <span>Our Location</span>
                                     <a href="#">
-                                        XYZ Hilton Street, 125 Town <br>
-                                        United State
+                                       Baghdad, Iraq
                                     </a>
                                 </div>
                             </div>
@@ -280,7 +278,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center">
-                            <p>HyveOnline - Copyright 2022. All rights reserved.</p>
+                                <p><a href="https://hyveonline.com">HyveOnline</a> - Copyright 2023. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

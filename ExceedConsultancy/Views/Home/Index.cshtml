@@ -35,7 +35,7 @@
 
                                                 <span> Business Consultancy </span> 
                                             </h1>
-                                            <a class="rts-btn btn-primary-2" href="#">View Solution</a>
+                                            <a class="rts-btn btn-primary-2" asp-controller="Business" asp-action="index">View Solution</a>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                             <h1 class="title">
                                                 <span>   Technology Solutions </span>
                                             </h1>
-                                            <a class="rts-btn btn-primary-2" href="#">View Solution</a>
+                                            <a class="rts-btn btn-primary-2" asp-controller="Technology" asp-action="index">View Solution</a>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
 
                                                 <span> Project Management </span> 
                                             </h1>
-                                            <a class="rts-btn btn-primary-2" href="#">View Solution</a>
+                                            <a class="rts-btn btn-primary-2" asp-controller="Management" asp-action="index">View Solution</a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <!-- single service start -->
                     <div class="rts-single-service-h2">
-                        <a href="service-details.html" class="thumbnail">
+                        <a asp-controller="Business" asp-action="index" class="thumbnail">
                             <img src="assets/images/service/02.jpg" alt="Service_image">
                         </a>
                         <div class="body">
@@ -110,9 +110,9 @@
                                 <h5 class="title">Business Consultancy </h5>
                             </a>
                             <p class="disc">
-                                Fusce dignissim erat dis proin ornare class sem nibh
+                                Our business consultancy services are tailored to address your unique challenges and opportunities.
                             </p>
-                            <a href="service-details.html" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="Business" asp-action="index" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -120,7 +120,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <!-- single service start -->
                     <div class="rts-single-service-h2">
-                        <a href="service-details.html" class="thumbnail">
+                        <a asp-controller="Technology" asp-action="index" class="thumbnail">
                             <img src="assets/images/service/03.jpg" alt="Service_image">
                         </a>
                         <div class="body">
@@ -128,9 +128,9 @@
                                 <h5 class="title">Technology Consultancy </h5>
                             </a>
                             <p class="disc">
-                                Fusce dignissim erat dis proin ornare class sem nibh
+                                Embrace the power of technology with our comprehensive technology consultancy.
                             </p>
-                            <a href="service-details.html" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="Technology" asp-action="index" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -142,13 +142,13 @@
                             <img src="assets/images/service/04.jpg" alt="Service_image">
                         </a>
                         <div class="body">
-                            <a href="service-details.html">
+                            <a asp-controller="Management" asp-action="index">
                                 <h5 class="title">Project Management </h5>
                             </a>
                             <p class="disc">
-                                Fusce dignissim erat dis proin ornare class sem nibh
+                                Successful projects require meticulous planning, execution, and monitoring.
                             </p>
-                            <a href="service-details.html" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="Management" asp-action="index" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -169,8 +169,8 @@
                     </div>
                     <div class="body">
                         <p class="info">Contact Our Agent For Any kind off Business Help <span>(24/7 Available)</span></p>
-                        <a href="tel:123-456-7890p123" class="number">+215 2153.2159</a>
-                        <a href="#" class="rts-btn btn-primary-2">Contact Us</a>
+                       @* <a href="tel:123-456-7890p123" class="number">+215 2153.2159</a>*@
+                        <a asp-controller="Contact" asp-action="index" class="rts-btn btn-primary-2">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -217,7 +217,7 @@
                                                 "To be a leading global partner for businesses, revolutionizing industries through innovative business strategies and technology solutions, empowering our clients to achieve unparalleled growth and success."
                                             </p>
                                            
-                                            <a class="rts-btn btn-primary-2 color-h-black" href="#">Contact Us</a>
+                                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Contact" asp-action="index">Contact Us</a>
                                         </div>
                                         <!-- start tab content End -->
                                     </div>
@@ -330,7 +330,7 @@
                         <img class="two" src="assets/images/service/h2/02.jpg" alt="Service_Image">
                         <img class="three" src="assets/images/service/h2/01.jpg" alt="Service_Image">
                         <div class="ratio-area">
-                            <h3 class="ratio">85%</h3>
+                            <h3 class="ratio">90%</h3>
                             <span>Successful Ratio</span>
                         </div>
                     </div>
@@ -399,108 +399,108 @@
                             <div class="swiper-slide">
                                 <!-- single business case -->
                                 <div class="rts-business-case-s-2">
-                                    <a href="project-details.html" class="thumbnail">
+                                  @*  <a href="project-details.html" class="thumbnail">*@
                                         <img src="assets/images/business-case/04.jpg" alt="Business_case">
-                                    </a>
+                                 @*   </a>*@
                                     <div class="inner">
-                                        <a href="project-details.html">
+                                       @* <a href="project-details.html">*@
                                             <h5 class="title">
                                                Healthcare
                                             </h5>
-                                        </a>
+                                       @* </a>*@
                                         <!--<span>Business Strategy</span>-->
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                   @* <a href="project-details.html" class="over_link"></a>*@
                                 </div>
                                 <!-- single business case End -->
                             </div>
                             <div class="swiper-slide">
                                 <!-- single business case -->
                                 <div class="rts-business-case-s-2">
-                                    <a href="project-details.html" class="thumbnail">
+                        @*            <a href="project-details.html" class="thumbnail">*@
                                         <img src="assets/images/business-case/05.jpg" alt="Business_case">
-                                    </a>
+                                 @*   </a>*@
                                     <div class="inner">
-                                        <a href="project-details.html">
+                                       @* <a href="project-details.html">*@
                                             <h5 class="title">
                                                 Manufacturing
                                             </h5>
-                                        </a>
+                                      @*  </a>*@
                                         <!--<span>Business Strategy</span>-->
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                   @* <a href="project-details.html" class="over_link"></a>*@
                                 </div>
                                 <!-- single business case End -->
                             </div>
                             <div class="swiper-slide">
                                 <!-- single business case -->
                                 <div class="rts-business-case-s-2">
-                                    <a href="project-details.html" class="thumbnail">
+                                   @* <a href="project-details.html" class="thumbnail">*@
                                         <img src="assets/images/business-case/06.jpg" alt="Business_case">
-                                    </a>
+                                   @* </a>*@
                                     <div class="inner">
-                                        <a href="project-details.html">
+                                       @* <a href="project-details.html">*@
                                             <h5 class="title">
                                                 	Retail
                                             </h5>
-                                        </a>
+                                      @*  </a>*@
                                         <!--<span>Business Strategy</span>-->
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                   @* <a href="project-details.html" class="over_link"></a>*@
                                 </div>
                                 <!-- single business case End -->
                             </div>
                             <div class="swiper-slide">
                                 <!-- single business case -->
                                 <div class="rts-business-case-s-2">
-                                    <a href="project-details.html" class="thumbnail">
+                                   @* <a href="project-details.html" class="thumbnail">*@
                                         <img src="assets/images/business-case/07.jpg" alt="Business_case">
-                                    </a>
+                                    @*</a>*@
                                     <div class="inner">
-                                        <a href="project-details.html">
+                                       @* <a href="project-details.html">*@
                                             <h5 class="title">
                                                 Construction & Contracting
                                             </h5>
-                                        </a>
+                                    @*    </a>*@
                                         <!--<span>Business Strategy</span>-->
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                   @* <a href="project-details.html" class="over_link"></a>*@
                                 </div>
                                 <!-- single business case End -->
                             </div>
                             <div class="swiper-slide">
                                 <!-- single business case -->
                                 <div class="rts-business-case-s-2">
-                                    <a href="project-details.html" class="thumbnail">
+                              @*      <a href="project-details.html" class="thumbnail">*@
                                         <img src="assets/images/business-case/08.jpg" alt="Business_case">
-                                    </a>
+                                  @*  </a>*@
                                     <div class="inner">
-                                        <a href="project-details.html">
+                                      @*  <a href="project-details.html">*@
                                             <h5 class="title">
                                                 Food & Beverages
                                             </h5>
-                                        </a>
+                                       @* </a>*@
                                         <!--<span>Business Strategy</span>-->
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                  @*  <a href="project-details.html" class="over_link"></a>*@
                                 </div>
                                 <!-- single business case End -->
                             </div>
                             <div class="swiper-slide">
                                 <!-- single business case -->
                                 <div class="rts-business-case-s-2">
-                                    <a href="project-details.html" class="thumbnail">
+                                   @* <a href="project-details.html" class="thumbnail">*@
                                         <img src="assets/images/business-case/09.jpg" alt="Business_case">
-                                    </a>
+                                @*    </a>*@
                                     <div class="inner">
-                                        <a href="project-details.html">
+                                        @*<a href="project-details.html">*@
                                             <h5 class="title">
                                                 Finance and Banking
                                             </h5>
-                                        </a>
+                                       @* </a>*@
                                         <!--<span>Business Strategy</span>-->
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                   @* <a href="project-details.html" class="over_link"></a>*@
                                 </div>
                                 <!-- single business case End -->
                             </div>
