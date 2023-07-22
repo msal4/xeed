@@ -17,6 +17,8 @@ string ApiKey = builder.Configuration.GetValue<string>("ApiKey");
 string ApiKeyPass = builder.Configuration.GetValue<string>("ApiKeyPass");
 
 
+
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(10);
@@ -35,10 +37,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-app.UseHttpsRedirection();
-DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
-app.UseDefaultFiles(defaultFilesOptions);
-app.UseStaticFiles();
+
+//app.UseHttpsRedirection();
+//DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+//app.UseDefaultFiles(defaultFilesOptions);
+//app.UseStaticFiles();
+
+
 //app.UseSession();
 //app.UseMvcWithDefaultRoute();
 //app.UseMvc(routes =>
@@ -52,4 +57,17 @@ app.UseStaticFiles();
 
 //app.MapGet("/", () => "Hello World!");
 
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.Run();
+
