@@ -9,7 +9,7 @@
  
 
 
-    @*<link rel="shortcut icon" href="~/assets/Image/Capturelogo.ico" type="image/png">*@
+    <link rel="shortcut icon" href="~/assets/images/logo.ico" type="image/png">
     <meta name="keywords" content="@ViewBag.MetaKeywords">
     <meta name="description" content="@ViewBag.MetaDescription">
 
@@ -84,7 +84,7 @@
                             </nav>
                             <div class="button-area">
                                 <!--<button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>-->
-                                <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
+                                    <a asp-controller="Quote" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
                                 <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
                                     <img class="menu-dark" src="assets/images/icon/menu.png" alt="Menu-icon">
                                     <img class="menu-light" src="assets/images/icon/menu-light.png" alt="Menu-icon">
@@ -197,7 +197,7 @@
                         <p class="disc">
                             We are a leading business and technology consultancy dedicated to helping businesses thrive in today's dynamic and digital landscape.
                         </p>
-                        <a class="rts-btn btn-primary-2 color-h-black" href="#">Get a Quote</a>
+                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Quote" asp-action="index">Get a Quote</a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
@@ -239,7 +239,7 @@
                                 </div>
                                 <div class="disc">
                                     <span>Email</span>
-                                    <a href="#">info@finbiz.com</a>
+                                    <a href="mailto:info@ExceedConsultancy.com">info@exceedconsultancy.com</a>
                                 </div>
                             </div>
                         </div>
@@ -260,9 +260,9 @@
                                 </div>
                                 <div class="disc">
                                     <span>Our Location</span>
-                                    <a href="#">
+                                   
                                        Baghdad, Iraq
-                                    </a>
+                                 
                                 </div>
                             </div>
                         </div>

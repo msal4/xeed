@@ -6,11 +6,11 @@ using Newtonsoft.Json;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class ContactController : Controller
+    public class QuoteController : Controller
     {
         private readonly IConfiguration _config;
 
-        public ContactController(IConfiguration config)
+        public QuoteController(IConfiguration config)
         {
             _config = config;
         }
@@ -20,9 +20,9 @@ namespace ExceedConsultancy.Controllers
             return View();
         }
 
-    
+
         [HttpPost]
-        public IActionResult Index(ContactModel model)
+        public IActionResult Index(QuoteModel model)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -138,7 +138,7 @@ namespace ExceedConsultancy.Controllers
         //        TempData["SubscribeSuccess"] = "Please validate that you are not a robot";
         //        return RedirectToAction("Index", "Contact");
         //    }
-        }
-
-
     }
+
+
+}
