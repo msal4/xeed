@@ -47,7 +47,7 @@ namespace ExceedConsultancy.Controllers
                     {
                         sendemail(sb.ToString(), "Contact Message", "ahmadghadder@gmail.com");
                         TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Contact");
                     }
                 }
 
@@ -75,7 +75,7 @@ namespace ExceedConsultancy.Controllers
                 SmtpServer.Host = "smtp.office365.com";
                 SmtpServer.Port = 587;
 
-                SmtpServer.Credentials = new System.Net.NetworkCredential(_config.GetSection("ApiKey").Value, _config.GetSection("ApiKeyPass").Value, "alsalamaademo1.appshyve.com");
+                SmtpServer.Credentials = new System.Net.NetworkCredential(_config.GetSection("ApiKey").Value, _config.GetSection("ApiKeyPass").Value, "exceedconsultancy.com");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
