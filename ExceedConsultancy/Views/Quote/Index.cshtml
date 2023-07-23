@@ -1,4 +1,4 @@
-﻿@model ExceedConsultancy.Models.ContactModel
+﻿@model ExceedConsultancy.Models.QuoteModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -50,19 +50,19 @@
                             <h2 class="title">Request a free quote</h2>
                         </div>
                         <div id="form-messages"></div>
-                        <form method="post" id="contact-form" method="post">
+                        <form method="post" id="contact-form">
                             <div class="name-email">
                                 <input type="text" placeholder="Your Name" name="Name" required>
                                 <input type="Email" placeholder="Email Address" name="email" required>
                             </div>
                             <input type="text" placeholder="Business Topic" name="Subject">
-                            <textarea placeholder="Type Your Message" name="Message"></textarea>
+                            <textarea placeholder="Type Your Message" name="Message"></textarea> <br /><br />
                             <div class="g-recaptcha" data-sitekey="6LfWIkknAAAAAOUo2d_GVScC3Z-2JKuVZW1d7ykv"></div>
 
                             <button type="submit" class="rts-btn btn-primary">Submit </button>
-                        </form>  @if (TempData["Success"] != null)
+                        </form>  @if (TempData["SuccessQuote"] != null)
                         {
-                            <p class="alert alert-warning d-block blue-bg ">@TempData["Success"]</p>
+                            <p class="alert alert-warning d-block blue-bg ">@TempData["SuccessQuote"]</p>
                         }
                     </div>
                 </div>

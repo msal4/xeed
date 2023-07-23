@@ -46,13 +46,13 @@ namespace ExceedConsultancy.Controllers
                     if (result.Success)
                     {
                         sendemail(sb.ToString(), "Contact Message", "ahmadghadder@gmail.com");
-                        TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
-                        return RedirectToAction("Index", "Home");
+                        TempData["SuccessQuote"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                        return RedirectToAction("Index", "Quote");
                     }
                 }
 
                 TempData["Success"] = "Please validate that you are not a robot";
-                return RedirectToAction("Index", "Contact");
+                return RedirectToAction("Index", "Quote");
             }
         }
 

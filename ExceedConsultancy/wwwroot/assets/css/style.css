@@ -24718,7 +24718,8 @@ p.disc.banner-para {
 }
 .team-inner-two .acquaintance-area {
   position: absolute;
-  left: 0;
+  /*left: 0;*/
+  width:100%;
   bottom: -20%;
   background: #fff;
   border-radius: 0 15px 15px 15px;
@@ -24736,8 +24737,8 @@ p.disc.banner-para {
   }
 }
 .team-inner-two .acquaintance-area .header {
-  padding: 30px 82px 22px 82px;
-  border-bottom: 1px solid #F0F0F0;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #F0F0F0;
 }
 @media only screen and (max-width: 1199px) {
   .team-inner-two .acquaintance-area .header {
