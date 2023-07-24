@@ -1,16 +1,13 @@
-﻿@model ExceedConsultancy.Models.AboutModel
+﻿@model ExceedConsultancy.Models.AboutArModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAr.cshtml";
     ViewBag.MetaDescription = "";
     ViewBag.MetaKeywords = "";
 }
 
 
 <body>
-    <!-- End header area -->
-
-  
 
     <div class="search-input-area">
         <div class="container">
@@ -32,13 +29,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">About Us</h1>
+                    <h1 class="title">من نحن </h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a <a asp-controller="Home" asp-action="index">Home</a>
+                        <a asp-controller="Home" asp-action="index">الرئيسية</a>
                         <span> / </span>
-                        <a href="#" class="active">About Us</a>
+من نحن
                     </div>
                 </div>
             </div>
@@ -70,26 +67,15 @@
                 <div class="col-lg-7">
                     <div class="about-progress-inner">
                         <div class="title-area">
-                            <span>JUST A CONSULTANCY</span>
-                            <!-- <h2 class="title">Get Consulting For Better
-                                Business Growth</h2> -->
+                            @*   <span></span>*@
+                            <h2 class="title">من نحن</h2>
                         </div>
                         <!-- inner start -->
                         <div class="inner">
                             <p class="disc">
-                                Exceed Consultancy was founded with the purpose of empowering businesses
-                                through innovating business and technology-driven strategies. Since our inception, we
-                                have partnered with numerous organizations across various industries, delivering
-                                tangible results and transformative outcomes.
-                                We are dedicated to helping organizations thrive through our strategic expertise and
-                                innovative solutions, we empower businesses to navigate complex challenges, seize growth
-                                opportunities, and achieve sustainable success.
-                                Exceed Consultancy emerged from a shared vision of a team of seasoned consultants who
-                                recognized the transformative potential of combining business acumen with cutting-edge
-                                technology. Over the years, we have built a solid reputation for delivering tangible
-                                results and driving positive change for our clients. Our commitment to excellence,
-                                continuous learning, and client-centric approach has been the cornerstone of our
-                                success.
+                               سست شركة تتجاوز للاستشارات بهدف تمكين الشركات من خلال الأعمال المبتكرة والاستراتيجيات القائمة على التكنولوجيا. منذ نشأتنا ، دخلنا في شراكة مع العديد من المنظمات عبر مختلف الصناعات ، وتقديم نتائج ملموسة ونتائج تحويلية.<br /><br />
+                                نحن ملتزمون بمساعدة المؤسسات على الازدهار من خلال خبرتنا الاستراتيجية وحلولنا المبتكرة ، ونمكن الشركات من التغلب على التحديات المعقدة ، واغتنام فرص النمو ، وتحقيق النجاح المستدام.<br /><br />
+                                انبثقت شركة أوفر للاستشارات من رؤية مشتركة لفريق من الاستشاريين المتمرسين الذين أدركوا الإمكانات التحويلية للجمع بين الفطنة التجارية والتكنولوجيا المتطورة. على مر السنين ، قمنا ببناء سمعة راسخة لتقديم نتائج ملموسة وقيادة التغيير الإيجابي لعملائنا. كان التزامنا بالتميز والتعلم المستمر والنهج الذي يركز على العميل حجر الزاوية في نجاحنا.
                             </p>
                             <!-- <div class="rts-progress-one-wrapper">
                                 <div class="single-progress">
@@ -125,81 +111,79 @@
                                     <span>Join Us</span>
                                     <h2 class="title">Join Us on Your Journey to Success</h2>
                                 </div> -->
-                                <span style="font-size:20px; color: #104e7e;">Join Us on Your Journey to Success</span><br />
-                                We are passionate about helping businesses unlock their full potential. Whether you are a
-                                startup looking to make your mark or an established enterprise seeking to scale to new
-                                heights, we are here to support you every step of the way.
+                                <span style="font-size:20px; color: #104e7e;">مهمتنا</span><br />
+                              "لتمكين الشركات من خلال استراتيجيات مبتكرة وحلول تعتمد على التكنولوجيا ، وتعزيز النمو والنجاح المستدام في عالم ديناميكي ورقمي."
+
                             </p>
 
                             <p class="disc">
-                                Together, let's navigate the complexities of today's business landscape and embrace the
-                                opportunities presented by bridging business and technology. Contact us today to embark on a
-                                transformative journey towards success.
+                                <span style="font-size:20px; color: #104e7e;">رؤيتنا </span><br />
+                                "أن نكون شريكا عالميا رائدا للشركات ، ونحدث ثورة في الصناعات من خلال استراتيجيات الأعمال المبتكرة والحلول التكنولوجية ، وتمكين عملائنا من تحقيق نمو ونجاح لا مثيل لهما."
                             </p>
 
                             <!-- start -->
-                            <div class="row">
-                                <!-- start -->
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="solution-wrapper">
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Empower businesses with innovation</p>
-                                        </div>
-                                        <!-- single business solution -->
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Drive sustainable growth</p>
-                                        </div>
-                                        <!-- single business solution -->
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Utilize tech-driven solutions</p>
-                                        </div>
-                                        <!-- single business solution -->
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Foster dynamic success</p>
-                                        </div>
-                                        <!-- single business solution -->
-                                    </div>
-                                </div>
-                                <!-- end -->
-                                <!-- start -->
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
-                                    <div class="solution-wrapper-right">
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Leading global partner</p>
-                                        </div>
-                                        <!-- single business solution -->
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Revolutionizing industries</p>
-                                        </div>
-                                        <!-- single business solution -->
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Innovative business strategies </p>
-                                        </div>
-                                        <!-- single business solution -->
-                                        <!-- single business solution -->
-                                        <div class="single-business-solution">
-                                            <i class="far fa-check"></i>
-                                            <p>Empowering unparalleled growth</p>
-                                        </div>
-                                        <!-- single business solution -->
-                                    </div>
-                                </div>
-                                <!-- end -->
+                            @* <div class="row">
+                            <!-- start -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="solution-wrapper">
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Empower businesses with innovation</p>
                             </div>
+                            <!-- single business solution -->
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Drive sustainable growth</p>
+                            </div>
+                            <!-- single business solution -->
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Utilize tech-driven solutions</p>
+                            </div>
+                            <!-- single business solution -->
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Foster dynamic success</p>
+                            </div>
+                            <!-- single business solution -->
+                            </div>
+                            </div>
+                            <!-- end -->
+                            <!-- start -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
+                            <div class="solution-wrapper-right">
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Leading global partner</p>
+                            </div>
+                            <!-- single business solution -->
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Revolutionizing industries</p>
+                            </div>
+                            <!-- single business solution -->
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Innovative business strategies </p>
+                            </div>
+                            <!-- single business solution -->
+                            <!-- single business solution -->
+                            <div class="single-business-solution">
+                            <i class="far fa-check"></i>
+                            <p>Empowering unparalleled growth</p>
+                            </div>
+                            <!-- single business solution -->
+                            </div>
+                            </div>
+                            <!-- end -->
+                            </div>*@
                         </div>
 
                         <!-- end -->
@@ -216,18 +200,17 @@
                 <div class="col-lg-6">
                     <div class="faq-two-inner">
                         <div class="title-area-faq">
-                            <span class="sub">WHY CHOOSE US</span>
+                            <span class="sub">لماذا نحن</span>
                             <h2 class="title">
-                                We Are Experienced
-                                <span class="sm-title">Business <span>Solution</span></span>
+                              نحن نفهم أن كل
+                                <span class="sm-title">الأعمال <span>هي فريدة من نوعها</span></span>
                             </h2>
 
 
                             <p>
-                                We understand that each business is unique, and there is no one-size-fits-all solution.
-                                Our tailored approach ensures that we delve deep into your organization's specific
-                                needs, challenges, and goals to craft strategies that yield meaningful outcomes.
+                                نحن نتفهم أن كل عمل فريد من نوعه ، ولا يوجد حل واحد يناسب الجميع. يضمن نهجنا المصمم أن نتعمق في الاحتياجات والتحديات والأهداف المحددة لمؤسستك لصياغة استراتيجيات تحقق نتائج ذات مغزى.
                             </p>
+
                         </div>
                         <!-- faq accordion area -->
                         <div class="faq-accordion-area">
@@ -237,18 +220,13 @@
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseOne" aria-expanded="true"
                                                 aria-controls="collapseOne">
-                                            <span>01. </span> Expert Team
+                                            <span>01. </span> فريق الخبراء
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                          aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            Our consultancy boasts a team of highly skilled professionals, each bringing
-                                            a wealth of experience and expertise to the table. From business analysts to
-                                            technology architects, project managers, and industry specialists, our
-                                            diverse talent pool ensures that we can address a wide spectrum of
-                                            challenges across various sectors.
-
+                                            تفتخر استشارتنا بفريق من المهنيين ذوي المهارات العالية ، كل منهم يجلب ثروة من الخبرة والخبرة إلى الطاولة. من محللي الأعمال إلى مهندسي التكنولوجيا, مديري المشاريع, والمتخصصين في الصناعة, يضمن تجمع المواهب المتنوع لدينا أنه يمكننا معالجة مجموعة واسعة من التحديات عبر مختلف القطاعات.
 
                                         </div>
                                     </div>
@@ -258,17 +236,14 @@
                                         <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                                 aria-expanded="false" aria-controls="collapseTwo">
-                                            <span>02. </span>Client-Centric Focus
+                                            <span>02. </span>التركيز على العميل
                                         </button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse"
                                          aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            We prioritize our clients' success above all else. Our collaborative
-                                            approach involves working closely with your team, understanding your vision,
-                                            and aligning our strategies with your business objectives. Your success is
-                                            our success, and we take pride in being a reliable partner throughout your
-                                            growth journey.
+                                            نحن نعطي الأولوية لنجاح عملائنا قبل كل شيء. لدينا التعاونية
+                                            يتضمن النهج العمل عن كثب مع فريقك ، وفهم رؤيتك ، ومواءمة استراتيجياتنا مع أهداف عملك. نجاحك هو نجاحنا, ونحن نفخر بكوننا شريكا موثوقا به طوال رحلة النمو الخاصة بك.
                                         </div>
                                     </div>
                                 </div>
@@ -277,18 +252,13 @@
                                         <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                                 aria-expanded="false" aria-controls="collapseThree">
-                                            <span>03. </span> Innovative Solutions
+                                            <span>03. </span>حلول مبتكرة
                                         </button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse"
                                          aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            In today's fast-paced world, staying ahead of the curve is crucial. We
-                                            constantly stay updated with the latest industry trends and emerging
-                                            technologies to offer innovative solutions that give you a competitive edge.
-                                            Whether it's harnessing the power of data analytics or integrating
-                                            artificial intelligence, our solutions are future-proof and designed to
-                                            drive sustainable growth.
+                                            في عالم اليوم سريع الخطى ، يعد البقاء في الطليعة أمرا بالغ الأهمية. نبقى على اطلاع دائم بأحدث اتجاهات الصناعة والتقنيات الناشئة لتقديم حلول مبتكرة تمنحك ميزة تنافسية. سواء كان ذلك من خلال تسخير قوة تحليلات البيانات أو دمج الذكاء الاصطناعي ، فإن حلولنا واقية من المستقبل ومصممة لدفع النمو المستدام.
                                         </div>
                                     </div>
                                 </div>
@@ -298,15 +268,13 @@
                                         <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapsefour"
                                                 aria-expanded="false" aria-controls="collapsefour">
-                                            <span>04. </span> Ethical Practices
+                                            <span>04. </span> الممارسات الأخلاقية
                                         </button>
                                     </h2>
                                     <div id="collapsefour" class="accordion-collapse collapse"
                                          aria-labelledby="headingfour" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            Integrity and ethical practices are at the heart of everything we do. We
-                                            uphold the highest standards of professionalism, ensuring transparency,
-                                            confidentiality, and compliance in all our interactions and engagements.
+                                            النزاهة والممارسات الأخلاقية هي في صميم كل ما نقوم به. نحن نتمسك بأعلى معايير الاحتراف, ضمان الشفافية, سرية, والامتثال في جميع تفاعلاتنا وارتباطاتنا.
 
 
                                         </div>
@@ -415,27 +383,27 @@
                 <div class="col-12">
                     <div class="rts-title-area team text-center">
                         <p class="pre-title">
-                            Professionals Team
+                           الفريق التنفيذي
                         </p>
-                        <h2 class="title">Professionals Team</h2>
+                        <h2 class="title">فريقنا</h2>
                     </div>
                 </div>
             </div>
             <div class="row g-5 mt--15 mt_sm--0">
                 <!-- single team -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 mb-5 mt-5 pt-5 pb-5">
                     <!-- single team inner -->
                     <div class="team-inner-two">
-                        <a href="team-details.html" class="thumbnail">
-                            <img src="assets/images/team/tm/lg-01.jpg" alt="">
+                        <a asp-controller="HusseinAr" asp-action="index" class="thumbnail">
+                            <img src="assets/images/team/tm/hussein.jpg" alt="">
                         </a>
                         <!-- Acquaintance area -->
                         <div class="acquaintance-area">
                             <div class="header">
-                                <a href="team-details.html">
-                                    <h5 class="title">Kevin Martin</h5>
+                                <a asp-controller="HusseinAr" asp-action="index">
+                                    <h6 class="title"> Dr. Hussein El Mussawi</h6>
                                 </a>
-                                <span>Consultant</span>
+                                <span>مدير عام وكبير مستشاري الرعاية الصحية</span>
                             </div>
                             <!-- <div class="acquaintance-social">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -449,19 +417,19 @@
                 </div>
                 <!-- single team End -->
                 <!-- single team -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 mb-5 mt-5 pt-5 pb-5">
                     <!-- single team inner -->
                     <div class="team-inner-two">
-                        <a href="team-details.html" class="thumbnail">
-                            <img src="assets/images/team/tm/lg-02.jpg" alt="">
+                        <a asp-controller="ElianeAr" asp-action="index" class="thumbnail">
+                            <img src="assets/images/team/tm/eliane.jpg" alt="">
                         </a>
                         <!-- Acquaintance area -->
                         <div class="acquaintance-area">
                             <div class="header">
-                                <a href="team-details.html">
-                                    <h5 class="title">Martin Jone</h5>
+                                <a asp-controller="ElianeAr" asp-action="index">
+                                    <h6 class="title">Eliane Fadoul</h6>
                                 </a>
-                                <span>Manager</span>
+                                <span>مستشار تطوير الأعمال</span>
                             </div>
                             <!-- <div class="acquaintance-social">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -475,19 +443,98 @@
                 </div>
                 <!-- single team End -->
                 <!-- single team -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 mb-5 mt-5 pt-5 pb-5">
                     <!-- single team inner -->
                     <div class="team-inner-two">
-                        <a href="team-details.html" class="thumbnail">
-                            <img src="assets/images/team/tm/lg-03.jpg" alt="">
+
+                        <a asp-controller="YoussefAr" asp-action="index" class="thumbnail">
+                            <img src="assets/images/team/tm/youssef.jpg" alt="">
                         </a>
                         <!-- Acquaintance area -->
                         <div class="acquaintance-area">
                             <div class="header">
-                                <a href="team-details.html">
-                                    <h5 class="title">Jone Lee</h5>
+                                <a asp-controller="YoussefAr" asp-action="index">
+                                    <h6 class="title">Youssef Kalash</h6>
                                 </a>
-                                <span>CEO</span>
+                                <span>كبير مستشاري تكنولوجيا الأعمال</span>
+                            </div>
+                            <!-- <div class="acquaintance-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div> -->
+                        </div>
+                        <!-- Acquaintance area -->
+                    </div>
+                    <!-- single team inner End -->
+                </div>
+
+
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 mb-5 mt-5 pt-5 pb-5">
+                    <!-- single team inner -->
+                    <div class="team-inner-two">
+                        <a asp-controller="AhmadAr" asp-action="index" class="thumbnail">
+                            <img src="assets/images/team/tm/ahmad.jpg" alt="">
+                        </a>
+                        <!-- Acquaintance area -->
+                        <div class="acquaintance-area">
+                            <div class="header">
+                                <a asp-controller="AhmadAr" asp-action="index">
+                                    <h6 class="title">Ahmad Ghader</h6>
+                                </a>
+                                <span>رئيس تطوير البرمجيات</span>
+                            </div>
+                            <!-- <div class="acquaintance-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div> -->
+                        </div>
+                        <!-- Acquaintance area -->
+                    </div>
+                    <!-- single team inner End -->
+                </div>
+
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 mb-5 mt-5 pt-5 pb-5">
+                    <!-- single team inner -->
+                    <div class="team-inner-two">
+                        <a asp-controller="ZeinabAr" asp-action="index" class="thumbnail">
+                            <img src="assets/images/team/tm/zeinab.jpg" alt="">
+                        </a>
+                        <!-- Acquaintance area -->
+                        <div class="acquaintance-area">
+                            <div class="header">
+                                <a asp-controller="ZeinabAr" asp-action="index">
+                                    <h6 class="title">Zeinab Kalash</h6>
+                                </a>
+                                <span>المالية والوظيفية تخطيط موارد المؤسسات استشاري</span>
+                            </div>
+                            <!-- <div class="acquaintance-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div> -->
+                        </div>
+                        <!-- Acquaintance area -->
+                    </div>
+                    <!-- single team inner End -->
+                </div>
+
+
+
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 mb-5 mt-5 pt-5 pb-5">
+                    <!-- single team inner -->
+                    <div class="team-inner-two">
+                        <a asp-controller="JihaneAr" asp-action="index" class="thumbnail">
+                            <img src="assets/images/team/tm/jihane.jpg" alt="">
+                        </a>
+                        <!-- Acquaintance area -->
+                        <div class="acquaintance-area">
+                            <div class="header">
+                                <a asp-controller="JihaneAr" asp-action="index">
+                                    <h6 class="title">Jihane Maatouk</h6>
+                                </a>
+                                <span>مدير المشروع</span>
                             </div>
                             <!-- <div class="acquaintance-social">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -565,5 +612,5 @@
     </div> -->
     <!-- customers feed back area end -->
     <!-- start header area -->
-    
+
 </body>

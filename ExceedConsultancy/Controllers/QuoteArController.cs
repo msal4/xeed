@@ -6,11 +6,11 @@ using Newtonsoft.Json;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class QuoteArController : Controller
+    public class QuoteController : Controller
     {
         private readonly IConfiguration _config;
 
-        public QuoteArController(IConfiguration config)
+        public QuoteController(IConfiguration config)
         {
             _config = config;
         }
@@ -22,7 +22,7 @@ namespace ExceedConsultancy.Controllers
 
 
         [HttpPost]
-        public IActionResult Index(QuoteArModel model)
+        public IActionResult Index(QuoteModel model)
         {
             StringBuilder sb = new StringBuilder();
 

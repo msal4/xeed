@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html> 
-<html lang="en" dir="">
+<html lang="ar" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
     
 
 </head>
-<body class="rtl">
+<body class="rtl" style="direction:rtl">
 
     <div>
 
@@ -38,7 +38,31 @@
                         </div>
                         <div class="col-lg-6 d-xl-block d-none">
                             <div class="right">
+                                <div class="lang-dropdown">
+                                    <select id="language-select">
+                                        <option value="ar">Ar</option>
+                                        <option value="en">En</option>
+                                    </select>
+                                </div>
                             </div>
+
+                            <script>
+                                document.getElementById("language-select").addEventListener("change", function () {
+                                    var selectedValue = this.value;
+
+
+                                    switch (selectedValue) {
+                                        case "ar":
+                                            window.location.href = "/HomeAr";
+                                            break;
+                                        case "en":
+                                            window.location.href = "/";
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -48,7 +72,7 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
                             <div class="thumbnail">
-                                <a asp-controller="Home" asp-action="index">
+                                <a asp-controller="HomeAr" asp-action="index">
                                     <img src="assets/images/logo/logo.png" alt="finbiz-logo">
                                 </a>
                             </div>
@@ -58,16 +82,16 @@
                                 <nav class="nav-main mainmenu-nav d-none d-xl-block">
                                     <ul class="mainmenu">
 
-                                        <li><a asp-controller="About" asp-action="index">About Us</a></li>
+                                        <li><a asp-controller="AboutAr" asp-action="index">من نحن</a></li>
                                         <li class="has-droupdown">
-                                            <a class="nav-link" asp-controller="Services" asp-action="index">Services</a>
+                                            <a class="nav-link" asp-controller="ServicesAr" asp-action="index">الخدمات</a>
                                             <ul class="submenu menu-link3">
                                                 <li class="sub-droupdown">
-                                                    <a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>
+                                                    <a class="sub-menu-link" asp-controller="ServicesAr" asp-action="index">خدماتنا</a>
                                                     <ul class="submenu third-lvl">
-                                                        <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
-                                                        <li><a asp-controller="Business" asp-action="index">Technology Consultancy  </a></li>
-                                                        <li><a asp-controller="Business" asp-action="index">Project Management  </a></li>
+                                                        <li><a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a></li>
+                                                        <li><a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا </a></li>
+                                                        <li><a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع </a></li>
 
 
                                                     </ul>
@@ -76,7 +100,7 @@
                                             </ul>
                                         </li>
 
-                                        <li><a class="nav-item" asp-controller="Contact" asp-action="index">Contact</a></li>
+                                        <li><a class="nav-item" asp-controller="ContactAr" asp-action="index">تواصل معنا</a></li>
                                     </ul>
                                 </nav>
                                 <div class="button-area">
@@ -93,19 +117,19 @@
                 </div>
             </div>
         </header>
-        <div id="side-bar" class="side-bar">
+        <div id="side-bar" class="side-bar" style="direction:ltr;">
             <button class="close-icon-menu"><i class="far fa-times"></i></button>
             <!-- inner menu area desktop start -->
             <div class="rts-sidebar-menu-desktop">
-                <a class="logo-1" href="index.html"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
+                <a class="logo-1" asp-controller="HomeAr" asp-action="index"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
 
                 <div class="body d-none d-xl-block">
                     <p class="disc">
-                        We are a leading business and technology consultancy dedicated to helping businesses thrive in today's dynamic and digital landscape.
+                       نحن شركة استشارية رائدة في مجال الأعمال والتكنولوجيا مكرسة لمساعدة الشركات على الازدهار في المشهد الديناميكي والرقمي اليوم.
                     </p>
                     <div class="get-in-touch">
                         <!-- title -->
-                        <div class="h6 title">Get In Touch</div>
+                        <div class="h6 title">الحصول على اتصال</div>
                         <!-- title End -->
                         <div class="wrapper">
                             <!-- single -->
@@ -141,22 +165,43 @@
                 <div class="body-mobile d-block d-xl-none">
                     <nav class="nav-main mainmenu-nav">
                         <ul class="mainmenu">
-                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a asp-controller="ServicesAr" asp-action="index">من نحن</a></li>
                             <li class="has-droupdown">
-                                <a class="nav-link" href="#">Services</a>
+                                <a class="nav-link" asp-controller="ServicesAr" asp-action="index">الخدمات</a>
                                 <ul class="submenu menu-link3">
                                     <li class="sub-droupdown">
-                                        <a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>
+                                        <a class="sub-menu-link" asp-controller="ServicesAr" asp-action="index">خدماتنا</a>
                                         <ul class="submenu third-lvl">
-                                            <li><a href="service-2.html">Business Consultancy  </a></li>
-                                            <li><a href="service-2.html">Technology Consultancy  </a></li>
-                                            <li><a href="service-3.html">Project Management  </a></li>
+                                            <li><a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a></li>
+                                            <li><a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا </a></li>
+                                            <li><a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع </a></li>
 
 
                                         </ul>
                                     </li>
 
                                 </ul>
+                            </li>
+                            <li><a asp-controller="ِAboutAr" asp-action="index"> تواصل معنا</a></li>
+                            <li>
+                                <div class="lang-dropdown">
+
+
+                                    <select id="language-select" onchange="redirect()">
+                                        <option value="HomeAr">Ar</option>
+                                        <option value="Home">En</option>
+                                    </select>
+
+
+                                </div>
+
+
+                                <script>
+                                    function redirect() {
+                                        var selectedValue = document.getElementById("language-select").value;
+                                        window.location.href = "/" + selectedValue;
+                                    }
+                                </script>
                             </li>
                         </ul>
                     </nav>
@@ -184,89 +229,67 @@
                 <!-- footer call to action area -->
                 <!-- footer call to action area End -->
                 <!-- rts footer area -->
-                <div class="row pt--120 pt_sm--80 pb--80 pb_sm--40 ps-3">
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="footer-two-single-wized left">
-                            <h3 class="title">
-                                <img src="assets/images/logo/logo.png" />
+                <div b-d3pag9n9jh="" class="row pt--120 pt_sm--80 pb--80 pb_sm--40 ps-3">
+                    <div b-d3pag9n9jh="" class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                        <div b-d3pag9n9jh="" class="footer-two-single-wized left">
+                            <h3 b-d3pag9n9jh="" class="title animated fadeIn">
+                                <img b-d3pag9n9jh="" src="assets/images/logo/logo.png">
                             </h3>
-                            <p class="disc">
-                                We are a leading business and technology consultancy dedicated to helping businesses thrive in today's dynamic and digital landscape.
+                            <p b-d3pag9n9jh="" class="disc">
+                                نحن شركة استشارية رائدة في مجال الأعمال والتكنولوجيا مكرسة لمساعدة الشركات على الازدهار في المشهد الديناميكي والرقمي اليوم.
                             </p>
-                            <a class="rts-btn btn-primary-2 color-h-black" href="#">Get a Quote</a>
+                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="QuoteAr" asp-action="index">Get a Quote</a>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
-                        <div class="footer-two-single-wized two">
-                            <div class="wized-title-area">
-                                <h5 class="wized-title">Our Services</h5>
-                                <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
+                    <div b-d3pag9n9jh="" class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt_sm--50">
+                        <div b-d3pag9n9jh="" class="footer-two-single-wized two pe-lg-5">
+                            <div b-d3pag9n9jh="" class="wized-title-area">
+                                <h5 b-d3pag9n9jh="" class="wized-title">خدماتنا</h5>
+                                <img b-d3pag9n9jh="" src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
                             </div>
-                            <div class="wized-2-body">
-                                <ul>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Business planning</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Tax strategy</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Financial advices</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Insurance strategy</a></li>
-                                    <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Manage investment</a></li>
+                            <div b-d3pag9n9jh="" class="wized-2-body  pe-lg-3">
+                                <ul b-d3pag9n9jh="">
+                                    <li b-d3pag9n9jh=""><a asp-controller="BusinessAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>استشارات الأعمال </a></li>
+                                    <li b-d3pag9n9jh=""><a asp-controller="TechnologyAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>استشارات التكنولوجيا</a></li>
+                                    <li b-d3pag9n9jh=""><a asp-controller="ManagementAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>إدارة المشاريع </a></li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <!-- single wized -->
-                    <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
-                        <div class="footer-two-single-wized">
-                            <div class="wized-title-area">
-                                <h5 class="wized-title">Contact Us</h5>
-                                <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
+                    <div b-d3pag9n9jh="" class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt_sm--30 ">
+                        <div b-d3pag9n9jh="" class="footer-two-single-wized">
+                            <div b-d3pag9n9jh="" class="wized-title-area">
+                                <h5 b-d3pag9n9jh="" class="wized-title">تواصل معنا</h5>
+                                <img b-d3pag9n9jh="" src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
                             </div>
-                            <div class="wized-2-body  ">
-                                <div class="contact-info-1">
-                                    <div class="icon ps-3">
-                                        <i class="fas fa-phone-alt"></i>
+                            <div b-d3pag9n9jh="" class="wized-2-body  ">
+                                <div b-d3pag9n9jh="" class="contact-info-1">
+                                    <div b-d3pag9n9jh="" class="icon  ps-3">
+                                        <i b-d3pag9n9jh="" class="fas fa-envelope"></i>
                                     </div>
-                                    <div class="disc">
-                                        <span>Call Us 24/7</span>
-                                        <a href="#">(+256) 2145.2156</a>
+                                    <div b-d3pag9n9jh="" class="disc">
+                                        <span b-d3pag9n9jh="">البريد الإلكتروني</span>
+                                        <a b-d3pag9n9jh="" href="mailto:info@ExceedConsultancy.com">info@exceedconsultancy.com</a>
                                     </div>
                                 </div>
-                                <div class="contact-info-1">
-                                    <div class="icon  ps-3">
-                                        <i class="fas fa-envelope"></i>
+                                <div b-d3pag9n9jh="" class="contact-info-1">
+                                    <div b-d3pag9n9jh="" class="icon  ps-3">
+                                        <i b-d3pag9n9jh="" class="fas fa-map-marker-alt"></i>
                                     </div>
-                                    <div class="disc">
-                                        <span>Email</span>
-                                        <a href="#">info@finbiz.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single wized -->
-                    <!-- single wized -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="footer-two-single-wized">
-                            <div class="wized-title-area">
-                                <h5 class="wized-title">Address</h5>
-                                <img src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
-                            </div>
-                            <div class="wized-2-body">
-                                <div class="contact-info-1">
-                                    <div class="icon  ps-3">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="disc">
-                                        <span>Our Location</span>
-                                        <a href="#">
-                                            XYZ Hilton Street, 125 Town <br>
-                                            United State
-                                        </a>
+                                    <div b-d3pag9n9jh="" class="disc location">
+                                        <span b-d3pag9n9jh="">الموقع</span>
+
+                                       بغداد,العراق
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
-                    <!-- footer end area post end-->
                 </div>
                 <!-- rts footer area End -->
             </div>
@@ -275,7 +298,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="text-center">
+                            <div class="text-center " style="direction:ltr">
                                 <p>HyveOnline - Copyright 2022. All rights reserved.</p>
                             </div>
                         </div>

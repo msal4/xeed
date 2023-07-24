@@ -3,6 +3,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json.Linq;
 
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddJsonConsole();
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);

@@ -1,6 +1,6 @@
-﻿@model ExceedConsultancy.Models.ServicesModel
+﻿@model ExceedConsultancy.Models.ServicesArModel
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAr.cshtml";
     ViewBag.MetaDescription = "";
     ViewBag.MetaKeywords = "";
 }
@@ -27,13 +27,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">Our Services</h1>
+                    <h1 class="title">خدماتنا</h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a <a asp-controller="Home" asp-action="index">Home</a>
+                        <a <a asp-controller="Home" asp-action="index">الرئيسية</a>
                         <span> / </span>
-                        <a href="#" class="active">Our Services</a>
+                        <a href="#" class="active">خدماتنا </a>
                     </div>
                 </div>
             </div>
@@ -45,48 +45,48 @@
         <div class="container">
             <div class="row g-5 service padding-controler">
                 <!-- single service area -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100  mb-3">
                     <div class="service-two-inner">
                         <a href="service-details.html" class="thumbnail"><img style="height: 272px;" src="assets/images/service/02.jpg" alt="Business_image"></a>
-                        <div class="body-content">
+                        <div class="body-content  mb-3">
                             <div class="hidden-area">
-                                <h5 class="title">Business Consultancy </h5>
+                                <h5 class="title">استشارات الأعمال </h5>
                                 <p class="dsic">
-                                    Our business consultancy services are tailored to address your unique challenges and opportunities.
+                                    تم تصميم خدمات الاستشارات التجارية لدينا لمواجهة التحديات والفرص الفريدة الخاصة بك.
                                 </p>
-                                <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
+                                <a class="rts-read-more-two color-primary" href="service-details.html">المزيد<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- single service area end-->
                 <!-- single service area -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100   mb-3">
                     <div class="service-two-inner">
                         <a href="service-details.html" class="thumbnail two"><img src="assets/images/service/03.jpg" alt="Business_image"></a>
-                        <div class="body-content">
+                        <div class="body-content  mb-3">
                             <div class="hidden-area">
-                                <h5 class="title">Technology Consultancy </h5>
+                                <h5 class="title">الاستشارات التكنولوجية</h5>
                                 <p class="dsic">
-                                    Embrace the power of technology with our comprehensive technology consultancy.
+                                    احتضان قوة التكنولوجيا من خلال استشارات التكنولوجيا الشاملة لدينا.
                                 </p>
-                                <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
+                                <a class="rts-read-more-two color-primary" href="service-details.html">المزيد <i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- single service area end-->
                 <!-- single service area -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
+                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100   mb-3">
                     <div class="service-two-inner">
                         <a href="service-details.html" class="thumbnail three"><img src="assets/images/service/04.jpg" alt="Business_image"></a>
-                        <div class="body-content">
+                        <div class="body-content  mb-3">
                             <div class="hidden-area">
-                                <h5 class="title">Project Management </h5>
+                                <h5 class="title">إدارة المشاريع</h5>
                                 <p class="dsic">
-                                    Successful projects require meticulous planning, execution, and monitoring.
+                                    تتطلب المشاريع الناجحة تخطيطا دقيقا وتنفيذا ومراقبة.
                                 </p>
-                                <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
+                                <a class="rts-read-more-two color-primary" href="service-details.html">المزيد <i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -148,17 +148,17 @@
     </div>
     <!-- our service area end -->
     <!-- service accordion area -->
-    <div class="rts-accordion-area service rts-section-gap">
+    <div class="rts-accordion-area service rts-section-gap" style="direction:ltr">
         <div class="accordion-service-bg bg_image ptb--120 ptb_md--80 ptb_sm--60">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6">
                         <div class="accordion-service-inner">
                             <div class="title-area-start">
-                                <span class="sub color-primary"> Business Consultancy </span>
+                                <span class="sub color-primary"> استشارات الأعمال </span>
                                 <h2 class="title">
-                                    We know how to manage
-                                    business globally
+                                    نحن نعرف كيفية إدارة
+                                    الأعمال التجارية على الصعيد العالمي
                                 </h2>
                             </div>
                             <div class="accordion-area">
@@ -166,61 +166,51 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingOne">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Strategy development
+                                                تطوير الاستراتيجية
                                             </button>
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                Crafting a winning strategy is the cornerstone of business success. Our Strategy Development service involves in-depth analysis and collaboration with your leadership team to define clear objectives, identify growth opportunities, and devise a roadmap for sustainable success.
-                                            </div>
+                                            <div class="accordion-body">صياغة استراتيجية رابحة هي حجر الزاوية لنجاح الأعمال. تتضمن خدمة تطوير الإستراتيجية لدينا تحليلا متعمقا وتعاونا مع فريق القيادة الخاص بك لتحديد أهداف واضحة ، وتحديد فرص النمو ، ووضع خارطة طريق للنجاح المستدام. </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingTwo">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Business Planning
+                                                تخطيط الأعمال
                                             </button>
                                         </h2>
                                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                Our Business Planning service equips you with comprehensive and actionable business plans that outline the path to achieving your goals.
-                                            </div>
+                                            <div class="accordion-body">تزودك خدمة تخطيط الأعمال لدينا بخطط عمل شاملة وقابلة للتنفيذ تحدد المسار لتحقيق أهدافك. </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingThree">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                Acquisitions
+                                                المقتنيات
                                             </button>
                                         </h2>
                                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                Navigating the complexities of mergers and acquisitions demands expert guidance. Our Acquisitions service offers in-depth due diligence, target analysis, and strategic advisory to support your decision-making process.
-                                            </div>
+                                            <div class="accordion-body">يتطلب التنقل في تعقيدات عمليات الدمج والاستحواذ إرشادات الخبراء. تقدم خدمة الاستحواذ لدينا العناية الواجبة المتعمقة, تحليل الهدف, والاستشارات الاستراتيجية لدعم عملية صنع القرار الخاصة بك. </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingFour">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Process optimization
+                                                عملية التحسين
                                             </button>
                                         </h2>
                                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                Unlock hidden potential and efficiency within your operations through our Process Optimization service.
-                                            </div>
+                                            <div class="accordion-body">أطلق العنان للإمكانات والكفاءة الخفية في عملياتك من خلال خدمة تحسين العمليات الخاصة بنا.  </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingFive">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                Financial analysis
+                                                التحليل المالي
                                             </button>
                                         </h2>
                                         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                Numbers tell a story, and our Financial Analysis service provides valuable insights into your organization's financial health.
-                                            </div>
+                                            <div class="accordion-body">تحكي الأرقام قصة ، وتوفر خدمة التحليل المالي لدينا رؤى قيمة حول الصحة المالية لمؤسستك.</div>
                                         </div>
                                     </div>
                                 </div>

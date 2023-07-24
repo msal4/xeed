@@ -6,11 +6,11 @@ using Newtonsoft.Json;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class QuoteArController : Controller
+    public class ContactArController : Controller
     {
         private readonly IConfiguration _config;
 
-        public QuoteArController(IConfiguration config)
+        public ContactArController(IConfiguration config)
         {
             _config = config;
         }
@@ -20,9 +20,9 @@ namespace ExceedConsultancy.Controllers
             return View();
         }
 
-
+    
         [HttpPost]
-        public IActionResult Index(QuoteArModel model)
+        public IActionResult Index(ContactArModel model)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -46,13 +46,13 @@ namespace ExceedConsultancy.Controllers
                     if (result.Success)
                     {
                         sendemail(sb.ToString(), "Contact Message", "ahmadghadder@gmail.com");
-                        TempData["SuccessQuote"] = "Thank you for contacting us! We will get back to you as soon as possible.";
-                        return RedirectToAction("Index", "Quote");
+                        TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                        return RedirectToAction("Index", "Contact");
                     }
                 }
 
                 TempData["Success"] = "Please validate that you are not a robot";
-                return RedirectToAction("Index", "Quote");
+                return RedirectToAction("Index", "Contact");
             }
         }
 
@@ -138,7 +138,7 @@ namespace ExceedConsultancy.Controllers
         //        TempData["SubscribeSuccess"] = "Please validate that you are not a robot";
         //        return RedirectToAction("Index", "Contact");
         //    }
+        }
+
+
     }
-
-
-}

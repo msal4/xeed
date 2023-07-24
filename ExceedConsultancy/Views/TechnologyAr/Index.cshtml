@@ -1,6 +1,6 @@
-﻿@model ExceedConsultancy.Models.TechnologyModel
+﻿@model ExceedConsultancy.Models.TechnologyArModel
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAr.cshtml";
     ViewBag.MetaDescription = "";
     ViewBag.MetaKeywords = "";
 }
@@ -17,13 +17,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">Technology Consultancy</h1>
+                    <h1 class="title">الاستشارات التكنولوجية</h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a asp-controller="Home" asp-action="index">Home</a>
+                        <a asp-controller="Home" asp-action="index">الرئيسية</a>
                         <span> / </span>
-                       Technology Consultancy
+                        الاستشارات التكنولوجية
                     </div>
                 </div>
             </div>
@@ -40,10 +40,9 @@
                         <div class="thumbnail">
                             <img src="assets/images/service/techno.jpg" alt="business-area">
                         </div>
-                        <h4 class="title">Technology Consultancy </h4>
+                        <h4 class="title">الاستشارات التكنولوجية </h4>
                         <p class="disc">
-                        Embrace the power of technology with our comprehensive technology consultancy. From designing and implementing a scalable IT infrastructure to developing cutting-edge software solutions, we help you leverage technology for competitive advantage.
-
+                            احتضان قوة التكنولوجيا من خلال استشارات التكنولوجيا الشاملة لدينا. من تصميم وتنفيذ بنية تحتية لتكنولوجيا المعلومات قابلة للتطوير إلى تطوير حلول برمجية متطورة ، نساعدك على الاستفادة من التكنولوجيا لتحقيق ميزة تنافسية.
                         </p>
 
                         
@@ -178,17 +177,17 @@
                         <div class="wized-body">
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Business" asp-action="index">Business Consultancy  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <!-- single categoris End -->
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="TechnologyAr" asp-action="index">الاستشارات التكنولوجية <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <!-- single categoris End -->
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Management" asp-action="index">Project Management <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <br />
                             <img src="assets/images/service/servicestechno.jpg" />
@@ -213,11 +212,11 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
-                    <h6 class="title">IT infrastructure design </h6>
+                    <h6 class="title">تصميم البنية التحتية لتكنولوجيا المعلومات </h6>
                     <p class="disc">
                         
-                        A robust and scalable IT infrastructure is the backbone of modern businesses. Our IT Infrastructure Design service leverages cutting-edge technologies and industry best practices to create tailored solutions that meet your organization's unique needs. From network architecture
-                        to hardware and security systems, we ensure your IT infrastructure is optimized for seamless performance, data integrity, and enhanced productivity.
+                        البنية التحتية القوية والقابلة للتطوير لتكنولوجيا المعلومات هي العمود الفقري للشركات الحديثة. تستفيد خدمة تصميم البنية التحتية لتكنولوجيا المعلومات لدينا من أحدث التقنيات وأفضل الممارسات الصناعية لإنشاء حلول مخصصة تلبي الاحتياجات الفريدة لمؤسستك. من بنية الشبكة
+                        بالنسبة لأنظمة الأجهزة والأمان ، نضمن تحسين البنية التحتية لتكنولوجيا المعلومات لديك للحصول على أداء سلس وتكامل البيانات وزيادة الإنتاجية.
                     </p>
 
 
@@ -225,11 +224,10 @@
             </div>
             <div class="row mt--35">
                 <div class="col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
-                    <h6 class="title">Software development </h6>
+                    <h6 class="title">تطوير البرمجيات </h6>
                     
                     <p class="disc">
-                        Stay ahead in the digital age with our Software Development service. Our team of skilled developers crafts custom software solutions that align perfectly with your business goals. From web and mobile applications to enterprise software, we deliver user-centric products that enhance customer experiences, streamline processes, and drive innovation within your organization.
-
+                        ابق متقدما في العصر الرقمي من خلال خدمة تطوير البرامج الخاصة بنا. يقوم فريقنا من المطورين المهرة بصياغة حلول برمجية مخصصة تتوافق تماما مع أهداف عملك. من تطبيقات الويب والهاتف المحمول إلى برامج المؤسسات ، نقدم منتجات تركز على المستخدم تعزز تجارب العملاء وتبسط العمليات وتدفع الابتكار داخل مؤسستك.
                     </p>
                   
 
@@ -253,10 +251,9 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
-                    <h6 class="title">Digital transformation </h6>
+                    <h6 class="title">التحول الرقمي </h6>
                     <p class="disc">
-                       Embrace the future with our Digital Transformation service. In a rapidly evolving landscape, we help businesses harness the power of digital technologies to drive growth and operational excellence. Our consultants collaborate with you to identify digital opportunities, revamp business processes, and adopt data-driven strategies, enabling your organization to thrive in the digital era.
-
+                      احتضان المستقبل مع خدمة التحول الرقمي لدينا. في مشهد سريع التطور ، نساعد الشركات على تسخير قوة التقنيات الرقمية لدفع النمو والتميز التشغيلي. يتعاون مستشارونا معك لتحديد الفرص الرقمية ، وتجديد العمليات التجارية ، واعتماد استراتيجيات تعتمد على البيانات ، مما يمكن مؤسستك من الازدهار في العصر الرقمي.
                     </p>
                 </div>
             </div>
