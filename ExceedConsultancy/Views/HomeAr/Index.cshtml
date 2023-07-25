@@ -36,7 +36,7 @@
 
                                                 <span> استشارات الأعمال </span>
                                             </h1>
-                                            <a class="rts-btn btn-primary-2" href="#">عرض الحل</a>
+                                            <a class="rts-btn btn-primary-2" asp-controller="BusinessAr" asp-action="index">إقرأ المزيد</a>
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
                                             <h1 class="title">
                                                 <span>  حلول تقنية </span>
                                             </h1>
-                                            <a class="rts-btn btn-primary-2" href="#">عرض الحل</a>
+                                            <a class="rts-btn btn-primary-2" asp-controller="TechnologyAr" asp-action="index">إقرأ المزيد</a>
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
 
                                                 <span> إدارة المشاريع </span> 
                                             </h1>
-                                            <a class="rts-btn btn-primary-2" href="#">عرض الحل</a>
+                                            <a class="rts-btn btn-primary-2"  asp-controller="ManagementAr" asp-action="index">إقرأ المزيد</a>
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
                             <p class="disc">
                                 تم تصميم خدمات الاستشارات التجارية لدينا لمواجهة التحديات والفرص الفريدة الخاصة بك.
                             </p>
-                            <a asp-controller="BusinessAr" asp-action="index" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="BusinessAr" asp-action="index" class="btn-red-more"> إقرأ المزيد<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -126,12 +126,12 @@
                         </a>
                         <div class="body">
                             <a asp-controller="TechnologyAr" asp-action="index">
-                                <h5 class="title">الاستشارات التكنولوجية </h5>
+                                <h5 class="title">الخدمات المعلوماتية </h5>
                             </a>
                             <p class="disc">
                                 احتضان قوة التكنولوجيا من خلال استشارات التكنولوجيا الشاملة لدينا.
                             </p>
-                            <a asp-controller="TechnologyAr" asp-action="index" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="TechnologyAr" asp-action="index" class="btn-red-more"> إقرأ المزيد<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -149,7 +149,7 @@
                             <p class="disc">
                                 تتطلب المشاريع الناجحة تخطيطا دقيقا وتنفيذا ومراقبة. يتبع فريق إدارة المشاريع الخبير لدينا منهجيات مثبتة في الصناعة لضمان تسليم المشروع
                             </p>
-                            <a asp-controller="ManagementAr" asp-action="index" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="ManagementAr" asp-action="index" class="btn-red-more"> إقرأ المزيد<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -191,7 +191,7 @@
                     </div>
                     <div class="about-company-wrapper">
                         <p class="disc">
-                            نحن شركة استشارية رائدة في مجال الأعمال والتكنولوجيا مكرسة لمساعدة الشركات على الازدهار في المشهد الديناميكي والرقمي اليوم. مهمتنا هي تقديم حلول مبتكرة وتوجيه استراتيجي لدفع نمو شركتك ونجاحها. مع فريقنا من الخبراء المتمرسين والمعرفة العميقة بالصناعة ، نحن ملتزمون بتزويدك بخدمات استشارية لا مثيل لها.
+                            نحن شركة استشارية رائدة في مجال الأعمال والتكنولوجيا مكرسة لمساعدة الشركات على الازدهار في المشهد الديناميكي والرقمي اليوم. مهمتنا هي تقديم حلول مبتكرة وتوجيه استراتيجي لدفع نمو شركتك ونجاحها. مع فريقنا من الخبراء المتمرسين والمعرفة العميقة بالصناعة، نحن ملتزمون بتزويدك بخدمات استشارية لا مثيل لها.
                         </p>
                         <div class="rts-tab-style-one">
                             <div class="d-flex align-items-start contoler-company">
@@ -204,7 +204,7 @@
                                         <!-- start tab content -->
                                         <div class="rts-tab-content-one">
                                             <p class="disc">
-                                                "لتمكين الشركات من خلال استراتيجيات مبتكرة وحلول تعتمد على التكنولوجيا ، وتعزيز النمو والنجاح المستدام في عالم ديناميكي ورقمي."
+                                                "لتمكين الشركات من خلال استراتيجيات مبتكرة وحلول تعتمد على التكنولوجيا، وتعزيز النمو والنجاح المستدام في عالم ديناميكي ورقمي."
                                             </p>
                                         
                                             <a class="rts-btn btn-primary-2 color-h-black" asp-controller="AboutAr" asp-action="index">من نحن</a>
@@ -215,7 +215,7 @@
                                         <!-- start tab content -->
                                         <div class="rts-tab-content-one">
                                             <p class="disc">
-                                              "أن نكون شريكا عالميا رائدا للشركات ، ونحدث ثورة في الصناعات من خلال استراتيجيات الأعمال المبتكرة والحلول التكنولوجية ، وتمكين عملائنا من تحقيق نمو ونجاح لا مثيل لهما."</p>
+                                              "أن نكون شريكا عالميا رائدا للشركات، ونحدث ثورة في الصناعات من خلال استراتيجيات الأعمال المبتكرة والحلول التكنولوجية، وتمكين عملائنا من تحقيق نمو ونجاح لا مثيل لهما."</p>
                                            
                                             <a class="rts-btn btn-primary-2 color-h-black" asp-controller="ContactAr" asp-action="index">تواصل معنا</a>
                                         </div>
@@ -329,10 +329,10 @@
                         <img src="assets/images/service/h2/03.jpg" alt="Service_Image">
                         <img class="two" src="assets/images/service/h2/02.jpg" alt="Service_Image">
                         <img class="three" src="assets/images/service/h2/01.jpg" alt="Service_Image">
-                        <div class="ratio-area">
+                        @*<div class="ratio-area">
                             <h3 class="ratio">85%</h3>
                             <span>نسبة ناجحة</span>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -345,7 +345,7 @@
                         </div>
                         <div class="content-wrapper">
                             <p class="disc">
-                               حن نتفهم أن كل عمل فريد من نوعه ، ولا يوجد حل واحد يناسب الجميع. يضمن نهجنا المصمم أن نتعمق في الاحتياجات والتحديات والأهداف المحددة لمؤسستك لصياغة استراتيجيات تحقق نتائج ذات مغزى.
+                               حن نتفهم أن كل عمل فريد من نوعه، ولا يوجد حل واحد يناسب الجميع. يضمن نهجنا المصمم أن نتعمق في الاحتياجات والتحديات والأهداف المحددة لمؤسستك لصياغة استراتيجيات تحقق نتائج ذات مغزى.
                             </p>
                             <div class="feature-one-wrapper mt--40">
                                 <div class="single-feature-one">
