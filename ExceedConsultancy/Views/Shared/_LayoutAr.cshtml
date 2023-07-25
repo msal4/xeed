@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
 
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-@*    <meta name="keywords" content="@ViewBag.MetaKeywords">
-    <meta name="description" content="@ViewBag.MetaDescription">*@
+    <link rel="shortcut icon" href="~/assets/images/logo.ico" type="image/png">
+    <meta name="keywords" content="@ViewBag.MetaKeywords">
+    <meta name="description" content="@ViewBag.MetaDescription">
+    <title>@ViewBag.Title</title>
     
 
 </head>
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 d-xl-block d-none">
+                        <div class="col-lg-12 col-xl-6 d-xl-block ">
                             <div class="right">
                                 <div class="lang-dropdown">
                                     <select id="language-select">
@@ -85,18 +85,18 @@
                                         <li><a asp-controller="AboutAr" asp-action="index">من نحن</a></li>
                                         <li class="has-droupdown">
                                             <a class="nav-link" asp-controller="ServicesAr" asp-action="index">الخدمات</a>
-                                            <ul class="submenu menu-link3">
+                                            <ul class="submenu menu-link3 text-end">
                                                 <li class="sub-droupdown">
-                                                    <a class="sub-menu-link" asp-controller="ServicesAr" asp-action="index">خدماتنا</a>
-                                                    <ul class="submenu third-lvl">
-                                                        <li><a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a></li>
-                                                        <li><a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا </a></li>
-                                                        <li><a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع </a></li>
-
-
-                                                    </ul>
+                                                    @*<a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>*@
+                                                    @*<ul class="submenu third-lvl">
+                                                    <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
+                                                    <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
+                                                    <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
+                                                    </ul>*@
+                                                    <a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a>
+                                                    <a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا  </a>
+                                                    <a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع  </a>
                                                 </li>
-
                                             </ul>
                                         </li>
 
@@ -105,7 +105,7 @@
                                 </nav>
                                 <div class="button-area">
                                     <!--<button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>-->
-                                    <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
+                                    <a asp-controller="QuoteAr" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
                                     <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
                                         <img class="menu-dark" src="assets/images/icon/menu.png" alt="Menu-icon">
                                         <img class="menu-light" src="assets/images/icon/menu-light.png" alt="Menu-icon">
@@ -117,11 +117,11 @@
                 </div>
             </div>
         </header>
-        <div id="side-bar" class="side-bar" style="direction:ltr;">
+        <div id="side-bar" class="side-bar" >
             <button class="close-icon-menu"><i class="far fa-times"></i></button>
             <!-- inner menu area desktop start -->
             <div class="rts-sidebar-menu-desktop">
-                <a class="logo-1" asp-controller="HomeAr" asp-action="index"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
+                <a class="" asp-controller="HomeAr" asp-action="index"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
 
                 <div class="body d-none d-xl-block">
                     <p class="disc">
@@ -168,41 +168,21 @@
                             <li><a asp-controller="ServicesAr" asp-action="index">من نحن</a></li>
                             <li class="has-droupdown">
                                 <a class="nav-link" asp-controller="ServicesAr" asp-action="index">الخدمات</a>
-                                <ul class="submenu menu-link3">
+                                <ul class="submenu menu-link3 text-right">
                                     <li class="sub-droupdown">
-                                        <a class="sub-menu-link" asp-controller="ServicesAr" asp-action="index">خدماتنا</a>
-                                        <ul class="submenu third-lvl">
-                                            <li><a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a></li>
-                                            <li><a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا </a></li>
-                                            <li><a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع </a></li>
-
-
-                                        </ul>
+                                        @*<a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>*@
+                                        @*<ul class="submenu third-lvl">
+                                        <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
+                                        <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
+                                        <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
+                                        </ul>*@
+                                        <a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a>
+                                        <a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا</a>
+                                        <a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع </a>
                                     </li>
-
                                 </ul>
                             </li>
                             <li><a asp-controller="ِAboutAr" asp-action="index"> تواصل معنا</a></li>
-                            <li>
-                                <div class="lang-dropdown">
-
-
-                                    <select id="language-select" onchange="redirect()">
-                                        <option value="HomeAr">Ar</option>
-                                        <option value="Home">En</option>
-                                    </select>
-
-
-                                </div>
-
-
-                                <script>
-                                    function redirect() {
-                                        var selectedValue = document.getElementById("language-select").value;
-                                        window.location.href = "/" + selectedValue;
-                                    }
-                                </script>
-                            </li>
                         </ul>
                     </nav>
                     <!--<div class="social-wrapper-two menu mobile-menu">
@@ -281,7 +261,7 @@
                                     <div b-d3pag9n9jh="" class="disc location">
                                         <span b-d3pag9n9jh="">الموقع</span>
 
-                                       بغداد,العراق
+                                       بغداد , العراق
 
                                     </div>
                                 </div>
@@ -329,6 +309,6 @@
 
         }
     </div>
-
+     <script src="https://www.google.com/recaptcha/api.js?hl=ar" async defer></script>
 </body>
 </html>

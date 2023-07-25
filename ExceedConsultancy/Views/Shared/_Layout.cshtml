@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-xl-block d-none">
+                        <div class="col-lg-12 col-xl-6 d-xl-block ">
                             <div class="right">
                                @* <div class="lang-dropdown">
                                     <select id="language-select">
@@ -92,15 +92,18 @@
                                             <a class="nav-link" asp-controller="Services" asp-action="index">Services</a>
                                         <ul class="submenu menu-link3">
                                             <li class="sub-droupdown">
-                                                <a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>
-                                                <ul class="submenu third-lvl">
+
+                                                @*<a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>*@
+                                                @*<ul class="submenu third-lvl">
                                                         <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
                                                         <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
                                                         <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
-
-
-                                                </ul>
+                                                </ul>*@
+                                                <a asp-controller="Business" asp-action="index">Business Consultancy  </a>
+                                                <a asp-controller="Technology" asp-action="index">Technology Consultancy  </a>
+                                                <a asp-controller="Management" asp-action="index">Project Management  </a>
                                             </li>
+                                          
 
                                         </ul>
                                     </li>
@@ -126,7 +129,7 @@
             <button class="close-icon-menu"><i class="far fa-times"></i></button>
             <!-- inner menu area desktop start -->
             <div class="rts-sidebar-menu-desktop">
-                <a class="logo-1" asp-controller="Home" asp-action="index"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
+                <a class="" asp-controller="Home" asp-action="index"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
 
                 <div class="body d-none d-xl-block">
                     <p class="disc">
@@ -175,38 +178,47 @@
                                 <a class="nav-link" asp-controller="Services" asp-action="index">Services</a>
                                 <ul class="submenu menu-link3">
                                     <li class="sub-droupdown">
-                                        <a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>
-                                        <ul class="submenu third-lvl">
-                                            <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
-                                            <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
-                                            <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
-
-
-                                        </ul>
+                                        @*<a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>*@
+                                        @*<ul class="submenu third-lvl">
+                                        <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
+                                        <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
+                                        <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
+                                        </ul>*@
+                                        <a asp-controller="Business" asp-action="index">Business Consultancy  </a>
+                                        <a asp-controller="Technology" asp-action="index">Technology Consultancy  </a>
+                                        <a asp-controller="Management" asp-action="index">Project Management  </a>
                                     </li>
-
                                 </ul>
+
                             </li>
                             <li><a asp-controller="About" asp-action="index">About Us</a></li>
-                            <li>
+                           @* <li>
                                 <div class="lang-dropdown">
-
-
-                                    <select id="language-select" onchange="redirect()">
-                                        <option value="Home">En</option>
-                                        <option value="HomeAr">Ar</option>
+                                    <select id="language-select">
+                                        <option value="en">En</option>
+                                        <option value="ar">Ar</option>
                                     </select>
-
-
                                 </div>
+                                <script>
+                                    document.getElementById("language-select").addEventListener("change", function () {
+                                        var selectedValue = this.value;
 
 
-                <script>
-                    function redirect() {
-                        var selectedValue = document.getElementById("language-select").value;
-                        window.location.href = "/" + selectedValue;
-                                    }
-                                    </script></li>
+                                        switch (selectedValue) {
+                                            case "ar":
+                                                window.location.href = "/";
+                                                break;
+                                            case "en":
+                                                window.location.href = "/Home";
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    });
+                                </script>
+
+
+               </li>*@
                         </ul>
                     </nav>
                     <!--<div class="social-wrapper-two menu mobile-menu">
