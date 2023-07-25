@@ -1,8 +1,10 @@
 ﻿@model ExceedConsultancy.Models.HomeModel
 @{
     Layout = "~/Views/Shared/_LayoutAr.cshtml";
-    ViewBag.MetaDescription = "";
-    ViewBag.MetaKeywords = "";
+    ViewBag.Title = "Exceed Consultancy | Empowering Businesses through Innovation";
+    ViewBag.MetaDescription = "Welcome to Exceed Consultancy! We are a dedicated team of seasoned consultants empowering businesses with innovative strategies and technology-driven solutions. Partner with us to navigate complex challenges, seize growth opportunities, and achieve sustainable success.";
+    ViewBag.MetaKeywords = "Exceed Consultancy, empowering businesses, innovation, strategic expertise, innovative solutions, complex challenges, growth opportunities, sustainable success, business consultancy, strategy development, business planning, acquisitions, process optimization, financial analysis, market analysis";
+
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -94,24 +96,24 @@
             <div class="row">
                 <div class="title-area service-h2">
                     <!--<span>Our Latest Services</span>-->
-                    <h2 class="title">Our Services</h2>
+                    <h2 class="title">خدماتنا</h2>
                 </div>
             </div>
             <div class="row g-5 mt--10">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <!-- single service start -->
                     <div class="rts-single-service-h2">
-                        <a href="service-details.html" class="thumbnail">
-                            <img src="assets/images/service/02.jpg" alt="Service_image">
+                        <a asp-controller="BusinessAr" asp-action="index" class="thumbnail">
+                            <img src="assets/images/service/02.jpg" alt="استشارات الأعمال">
                         </a>
                         <div class="body">
-                            <a href="service-details.html">
+                            <a asp-controller="BusinessAr" asp-action="index">
                                 <h5 class="title">استشارات الأعمال </h5>
                             </a>
                             <p class="disc">
-                                Fusce dignissim erat dis proin ornare class sem nibh
+                                تم تصميم خدمات الاستشارات التجارية لدينا لمواجهة التحديات والفرص الفريدة الخاصة بك.
                             </p>
-                            <a href="service-details.html" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="BusinessAr" asp-action="index" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -119,17 +121,17 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <!-- single service start -->
                     <div class="rts-single-service-h2">
-                        <a href="service-details.html" class="thumbnail">
+                        <a asp-controller="TechnologyAr" asp-action="index" class="thumbnail">
                             <img src="assets/images/service/03.jpg" alt="Service_image">
                         </a>
                         <div class="body">
-                            <a href="service-details.html">
+                            <a asp-controller="TechnologyAr" asp-action="index">
                                 <h5 class="title">الاستشارات التكنولوجية </h5>
                             </a>
                             <p class="disc">
-                                Fusce dignissim erat dis proin ornare class sem nibh
+                                احتضان قوة التكنولوجيا من خلال استشارات التكنولوجيا الشاملة لدينا.
                             </p>
-                            <a href="service-details.html" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="TechnologyAr" asp-action="index" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -137,17 +139,17 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <!-- single service start -->
                     <div class="rts-single-service-h2">
-                        <a href="service-details.html" class="thumbnail">
+                        <a asp-controller="ManagementAr" asp-action="index" class="thumbnail">
                             <img src="assets/images/service/04.jpg" alt="Service_image">
                         </a>
                         <div class="body">
-                            <a href="service-details.html">
+                            <a asp-controller="ManagementAr" asp-action="index">
                                 <h5 class="title">إدارة المشاريع </h5>
                             </a>
                             <p class="disc">
-                                Fusce dignissim erat dis proin ornare class sem nibh
+                                تتطلب المشاريع الناجحة تخطيطا دقيقا وتنفيذا ومراقبة. يتبع فريق إدارة المشاريع الخبير لدينا منهجيات مثبتة في الصناعة لضمان تسليم المشروع
                             </p>
-                            <a href="service-details.html" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
+                            <a asp-controller="ManagementAr" asp-action="index" class="btn-red-more"> المزيد<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- single service End -->
@@ -205,7 +207,7 @@
                                                 "لتمكين الشركات من خلال استراتيجيات مبتكرة وحلول تعتمد على التكنولوجيا ، وتعزيز النمو والنجاح المستدام في عالم ديناميكي ورقمي."
                                             </p>
                                         
-                                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="About" asp-action="index">About Us</a>
+                                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="AboutAr" asp-action="index">من نحن</a>
                                         </div>
                                         <!-- start tab content End -->
                                     </div>
@@ -215,7 +217,7 @@
                                             <p class="disc">
                                               "أن نكون شريكا عالميا رائدا للشركات ، ونحدث ثورة في الصناعات من خلال استراتيجيات الأعمال المبتكرة والحلول التكنولوجية ، وتمكين عملائنا من تحقيق نمو ونجاح لا مثيل لهما."</p>
                                            
-                                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Contact" asp-action="index">Contact Us</a>
+                                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="ContactAr" asp-action="index">تواصل معنا</a>
                                         </div>
                                         <!-- start tab content End -->
                                     </div>

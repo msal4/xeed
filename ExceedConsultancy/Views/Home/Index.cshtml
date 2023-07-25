@@ -1,8 +1,10 @@
 ﻿@model ExceedConsultancy.Models.HomeModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.MetaDescription = "";
-    ViewBag.MetaKeywords = "";
+    ViewBag.Title = "Exceed Consultancy | Empowering Businesses through Innovation";
+    ViewBag.MetaDescription = "Welcome to Exceed Consultancy! We are a dedicated team of seasoned consultants empowering businesses with innovative strategies and technology-driven solutions. Partner with us to navigate complex challenges, seize growth opportunities, and achieve sustainable success.";
+    ViewBag.MetaKeywords = "Exceed Consultancy, empowering businesses, innovation, strategic expertise, innovative solutions, complex challenges, growth opportunities, sustainable success, business consultancy, strategy development, business planning, acquisitions, process optimization, financial analysis, market analysis";
+
 }
 
 <!DOCTYPE html>
@@ -103,7 +105,7 @@
                             <img src="assets/images/service/02.jpg" alt="Service_image">
                         </a>
                         <div class="body">
-                            <a href="service-details.html">
+                            <a asp-controller="Business" asp-action="index">
                                 <h5 class="title">Business Consultancy </h5>
                             </a>
                             <p class="disc">
@@ -121,7 +123,7 @@
                             <img src="assets/images/service/03.jpg" alt="Service_image">
                         </a>
                         <div class="body">
-                            <a href="service-details.html">
+                            <a asp-controller="Technology" asp-action="index">
                                 <h5 class="title">Technology Consultancy </h5>
                             </a>
                             <p class="disc">
@@ -135,7 +137,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <!-- single service start -->
                     <div class="rts-single-service-h2">
-                        <a href="service-details.html" class="thumbnail">
+                        <a asp-controller="Management" asp-action="index" class="thumbnail">
                             <img src="assets/images/service/04.jpg" alt="Service_image">
                         </a>
                         <div class="body">

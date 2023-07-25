@@ -15436,7 +15436,7 @@ body.sal-disabled [data-sal|=flip] {
 @media screen and (max-width: 1199px) {
   .main-header .button-area {
     margin-left: 16px;
-    margin: 33px 0;
+    margin: 13px 0;
   }
 }
 @media only screen and (max-width: 479px) {
