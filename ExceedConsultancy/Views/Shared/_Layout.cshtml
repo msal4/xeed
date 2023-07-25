@@ -3,18 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exceed Consultancy</title>
+
 
     <!-- Fav Icon -->
  
 
 
     <link rel="shortcut icon" href="~/assets/images/logo.ico" type="image/png">
-    <meta name="keywords" content="@ViewBag.MetaKeywords">
+     <meta name="keywords" content="@ViewBag.MetaKeywords">
     <meta name="description" content="@ViewBag.MetaDescription">
+    <title>@ViewBag.Title</title>
 
-
-<link href="~/assets/css/nice-select.css" rel="stylesheet" />
 
 
 </head>
@@ -127,7 +126,7 @@
             <button class="close-icon-menu"><i class="far fa-times"></i></button>
             <!-- inner menu area desktop start -->
             <div class="rts-sidebar-menu-desktop">
-                <a class="logo-1" href="index.html"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
+                <a class="logo-1" asp-controller="Home" asp-action="index"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
 
                 <div class="body d-none d-xl-block">
                     <p class="disc">
