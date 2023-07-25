@@ -1,4 +1,4 @@
-/*---------------------------
+﻿/*---------------------------
  CSS Index  
 ****************************
 
@@ -135,6 +135,125 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
+.rtl .header-top-one .left {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.rtl .main-header .button-area {
+    margin-right: 80px;
+    margin-left: 0px;
+}
+
+
+
+.rtl .footer-two-single-wized .wized-2-body ul li a i {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 0px;
+    rotate: 180deg;
+}
+.rtl .footer-two-single-wized .contact-info-1 .disc {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+
+.rtl .single-feature-one i {
+    margin-left: 15px;
+    margin-right: 0px;
+}
+.rtl .rts-single-wized .single-categories li a i {
+    rotate: 180deg;
+}
+.location{
+    color:#fff;
+}
+#language-select {
+    color: #fff !important;
+    background: #104e7e;
+}
+    #language-select option{
+
+        padding:10px;
+    }
+.lang-dropdown {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+.rtl .inner-about-three p.disc {
+    padding-right: 20px;
+    border-right: 5px solid var(--color-primary-3);
+    padding-left: 0px;
+    border-left: 0px solid var(--color-primary-3);
+}
+
+.rtl .rts-title-area.team::after {
+    content: "الأعضاء";
+    
+}
+
+.rtl .faq-two-inner .faq-accordion-area .accordion .accordion-item .accordion-header button::after {
+    left: -10px;
+}
+.rtl .faq-two-inner .faq-accordion-area .accordion .accordion-item .accordion-header button span {
+    margin-left: 10px;
+    margin-right: 0px;
+}
+    .rtl .rts-single-service-h2 .body a.btn-red-more i {
+    
+    rotate: 180deg;
+}
+.rtl .rts-breadcrumb-area .bread-tag {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: flex-end;
+    padding: 12px 30px;
+    background: #fff;
+    border-radius: 31px;
+    box-shadow: 0px 9px 18px rgba(24, 16, 16, 0.05);
+    max-width: max-content;
+    margin-right: auto;
+    margin-left: 0px;
+}
+    .rtl .rts-tab-style-one .tab-content .rts-tab-content-one {
+    margin-right: 26px;
+}
+
+    .single-feature-one {
+    margin-right: 0px;
+    margin-left: 10px;
+}
+.rtl .mainmenu li.has-droupdown .submenu {
+    left: -200px;
+}
+.rtl .mainmenu li.has-droupdown .submenu::after {
+    left: 86%;
+}
+
+    .rtl .mainmenu li.has-droupdown .submenu .sub-droupdown a.sub-menu-link::before {
+        right: 222px;
+        rotate: 180deg;
+    }
+    .rtl .mainmenu li.has-droupdown .submenu.third-lvl {
+    left: -69%;
+    top: 0%;
+}
+
+
+.rtl  .mainmenu li.has-droupdown .submenu li a {
+    float: right;
+}
+
+.side-bar.show {
+    right: 0;
+}
+
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   body {
     overflow: hidden;
@@ -16625,9 +16744,6 @@ li.has-droupdown {
     box-shadow: none;
   }
 }
-.side-bar.show {
-  right: 0;
-}
 
 .side-bar button {
   max-width: max-content;
@@ -29373,9 +29489,9 @@ p.disc {
 .rts-working-process-1:hover .inner {
   border: 2px dashed var(--color-primary-2);
 }
-.rts-working-process-1:hover .inner::after {
+/*.rts-working-process-1:hover .inner::after {
   transform: scale(1);
-}
+}*/
 
 .rts-service-areah2-im-3 .image-area {
   position: relative;

@@ -1,6 +1,6 @@
-﻿@model ExceedConsultancy.Models.TechnologyModel
+﻿@model ExceedConsultancy.Models.BusinessArModel
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAr.cshtml";
     ViewBag.MetaDescription = "";
     ViewBag.MetaKeywords = "";
 }
@@ -17,13 +17,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">Technology Consultancy</h1>
+                    <h1 class="title">استشارات الأعمال</h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a asp-controller="Home" asp-action="index">Home</a>
+                        <a asp-controller="Home" asp-action="index">الرئيسية</a>
                         <span> / </span>
-                       Technology Consultancy
+                        استشارات الأعمال
                     </div>
                 </div>
             </div>
@@ -38,15 +38,12 @@
                     <!-- service details left area start -->
                     <div class="service-detials-step-1">
                         <div class="thumbnail">
-                            <img src="assets/images/service/techno.jpg" alt="business-area">
+                            <img src="assets/images/service/01.jpg" alt="business-area">
                         </div>
-                        <h4 class="title">Technology Consultancy </h4>
+                        <h4 class="title">استشارات الأعمال </h4>
                         <p class="disc">
-                        Embrace the power of technology with our comprehensive technology consultancy. From designing and implementing a scalable IT infrastructure to developing cutting-edge software solutions, we help you leverage technology for competitive advantage.
-
+                            تم تصميم خدمات الاستشارات التجارية لدينا لمواجهة التحديات والفرص الفريدة الخاصة بك. سواء كنت بحاجة إلى تطوير استراتيجية عمل قوية ، أو تبسيط العمليات لتحقيق أقصى قدر من الكفاءة ، أو اكتساب رؤى أعمق في السوق المستهدف ، فقد قمنا بتغطيتك.
                         </p>
-
-                        
 
                         <!--<div class="row g-5 mt--30 mb--40">
                         <div class="col-lg-6">-->
@@ -177,21 +174,21 @@
                         </div>
                         <div class="wized-body">
                             <!-- single categoris -->
-                            <ul class="single-categories">
-                                <li><a asp-controller="Business" asp-action="index">Business Consultancy  <i class="far fa-long-arrow-right"></i></a></li>
+                              <ul class="single-categories">
+                                <li><a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <!-- single categoris End -->
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="TechnologyAr" asp-action="index">الاستشارات التكنولوجية  <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <!-- single categoris End -->
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Management" asp-action="index">Project Management <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <br />
-                            <img src="assets/images/service/servicestechno.jpg" />
+                            <img src="assets/images/service/services.jpg" />
                             <!-- single categoris End -->
                         </div>
                     </div>
@@ -209,15 +206,13 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                     <div class="thumbnail sm-thumb-service">
-                        <img src="assets/images/service/smt-01.jpg" alt="Service">
+                        <img src="assets/images/service/sm-01.jpg" alt="Service">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
-                    <h6 class="title">IT infrastructure design </h6>
+                    <h6 class="title">تطوير الاستراتيجية </h6>
                     <p class="disc">
-                        
-                        A robust and scalable IT infrastructure is the backbone of modern businesses. Our IT Infrastructure Design service leverages cutting-edge technologies and industry best practices to create tailored solutions that meet your organization's unique needs. From network architecture
-                        to hardware and security systems, we ensure your IT infrastructure is optimized for seamless performance, data integrity, and enhanced productivity.
+                        صياغة استراتيجية رابحة هي حجر الزاوية لنجاح الأعمال. تتضمن خدمة تطوير الإستراتيجية لدينا تحليلا متعمقا وتعاونا مع فريق القيادة الخاص بك لتحديد أهداف واضحة ، وتحديد فرص النمو ، ووضع خارطة طريق للنجاح المستدام. مع الحرص على اتجاهات السوق والمنافسة ، نقوم بتطوير أطر استراتيجية تتماشى مع رؤيتك ، مما يدفع عملك إلى الأمام بثقة.
                     </p>
 
 
@@ -225,18 +220,17 @@
             </div>
             <div class="row mt--35">
                 <div class="col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
-                    <h6 class="title">Software development </h6>
+                    <h6 class="title">تخطيط الأعمال</h6>
                     
                     <p class="disc">
-                        Stay ahead in the digital age with our Software Development service. Our team of skilled developers crafts custom software solutions that align perfectly with your business goals. From web and mobile applications to enterprise software, we deliver user-centric products that enhance customer experiences, streamline processes, and drive innovation within your organization.
-
+                        تزودك خدمة تخطيط الأعمال لدينا بخطط عمل شاملة وقابلة للتنفيذ تحدد المسار لتحقيق أهدافك. من تحديد مؤشرات الأداء الرئيسية إلى تخصيص الموارد بشكل فعال ، نقدم خرائط طريق مفصلة لتوجيه نمو مؤسستك وتوجيهك خلال حالات عدم اليقين ، مما يضمن لك البقاء على المسار الصحيح للوصول إلى إنجازاتك.
                     </p>
-                  
+
 
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                     <div class="thumbnail sm-thumb-service">
-                        <img src="assets/images/service/smt-02.jpg" alt="Service">
+                        <img src="assets/images/service/sm-02.jpg" alt="Service">
                     </div>
                 </div>
             </div>
@@ -249,18 +243,70 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                     <div class="thumbnail sm-thumb-service">
-                        <img src="assets/images/service/smt-03.jpg" alt="Service">
+                        <img src="assets/images/service/sm-03.jpg" alt="Service">
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
-                    <h6 class="title">Digital transformation </h6>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
+                    <h6 class="title">المقتنيات </h6>
                     <p class="disc">
-                       Embrace the future with our Digital Transformation service. In a rapidly evolving landscape, we help businesses harness the power of digital technologies to drive growth and operational excellence. Our consultants collaborate with you to identify digital opportunities, revamp business processes, and adopt data-driven strategies, enabling your organization to thrive in the digital era.
-
+                         يتطلب التنقل في تعقيدات عمليات الدمج والاستحواذ إرشادات الخبراء. تقدم خدمة الاستحواذ لدينا العناية الواجبة المتعمقة, تحليل الهدف, والاستشارات الاستراتيجية لدعم عملية صنع القرار الخاصة بك. سواء كنت تفكر في الاندماج أو الاستحواذ أو الشراكة ، فإننا نساعدك على تقييم الفرص والتفاوض على شروط مواتية وتحقيق نتائج تآزرية
                     </p>
+
+
                 </div>
             </div>
-           
+            <div class="row mt--35">
+                <div class="col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
+                    <h6 class="title">عملية التحسين</h6>
+                    <p class="disc">
+                        أطلق العنان للإمكانات والكفاءة الخفية في عملياتك من خلال خدمة تحسين العمليات الخاصة بنا. يقوم مستشارونا بإجراء عمليات تدقيق شاملة للعملية ، وتحديد الاختناقات وعدم الكفاءة. مع التركيز على تبسيط سير العمل وتنفيذ أفضل الممارسات ، نساعد مؤسستك على تحقيق إنتاجية أعلى وخفض التكاليف وتحسين رضا العملاء.
+                    </p>
+
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex flex-column justify-content-center ">
+                    <div class="thumbnail sm-thumb-service">
+                        <img src="assets/images/service/sm-04.jpg" alt="Service">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row mt--35">
+
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex flex-column justify-content-center">
+                    <div class="thumbnail sm-thumb-service">
+                        <img src="assets/images/service/sm-05.jpg" alt="Service">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
+                    <h6 class="title">التحليل المالي  </h6>
+                    <p class="disc">
+                        يتطلب التنقل في تعقيدات عمليات الدمج والاستحواذ إرشادات الخبراء. تقدم خدمة الاستحواذ لدينا العناية الواجبة المتعمقة, تحليل الهدف, والاستشارات الاستراتيجية لدعم عملية صنع القرار الخاصة بك. سواء كنت تفكر في الاندماج أو الاستحواذ أو الشراكة ، فإننا نساعدك على تقييم الفرص والتفاوض على شروط مواتية وتحقيق نتائج تآزرية.
+                    </p>
+
+
+                </div>
+            </div>
+            <div class="row mt--35">
+                <div class="col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12 mb_md--20 mb_sm--20 d-flex flex-column justify-content-center">
+                    <h6 class="title">تحليل السوق </h6>
+                    <p class="disc">
+                        فهم ديناميات السوق أمر حيوي للحفاظ على قدرتها التنافسية. من خلال خدمة تحليل السوق لدينا ، نقوم بجمع وتفسير بيانات السوق وسلوك العملاء واتجاهات الصناعة. مسلحا بهذه المعرفة ، يمكنك اتخاذ قرارات استراتيجية مستنيرة ، وتحديد الفرص الناشئة ، والتكيف بشكل استباقي مع ظروف السوق الديناميكية.
+                    </p>
+
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                    <div class="thumbnail sm-thumb-service">
+                        <img src="assets/images/service/sm-06.jpg" alt="Service">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
   

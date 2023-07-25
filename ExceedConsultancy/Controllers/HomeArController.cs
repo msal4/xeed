@@ -5,11 +5,11 @@ using System.Text;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class HomeArController : Controller
+    public class HomeController : Controller
     {
         private readonly IConfiguration _config;
 
-        public HomeArController(IConfiguration config)
+        public HomeController(IConfiguration config)
         {
             _config = config;
         }
