@@ -15232,7 +15232,7 @@ body.sal-disabled [data-sal|=flip] {
         content: "";
         width: 1px;
         height: 14px;
-        background: #7c7c7d;
+        /*background: #7c7c7d;*/
         right: 25px;
         top: 50%;
         transform: translateY(-50%);
