@@ -18,7 +18,7 @@
         @{
 
             await Html.RenderPartialAsync("StylesPartial");
-
+          
         }
 
         <header class="header--sticky header-one ">
@@ -30,9 +30,9 @@
                                 <div class="mail">
                                     <a href="mailto:info@exceedconsultancy.com"><i class="fal fa-envelope"></i> info@exceedconsultancy.com </a>
                                 </div>
-                                <div class="working-time">
+                               @* <div class="working-time">
                                     <p><i class="fal fa-clock"></i> Working: 8.00am - 5.00pm</p>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
                         <div class="col-lg-12 col-xl-6 d-xl-block ">
@@ -93,7 +93,7 @@
                                                     <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
                                                     </ul>*@
                                                     <a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a>
-                                                    <a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا  </a>
+                                                    <a asp-controller="TechnologyAr" asp-action="index"> الخدمات المعلوماتية </a>
                                                     <a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع  </a>
                                                 </li>
                                             </ul>
@@ -104,7 +104,7 @@
                                 </nav>
                                 <div class="button-area">
                                     <!--<button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>-->
-                                    <a asp-controller="QuoteAr" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get a Quote</a>
+                                    <a asp-controller="QuoteAr" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">طلب إستشارة</a>
                                     <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
                                         <img class="menu-dark" src="assets/images/icon/menu.png" alt="Menu-icon">
                                         <img class="menu-light" src="assets/images/icon/menu-light.png" alt="Menu-icon">
@@ -148,7 +148,7 @@
                             <!-- single -->
                             <div class="single">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <a href="#">Baghdad, Iraq</a>
+                                <a href="#">بغداد , العراق</a>
                             </div>
                             <!-- single ENd -->
                         </div>
@@ -176,7 +176,7 @@
                                         <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
                                         </ul>*@
                                         <a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a>
-                                        <a asp-controller="TechnologyAr" asp-action="index">استشارات التكنولوجيا</a>
+                                        <a asp-controller="TechnologyAr" asp-action="index">الخدمات المعلوماتية</a>
                                         <a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع </a>
                                     </li>
                                 </ul>
@@ -191,7 +191,7 @@
                         <a href="#"><i class="fab fa-whatsapp"></i></a>-->
                     <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
                     <!--</div>-->
-                    <a asp-controller="QuoteAr" asp-action="index"  class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get a Quote</a>
+                    <a asp-controller="QuoteAr" asp-action="index"  class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">طلب إستشارة</a>
                 </div>
             </div>
             <!-- inner menu area desktop End -->
@@ -217,7 +217,7 @@
                             <p b-d3pag9n9jh="" class="disc">
                                 نحن شركة استشارية رائدة في مجال الأعمال والتكنولوجيا مكرسة لمساعدة الشركات على الازدهار في المشهد الديناميكي والرقمي اليوم.
                             </p>
-                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="QuoteAr" asp-action="index">Get a Quote</a>
+                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="QuoteAr" asp-action="index">طلب إستشارة</a>
                         </div>
                     </div>
                     <div b-d3pag9n9jh="" class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt_sm--50">
@@ -229,7 +229,7 @@
                             <div b-d3pag9n9jh="" class="wized-2-body  pe-lg-3">
                                 <ul b-d3pag9n9jh="">
                                     <li b-d3pag9n9jh=""><a asp-controller="BusinessAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>استشارات الأعمال </a></li>
-                                    <li b-d3pag9n9jh=""><a asp-controller="TechnologyAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>استشارات التكنولوجيا</a></li>
+                                    <li b-d3pag9n9jh=""><a asp-controller="TechnologyAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>الخدمات المعلوماتية</a></li>
                                     <li b-d3pag9n9jh=""><a asp-controller="ManagementAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>إدارة المشاريع </a></li>
 
                                 </ul>
