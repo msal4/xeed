@@ -2,9 +2,10 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = "~/Views/Shared/_LayoutAr.cshtml";
-    ViewBag.Title = "Exceed Consultancy | Make An Appointment";
-    ViewBag.MetaDescription = "Request a free quote from Exceed Consultancy by filling out the appointment form. We are dedicated to providing expert guidance and solutions tailored to your business needs.";
-    ViewBag.MetaKeywords = "Make An Appointment, Request a free quote, Exceed Consultancy, appointment form, expert guidance, business needs";
+    ViewBag.Title = "Exceed Consultancy | حجز موعد";
+    ViewBag.MetaDescription = "اطلب عرض سعر مجاني من اExceed Consultancy عن طريق ملء نموذج الحجز. نحن ملتزمون بتقديم التوجيه الصحيح والحلول المصممة خصيصًا لاحتياجات عملك.";
+
+    ViewBag.MetaKeywords = "حجز موعد، طلب عرض سعر مجاني، نموذج الحجز، التوجيه الخبير، احتياجات العمل";
 
 }
 
@@ -21,13 +22,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">احصل على إسشارة</h1>
+                    <h1 class="title">تحديد موعد</h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
                         <a asp-controller="Home" asp-action="index">الرئيسية</a>
                         <span> / </span>
-                        احصل على إسشارة
+                        تحديد موعد
                     </div>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                             <p class="pre-title">
                                 تحديد موعد
                             </p>
-                            <h2 class="title">احصل على إسشارة</h2>
+                            <h2 class="title">احصل على إتصال  </h2>
                         </div>
                         <div id="form-messages"></div>
                         <form method="post">
@@ -58,6 +59,10 @@
                                 <input type="Email" placeholder="البريد الإلكتروني" name="email" required>
                             </div>
                             <input type="text" placeholder="الموضوع" name="Subject">
+                            <div class="name-email">
+                                <input type="text" placeholder="الموضوع" name="Subject">
+                                <input type="text" placeholder="رقم الهاتف" name="Phone" required>
+                            </div>
                             <textarea placeholder="اكتب رسالة" name="Message"></textarea> <br /><br />
                             <div class="g-recaptcha" data-sitekey="6LfWIkknAAAAAOUo2d_GVScC3Z-2JKuVZW1d7ykv"></div>
 

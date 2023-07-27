@@ -6,11 +6,11 @@ using Newtonsoft.Json;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class QuoteArController : Controller
+    public class QuoteController : Controller
     {
         private readonly IConfiguration _config;
 
-        public QuoteArController(IConfiguration config)
+        public QuoteController(IConfiguration config)
         {
             _config = config;
         }
@@ -22,7 +22,7 @@ namespace ExceedConsultancy.Controllers
 
 
         [HttpPost]
-        public IActionResult Index(QuoteArModel model)
+        public IActionResult Index(QuoteModel model)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -30,6 +30,7 @@ namespace ExceedConsultancy.Controllers
             sb.Append("Full Name: " + model.Name);
             sb.AppendLine("<br/>Email: " + model.Email);
             sb.AppendLine("<br/>Subject: " + model.Subject);
+            sb.AppendLine("<br/>Phone: " + model.Phone);
             sb.AppendLine("<br/>Message: " + model.Message);
 
             var response = Request.Form["g-Recaptcha-Response"];
@@ -45,7 +46,7 @@ namespace ExceedConsultancy.Controllers
 
                     if (result.Success)
                     {
-                        sendemail(sb.ToString(), "Contact Message", "ahmadghadder@gmail.com");
+                        sendemail(sb.ToString(), "Contact Message", "1997jihad@gmail.com");
                         TempData["SuccessQuote"] = "Thank you for contacting us! We will get back to you as soon as possible.";
                         return RedirectToAction("Index", "Quote");
                     }

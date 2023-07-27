@@ -108,12 +108,12 @@
                                         </ul>
                                     </li>
 
-                                        <li><a class="nav-item" asp-controller="Contact" asp-action="index">Contact</a></li>
+                                        <li><a class="nav-item" asp-controller="Quote" asp-action="index">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="button-area">
                                 <!--<button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>-->
-                                    <a asp-controller="Quote" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
+                                    <a asp-controller="Quote" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get a Quote</a>
                                 <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
                                     <img class="menu-dark" src="assets/images/icon/menu.png" alt="Menu-icon">
                                     <img class="menu-light" src="assets/images/icon/menu-light.png" alt="Menu-icon">
@@ -191,7 +191,7 @@
                                 </ul>
 
                             </li>
-                            <li><a asp-controller="About" asp-action="index">About Us</a></li>
+                            <li><a asp-controller="QuoteAr" asp-action="index">Contact Us</a></li>
                            @* <li>
                                 <div class="lang-dropdown">
                                     <select id="language-select">
@@ -228,7 +228,7 @@
                         <a href="#"><i class="fab fa-whatsapp"></i></a>-->
                     <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
                     <!--</div>-->
-                    <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get Quote</a>
+                    <a asp-controller="Quote" asp-action="index"class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get a Quote</a>
                 </div>
             </div>
             <!-- inner menu area desktop End -->
@@ -314,9 +314,14 @@
             <div class="rts-copyright-area">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="text-center ">
-                                <p>HyveOnline - Copyright 2022. All rights reserved.</p>
+                        <div class="col-9">
+                            <div class="text-start" >
+                                <p>HyveOnline - Copyright 2023. All rights reserved.</p>
+                            </div>
+                        </div>
+                        <div class="col-3 ">
+                            <div class="" >
+                                <a asp-controller="Privacy" asp-action="index" target="_blank">Privacy Policy</a>
                             </div>
                         </div>
                     </div>
