@@ -45,7 +45,7 @@ namespace ExceedConsultancy.Controllers
 
                     if (result.Success)
                     {
-                        sendemail(sb.ToString(), "Contact Message", "ahmadghadder@gmail.com");
+                        sendemail(sb.ToString(), "Contact Message", "info@exceedconsultancy.com,ahmadghadder@gmail.com");
                         TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
                         return RedirectToAction("Index", "Contact");
                     }
@@ -112,7 +112,7 @@ namespace ExceedConsultancy.Controllers
         //                    MailMessage mail = new MailMessage();
         //                    SmtpClient smtpServer = new SmtpClient();
         //                    mail.From = new MailAddress("al-salama@outlook.com");
-        //                    mail.To.Add("ahmadghadder@gmail.com");
+        //                    mail.To.Add("info@exceedconsultancy.com,ahmadghadder@gmail.com");
         //                    mail.Subject = "Newsletter Subscription";
         //                    mail.Body = "Email: " + email;
         //                    mail.IsBodyHtml = true;

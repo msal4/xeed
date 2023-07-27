@@ -113,7 +113,7 @@ namespace ExceedConsultancy.Controllers
         //                    MailMessage mail = new MailMessage();
         //                    SmtpClient smtpServer = new SmtpClient();
         //                    mail.From = new MailAddress("al-salama@outlook.com");
-        //                    mail.To.Add("ahmadghadder@gmail.com");
+        //                    mail.To.Add("info@exceedconsultancy.com,ahmadghadder@gmail.com");
         //                    mail.Subject = "Newsletter Subscription";
         //                    mail.Body = "Email: " + email;
         //                    mail.IsBodyHtml = true;
