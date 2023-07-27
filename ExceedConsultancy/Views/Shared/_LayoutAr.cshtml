@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
 
     <link rel="shortcut icon" href="~/assets/images/logo.ico" type="image/png">
     <meta name="keywords" content="@ViewBag.MetaKeywords">
@@ -100,12 +99,12 @@
                                             </ul>
                                         </li>
 
-                                        <li><a class="nav-item" asp-controller="ContactAr" asp-action="index">تواصل معنا</a></li>
+                                        <li><a class="nav-item" asp-controller="QuoteAr" asp-action="index">تواصل معنا</a></li>
                                     </ul>
                                 </nav>
                                 <div class="button-area">
                                     <!--<button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>-->
-                                    <a asp-controller="QuoteAr" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
+                                    <a asp-controller="QuoteAr" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get a Quote</a>
                                     <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
                                         <img class="menu-dark" src="assets/images/icon/menu.png" alt="Menu-icon">
                                         <img class="menu-light" src="assets/images/icon/menu-light.png" alt="Menu-icon">
@@ -182,7 +181,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a asp-controller="ِAboutAr" asp-action="index"> تواصل معنا</a></li>
+                            <li><a asp-controller="ِQuoteAr" asp-action="index"> تواصل معنا</a></li>
                         </ul>
                     </nav>
                     <!--<div class="social-wrapper-two menu mobile-menu">
@@ -192,7 +191,7 @@
                         <a href="#"><i class="fab fa-whatsapp"></i></a>-->
                     <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
                     <!--</div>-->
-                    <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get Quote</a>
+                    <a asp-controller="QuoteAr" asp-action="index"  class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get a Quote</a>
                 </div>
             </div>
             <!-- inner menu area desktop End -->
@@ -277,9 +276,16 @@
             <div class="rts-copyright-area">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="text-center " style="direction:ltr">
-                                <p>HyveOnline - Copyright 2022. All rights reserved.</p>
+                     
+                        <div class="col-3 ">
+                            <div class="" style="direction: ltr">
+                                <a asp-controller="PrivacyAr" asp-action="index" target="_blank">سياسة الخصوصية</a>
+                            </div>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="text-start" style="direction: ltr">
+                                <p>HyveOnline - Copyright 2023. All rights reserved.</p>
                             </div>
                         </div>
                     </div>
