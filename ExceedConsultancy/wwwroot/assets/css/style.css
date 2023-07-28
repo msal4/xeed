@@ -11042,7 +11042,7 @@ body {
 }
 .rts-title-area::after {
   position: absolute;
-  content: "About Us";
+  /*content: "About Us";*/
   left: -14%;
   top: -39%;
   color: #ffffff;
@@ -11167,14 +11167,14 @@ body {
   height: 109px;
   top: 2%;
 }
-.rts-title-area.contact::after {
+./*rts-title-area.contact::after {
   content: "Hello";
   left: 52%;
   transform: translateX(-50%);
   z-index: -1;
   height: 109px;
   top: -41%;
-}
+}*/
 .rts-title-area.contact-appoinment::after {
   position: absolute;
   content: "Hello";
