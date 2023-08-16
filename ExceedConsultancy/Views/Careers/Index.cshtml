@@ -1,0 +1,206 @@
+﻿@model ExceedConsultancy.Models.ContactModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Exceed Consultancy | Contact Us";
+    ViewBag.MetaDescription = "Get in touch with Exceed Consultancy for all your business needs. Our team of experts is here to address your unique challenges and opportunities. Contact us now to explore how we can empower your business.";
+    ViewBag.MetaKeywords = "Contact Us, Exceed Consultancy, business needs, get in touch, experts, unique challenges, opportunities, empower your business";
+
+}
+
+
+<body>
+   
+
+    <!--<div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input id="searchInput1" class="search-input" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>-->
+
+    <div id="anywhere-home">
+    </div>
+    <!-- ENd Header Area -->
+    <!-- start breadcrumb area -->
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Careers</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a asp-controller="Home" asp-action="index">Home</a>
+                        <span> / </span>
+                       Careers
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb area -->
+    <!-- contact single area start -->
+    <!--<div class="rts-contact-area rts-section-gap">
+        <div class="container">
+            <div class="row g-5">-->
+    <!-- single contact area -->
+    <!--<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="single-contact-one-inner">-->
+    <!--<div class="thumbnail">
+        <img src="assets/images/contact/01.png" alt="">
+    </div>-->
+    <!--<div class="content">
+                <div class="icone">
+                    <img src="assets/images/contact/shape/01.svg" alt="">
+                </div>
+                <div class="info">
+                    <span>Call Us 24/7</span>
+                    <a href="tel:+18475555555">
+                        <h5>+584 (25) 21453</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- single contact area end -->
+    <!-- single contact area -->
+    <!--<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="single-contact-one-inner">-->
+    <!--<div class="thumbnail">
+        <img src="assets/images/contact/02.png" alt="">
+    </div>-->
+    <!--<div class="content">
+                <div class="icone">
+                    <img src="assets/images/contact/shape/02.svg" alt="">
+                </div>
+                <div class="info">
+                    <span>MAke A Quote</span>
+                    <a href="mailto:someone@example.com">
+                        <h5>info@finbiz.com</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- single contact area end -->
+    <!-- single contact area -->
+    <!--<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="single-contact-one-inner">-->
+    <!--<div class="thumbnail">
+        <img src="assets/images/contact/03.png" alt="">
+    </div>-->
+    <!--<div class="content">
+                <div class="icone">
+                    <img src="assets/images/contact/shape/03.svg" alt="">
+                </div>
+                <div class="info">
+                    <span>Service Station</span>
+                    <a href="#">
+                        <h5>25 Hilton Street.</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- single contact area end -->
+    <!--</div>
+        </div>
+    </div>-->
+    <!-- conact single area end -->
+    <!-- bizup map area start -->
+    <!--<div class="rts-contact-map-area">
+        <div class="contaciner-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-map-area-fluid">
+                        <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.288851207937!2d90.47855065!3d23.798243149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1663151706353!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <img class="location" src="assets/images/contact/shape/location.svg" alt="Business_map">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- bizup map area end -->
+    <!-- conact us form fluid start -->
+    <div class="rts-contact-form-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="rts-contact-fluid rts-section-gap">
+                        <div class="rts-title-area contact-fluid text-center mb--50">
+                            <p class="pre-title">
+                                Careers
+                            </p>
+                            <h2 class="title">Submit Your CV</h2>
+                        </div>
+                        <div class="form-wrapper">
+                            <form method="post" enctype="multipart/form-data">
+                                <div class="name-email">
+                                    <input type="text" name="Name" placeholder="Your Name" required="" aria-required="true">
+                                    <input type="email" name="Email" placeholder="Email Address">
+                                </div>
+
+
+                                <input type="text" name="Subject" placeholder="Your Subject">
+                                <textarea placeholder="Type Your Message" name="Message" required="" aria-required="true"></textarea>
+
+
+                            
+                                    
+                              
+                                <input type="file" id="cvFileInput" class="mt-4 pt-4" name="CVFile" class="form-control-file" required />
+                                        <label for="cvFileInput" class="cvFileLabel">Upload CV</label>
+                                   
+                                <script>
+                                    const cvFileInput = document.getElementById('cvFileInput');
+                                    const cvFileLabel = document.getElementById('cvFileLabel');
+
+                                    cvFileInput.addEventListener('change', () => {
+                                        if (cvFileInput.files.length > 0) {
+                                            cvFileLabel.textContent = cvFileInput.files[0].name;
+                                        } else {
+                                            cvFileLabel.textContent = 'Choose CV';
+                                        }
+                                    });
+                                </script>
+                              
+
+
+
+
+                                <br/><br/>
+                                <div class="g-recaptcha" data-sitekey="6LfWIkknAAAAAOUo2d_GVScC3Z-2JKuVZW1d7ykv"></div>
+
+                                 
+                                <button type="submit" class="rts-btn btn-primary">Apply</button>
+                            </form>
+                            @if (TempData["Success"] != null)
+                            {
+                                <p class="alert alert-warning d-block blue-bg ">@TempData["Success"]</p>
+                            }
+
+                     
+
+
+
+
+
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- conact us form fluid end -->
+    <!-- start header area -->
+    <!-- rts footer area start -->
+ 
+
+</body>
