@@ -1,7 +1,7 @@
 namespace ExceedConsultancy.Models
 
 {
-    public class ContactArModel
+    public class CareersModel
     {
         public string Name { get; set; }
         public string Email { get; set; }

@@ -136,6 +136,24 @@ body {
   overflow-x: hidden;
 }
 
+
+
+.cvFileLabel {
+    display: inline-block;
+    padding: 7px 15px;
+    background-color: #f1f1f1;
+    border: none;
+    /* border-radius: 4px; */
+    top: -74px;
+    left: 9px;
+    cursor: pointer;
+    position: relative;
+}
+.rtl .cvFileLabel {
+    left: -11px;
+}
+
+
 .rtl .header-top-one .left {
     display: flex;
     justify-content: flex-end;
@@ -11202,7 +11220,7 @@ body {
   }
 }
 .rts-title-area.contact-fluid::after {
-  content: "Contact Us";
+  /*content: "Contact Us";*/
   left: 49%;
   transform: translateX(-50%);
   z-index: -1;
@@ -17923,13 +17941,11 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.Industries .swiper-slide img {
+   
+    height: 486px !important;
+   
 }
-
 .banner-one .swiper-wrapper .swiper-slide {
   background-image: url(../images/banner/banner-01.jpg);
   background-size: cover;
