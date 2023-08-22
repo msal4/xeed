@@ -84,23 +84,41 @@
                                         <li><a asp-controller="AboutAr" asp-action="index">من نحن</a></li>
                                         <li class="has-droupdown">
                                             <a class="nav-link" asp-controller="ServicesAr" asp-action="index">القدرات</a>
-                                            <ul class="submenu menu-link3 text-end">
+                                            <ul class="HeaderSub submenu menu-link3">
                                                 <li class="sub-droupdown">
+
                                                     @*<a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>*@
                                                     @*<ul class="submenu third-lvl">
-                                                    <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
+                                                    <li><a asp-controller="Business" asp-action=" index">Business Consultancy  </a></li>
                                                     <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
                                                     <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
                                                     </ul>*@
-                                                    <a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a>
-                                                    <a asp-controller="TechnologyAr" asp-action="index"> الخدمات المعلوماتية </a>
-                                                    <a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع  </a>
+
+                                                    <a asp-controller="BusinessAr" asp-action="index">الغرض التجاري والتنظيمي </a>
+                                                    <a asp-controller="FinanceAr" asp-action="index">تمويل الشركات واستراتيجيتها</a>
+                                                    <a asp-controller="TechnologyAr" asp-action="index">الرقمية والتكنولوجيا والبيانات</a>
+                                                    <a asp-controller="ArtificialIntelligenceAr" asp-action="index">الذكاء الاصطناعي</a>
+                                                    <a asp-controller="MonitoringEvaluationAr" asp-action="index">الرصد والتقييم </a>
+                                                    <a asp-controller="ManufacturingAr" asp-action="index">التصنيع</a>
+                                                    <a asp-controller="MarketingAr" asp-action="index">النمو والتسويق والمبيعات</a>
+                                                    <a asp-controller="OperationsAr" asp-action="index">العمليات</a>
+                                                    <a asp-controller="Implementationar" asp-action="index">التنفيذ </a>
+                                                    <a asp-controller="OrganizationStrategyar" asp-action="index">استراتيجية المنظمة</a>
+                                                    <a asp-controller="PeopleStrategyAR" asp-action="index">استراتيجية الناس </a>
+                                                    <a asp-controller="PricingAr" asp-action="index">التسعير وإدارة الإيرادات</a>
+                                                    <a asp-controller="BudgetingAr" asp-action="index">الميزنة الصفرية</a>
+                                                    <a asp-controller="RiskManagementAr" asp-action="index">إدارة المخاطر والامتثال </a>
+                                                    <a asp-controller="InnovationAr" asp-action="index">استراتيجية الابتكار والتسليم </a>
+
                                                 </li>
+
+
                                             </ul>
                                         </li>
 
-                                        <li><a class="nav-item" asp-controller="QuoteAr" asp-action="index">تواصل معنا</a></li>
                                          <li><a class="nav-item" asp-controller="CareersAr" asp-action="index"> الوظائف</a></li>
+                                        <li><a class="nav-item" asp-controller="QuoteAr" asp-action="index">تواصل معنا</a></li>
+                                        
                                     </ul>
                                 </nav>
                                 <div class="button-area">
@@ -176,9 +194,22 @@
                                         <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
                                         <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
                                         </ul>*@
-                                        <a asp-controller="BusinessAr" asp-action="index">استشارات الأعمال  </a>
-                                        <a asp-controller="TechnologyAr" asp-action="index">الخدمات المعلوماتية</a>
-                                        <a asp-controller="ManagementAr" asp-action="index">إدارة المشاريع </a>
+                                        <a asp-controller="BusinessAr" asp-action="index">الغرض التجاري والتنظيمي </a>
+                                        <a asp-controller="FinanceAr" asp-action="index">تمويل الشركات واستراتيجيتها</a>
+                                        <a asp-controller="TechnologyAr" asp-action="index">الرقمية والتكنولوجيا والبيانات</a>
+                                        <a asp-controller="ArtificialIntelligenceAr" asp-action="index">الذكاء الاصطناعي</a>
+                                        <a asp-controller="MonitoringEvaluationAr" asp-action="index">الرصد والتقييم </a>
+                                        <a asp-controller="ManufacturingAr" asp-action="index">التصنيع</a>
+                                        <a asp-controller="MarketingAr" asp-action="index">النمو والتسويق والمبيعات</a>
+                                        <a asp-controller="OperationsAr" asp-action="index">العمليات</a>
+                                        <a asp-controller="Implementationar" asp-action="index">التنفيذ </a>
+                                        <a asp-controller="OrganizationStrategyar" asp-action="index">استراتيجية المنظمة</a>
+                                        <a asp-controller="PeopleStrategyAR" asp-action="index">استراتيجية الناس </a>
+                                        <a asp-controller="PricingAr" asp-action="index">التسعير وإدارة الإيرادات</a>
+                                        <a asp-controller="BudgetingAr" asp-action="index">الميزنة الصفرية</a>
+                                        <a asp-controller="RiskManagementAr" asp-action="index">إدارة المخاطر والامتثال </a>
+                                        <a asp-controller="InnovationAr" asp-action="index">استراتيجية الابتكار والتسليم </a>
+
                                     </li>
                                 </ul>
                             </li>
@@ -227,11 +258,14 @@
                                 <h5 b-d3pag9n9jh="" class="wized-title">خدماتنا</h5>
                                 <img b-d3pag9n9jh="" src="assets/images/footer/under-title-2.png" alt="finbiz_footer">
                             </div>
-                            <div b-d3pag9n9jh="" class="wized-2-body  pe-lg-3">
-                                <ul b-d3pag9n9jh="">
-                                    <li b-d3pag9n9jh=""><a asp-controller="BusinessAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>استشارات الأعمال </a></li>
-                                    <li b-d3pag9n9jh=""><a asp-controller="TechnologyAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>الخدمات المعلوماتية</a></li>
-                                    <li b-d3pag9n9jh=""><a asp-controller="ManagementAr" asp-action="index"><i b-d3pag9n9jh="" class="fal fa-chevron-double-right"></i>إدارة المشاريع </a></li>
+                            <div class="wized-2-body">
+                                <ul>
+                                    <li>    <a asp-controller="OperationsAr" asp-action="index">العمليات</a></li>
+                                    <li>     <a asp-controller="ManufacturingAr" asp-action="index">التصنيع </a></li>
+                                    <li><a asp-controller="ArtificialIntelligenceAr" asp-action="index">الذكاء الاصطناعيs </a></li>
+                                    <li>  <a asp-controller="PeopleStrategyAr" asp-action="index">استراتيجية الناس </a></li>
+                                    <li> <a asp-controller="OrganizationStrategyAr " asp-action="index">استراتيجية المنظمة</a></li>
+                                    <li> <a asp-controller="PeopleStrategyAr" asp-action="index">استراتيجية الناس </a></li>
 
                                 </ul>
                             </div>

@@ -107,7 +107,7 @@
     --h2: 48px;
     --h3: 36px;
     --h4: 30px;
-    --h5: 24px;
+    --h5: 21px;
     --h6: 20px;
 }
 
@@ -149,10 +149,46 @@ body {
     cursor: pointer;
     position: relative;
 }
+
+.HeaderSub.submenu.menu-link3 {
+    max-height: 500px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+    width: 4px;
+     }
+
+    &::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 4px;
+
+      &:hover{
+    background-color: #555;
+     }
+   }
+ }
+
+
+.Purpose p.disc {
+    padding-left: 20px;
+    border-left: 5px solid var(--color-primary-3);
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
 .rtl .cvFileLabel {
     left: -11px;
 }
-
+.rtl .accordion-service-inner .accordion-area {
+    padding-right: 0px;
+    padding-left:130px;
+}
 
 .rtl .header-top-one .left {
     display: flex;
@@ -164,8 +200,14 @@ body {
     margin-right: 80px;
     margin-left: 0px;
 }
-.rts-sidebar-menu-desktop .nav-link{
-    padding:0px !important;
+.rtl .business-goal-one img.small.Business {
+    right: 47%;
+}
+.rtl .capbilties i {
+    rotate: 180deg;
+}
+.rts-sidebar-menu-desktop .nav-link {
+    padding: 0px !important;
 }
 
 .rtl .rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown .submenu.active {
@@ -834,7 +876,7 @@ ol ul {
 }
 
 .rts-section-gap {
-  padding: 120px 0;
+  padding: 60px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rts-section-gap {
@@ -862,7 +904,7 @@ ol ul {
 }
 
 .rts-section-gapTop {
-  padding-top: 10px;
+    padding: 60px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rts-section-gapTop {
@@ -11136,7 +11178,7 @@ body {
   top: -20%;
 }
 .rts-title-area.business::after {
-  content: "Business Goal";
+  content: "OUR TEAM";
   min-width: max-content;
   min-height: 120px;
   left: 67%;
@@ -11164,7 +11206,7 @@ body {
   height: 109px;
 }
 .rts-title-area.feature::after {
-  content: "Features";
+  content: "PURPOSE";
   left: 32%;
   transform: translateX(-50%);
   z-index: -1;
@@ -11469,7 +11511,7 @@ body {
   position: relative;
   z-index: 1;
 }
-.home-blue .title-area::after {
+/*.home-blue .title-area::after {
   position: absolute;
   content: "00";
   left: 50%;
@@ -11491,7 +11533,7 @@ body {
   opacity: 0.35;
   font-family: var(--font-secondary);
   z-index: -1;
-}
+}*/
 .home-blue .title-area.blog::after {
   left: 50%;
   transform: translateX(-50%);
@@ -17941,11 +17983,10 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
   align-items: center;
 }
 
-.Industries .swiper-slide img {
-   
+/*.Industries .swiper-slide img {
     height: 486px !important;
-   
-}
+}*/
+
 .banner-one .swiper-wrapper .swiper-slide {
   background-image: url(../images/banner/banner-01.jpg);
   background-size: cover;
@@ -20749,6 +20790,7 @@ p.disc.banner-para {
 
 .service-detials-step-1 .thumbnail {
   margin-bottom: 45px;
+  text-align:center;
 }
 .service-detials-step-1 .title {
   margin-bottom: 16px;
@@ -21923,14 +21965,14 @@ p.disc.banner-para {
 }
 
 .cta-one-bg {
-  background-image: url(../images/cta/01.jpg);
-  background-repeat: no-repeat;
-  background-color: #104e7e;
-  background-blend-mode: multiply;
-  overflow: hidden;
-  background-position: center;
-  object-fit: contain;
-  background-size: cover;
+    background-image: url(../images/busness.jpg);
+    background-repeat: no-repeat;
+    background-color: #104e7e;
+    background-blend-mode: multiply;
+    overflow: hidden;
+    background-position: center;
+    object-fit: contain;
+    background-size: cover;
 }
 
 .rts-cta-bg {
@@ -22552,7 +22594,7 @@ p.disc.banner-para {
   border-radius: 20px;
 }
 .rts-business-case-s-2 .inner {
-  padding: 35px;
+  padding: 19px;
   text-align: center;
   position: absolute;
   bottom: 35px;
@@ -22596,7 +22638,7 @@ p.disc.banner-para {
   margin-bottom: 2px;
   transition: 0.3s;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 17px;
   line-height: 32px;
   color: #1C2539;
 }
@@ -23722,18 +23764,18 @@ p.disc.banner-para {
   overflow: hidden;
   border-radius: 19px;
 }
-.rts-product-one .thumbnail-area::after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 133%;
-  background: linear-gradient(180deg, rgba(223, 10, 10, 0.55) 0%, rgba(90, 0, 0, 0.352) 100%);
-  left: 0;
-  top: 0;
-  transform: rotate(-45deg) translateY(126%);
-  transition: 0.5s;
-  z-index: 0;
-}
+    .rts-product-one .thumbnail-area::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 133%;
+        background: linear-gradient(180deg, #5a00005a 0%, #104e7e8c 100%);
+        left: 0;
+        top: 0;
+        transform: rotate(-45deg) translateY(126%);
+        transition: 0.5s;
+        z-index: 0;
+    }
 .rts-product-one .thumbnail-area::before {
   position: absolute;
   content: "";
@@ -24042,15 +24084,15 @@ p.disc.banner-para {
 .rts-cse-study-3-wrapper .thumbnail .content .content-wrap {
   position: relative;
 }
-.rts-cse-study-3-wrapper .thumbnail .content .content-wrap::after {
+/*.rts-cse-study-3-wrapper .thumbnail .content .content-wrap::after {
   position: absolute;
   content: "";
   left: -15%;
   bottom: -83%;
-  background-image: url(../images/business-case/icon/01.png);
+  background-image: url(../images/business-case/icon/01.jpg);
   height: 58px;
   width: 58px;
-}
+}*/
 .rts-cse-study-3-wrapper .thumbnail:hover img {
   filter: grayscale(1);
 }
@@ -25489,7 +25531,7 @@ p.disc.banner-para {
 
 .rts-feature-area {
   position: relative;
-  margin-top: -17%;
+  margin-top: 0%;
 }
 @media only screen and (max-width: 1199px) {
   .rts-feature-area {
@@ -28458,7 +28500,7 @@ p.disc.banner-para {
   margin-bottom: 0;
 }
 .accordion-area.inner {
-  max-width: 700px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -28523,15 +28565,17 @@ p.disc.banner-para {
   }
 }
 .accordion-one-inner.inner .accordion-item {
-  box-shadow: none !important;
-  border: 1px solid #9993;
-  border-radius: 15px;
-  background-color: var(--color-gray);
+    box-shadow: none !important;
+    border: 1px solid #9993;
+    border-radius: 15px;
+    /*background-color: var(--color-gray);*/
+
+    /*background-color: #ab7878;*/
 }
-.accordion-one-inner.inner .accordion-item .accordion-header button {
-  border-radius: 15px;
-  background-color: var(--color-gray);
-}
+    .accordion-one-inner.inner .accordion-item .accordion-header button {
+        border-radius: 15px;
+        ackground-color: var(--color-gray);
+    }
 .accordion-one-inner.inner .accordion-item .accordion-button:not(.collapsed) {
   box-shadow: none;
   background: var(--color-gray);

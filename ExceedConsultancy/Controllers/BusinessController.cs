@@ -6,6 +6,7 @@ using System.Text;
 namespace ExceedConsultancy.Controllers
 {
     public class BusinessController : Controller
+
     {
         private readonly IConfiguration _config;
 
@@ -13,6 +14,7 @@ namespace ExceedConsultancy.Controllers
         {
             _config = config;
         }
+
 
         public IActionResult Index()
         {
