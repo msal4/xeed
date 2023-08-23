@@ -2,9 +2,9 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = "~/Views/Shared/_LayoutAr.cshtml";
-    ViewBag.Title = "Exceed Consultancy | Contact Us";
-    ViewBag.MetaDescription = "Get in touch with Exceed Consultancy for all your business needs. Our team of experts is here to address your unique challenges and opportunities. Contact us now to explore how we can empower your business.";
-    ViewBag.MetaKeywords = "Contact Us, Exceed Consultancy, business needs, get in touch, experts, unique challenges, opportunities, empower your business";
+    ViewBag.Title = "Exceed Consultancy | الوظائف";
+    ViewBag.MetaDescription = "أرسل ملفك - قم بإرسال ملفك ومعلومات الاتصال لفرص الوظائف المتاحة.";
+    ViewBag.MetaKeywords = "أرسل ملفك, فرص الوظائف, الإسم, البريد الإلكتروني, الموضوع, الرسالة, تحميل السيرة الذاتية";
 
 }
 
@@ -128,69 +128,7 @@
     </div>-->
     <!-- bizup map area end -->
     <!-- conact us form fluid start -->
-    <div class="rts-contact-form-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="rts-contact-fluid rts-section-gap">
-                        <div class="rts-title-area contact-fluid text-center mb--50">
-                            <p class="pre-title">
-                                الوظائف 
-                            </p>
-                            <h2 class="title">أرسل ملفك</h2>
-                        </div>
-                        <div class="form-wrapper">
-                            <form method="post">
-                                <div class="name-email">
-                                    <input type="text" name="Name" placeholder="الإسم" required="" aria-required="true">
-                                    <input type="email" name="Email" placeholder="البريد الإلكتروني">
-                                </div>
-                                <input type="text" name="الموضوع" placeholder="Your Subject">
-                                <textarea placeholder="الرسالة" name="Message" required="" aria-required="true"></textarea>
-
-
-                                <input type="file" id="cvFileInput" class="mt-4 pt-4" name="CVFile" class="form-control-file" required />
-                                <label for="cvFileInput" class="cvFileLabel">Upload CV</label>
-
-                                <script>
-                                    const cvFileInput = document.getElementById('cvFileInput');
-                                    const cvFileLabel = document.getElementById('cvFileLabel');
-
-                                    cvFileInput.addEventListener('change', () => {
-                                        if (cvFileInput.files.length > 0) {
-                                            cvFileLabel.textContent = cvFileInput.files[0].name;
-                                        } else {
-                                            cvFileLabel.textContent = 'Choose CV';
-                                        }
-                                    });
-                                </script>
-
-
-
-                                <br/><br/>
-                                <div class="g-recaptcha" data-sitekey="6LfWIkknAAAAAOUo2d_GVScC3Z-2JKuVZW1d7ykv"></div>
-
-                                 
-                                <button type="submit" class="rts-btn btn-primary">ارسال</button>
-                            </form>
-                            @if (TempData["Success"] != null)
-                            {
-                                <p class="alert alert-warning d-block blue-bg ">@TempData["Success"]</p>
-                            }
-
-                     
-
-
-
-
-
-                        </div>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  ee
     <!-- conact us form fluid end -->
     <!-- start header area -->
     <!-- rts footer area start -->

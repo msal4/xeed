@@ -47,14 +47,14 @@ namespace ExceedConsultancy.Controllers
                     if (result.Success)
                     {
                         //info @exceedconsultancy.com,ahmadghadder @gmail.com
-                        sendemail(sb.ToString(), "Contact Message", "1997jihad@gmail.com", model.CVFile);
+                        sendemail(sb.ToString(), "Contact Message", "info@exceedconsultancy.com,1997jihad@gmail.com", model.CVFile);
                         TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
-                        return RedirectToAction("Index", "Contact");
+                        return RedirectToAction("Index", "Careers");
                     }
                 }
 
                 TempData["Success"] = "Please validate that you are not a robot";
-                return RedirectToAction("Index", "Contact");
+                return RedirectToAction("Index", "Careers");
             }
         }
 
