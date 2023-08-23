@@ -182,6 +182,14 @@ body {
     font-weight: 400;
 }
 
+.rtl .footer-two-single-wized.two {
+    padding-right: 92px;
+    padding-left: 0px;
+}
+
+.footer-two-single-wized.two {
+    padding-left: 92px;
+}
 .rtl .cvFileLabel {
     left: -11px;
 }
@@ -15268,6 +15276,10 @@ body.sal-disabled [data-sal|=flip] {
   position: relative;
   transition: var(--transition);
 }
+.rtl .header-top-one .left .mail a {
+    margin-right: 0px;
+    margin-left:50px;
+}
 .header-top-one .left .mail a i {
   margin-right: 6px;
 }
@@ -29492,6 +29504,10 @@ p.disc {
   .single-contact-one-inner .content .info a h5 {
     font-size: 18px;
   }
+    .rtl .footer-two-single-wized.two {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
 }
 .single-contact-one-inner .content .info a:hover h5 {
   color: var(--color-primary);
@@ -30025,6 +30041,9 @@ p.disc {
   .rts-cta-wrapper .background-cta .cta-left-wrapepr {
     padding-bottom: 20px;
   }
+    .footer-two-single-wized.two {
+        padding-left: 50px;
+    }
 }
 @media only screen and (max-width: 767px) {
   .rts-cta-wrapper .background-cta .cta-left-wrapepr {
@@ -30591,6 +30610,11 @@ p.disc {
     border-radius: 0;
     max-width: 100%;
   }
+    .rtl .footer-two-single-wized.two {
+        padding-right: 50px ;
+       
+    }
+
 }
 @media only screen and (max-width: 767px) {
   .footer-bg-two {
@@ -30605,9 +30629,6 @@ p.disc {
   }
 }
 
-.footer-two-single-wized.two {
-  padding-left: 27px;
-}
 @media only screen and (max-width: 767px) {
   .footer-two-single-wized.two {
     padding-left: 0;
