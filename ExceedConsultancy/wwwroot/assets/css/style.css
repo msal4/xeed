@@ -11177,14 +11177,14 @@ body {
   transform: translateX(-50%);
   top: -20%;
 }
-.rts-title-area.business::after {
+/*.rts-title-area.business::after {
   content: "OUR TEAM";
   min-width: max-content;
   min-height: 120px;
   left: 67%;
   transform: translateX(-50%);
   z-index: -1;
-}
+}*/
 .rts-title-area.gallery::after {
   content: "Gallery";
   left: 18%;
@@ -11205,14 +11205,14 @@ body {
   z-index: -1;
   height: 109px;
 }
-.rts-title-area.feature::after {
+/*.rts-title-area.feature::after {
   content: "PURPOSE";
   left: 32%;
   transform: translateX(-50%);
   z-index: -1;
   height: 109px;
   top: -18%;
-}
+}*/
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
   .rts-title-area.feature::after {
     left: 55%;
