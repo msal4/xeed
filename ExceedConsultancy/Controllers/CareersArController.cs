@@ -46,7 +46,7 @@ namespace ExceedConsultancy.Controllers
 
                     if (result.Success)
                     {
-                        sendemail(sb.ToString(), "Contact Message", "info@exceedconsultancy.com,ahmadghadder@gmail.com",model.CVFile);
+                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,ahmadghadder@gmail.com",model.CVFile);
                         TempData["Success"] = "شكرا لك على الاتصال بنا! ونحن سوف نعود اليكم في أقرب وقت ممكن.";
                         return RedirectToAction("Index", "CareersAr");
                     }
@@ -84,7 +84,7 @@ namespace ExceedConsultancy.Controllers
                 SmtpServer.Host = "smtp.office365.com";
                 SmtpServer.Port = 587;
 
-                SmtpServer.Credentials = new System.Net.NetworkCredential(_config.GetSection("ApiKey").Value, _config.GetSection("ApiKeyPass").Value, "exceedconsultancy.com");
+                SmtpServer.Credentials = new System.Net.NetworkCredential(_config.GetSection("ApiKey").Value, _config.GetSection("ApiKeyPass").Value, "xeed-consulting.com");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
@@ -121,7 +121,7 @@ namespace ExceedConsultancy.Controllers
         //                    MailMessage mail = new MailMessage();
         //                    SmtpClient smtpServer = new SmtpClient();
         //                    mail.From = new MailAddress("al-salama@outlook.com");
-        //                    mail.To.Add("info@exceedconsultancy.com,ahmadghadder@gmail.com");
+        //                    mail.To.Add("contact@xeed-consulting.com,ahmadghadder@gmail.com");
         //                    mail.Subject = "Newsletter Subscription";
         //                    mail.Body = "Email: " + email;
         //                    mail.IsBodyHtml = true;
