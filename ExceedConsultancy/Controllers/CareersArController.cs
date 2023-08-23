@@ -47,13 +47,13 @@ namespace ExceedConsultancy.Controllers
                     if (result.Success)
                     {
                         sendemail(sb.ToString(), "Contact Message", "info@exceedconsultancy.com,ahmadghadder@gmail.com",model.CVFile);
-                        TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
-                        return RedirectToAction("Index", "Contact");
+                        TempData["Success"] = "شكرا لك على الاتصال بنا! ونحن سوف نعود اليكم في أقرب وقت ممكن.";
+                        return RedirectToAction("Index", "CareersAr");
                     }
                 }
 
                 TempData["Success"] = "Please validate that you are not a robot";
-                return RedirectToAction("Index", "Contact");
+                return RedirectToAction("Index", "CareersAr");
             }
         }
 
@@ -88,14 +88,14 @@ namespace ExceedConsultancy.Controllers
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
-                TempData["Success"] = "Thank you for contacting us, We will get back to you as soon as possible.";
-                return RedirectToAction("Index", "Contact");
+                TempData["Success"] = "شكرا لك على الاتصال بنا! ونحن سوف نعود اليكم في أقرب وقت ممكن.";
+                return RedirectToAction("Index", "CareersAr");
 
             }
             catch (Exception ex)
             {
-                TempData["Success"] = "Sorry mail not sent,Please try again!";
-                return RedirectToAction("Index", "Contact");
+                TempData["Success"] = "آسف لم يتم إرسال البريد ، يرجى المحاولة مرة أخرى!";
+                return RedirectToAction("Index", "CareersAr");
                 throw;
             }
 

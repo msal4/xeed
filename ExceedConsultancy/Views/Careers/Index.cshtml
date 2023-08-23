@@ -2,9 +2,9 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Exceed Consultancy | Contact Us";
-    ViewBag.MetaDescription = "Get in touch with Exceed Consultancy for all your business needs. Our team of experts is here to address your unique challenges and opportunities. Contact us now to explore how we can empower your business.";
-    ViewBag.MetaKeywords = "Contact Us, Exceed Consultancy, business needs, get in touch, experts, unique challenges, opportunities, empower your business";
+    ViewBag.Title = "Exceed Consultancy | Careers";
+    ViewBag.MetaDescription = "Submit Your CV - Submit your CV and contact information for available career opportunities.";
+    ViewBag.MetaKeywords = "Submit Your CV, Career Opportunities, Your Name, Email Address, Your Subject, Type Your Message, Upload CV";
 
 }
 
@@ -182,7 +182,7 @@
                             </form>
                             @if (TempData["Success"] != null)
                             {
-                                <p class="alert alert-warning d-block blue-bg ">@TempData["Success"]</p>
+                                <p class="alert alert-warning d-block blue-bg  mt-4">@TempData["Success"]</p>
                             }
 
                      
