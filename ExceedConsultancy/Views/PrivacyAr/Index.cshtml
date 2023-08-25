@@ -1,7 +1,15 @@
-﻿@model ExceedConsultancy.Models.PrivacyArModel
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@*@model ExceedConsultancy.Models.PrivacyArModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers                                                                                                  @using Microsoft.AspNetCore.Localization;
+                                         
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
 @{
     Layout = "~/Views/Shared/_LayoutAr.cshtml";
+                                              
     ViewBag.Title = "Xeed Consulting | Privacy Policy";
     ViewBag.MetaDescription = "We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website. By accessing or using our Website, you agree to the terms of this Privacy Policy.";
     ViewBag.MetaKeywords = "Privacy Policy, personal information, non-personal information, data sharing, data security, third-party links, rights and choices, Xeed Consulting";
@@ -27,7 +35,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a asp-controller="Home" asp-action="index">الرئيسية</a>
+                        <a asp-controller="Home" asp-action="index"  asp-route-culture="@culture">الرئيسية</a>
                         <span> / </span>
                         سياسة الخصوصية
                     </div>
@@ -105,4 +113,4 @@
         </div>
     </div>
 
-</body>
+</body>*@
