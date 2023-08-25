@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_company" xml:space="preserve">
+    <value>عن شركتنا</value>
+  </data>
+  <data name="Acquisitions" xml:space="preserve">
+    <value>المقتنيات</value>
+  </data>
+  <data name="advantage1_company" xml:space="preserve">
+    <value>"مساعدة الشركات من خلال استراتيجيات مبتكرة وحلول تعتمد على التكنولوجيا، وتعزيز النمو والنجاح المستدام في عالم ديناميكي ورقمي."</value>
+  </data>
+  <data name="advantage2_company" xml:space="preserve">
+    <value>"أن نكون شريكا عالميا رائدا للشركات، ونحدث ثورة في الصناعات و الاعمال التجارية، الطبية و الصناعية من خلال استراتيجيات الأعمال المبتكرة والحلول الرقمية، مما يمكن عملاؤنا من تحقيق نمو ونجاح لا مثيل لهما."</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>أرسل</value>
+  </data>
+  <data name="Best_Quality_Services" xml:space="preserve">
+    <value>جودة و اتقان في العمل</value>
+  </data>
+  <data name="Business_Consultancy" xml:space="preserve">
+    <value>استشارات الأعمال</value>
+  </data>
+  <data name="Business_Growth" xml:space="preserve">
+    <value>نمو الأعمال</value>
+  </data>
+  <data name="Business_Planning" xml:space="preserve">
+    <value>تخطيط الأعمال</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>الفئات</value>
+  </data>
+  <data name="Consulting_Services" xml:space="preserve">
+    <value>الخدمات الاستشارية</value>
+  </data>
+  <data name="Cost_Calculating" xml:space="preserve">
+    <value>التكلفة المالية</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Email_addrs" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Engineering_Construction" xml:space="preserve">
+    <value>الهندسة والبناء</value>
+  </data>
+  <data name="Expert_Members" xml:space="preserve">
+    <value>خبراء متمرسون</value>
+  </data>
+  <data name="Financial_analysis" xml:space="preserve">
+    <value>التحليل المالي</value>
+  </data>
+  <data name="Financial_Services" xml:space="preserve">
+    <value>الخدمات المالية</value>
+  </data>
+  <data name="Growing_Sells" xml:space="preserve">
+    <value>تخطيط انماء الشركات</value>
+  </data>
+  <data name="Health_Care" xml:space="preserve">
+    <value>الرعاية الصحية</value>
+  </data>
+  <data name="Home_bg_text_Contact" xml:space="preserve">
+    <value>اتصل بوكيلنا للحصول على أي نوع من الاستشارات</value>
+  </data>
+  <data name="Industrial_Goods" xml:space="preserve">
+    <value>السلع الصناعية</value>
+  </data>
+  <data name="Industries_Served" xml:space="preserve">
+    <value>القطاعات</value>
+  </data>
+  <data name="Insurance_Industry" xml:space="preserve">
+    <value>التأمين</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="location_baghdad_iraq" xml:space="preserve">
+    <value>بغداد , العراق</value>
+  </data>
+  <data name="Make_Appointment" xml:space="preserve">
+    <value>تحديد موعد</value>
+  </data>
+  <data name="Make_Plan" xml:space="preserve">
+    <value>وضع خطة</value>
+  </data>
+  <data name="Mission" xml:space="preserve">
+    <value>مهمتنا</value>
+  </data>
+  <data name="Mission_About_us" xml:space="preserve">
+    <value>"لتمكين الشركات من خلال استراتيجيات مبتكرة وحلول تعتمد على التكنولوجيا، وتعزيز النمو والنجاح المستدام في عالم ديناميكي ورقمي."</value>
+  </data>
+  <data name="nav_about_us" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="nav_about_Xeed" xml:space="preserve">
+    <value>حول</value>
+  </data>
+  <data name="nav_about_Xeed_text1" xml:space="preserve">
+    <value>أسست شركة Xeed Consulting بهدف المساعدة في نمو الشركات من خلال الأعمال المبتكرة والاستراتيجيات القائمة على التكنولوجيا. منذ نشأتنا، دخلنا في شراكة مع العديد من المنظمات عبر مختلف مجالات الاعمال، وتقديم نتائج ملموسة و مميزة.</value>
+  </data>
+  <data name="nav_about_Xeed_text2" xml:space="preserve">
+    <value>نحن ملتزمون بمساعدة المؤسسات على الازدهار من خلال خبرتنا الاستراتيجية وحلولنا المبتكرة، كما نمكن الشركات من التغلب على التحديات المعقدة، واغتنام فرص النمو، وتحقيق النجاح المستدام.</value>
+  </data>
+  <data name="nav_about_Xeed_text3" xml:space="preserve">
+    <value>انبثقت شركة Xeed Consulting  من رؤية مشتركة لفريق من الاستشاريين المتمرسين الذين أدركوا مدى اهمية  الجمع بين الخبرة التجارية والتكنولوجيا المتطورة. على مر السنين، قمنا ببناء سمعة راسخة لتقديم نتائج ملموسة وقيادة التغيير الإيجابي لعملائنا. كان التزامنا بالتميز والتعلم المستمر والنهج الذي يركز على العميل الركيزة الاساسية في نجاحنا</value>
+  </data>
+  <data name="nav_AI" xml:space="preserve">
+    <value>الذكاء الاصطناعي</value>
+  </data>
+  <data name="nav_AI_Text" xml:space="preserve">
+    <value>اكتشفوا إمكانيات الذكاء الاصطناعي مع خدمات الاستشارة لدينا. نساعد الشركات في استغلال قوة الذكاء الاصطناعي لتحسين العمليات وتلقين المهام واكتساب رؤى أعمق من البيانات. تم تصميم حلولنا لزيادة الإنتاجية وتقليل التكاليف ودفع الابتكار في مجموعة متنوعة من الصناعات.</value>
+  </data>
+  <data name="nav_Business" xml:space="preserve">
+    <value>الغرض من الأعمال والمؤسسات</value>
+  </data>
+  <data name="nav_Business_text" xml:space="preserve">
+    <value>في “Exceed Consultancy”، نعتقد أن كل شركة يجب أن تمتلك هدفًا واضحًا وجاذبًا. نعمل عن كثب مع عملائنا لتحديد هدف أعمالهم ومؤسساتهم، مساعدينهم في مواءمة قيمهم وأهدافهم لإنشاء بيان مهمة ذو معنى وأثر. خدمات الاستشارة لدينا تمكن الشركات من صياغة هدفها ودمجه في عملياتها اليومية، ما يشجع على شعور بالاتجاه والإلهام لدى الموظفين وأصحاب المصلحة على حد سواء.</value>
+  </data>
+  <data name="nav_capabilities" xml:space="preserve">
+    <value>قدراتنا</value>
+  </data>
+  <data name="nav_Careers" xml:space="preserve">
+    <value>الوظائف</value>
+  </data>
+  <data name="nav_Contact" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="nav_Finance" xml:space="preserve">
+    <value>التمويل والاستراتيجية الشركية</value>
+  </data>
+  <data name="nav_Finance_text" xml:space="preserve">
+    <value>يتخصص فريقنا من الخبراء الماليين في صياغة حلول شاملة للتمويل الشركي واستراتيجية الشركات. نساعد الشركات في تحسين أدائها المالي وتوجيه رأس المال وإدارة المخاطر. سواء كنتم تبحثون عن التوسع، أو تبسيط العمليات، أو التنقل في تحديات مالية معقدة، نقدم إرشادًا استراتيجيًا لمساعدتكم في تحقيق أهدافكم المالية على المدى الطويل</value>
+  </data>
+  <data name="nav_get_Quote" xml:space="preserve">
+    <value>طلب إستشارة</value>
+  </data>
+  <data name="nav_home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="nav_implementation" xml:space="preserve">
+    <value>التنفيذ</value>
+  </data>
+  <data name="nav_implementation_text" xml:space="preserve">
+    <value>تنفيذ الخطط الاستراتيجية بفعالية أمر حاسم لتحقيق النتائج المرغوبة. نحن نقدم دعمًا عمليًا في تنفيذ استراتيجيات الأعمال وحلول التكنولوجيا وتحسين العمليات. مستشارونا ذوي الخبرة يرشدونكم خلال كل خطوة، من التخطيط إلى التنفيذ، لضمان تنفيذ ناجح.</value>
+  </data>
+  <data name="nav_industries" xml:space="preserve">
+    <value>القطاعات</value>
+  </data>
+  <data name="nav_innovation" xml:space="preserve">
+    <value>استراتيجية وتنفيذ الابتكار</value>
+  </data>
+  <data name="nav_innovation_text" xml:space="preserve">
+    <value>الابتكار يدفع النمو المستدام. نساعد الشركات في وضع استراتيجيات الابتكار وتنفيذ مبادراتها الابتكارية. حلولنا تعزز من ثقافة الإبداع وريادة الأعمال، مما يضمن أن منظمتكم تظل في مقدمة الابتكار في صناعتكم.</value>
+  </data>
+  <data name="nav_manufacturing" xml:space="preserve">
+    <value>التصنيع</value>
+  </data>
+  <data name="nav_manufacturing_text" xml:space="preserve">
+    <value>حققوا التميز التشغيلي في مجال التصنيع مع خدمات الاستشارة لدينا. نساعد الشركات في تبسيط عمليات التصنيع وتحسين مراقبة الجودة وتقليل الفاقد. خبرتنا تضمن أن عمليات التصنيع لديكم فعّالة وكفؤة من الناحية التكلفة وقادرة على تلبية أعلى معايير الصناعة.</value>
+  </data>
+  <data name="nav_marketing" xml:space="preserve">
+    <value>النمو والتسويق والمبيعات</value>
+  </data>
+  <data name="nav_marketing_text" xml:space="preserve">
+    <value>اطلقوا سراح إمكانيات نمو أعمالكم مع حلول التسويق والمبيعات الاستراتيجية لدينا. نعمل عن كثب مع العملاء لتحديد فرص السوق وتطوير استراتيجيات التسويق وتحسين عمليات البيع. طرقنا المجربة تدفع بنمو الإيرادات وتساعد الشركات على الازدهار في الأسواق التنافسية.</value>
+  </data>
+  <data name="nav_monitoring_Evaluation" xml:space="preserve">
+    <value>مراقبة وتقييم</value>
+  </data>
+  <data name="nav_monitoring_Evaluation_text" xml:space="preserve">
+    <value>المراقبة والتقييم الفعّالين ضروريان لقياس تأثير مبادراتكم. نقدم أطُر مراقبة وتقييم مخصصة لتتبع التقدم وتقييم الأداء واتخاذ التعديلات استنادًا إلى البيانات. نهجنا يضمن أن منظمتكم تبقى ذكية ومستجيبة للتغيرات.</value>
+  </data>
+  <data name="nav_operations" xml:space="preserve">
+    <value>العمليات</value>
+  </data>
+  <data name="nav_operations_text" xml:space="preserve">
+    <value>العمليات الفعّالة هي العمود الفقري لنجاح الأعمال. نحن متخصصون في تحسين العمليات التشغيلية وتعزيز إدارة سلسلة التوريد وتقليل تكاليف التشغيل. خدمات الاستشارة لدينا مصممة لضمان أن عملياتكم تسير بسلاسة وتقدم قيمة مستدامة.</value>
+  </data>
+  <data name="nav_organization_strategy" xml:space="preserve">
+    <value>استراتيجية المؤسسة</value>
+  </data>
+  <data name="nav_organization_strategy_text" xml:space="preserve">
+    <value>صاغوا استراتيجية المؤسسة الفائزة مع خدمات الاستشارة لدينا. نحن نساعد الشركات في تحديد هيكلها التنظيمي والأدوار والمسؤوليات للمواءمة مع أهدافها الاستراتيجية. حلولنا تعزز من القدرة على التكيف وتتيح للمنظمات التكيف مع تغيرات ديناميات السوق.</value>
+  </data>
+  <data name="nav_people" xml:space="preserve">
+    <value>استراتيجية الموارد البشرية</value>
+  </data>
+  <data name="nav_people_text" xml:space="preserve">
+    <value>فريقكم هو أثمن ما تمتلكونه. نساعد الشركات في تطوير استراتيجيات شاملة للموارد البشرية، بما في ذلك اكتساب المواهب وتطويرها والاحتفاظ بها. نهجنا يضمن أن قوت العمل لديكم متوافقة مع أهداف أعمالكم، مما يشجع على ثقافة الارتباط والنمو.</value>
+  </data>
+  <data name="nav_pricing" xml:space="preserve">
+    <value>تسعير وإدارة الإيرادات</value>
+  </data>
+  <data name="nav_pricing_text" xml:space="preserve">
+    <value>زيّنوا ربحيتكم مع خبرتنا في تسعير وإدارة الإيرادات. نساعد الشركات في تحسين استراتيجيات التسعير، ونماذج الإيرادات، وتوقعات الطلب. حلولنا تمكنكم من الاستفادة من قيمة السوق وتعزيز الأرباح الصافية الخاصة بكم.</value>
+  </data>
+  <data name="nav_risk_management" xml:space="preserve">
+    <value>إدارة المخاطر والامتثال</value>
+  </data>
+  <data name="nav_risk_management_text" xml:space="preserve">
+    <value>تقليل المخاطر وضمان الامتثال أمور حيوية في بيئة الأعمال الحالية. تقدم خدمات الاستشارة لدينا نهجاً شاملاً لإدارة المخاطر والامتثال، حماية أعمالكم من التهديدات المحتملة والتحديات التنظيمية.</value>
+  </data>
+  <data name="nav_Technology" xml:space="preserve">
+    <value>التكنولوجيا الرقمية والبيانات</value>
+  </data>
+  <data name="nav_Technology_text" xml:space="preserve">
+    <value>في عصر اليوم الرقمي، التنافسية يتطلب استغلال التكنولوجيا الحديثة واستغلال قوة البيانات. نحن نساعد الشركات في التكيف والازدهار في المناظر الرقمية من خلال تقديم إرشادات خبراء حول التحول الرقمي واعتماد التكنولوجيا واتخاذ القرارات استنادًا إلى البيانات. حلولنا المخصصة تمكّن المؤسسات من تحقيق أقصى كفاءة والبقاء في مقدمة التطور.</value>
+  </data>
+  <data name="nav_zero_based" xml:space="preserve">
+    <value>الميزانية من الصفر</value>
+  </data>
+  <data name="nav_zero_based_text" xml:space="preserve">
+    <value>حققوا كفاءة التكلفة والشفافية المالية من خلال الميزانية من الصفر. نرشد الشركات في تنفيذ هذا النهج المبتكر للميزانية، مساعدينهم في إعادة تخصيص الموارد إلى المجالات التي تولد أكبر قيمة والتخلص من التكاليف غير الضرورية.</value>
+  </data>
+  <data name="Our_Process" xml:space="preserve">
+    <value>الاستراتيجية الأساسية لدينا</value>
+  </data>
+  <data name="page_about_us_commitment_Business_Practices" xml:space="preserve">
+    <value>ممارسات أخلاقية في الأعمال</value>
+  </data>
+  <data name="page_about_us_commitment_Business_Practices_text" xml:space="preserve">
+    <value>نحن نلتزم بأعلى معايير الممارسات الأخلاقية في الأعمال. التزامنا بالنزاهة والصدق ليس قابلاً للتزكية. نعتقد أن الثقة هي أساس الشراكات الناجحة، ونكسب ثقتكم من خلال أفعالنا ونتائجنا</value>
+  </data>
+  <data name="page_about_us_commitment_Crafting" xml:space="preserve">
+    <value>صياغة حلول</value>
+  </data>
+  <data name="page_about_us_commitment_Crafting_text" xml:space="preserve">
+    <value>مُصممة خصيصًا حلاً واحد ال يلائم الجميع. التزامنا يمتد أيضًا لصياغة حلول مُصممة خصيصًا تتماشى مع أهدافكم. نستفيد من خبرتنا الواسعة لإنشاء استراتيجيات فعّالة ومستدامة على المدى الطويل. حلولنا تكون فريدة مثل أعمالكم.</value>
+  </data>
+  <data name="page_about_us_commitment_Crafting_Transparency" xml:space="preserve">
+    <value>الشفافية والتعاون</value>
+  </data>
+  <data name="page_about_us_commitment_Crafting_Transparency_text" xml:space="preserve">
+    <value>نؤمن بالشراكات المفتوحة والشفافة. طوال مشاركتنا، نلتزم بإبقائكم على علم ومشاركتكم. نهجنا التعاوني يضمن أنكم شركاء فاعلين في عملية اتخاذ القرار. نقدر آراءكم وملاحظاتكم وندمجها في استراتيجياتنا.</value>
+  </data>
+  <data name="page_about_us_commitment_Dedicated" xml:space="preserve">
+    <value>فريق مكرس من الخبراء</value>
+  </data>
+  <data name="page_about_us_commitment_Dedicated_text" xml:space="preserve">
+    <value>فريق استشارينا ملتزم بعمق بنجاحكم. إنهم يجلبون ثروة من الخبرة، وآراء جديدة، واهتمام مشترك بنموكم. عندما تعملون معنا، لا تحصلون على مجرد شركة استشارية؛ بل تحصلون على فريق من الأفراد الشغوفين مستثمرين بعمق في نجاحكم</value>
+  </data>
+  <data name="page_about_us_commitment_Long_term_Partnership" xml:space="preserve">
+    <value>شراكة طويلة الأمد</value>
+  </data>
+  <data name="page_about_us_commitment_Long_term_Partnership_text" xml:space="preserve">
+    <value>التزامنا يمتد بعيدًا عن المشروع الفوري. هدفنا هو بناء شراكات طويلة الأمد مع عملائنا. بينما تتطور أعمالكم، سنكون هنا لدعمكم، نقدم الإرشاد والحلول لمواجهة التحديات الجديدة واستغلال الفرص الجديدة.</value>
+  </data>
+  <data name="page_about_us_commitment_Measuring_Adaptation" xml:space="preserve">
+    <value>قياس التقدم والتكيف</value>
+  </data>
+  <data name="page_about_us_commitment_Measuring_Adaptation_text" xml:space="preserve">
+    <value>التزامنا لا ينتهي مع تنفيذ الحلول. نقيس التقدم باستمرار مقابل الأهداف المحددة مسبقًا ومؤشرات الأداء الرئيسية. إذا كانت هناك حاجة لتعديلات، نحن متماينون وقابلون للتكيف، جاهزون لتحسين استراتيجياتنا لضمان النجاح.</value>
+  </data>
+  <data name="page_about_us_commitment_YourGoal_OurMission" xml:space="preserve">
+    <value>أهدافكم هي مهمتنا</value>
+  </data>
+  <data name="page_about_us_commitment_YourGoal_OurMission_text" xml:space="preserve">
+    <value>في “Exceed Consultancy”، أهدافكم تصبح مهمتنا. نحن لسنا مجرد مستشارين؛ نحن شركاء في رحلتكم نحو النجاح. التزامنا هو أن نكون معكم في كل خطوة على طول الطريق، نساعدكم على التنقل في تعقيدات منظر الأعمال.</value>
+  </data>
+  <data name="page_about_us_how_we_work" xml:space="preserve">
+    <value>كيف نعمل</value>
+  </data>
+  <data name="page_about_us_how_we_work_Collaboration" xml:space="preserve">
+    <value>7.	التعاون</value>
+  </data>
+  <data name="page_about_us_how_we_work_Collaboration_text" xml:space="preserve">
+    <value>نحن لا نعمل على عزلة؛ نعمل بتعاون مع فريقكم. نحن نؤمن بالاستفادة من خبرتكم وأفكاركم الداخلية. من خلال العمل المشترك، نخلق تأثيرًا إيجابيًا يعزز من فعالية استراتيجياتنا.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Continuous" xml:space="preserve">
+    <value>5.	القياس والتقييم المستمر</value>
+  </data>
+  <data name="page_about_us_how_we_work_Continuous_text" xml:space="preserve">
+    <value>نحن نؤمن بالتحسين المستمر. طوال مشاركتنا، نقوم بمراقبة التقدم مقابل مؤشرات الأداء الرئيسية المحددة مسبقًا. إذا رأينا أن هناك حاجة لتعديلات لتحقيق أهدافكم، نتكيف ونعدل استراتيجياتنا وفقًا لذلك.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Implementation" xml:space="preserve">
+    <value>4.	التنفيذ</value>
+  </data>
+  <data name="page_about_us_how_we_work_Implementation_text" xml:space="preserve">
+    <value>الاستراتيجية بدون عمل هي مجرد خطة. نلف الأكمام ونعمل جنبًا إلى جنب مع فريقكم لتنفيذ الاستراتيجيات التي قمنا بتطويرها. يقدم مستشارونا الإرشاد والدعم والمساعدة العملية لضمان تنفيذ الخطة بسلاسة.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Initial_Consultation" xml:space="preserve">
+    <value>1.	استشارة أولية</value>
+  </data>
+  <data name="page_about_us_how_we_work_Initial_Consultation_text" xml:space="preserve">
+    <value>رحلتنا معًا تبدأ بجلسة استشارية مفصلة. خلال هذه المرحلة، نأخذ الوقت لفهم أهداف منظمتكم، والتحديات، والآمال. نعتقد أن الفهم الجيد لظروفكم الفريدة ضروري لصياغة استراتيجيات فعّالة.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Knowledge" xml:space="preserve">
+    <value>9.	مشاركة المعرفة</value>
+  </data>
+  <data name="page_about_us_how_we_work_Knowledge_text" xml:space="preserve">
+    <value>نحن نؤمن بتمكين عملائنا بالمعرفة. طوال مشاركتنا، نقدم تدريبًا ونقل معرفة لضمان أن فريقكم يمتلك المهارات والفهم للحفاظ على التحسينات التي قمنا بتنفيذها.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Needs_assessment" xml:space="preserve">
+    <value>2.	تقييم الاحتياجات</value>
+  </data>
+  <data name="page_about_us_how_we_work_Needs_assessment_text" xml:space="preserve">
+    <value>بمجرد أن نحصل على صورة واضحة عن منظمتكم، نقوم بإجراء تقييم شامل للاحتياجات. يتضمن ذلك استقصاءًا عميقًا في العمليات الحالية ومؤشرات الأداء وديناميات الصناعة. نحدد المجالات التي يمكن تحسينها والفرص للنمو.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Partnership" xml:space="preserve">
+    <value>10.	شراكة طويلة الأمد</value>
+  </data>
+  <data name="page_about_us_how_we_work_Partnership_text" xml:space="preserve">
+    <value>التزامنا لا ينتهي مع انتهاء مشروع. نهدف إلى بناء شراكات طويلة الأمد مع عملائنا. مع تطور منظمتكم، سنكون هنا لدعمكم، ونقدم الإرشاد والحلول لمعالجة التحديات الجديدة واستغلال الفرص الجديدة.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Strategy" xml:space="preserve">
+    <value>3.	تطوير الاستراتيجية</value>
+  </data>
+  <data name="page_about_us_how_we_work_Strategy_text" xml:space="preserve">
+    <value>باستخدام المعلومات التي تم جمعها من تقييم الاحتياجات، نقوم بتطوير استراتيجية مخصصة مصممة خصيصًا لأهدافكم. استراتيجيتنا ليست حلاً عامًا؛ إنها خريطة طريق مصممة بشكل خاص لنجاح منظمتكم. نشملكم في عملية تطوير الاستراتيجية لضمان التوافق مع رؤيتكم.</value>
+  </data>
+  <data name="page_about_us_how_we_work_text" xml:space="preserve">
+    <value>في “Exceed Consultancy”، يرتكز نهجنا للاستشارة على التعاون والشفافية وتحقيق نتائج قابلة للقياس. نحن ندرك أن كل منظمة فريدة، ونقوم بتصميم منهجيتنا لتناسب احتياجاتكم الخاصة. إليك نظرة أقرب على كيفية عملنا:</value>
+  </data>
+  <data name="page_about_us_how_we_work_text_Flexibility" xml:space="preserve">
+    <value>8.	المرونة</value>
+  </data>
+  <data name="page_about_us_how_we_work_text_Flexibility_text" xml:space="preserve">
+    <value>نحن نفهم أن منظر الأعمال يتغير باستمرار. نهجنا مرن وقابل للتكيف. إذا ظهرت تحديات غير متوقعة أو تغيرت ديناميات السوق، فنحن مستعدون للانتقال وضبط استراتيجياتنا للحفاظ على النجاح.</value>
+  </data>
+  <data name="page_about_us_how_we_work_Transparency" xml:space="preserve">
+    <value>6.	الشفافية</value>
+  </data>
+  <data name="page_about_us_how_we_work_Transparency_text" xml:space="preserve">
+    <value>الشفافية هي قيمة أساسية في نهجنا. نحن نحتفظ بخطوط اتصال مفتوحة طوال شراكتنا. ستتلقون تحديثات منتظمة حول التقدم والتحديات والفرص. نشجع على الأسئلة والملاحظات لضمان أنكم مطلعين تمامًا ومشاركين في العملية.</value>
+  </data>
+  <data name="page_about_us_Leadership" xml:space="preserve">
+    <value>قيادتنا</value>
+  </data>
+  <data name="page_about_us_Leadership_getIn_touch" xml:space="preserve">
+    <value>توصل معنا</value>
+  </data>
+  <data name="page_about_us_Leadership_text1" xml:space="preserve">
+    <value>في “Exceed Consultancy”، تُكتب قصة نجاحنا بواسطة الأفراد الديناميين الذين يقودون، والهدف الثابت الذي يدفعنا، والقيم الأساسية التي توجه كل تصرف لدينا.</value>
+  </data>
+  <data name="page_about_us_Leadership_text2" xml:space="preserve">
+    <value>القيادة فريق القيادة لدينا يتألف من محترفين ذوي خبرة واسعة لديهم سجل حافل من التميز في مختلف الصناعات. خبرتهم الواسعة ورؤاهم العميقة في تفاصيل الأعمال تجعلهم القوة الدافعة وراء استشاراتنا. إنهم يقدمون القدوة، ويعززون المنظمة بثقافة الابتكار والتعاون والتوجه نحو العميل.</value>
+  </data>
+  <data name="page_about_us_Leadership_text3" xml:space="preserve">
+    <value>
+قادتنا ليسوا مجرد خبراء؛ بل هم شركاءك في تحقيق النجاح. التفاني لديهم في التحول والتفرغ لنموك هما أركان استشاراتنا.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration" xml:space="preserve">
+    <value>تطلعاتنا</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Building_Resilience" xml:space="preserve">
+    <value>بناء المرونة</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Building_Resilience_text" xml:space="preserve">
+    <value>منظر الأعمال متغير دائمًا، ونحن نطمح لبناء المرونة داخل منظمتك. نريدك أن لا تنجو فقط في أوقات عدم اليقين، ولكن أن تزدهر فيها. تمت صياغة استراتيجياتنا لجعل منظمتك متناسقة وقابلة للتكيف وجاهزة للتغلب على أي تحدي.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Creating_Impact" xml:space="preserve">
+    <value>خلق تأثير إيجابي</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Creating_Impact_text" xml:space="preserve">
+    <value>نطمح لخلق تأثير إيجابي ليس فقط على رصيدك المالي، ولكن أيضًا على المجتمع والبيئة. التزامنا بالاستدامة والمسؤولية الاجتماعية للشركات يضمن أن نجاحك يتوافق مع الممارسات الأخلاقية ويسهم إيجابيًا في العالم.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Driving_Innovation" xml:space="preserve">
+    <value>دفع الابتكار</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Driving_Innovation_text" xml:space="preserve">
+    <value>الابتكار هو في قلب التقدم، ونحن نطمح لدفع الابتكار داخل منظمتك. نحن نشجع على التفكير الإبداعي، ووجهات النظر الجديدة، واعتماد التقنيات المتطورة. هدفنا هو مساعدتك في البقاء في مقدمة السباق وأن تصبح قائدًا في صناعتك.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Empowering_Success" xml:space="preserve">
+    <value>تمكين نجاحك</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Empowering_Success_text1" xml:space="preserve">
+    <value>في “Exceed Consultancy”، نطمح لأن نكون أكثر من مجرد شركة استشارية</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Empowering_Success_text2" xml:space="preserve">
+    <value>نحن نطمح لأن نكون شريكك الاستراتيجي في رحلتك نحو النجاح</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Empowering_Success_text3" xml:space="preserve">
+    <value>تتجذر تطلعاتنا في رؤية عالم أعمال مزدهر، حيث تمتلك كل منظمة الأدوات والمعرفة والدعم ليس فقط للتكيف مع التغيير، ولكن للتفوق فيه.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Fostering_Collaborative" xml:space="preserve">
+    <value>تعزيز الشراكات التعاونية</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Fostering_Collaborative_text" xml:space="preserve">
+    <value>نطمح لبناء أكثر من مجرد علاقات عميل - مستشار؛ نهدف لتعزيز الشراكات التعاونية. عندما تختار Exceed Consultancy، تحصل على فريق من الأفراد الملتزمين عميقًا بنجاحك. سنحقق معًا أهداف كان يعتقد البعض في السابق أنها خارجة عن الوصول.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_last_text" xml:space="preserve">
+    <value>في “xceed  Consulting”، تطلعاتنا ليست مجرد شأن عمل؛ إنها عن الرحلة التي نبدأها معك. إنها عن التأثير الذي يمكن أن نخلقه معًا. ندعوك للانضمام إلينا في تحقيق هذه التطلعات من خلال الاتصال بنا اليوم. نجاحك ليس مجرد تطلع لدينا؛ إنه التزامنا. معًا، سنحول التطلعات إلى إنجازات.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Nurturing_Growth" xml:space="preserve">
+    <value>تغذية النمو</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Nurturing_Growth_text" xml:space="preserve">
+    <value>نطمح لتغذية النمو بكل معنى الكلمة. نحن لا نهدف فقط إلى الربح في الأمد القريب؛ نحن في هذا للأمد البعيد. حلول استشارتنا مصممة لتعزيز النمو المستدام الذي يتجاوز التقلبات السوقية والتحديات الاقتصادية.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_text" xml:space="preserve">
+    <value>في “Exceed Consultancy”، نطمح لأن نكون أكثر من مجرد شركة استشارية؛ نحن نطمح لأن نكون شريكك الاستراتيجي في رحلتك نحو النجاح. تتجذر تطلعاتنا في رؤية عالم أعمال مزدهر، حيث تمتلك كل منظمة الأدوات والمعرفة والدعم ليس فقط للتكيف مع التغيير، ولكن للتفوق فيه.</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Unleashing_Potential" xml:space="preserve">
+    <value>إطلاق الإمكانات</value>
+  </data>
+  <data name="page_about_us_Our_Aspiration_Unleashing_Potential_text" xml:space="preserve">
+    <value>تطلعتنا النهائي هو مساعدتك في إطلاق الإمكانات الكاملة لمنظمتك. نحن نؤمن أنه لا يوجد حدود لما يمكن لفريق مخصص، مسلح بالاستراتيجيات الصحيحة، أن يحققه. نجاحك هو مقياس إنجازنا.</value>
+  </data>
+  <data name="page_about_us_Our_Commitment" xml:space="preserve">
+    <value>التزامنا</value>
+  </data>
+  <data name="page_about_us_Our_Commitment_Lasttext" xml:space="preserve">
+    <value>اتصل بنا اليوم لمعرفة المزيد حول كيفية عملنا وكيف يمكننا مساعدتك في تحويل عملك. نجاحك هو مهمتنا ، ومعا ، ونحن سوف نجعل ذلك يحدث.</value>
+  </data>
+  <data name="page_about_us_Our_Commitment_text" xml:space="preserve">
+    <value>في “xceed  Consulting”، التزامنا تجاه عملائنا هو ركيزة ممارسات استشارتنا. نحن ندرك أن الثقة بنا بتحدثكم تحديات وآمال أعمالكم هي قرار هام، ونحن نأخذ هذه المسؤولية على محمل الجد. التزامنا الثابت بكم هو ما يميزنا.</value>
+  </data>
+  <data name="page_about_us_Purpose" xml:space="preserve">
+    <value>هدفنا</value>
+  </data>
+  <data name="page_about_us_Purpose_text" xml:space="preserve">
+    <value>الهدف في “Exceed Consultancy”، هدفنا واضح وثابت: تمكين المؤسسات للازدهار في مناظر الأعمال المتطورة باستمرار. نحن نفهم أن بيئة الأعمال اليومية دينامية وتحدية ومنافسة بشدة. هدفنا هو أن نكون الضوء القائم، مساعدين الشركات ليس فقط على البقاء ولكن على التفوق في هذه المناظر.
+القيم قيمنا هي البوصلة التي توجه أفعالنا وقراراتنا. إنها تعكس التزامنا بممارسات الأعمال الأخلاقية والشفافية والتوجه نحو العميل. تحدد قيمنا الأساسية من نحن وكيف نتعامل:</value>
+  </data>
+  <data name="page_about_us_Purpose_Value" xml:space="preserve">
+    <value>قيمتنا</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Client_Centricity" xml:space="preserve">
+    <value>التوجه نحو العميل</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Client_Centricity_text" xml:space="preserve">
+    <value>نجاحك هو تركيزنا الرئيسي. نحن ملتزمون بفهم تحدياتك وأهدافك وآمالك الفريدة. حلولنا مصممة حسب احتياجاتك الخاصة، مضمونة أننا نواجه استراتيجياتنا مع أهدافك.</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Collaboration" xml:space="preserve">
+    <value>التعاون</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Collaboration_text" xml:space="preserve">
+    <value>نؤمن بقوة التعاون، سواء داخل فريقنا أو مع عملائنا. من خلال العمل المشترك، نستغل الذكاء والإبداع الجماعي الذي يدفع التغيير النوعي.</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Continuous_Learning" xml:space="preserve">
+    <value>التعلم المستمر</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Continuous_Learning_text" xml:space="preserve">
+    <value>في عالم يتغير بسرعة، السعي لاكتساب المعرفة أمر بارز. نحن ملتزمون بالتعلم المستمر والبقاء في مقدمة الصناعة فيما يتعلق بالاتجاهات وأفضل الممارسات.</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Diversity_Inclusion" xml:space="preserve">
+    <value>التنوع والشمولية</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Diversity_Inclusion_text" xml:space="preserve">
+    <value>نحتفل بالتنوع ونؤمن بخلق بيئة عمل شمولية. وجهات النظر المتنوعة تثري استشارتنا وتؤدي إلى حلاول أكثر قوة واستدامة.</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Innovation" xml:space="preserve">
+    <value>الابتكار</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Innovation_text" xml:space="preserve">
+    <value>الابتكار هو القوة الدافعة وراء التقدم. نبحث باستمرار عن حلول جديدة ومبتكرة للتحديات التي تواجه عملائنا. نشجع على آراء جديدة وتفكير خارج الصندوق لدفع التحسين المستمر.</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Integrity" xml:space="preserve">
+    <value>النزاهة</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Integrity_text" xml:space="preserve">
+    <value>نضع أنفسنا على أعلى مستويات الصدق والنزاهة. نؤمن بفعل الصواب حتى عندما يكون ذلك صعبًا. النزاهة هي أساس علاقاتنا مع العملاء والثقة التي تشكل أساس استشاراتنا.</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_text" xml:space="preserve">
+    <value>الهدف في “Exceed Consultancy”، هدفنا واضح وثابت: تمكين المؤسسات للازدهار في مناظر الأعمال المتطورة باستمرار. نحن نفهم أن بيئة الأعمال اليومية دينامية وتحدية ومنافسة بشدة. هدفنا هو أن نكون الضوء القائم، مساعدين الشركات ليس فقط على البقاء ولكن على التفوق في هذه المناظر.
+القيم قيمنا هي البوصلة التي توجه أفعالنا وقراراتنا. إنها تعكس التزامنا بممارسات الأعمال الأخلاقية والشفافية والتوجه نحو العميل. تحدد قيمنا الأساسية من نحن وكيف نتعامل</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Transparency" xml:space="preserve">
+    <value>الشفافية</value>
+  </data>
+  <data name="page_about_us_Purpose_Value_Transparency_text" xml:space="preserve">
+    <value>التواصل المفتوح والواضح هو في قلب منهجنا. نؤمن بالشراكات الشفافة، حيث تكون مطلعًا ومشاركًا في كل خطوة في الرحلة. الشفافية تبني الثقة، والثقة هي أساس استشاراتنا.</value>
+  </data>
+  <data name="page_about_us_Success_OurBusiness" xml:space="preserve">
+    <value>نجاحك هو عملنا</value>
+  </data>
+  <data name="page_about_us_Success_OurBusiness_text" xml:space="preserve">
+    <value>في “Exceed Consultancy”، التزامنا تجاه عملائنا هو ركيزة ممارسات استشارتنا. نحن ندرك أن الثقة بنا بتحدثكم تحديات وآمال أعمالكم هي قرار هام، ونحن نأخذ هذه المسؤولية على محمل الجد. التزامنا الثابت بكم هو ما يميزنا.</value>
+  </data>
+  <data name="page_about_us_Understanding_yourUniqu" xml:space="preserve">
+    <value>فهم احتياجاتكم الفريدة</value>
+  </data>
+  <data name="page_about_us_Understanding_yourUniqu_text" xml:space="preserve">
+    <value>نحن ملتزمون بفهم تحدياتكم واحتياجاتكم الفريدة. لا تتشابه الشركات الاثنتان، والحلول القائمة على نمط واحد نادرًا ما تسفر عن نتائج ذات مغزى. نأخذ الوقت للاستماع والتعرف على منظمتكم، وصناعتكم، وأهدافكم. هذا التزامنا بالفهم يشكل أساس منهجنا في الاستشارة.</value>
+  </data>
+  <data name="page_about_us_Xeed_Consulting_Our_team" xml:space="preserve">
+    <value>فريقنا</value>
+  </data>
+  <data name="page_about_us_Xeed_Consulting_text" xml:space="preserve">
+    <value>في “Exceed Consultancy”، فريقنا هو القوة الدافعة وراء نجاحنا. نحن نفتخر بفريقنا المتنوع والموهوب الذين ملتزمون بمساعدة منظمتكم على الازدهار. تعرفوا على الأفراد الذين سيكونون إلى جانبكم في رحلة النجاح:
+قوة فريقنا تكمن في تنوعهم وخبرتهم والالتزام المشترك بنجاحكم. نحن أكثر من مجرد مستشارين؛ نحن شركاءكم المخصصين في تحقيق أهداف أعمالكم.
+عندما تختارون “Exceed Consultancy”، فإنكم لا تحصلون فقط على شركة استشارية؛ بل تحصلون على فريق من الأفراد المشتاقين الذين مستثمرون بعمق في نموكم. اتصلوا بنا اليوم لمقابلة فريقنا ومعرفة كيف يمكننا العمل معًا لتحويل أعمالكم. نجاحكم هو مهمة فريقنا!</value>
+  </data>
+  <data name="page_about_us_Xeed_discuss" xml:space="preserve">
+    <value>دعونا نناقش حول كيف يمكننا المساعدة في جعل عملك أفضل</value>
+  </data>
+  <data name="page_about_us_Xeed_Work_together" xml:space="preserve">
+    <value>توصل معنا</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="privacy_policy" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="Process_optimization" xml:space="preserve">
+    <value>عملية التحسين</value>
+  </data>
+  <data name="Professional_Dedicated" xml:space="preserve">
+    <value>المهنية و الاتقان</value>
+  </data>
+  <data name="Quality_Services" xml:space="preserve">
+    <value>24/7 جودة الخدمات</value>
+  </data>
+  <data name="Read_More" xml:space="preserve">
+    <value>إقرأ المزيد</value>
+  </data>
+  <data name="Real_Estate" xml:space="preserve">
+    <value>العقارات</value>
+  </data>
+  <data name="Request_Call_back" xml:space="preserve">
+    <value>احصل على إتصال</value>
+  </data>
+  <data name="sidebar_get_in_touch" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="sidebar_text" xml:space="preserve">
+    <value>نحن شركة استشارية رائدة في مجال الأعمال والتكنولوجيا مكرسة لمساعدة الشركات على الازدهار في المشهد الديناميكي والرقمي اليوم.</value>
+  </data>
+  <data name="Strategy_development" xml:space="preserve">
+    <value>تطوير الاستراتيجية</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="Submit_CV" xml:space="preserve">
+    <value>أرسل سيرتك الذاتية</value>
+  </data>
+  <data name="Success_Mission" xml:space="preserve">
+    <value>النجاح</value>
+  </data>
+  <data name="Technology_Media" xml:space="preserve">
+    <value>التكنولوجيا والإعلام والاتصالات</value>
+  </data>
+  <data name="text_about_company" xml:space="preserve">
+    <value>نحن شركة استشارية رائدة في مجال الأعمال والتكنولوجيا تختص في مساعدة الشركات على الازدهار في القطاع التجاري، الصحي، التكنولوجيا و الاعمال. مهمتنا هي تقديم حلول مبتكرة وتوجيه استراتيجي متكامل للدفع نحو تطوير شركتك ونجاحها. مع فريقنا من الخبراء المتمرسين والمتميزين بالمعرفة العميقة في مختلف المجالات، نحن ملتزمون بتزويدك بخدمات استشارية لا مثيل لها.</value>
+  </data>
+  <data name="text_Acquisitions" xml:space="preserve">
+    <value>يتطلب التنقل في تعقيدات عمليات الدمج والاستحواذ إرشادات الخبراء. تقدم خدمة الاستحواذ لدينا العناية الواجبة المتعمقة، تحليل الهدف، والاستشارات الاستراتيجية لدعم عملية اتخاذ القرار الخاصة بك.</value>
+  </data>
+  <data name="text_Business_Planning" xml:space="preserve">
+    <value>تزودك خدمة تخطيط الأعمال لدينا بخطط عمل شاملة وقابلة للتنفيذ تحدد المسار لتحقيق أهدافك.</value>
+  </data>
+  <data name="text_Consultancy" xml:space="preserve">
+    <value>نحن نعرف كيفية إدارة
+                                    الأعمال التجارية على الصعيد العالمي</value>
+  </data>
+  <data name="text_Financial_analysis" xml:space="preserve">
+    <value>تحكي الأرقام قصة، وتوفر خدمة التحليل المالي لدينا رؤى قيمة حول الصحة المالية لمؤسستك.</value>
+  </data>
+  <data name="text_Process_optimization" xml:space="preserve">
+    <value>أطلق العنان للإمكانات والكفاءة الخفية في عملياتك من خلال خدمة تحسين العمليات الخاصة بنا.</value>
+  </data>
+  <data name="text_Strategy_development" xml:space="preserve">
+    <value>صياغة استراتيجية رابحة هي حجر الزاوية لنجاح الأعمال. تتضمن خدمة تطوير الإستراتيجية لدينا تحليلًا متعمقًا وتعاونًا مع فريق القيادة الخاص بك لتحديد أهداف واضحة، وتحديد فرص النمو، ووضع خارطة طريق للنجاح المستدام.</value>
+  </data>
+  <data name="Travel_tourism" xml:space="preserve">
+    <value>السفر والنقل والسياحة والخدمات</value>
+  </data>
+  <data name="Type_msg" xml:space="preserve">
+    <value>اكتب رسالة</value>
+  </data>
+  <data name="Vision" xml:space="preserve">
+    <value>رؤيتنا</value>
+  </data>
+  <data name="Vision_About_us" xml:space="preserve">
+    <value>"أن نكون شريكًا عالميًا رائدًا للشركات، ونحدث ثورة في الصناعات من خلال استراتيجيات الأعمال المبتكرة والحلول التكنولوجية، وتمكين عملائنا من تحقيق نمو ونجاح لا مثيل لهما."</value>
+  </data>
+  <data name="Why_Choose_perfromance" xml:space="preserve">
+    <value>نحن نركز على الحصول على أداء مميز</value>
+  </data>
+  <data name="Why_Choose_Us" xml:space="preserve">
+    <value>لماذا نحن</value>
+  </data>
+  <data name="Why_Choose_Us_Client_Centric" xml:space="preserve">
+    <value>التركيز على العميل</value>
+  </data>
+  <data name="Why_Choose_Us_Client_Centric_text" xml:space="preserve">
+    <value>نحن نعطي الأولوية لنجاح عملائنا قبل كل شيء.
+                                                يعتمد اسلوبنا على العمل عن كثب مع فريقك، وفهم رؤيتك، و انسجام استراتيجياتنا مع أهداف عملك. نجاحك هو نجاحنا، ونحن نفخر بكوننا شريكا موثوقا به طوال رحلة النمو و التطور الخاصة بك.</value>
+  </data>
+  <data name="Why_Choose_Us_Ethical_Practices" xml:space="preserve">
+    <value>الممارسات الأخلاقية</value>
+  </data>
+  <data name="Why_Choose_Us_Ethical_Practices_text" xml:space="preserve">
+    <value>النزاهة والممارسات الأخلاقية هي في صميم كل ما نقوم به. نحن نتمسك بأعلى معايير الاحتراف، ضمان الشفافية و السرية  في جميع تفاعلاتنا وارتباطاتنا.</value>
+  </data>
+  <data name="Why_Choose_Us_Expert_Team" xml:space="preserve">
+    <value>فريق الخبراء</value>
+  </data>
+  <data name="Why_Choose_Us_Expert_Team_text" xml:space="preserve">
+    <value>تتميز استشارتنا بفريق من المهنيين ذوي المهارات العالية، كل منهم يجلب ثروة من الخبرة والمعرفة إلى المشروع. من محللي الأعمال إلى مهندسي التكنولوجيا ومديري المشاريع والمتخصصين في مجالات الاعمال و الخدمات الطبية، يضمن تجمع المواهب المتنوع لدينا أنه يمكننا معالجة مجموعة واسعة من التحديات عبر مختلف القطاعات باسلوب مميز و متكامل.</value>
+  </data>
+  <data name="Why_Choose_Us_Innovative_Solutions" xml:space="preserve">
+    <value>حلول مبتكرة</value>
+  </data>
+  <data name="Why_Choose_Us_Innovative_Solutions_text" xml:space="preserve">
+    <value>في عالم سريع الخطى، يعد البقاء في الطليعة أمرا صعباً و بالغ الأهمية. نبقى على اطلاع دائم بأحدث اتجاهات الصناعة والتقنيات الناشئة لتقديم حلول مبتكرة تمنحك ميزة تنافسية. سواء كان ذلك من خلال تسخير قوة تحليلات البيانات أو دمج الذكاء الاصطناعي، فإن حلولنا واقية من المستقبل ومصممة لدفع شركتك باتجاه النمو المستدام.</value>
+  </data>
+  <data name="Why_Choose_Us_text" xml:space="preserve">
+    <value>نحن نتفهم أن كل عمل فريد من نوعه، ولا يوجد حل واحد يناسب الجميع. تتضمن خطتنا أن نتعمق في الاحتياجات والتحديات والأهداف المحددة لمؤسستك لصياغة استراتيجيات تحقق نتائج ذات مغزى مما يتناسب مع الاحتياجات و الخصائص المحددة للشركة.</value>
+  </data>
+  <data name="Why_Choose_Us_text_about_us" xml:space="preserve">
+    <value>نحن نفهم أن كل شركة لديها مجال فريد من نوعه، كما تمر بظروف و عوامل خاصة فكل عمل لديه خاصية معينة ولا يوجد حل واحد يناسب الجميع. يتضمن اسلوبنا أن نتعمق في الاحتياجات والتحديات والأهداف المحددة لمؤسستك لصياغة حلول مخصصة لك و تنسجم مع العوامل الخاصة بك.</value>
+  </data>
+  <data name="Why_Choose_Us_title_about_us" xml:space="preserve">
+    <value>نحن نعلم أن كل</value>
+  </data>
+  <data name="Why_Choose_Us_title_about_us_business" xml:space="preserve">
+    <value>شركة</value>
+  </data>
+  <data name="Why_Choose_Us_title_about_us_business_unique" xml:space="preserve">
+    <value>لديها عوامل و ظروف خاصة</value>
+  </data>
+  <data name="Working_Steps" xml:space="preserve">
+    <value>خطوات العمل</value>
+  </data>
+  <data name="Your_name" xml:space="preserve">
+    <value>الإسم</value>
+  </data>
+</root>

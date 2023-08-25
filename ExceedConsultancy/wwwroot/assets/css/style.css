@@ -135,8 +135,9 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-
-
+body.rtl{
+    direction:rtl;
+}
 
 .cvFileLabel {
     display: inline-block;
@@ -171,7 +172,35 @@ body {
    }
  }
 
+.language {
+    margin-top: 10px;
+    width: 49px;
+    background: #104e7e;
+}
+    .language button {
+        background: #104e7e;
+        border:0;
+    }
+    .language button span {
+        font-size:15px;
+    }
+        .language button span::after {
+            font-size: 15px;
+        }
+    .language button:hover {
+        background: #104e7e;
+        border: 0;
+    }
+    .rtl .feature-left-area {
+        padding-left: 83px;
+        padding-right: 0px;
+    }
 
+.rtl .business-goal-one img.small {
+  
+    right: 50%;
+   
+}
 .Purpose p.disc {
     padding-left: 20px;
     border-left: 5px solid var(--color-primary-3);
@@ -211,6 +240,11 @@ body {
 .rtl .business-goal-one img.small.Business {
     right: 47%;
 }
+
+
+.rtl .accordion-text-rtl{
+    text-align:right;
+}
 .rtl .capbilties i {
     rotate: 180deg;
 }
@@ -221,7 +255,7 @@ body {
 .rtl .rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown .submenu.active {
    
     position: relative;
-    right: 0;
+    left: 0;
 }
 
 .rtl  .rts-sidebar-menu-desktop .body-mobile .mainmenu li.has-droupdown > a.open::before {
@@ -324,6 +358,7 @@ body {
 }
 .rtl .mainmenu li.has-droupdown .submenu {
     left: -200px;
+    text-align:right;
 }
 .rtl .mainmenu li.has-droupdown .submenu::after {
     left: 86%;
@@ -343,10 +378,13 @@ body {
     float: right;
 }
 
-.side-bar.show {
+.ltr .side-bar.show {
     right: 0;
 }
-
+.rtl .side-bar.show {
+    left: 0;
+    direction:ltr;
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   body {
@@ -16821,7 +16859,7 @@ li.has-droupdown {
   position: fixed;
   overflow: hidden;
   top: 0;
-  right: -100%;
+
   width: 365px;
   padding: 40px 30px;
   padding-top: 50px;
@@ -16836,6 +16874,22 @@ li.has-droupdown {
   flex-direction: column;
   overflow-y: auto;
 }
+
+.ltr .side-bar {
+   
+    right: -100%;
+   
+}
+
+.rtl .side-bar {
+    left: -100%;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 479px) {
   .side-bar {
     width: 320px;
@@ -20802,7 +20856,7 @@ p.disc.banner-para {
 
 .service-detials-step-1 .thumbnail {
   margin-bottom: 45px;
-  text-align:left;
+  text-align:center;
 }
 .service-detials-step-1 .title {
   margin-bottom: 16px;
@@ -30346,9 +30400,12 @@ p.disc {
   margin-left: 15px;
 }
 
+.rtl .footer-one .rts-copyright-area{
+    direction:ltr;
+}
 .footer-one .rts-copyright-area {
-  border-top: 1px solid #21293D;
-  padding: 30px 0;
+    border-top: 1px solid #21293D;
+    padding: 30px 0;
 }
 .footer-one .rts-copyright-area p {
   font-size: 16px;

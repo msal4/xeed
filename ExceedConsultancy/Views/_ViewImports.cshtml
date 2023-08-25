@@ -1,2 +1,15 @@
-﻿@using ExceedConsultancy.Models;
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using ExceedConsultancy
+@using ExceedConsultancy.Models;
+@using Microsoft.AspNetCore.Localization;
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers 
+@using Microsoft.AspNetCore.Localization;
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+                                              
+
+@using Microsoft.Extensions.Localization;
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IStringLocalizer<SharedResource> SharedResource;

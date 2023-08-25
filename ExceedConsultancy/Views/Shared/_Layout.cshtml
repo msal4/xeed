@@ -1,83 +1,100 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-    <!-- Fav Icon -->
- 
-
-
-    <link rel="shortcut icon" href="~/assets/images/logo.ico" type="image/png">
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico" type="image/png">
      <meta name="keywords" content="@ViewBag.MetaKeywords">
     <meta name="description" content="@ViewBag.MetaDescription">
     <title>@ViewBag.Title</title>
 
-
-
 </head>
-<body >
+<body class="@textDirection">
 
     <div>
-
         @{
-
             await Html.RenderPartialAsync("StylesPartial");
-
         }
-
-    <header class="header--sticky header-one ">
-        <div class="header-top header-top-one bg-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 d-xl-block d-none">
-                        <div class="left">
-                            <div class="mail">
-                                <a href="mailto:contact@xeed-consulting.com"><i class="fal fa-envelope"></i> contact@xeed-consulting.com </a>
-                            </div>
-                            @*<div class="working-time">
-                                <p><i class="fal fa-clock"></i> Working: 8.00am - 5.00pm</p>
-                            </div>*@
-                        </div>
-                    </div>
-                        <div class="col-lg-12 col-xl-6 d-xl-block ">
-                            <div class="right">
-                               @* <div class="lang-dropdown">
-                                    <select id="language-select">
-                                        <option value="en">EN</option>
-                                        <option value="ar">AR</option>
-                                    </select>
-                                </div>*@
-                                <div class="lang-dropdown">
-
-
-                                    <select id="language-select" onchange="redirect()">
-                                        <option value="Home">En</option>
-                                        <option value="HomeAr">Ar</option>
-                                    </select>
-
-
+@*    <header class="header--sticky header-one ">
+            <div class="header-top header-top-one bg-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 d-xl-block d-none">
+                            <div class="left">
+                                <div class="mail">
+                                    <a href="mailto:contact@xeed-consulting.com"><i class="fal fa-envelope"></i> contact@xeed-consulting.com </a>
                                 </div>
                             </div>
-
-                           
-                             <script>
-                        function redirect() {
-                            var selectedValue = document.getElementById("language-select").value;
-                            window.location.href = "/" + selectedValue;
-                        }
-                    </script>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Language
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" asp-action="Change" asp-controller="Home" asp-route-culture="en-US">EN</a></li>
+                                        <li><a class="dropdown-item" asp-action="Change" asp-controller="Home" asp-route-culture="ar">AR</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+*@
+<div class="header-top header-top-one bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-xl-block d-none">
+                <div class="left">
+                    <div class="mail">
+                        <a href="mailto:contact@xeed-consulting.com"><i class="fal fa-envelope"></i> contact@xeed-consulting.com </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right">
+                    <div class="dropdown language">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @if (ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name.StartsWith("en"))
+                            {
+                                <span  >EN</span>
+                            }
+                            else
+                            {
+                                <span>AR</span>
+                            }
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <a class="dropdown-item" asp-action="Change" asp-controller="Home" asp-route-culture="en-US">EN</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-action="Change" asp-controller="Home" asp-route-culture="ar">AR</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+
         <div class="header-main-one bg-white">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
                         <div class="thumbnail">
-                                <a asp-controller="Home" asp-action="index">
+                                <a asp-controller="Home" asp-action="index"  asp-route-culture="@culture">
                                 <img src="assets/images/logo/logo.png" alt="finbiz-logo">
                             </a>
                         </div>
@@ -87,50 +104,40 @@
                             <nav class="nav-main mainmenu-nav d-none d-xl-block">
                                 <ul class="mainmenu">
 
-                                        <li><a asp-controller="Home" asp-action="index">Home</a></li>
-                                        <li><a asp-controller="Industries" asp-action="index">Industries</a></li>
+                                        <li><a asp-controller="Home" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_home"]</a></li>
+                                        <li><a asp-controller="Industries" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_industries"]</a></li>
                                     <li class="has-droupdown">
-                                            <a class="nav-link" asp-controller="Services" asp-action="index">Capabilities </a>
+                                            <a class="nav-link" asp-controller="Services" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_capabilities"]</a>
                                             <ul class="HeaderSub submenu menu-link3">
                                             <li class="sub-droupdown">
-
-                                                @*<a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>*@
-                                                @*<ul class="submenu third-lvl">
-                                                        <li><a asp-controller="Business" asp-action=" index">Business Consultancy  </a></li>
-                                                        <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
-                                                        <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
-                                                </ul>*@
-
-                                                    <a asp-controller="Business" asp-action="index">Business and Organizational Purpose </a>
-                                                    <a asp-controller="Finance" asp-action="index">Corporate Finance and Strategy </a>
-                                                    <a asp-controller="Technology" asp-action="index">Digital, Technology and Data</a>
-                                                    <a asp-controller="ArtificialIntelligence" asp-action="index">Artificial Intelligence  </a>
-                                                    <a asp-controller="MonitoringEvaluation" asp-action="index">Monitoring and Evaluation </a>
-                                                    <a asp-controller="Manufacturing" asp-action="index">Manufacturing </a>
-                                                    <a asp-controller="Marketing" asp-action="index">Growth, Marketing and Sales</a>
-                                                    <a asp-controller="Operations" asp-action="index">Operations</a>
-                                                    <a asp-controller="Implementation" asp-action="index">Implementation </a>
-                                                    <a asp-controller="OrganizationStrategy" asp-action="index">Organization Strategy </a>
-                                                    <a asp-controller="PeopleStrategy" asp-action="index">People Strategy  </a>
-                                                    <a asp-controller="Pricing" asp-action="index">Pricing and Revenue Management </a>
-                                                    <a asp-controller="Budgeting" asp-action="index">Zero-Based Budgeting </a>
-                                                    <a asp-controller="RiskManagement" asp-action="index">Risk Management and Compliance </a>
-                                                    <a asp-controller="Innovation" asp-action="index">Innovation Strategy and Delivery </a>
-                                               
+                                                    <a asp-controller="Business" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_Business"]</a>
+                                                    <a asp-controller="Finance" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_Finance"] </a>
+                                                    <a asp-controller="Technology" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_Technology"]</a>
+                                                    <a asp-controller="ArtificialIntelligence" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_AI"] </a>
+                                                    <a asp-controller="MonitoringEvaluation" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_monitoring_Evaluation"] </a>
+                                                    <a asp-controller="Manufacturing" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_manufacturing"] </a>
+                                                    <a asp-controller="Marketing" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_marketing"]</a>
+                                                    <a asp-controller="Operations" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_operations"]</a>
+                                                    <a asp-controller="Implementation" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_implementation"] </a>
+                                                    <a asp-controller="OrganizationStrategy" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_organization_strategy"]</a>
+                                                    <a asp-controller="PeopleStrategy" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_people"]</a>
+                                                    <a asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_pricing"] </a>
+                                                    <a asp-controller="Budgeting" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_zero_based"]</a>
+                                                    <a asp-controller="RiskManagement" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_risk_management"]</a>
+                                                    <a asp-controller="Innovation" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_innovation"]</a>
                                             </li>
-                                          
-
                                         </ul>
+                                           @* <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" asp-action="Change" asp-controller="Home" asp-route-culture="en-US">EN</a></li>
+                                                <li><a class="dropdown-item" asp-action="Change" asp-controller="Home" asp-route-culture="ar">AR</a></li>
+                                            </ul>*@
                                     </li>
-
-                                    <li><a class="nav-item" asp-controller="Careers" asp-action="index">Careers</a></li>
-                                        <li><a asp-controller="About" asp-action="index">About Us</a></li>
-                                        <li><a class="nav-item" asp-controller="Quote" asp-action="index">Contact</a></li>
+                                        <li><a class="nav-item" asp-controller="Careers" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_Careers"]</a></li>
+                                        <li><a asp-controller="About" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_about_us"]</a></li>
+                                        <li><a class="nav-item" asp-controller="Quote" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_Contact"]</a></li>
                                 </ul>
                             </nav>
                             <div class="button-area">
-                                <!--<button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>-->
-                                  @*  <a asp-controller="Quote" asp-action="index" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get a Quote</a>*@
                                 <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
                                     <img class="menu-dark" src="assets/images/icon/menu.png" alt="Menu-icon">
                                     <img class="menu-light" src="assets/images/icon/menu-light.png" alt="Menu-icon">
@@ -144,17 +151,15 @@
     </header>
         <div id="side-bar" class="side-bar">
             <button class="close-icon-menu"><i class="far fa-times"></i></button>
-            <!-- inner menu area desktop start -->
             <div class="rts-sidebar-menu-desktop">
-                <a class="" asp-controller="Home" asp-action="index"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
+                <a class="" asp-controller="Home" asp-action="index"  asp-route-culture="@culture"><img class="logo" src="assets/images/logo/logo.png" alt="finbiz_logo"></a>
 
                 <div class="body d-none d-xl-block">
                     <p class="disc">
-                        We are a leading business and technology consultancy dedicated to helping businesses thrive in today's dynamic and digital landscape.
+                        @SharedResource["sidebar_text"]    
                     </p>
                     <div class="get-in-touch">
-                        <!-- title -->
-                        <div class="h6 title">Get In Touch</div>
+                        <div class="h6 title">@SharedResource["sidebar_get_in_touch"]</div>
                         <!-- title End -->
                         <div class="wrapper">
                             <!-- single -->
@@ -162,16 +167,12 @@
                                 <i class="fas fa-phone-alt"></i>
                                 <a href="#">+8801234566789</a>
                             </div>-->
-                            <!-- single ENd -->
-                            <!-- single -->
+                         
                             <div class="single">
                                 <i class="fas fa-envelope"></i>
                                 <a href="mailto:contact@xeed-consulting.com">contact@xeed-consulting.com </a>
                             </div>
-                            <!-- single ENd -->
-                            <!-- single -->
-                            <!-- single ENd -->
-                            <!-- single -->
+                            
                             <div class="single">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <a href="#">Baghdad, Iraq</a>
@@ -190,65 +191,33 @@
                 <div class="body-mobile d-block d-xl-none">
                     <nav class="nav-main mainmenu-nav">
                         <ul class="mainmenu">
-                            <li><a asp-controller="About" asp-action="index">About Us</a></li>
+                            <li><a asp-controller="Home" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_home"]</a></li>
+                            <li><a asp-controller="About" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_about_us"]</a></li>
+                            <li><a asp-controller="Industries" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_industries"]</a></li>
                             <li class="has-droupdown">
-                                <a class="nav-link" asp-controller="Services" asp-action="index">Services</a>
+                                <a class="nav-link" asp-controller="Services" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_capabilities"]</a>
                                 <ul class="submenu menu-link3 ">
                                     <li class="sub-droupdown">
-                                        @*<a class="sub-menu-link" asp-controller="Services" asp-action="index">Our Service</a>*@
-                                        @*<ul class="submenu third-lvl">
-                                        <li><a asp-controller="Business" asp-action="index">Business Consultancy  </a></li>
-                                        <li><a asp-controller="Technology" asp-action="index">Technology Consultancy  </a></li>
-                                        <li><a asp-controller="Management" asp-action="index">Project Management  </a></li>
-                                        </ul>*@
-                                        <a asp-controller="Business" asp-action="index">Business and Organizational Purpose </a>
-                                        <a asp-controller="Finance" asp-action="index">Corporate Finance and Strategy </a>
-                                        <a asp-controller="Technology" asp-action="index">Digital, Technology and Data</a>
-                                        <a asp-controller="ArtificialIntelligence" asp-action="index">Artificial Intelligence  </a>
-                                        <a asp-controller="MonitoringEvaluation" asp-action="index">Monitoring and Evaluation </a>
-                                        <a asp-controller="Manufacturing" asp-action="index">Manufacturing </a>
-                                        <a asp-controller="Marketing" asp-action="index">Growth, Marketing and Sales</a>
-                                        <a asp-controller="Operations" asp-action="index">Operations</a>
-                                        <a asp-controller="Implementation" asp-action="index">Implementation </a>
-                                        <a asp-controller="OrganizationStrategy" asp-action="index">Organization Strategy </a>
-                                        <a asp-controller="PeopleStrategy" asp-action="index">People Strategy  </a>
-                                        <a asp-controller="Pricing" asp-action="index">Pricing and Revenue Management </a>
-                                        <a asp-controller="Budgeting" asp-action="index">Zero-Based Budgeting </a>
-                                        <a asp-controller="RiskManagement" asp-action="index">Risk Management and Compliance </a>
-                                        <a asp-controller="Innovation" asp-action="index">Innovation Strategy and Delivery </a>
-
+                                        <a asp-controller="Business" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_Business"]</a>
+                                        <a asp-controller="Finance" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_Finance"] </a>
+                                        <a asp-controller="Technology" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_Technology"]</a>
+                                        <a asp-controller="ArtificialIntelligence" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_AI"] </a>
+                                        <a asp-controller="MonitoringEvaluation" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_monitoring_Evaluation"] </a>
+                                        <a asp-controller="Manufacturing" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_manufacturing"] </a>
+                                        <a asp-controller="Marketing" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_marketing"]</a>
+                                        <a asp-controller="Operations" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_operations"]</a>
+                                        <a asp-controller="Implementation" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_implementation"] </a>
+                                        <a asp-controller="OrganizationStrategy" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_organization_strategy"]</a>
+                                        <a asp-controller="PeopleStrategy" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_people"]</a>
+                                        <a asp-controller="Pricing" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_pricing"] </a>
+                                        <a asp-controller="Budgeting" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_zero_based"]</a>
+                                        <a asp-controller="RiskManagement" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_risk_management"]</a>
+                                        <a asp-controller="Innovation" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_innovation"]</a>
                                     </li>
                                 </ul>
 
                             </li>
-                            <li><a asp-controller="QuoteAr" asp-action="index">Contact Us</a></li>
-                           @* <li>
-                                <div class="lang-dropdown">
-                                    <select id="language-select">
-                                        <option value="en">En</option>
-                                        <option value="ar">Ar</option>
-                                    </select>
-                                </div>
-                                <script>
-                                    document.getElementById("language-select").addEventListener("change", function () {
-                                        var selectedValue = this.value;
-
-
-                                        switch (selectedValue) {
-                                            case "ar":
-                                                window.location.href = "/";
-                                                break;
-                                            case "en":
-                                                window.location.href = "/Home";
-                                                break;
-                                            default:
-                                                break;
-                                        }
-                                    });
-                                </script>
-
-
-               </li>*@
+                            <li><a asp-controller="QuoteAr" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_Contact"]</a></li>
                         </ul>
                     </nav>
                     <!--<div class="social-wrapper-two menu mobile-menu">
@@ -258,53 +227,44 @@
                         <a href="#"><i class="fab fa-whatsapp"></i></a>-->
                     <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
                     <!--</div>-->
-                    <a asp-controller="Quote" asp-action="index"class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get a Quote</a>
+                    <a asp-controller="Quote" asp-action="index" asp-route-culture="@culture" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">@SharedResource["nav_get_Quote"]</a>
                 </div>
             </div>
-            <!-- inner menu area desktop End -->
         </div>
-
        
         @RenderBody()
-
-     
 
     <!-- footer area start -->
     <div class="rts-footer-area footer-one rts-section-gapTop bg-footer-one">
         <div class="container bg-shape-f1 ">
-            <!-- footer call to action area -->
-
-            <!-- footer call to action area End -->
-            <!-- rts footer area -->
             <div class="row pt--120 pt_sm--80 pb--80 pb_sm--40 ps-3">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                     <div class="footer-two-single-wized left">
                         <h3 class="title">
-                                <a asp-controller="Home" asp-action="index">
+                                <a asp-controller="Home" asp-action="index"  asp-route-culture="@culture">
                                     <img src="assets/images/logo/logo.png">
                                 </a>
                         </h3>
                         <p class="disc">
-                            We are a leading business and technology consultancy dedicated to helping businesses thrive in today's dynamic and digital landscape.
-                        </p>
-                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Quote" asp-action="index">Get a Quote</a>
+                                @SharedResource["sidebar_text"]
+                            </p>
+                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Quote" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_get_Quote"]</a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt_sm--50">
                     <div class="footer-two-single-wized two">
                         <div class="wized-title-area">
-                                <h5 class="wized-title">Capabilities</h5>
+                                <h5 class="wized-title">@SharedResource["nav_capabilities"]</h5>
                             <img src="assets/images/footer/under-title-2.png" alt="xeed consultancy">
                         </div>
                         <div class="wized-2-body">
                             <ul>
-                                    <li>    <a asp-controller="Operations" asp-action="index">Operations</a></li>
-                                    <li>     <a asp-controller="Manufacturing" asp-action="index">Manufacturing </a></li>
-                                    <li><a asp-controller="ArtificialIntelligence" asp-action="index">Artificial Intelligence </a></li>
-                                    <li>  <a asp-controller="PeopleStrategy" asp-action="index">People Strategy  </a></li>
-                                    <li> <a asp-controller="OrganizationStrategy" asp-action="index">Organization Strategy </a></li>
-                                    <li> <a asp-controller="PeopleStrategy" asp-action="index">People Strategy </a></li>
-                                
+                                    <li><a asp-controller="Operations" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_operations"]</a></li>
+                                    <li><a asp-controller="Manufacturing" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_manufacturing"] </a></li>
+                                    <li><a asp-controller="ArtificialIntelligence" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_AI"] </a></li>
+                                    <li><a asp-controller="PeopleStrategy" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_people"]</a></li>
+                                    <li><a asp-controller="OrganizationStrategy" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_organization_strategy"]</a></li>
+                                    <li><a asp-controller="PeopleStrategy" asp-action="index" asp-route-culture="@culture">@SharedResource["nav_people"]</a></li>
                             </ul>
                         </div>
                     </div>
@@ -313,7 +273,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt_sm--30 ">
                         <div  class="footer-two-single-wized">
                             <div  class="wized-title-area">
-                                <h5  class="wized-title">Contact Us</h5>
+                                <h5 class="wized-title">@SharedResource["nav_Contact"]</h5>
                                 <img  src="assets/images/footer/under-title-2.png" alt="xeed consultancy">
                             </div>
                             <div  class="wized-2-body  ">
@@ -322,7 +282,7 @@
                                         <i  class="fas fa-envelope"></i>
                                     </div>
                                     <div class="disc">
-                                        <span >Email</span>
+                                        <span>@SharedResource["email"]</span>
                                         <a href="mailto:contact@xeed-consulting.com">contact@xeed-consulting.com</a>
                                     </div>
                                 </div>
@@ -331,19 +291,14 @@
                                         <i  class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div class="disc location">
-                                        <span >Location</span>
-
-                                        Baghdad, Iraq
-
+                                        <span >@SharedResource["location"]</span>
+                                        @SharedResource["location_baghdad_iraq"]
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-                <!-- rts footer area End -->
             </div>
             <!-- copyright area start -->
             <div class="rts-copyright-area">
@@ -356,7 +311,7 @@
                         </div>
                         <div class="col-3 ">
                             <div class="" >
-                                <a asp-controller="Privacy" asp-action="index" target="_blank">Privacy Policy</a>
+                                <a asp-controller="Privacy" asp-action="index" asp-route-culture="@culture" target="_blank">@SharedResource["privacy_policy"]</a>
                             </div>
                         </div>
                     </div>
@@ -364,37 +319,22 @@
             </div>
             <!-- copyright area end -->
         </div>
-        <!-- copyright-area end -->
-        <!-- ENd Header Area -->
-        <!-- start loader -->
+        
         <div class="loader-wrapper">
             <div class="loader">
             </div>
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
-        <!-- End loader -->
-        <!-- progress Back to top -->
+    
         <div class="progress-wrap">
             <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
         </div>
         @{
-
             await Html.RenderPartialAsync("ScriptsPartial");
-
         }
     </div>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG8J5VTJZ2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-EG8J5VTJZ2');
-    </script>
-
 </body>
 </html>

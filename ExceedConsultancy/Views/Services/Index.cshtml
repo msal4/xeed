@@ -1,6 +1,13 @@
 ﻿@model ExceedConsultancy.Models.ServicesModel
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+                                              
     ViewBag.Title = "Xeed Consulting | Services Consultancy ";
     ViewBag.MetaDescription = "Our business consultancy services are tailored to address your unique challenges and opportunities. Embrace the power of technology with our comprehensive technology consultancy.";
     ViewBag.MetaKeywords = "Business Consultancy, Technology Consultancy, Project Management, Strategy development, Business Planning, Acquisitions, Process optimization, Financial analysis, Xeed Consulting";
@@ -29,13 +36,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">Capabilities</h1>
+                    <h1 class="title">@SharedResource["nav_capabilities"]</h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a asp-controller="Home" asp-action="index">Home</a>
+                        <a asp-controller="Home" asp-action="index"  asp-route-culture="@culture"> @SharedResource["nav_home"]</a>
                         <span> / </span>
-                    Capabilities
+                    @SharedResource["nav_capabilities"]
                     </div>
                 </div>
             </div>
@@ -49,14 +56,14 @@
                 <!-- single service area -->
                 <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100  mb-3">
                     <div class="service-two-inner">
-                        <a asp-controller="Business" asp-action="index" class="thumbnail"><img style="height: 272px;" src="assets/images/service/02.jpg" alt="Business_image"></a>
+                        <a asp-controller="Business" asp-action="index"  asp-route-culture="@culture" class="thumbnail"><img style="height: 272px;" src="assets/images/service/02.jpg" alt="Business_image"></a>
                         <div class="body-content  mb-3">
                             <div class="hidden-area">
                                 <h5 class="title">Business Consultancy </h5>
                                 <p class="dsic">
                                     Our business consultancy services are tailored to address your unique challenges and opportunities.
                                 </p>
-                                <a class="rts-read-more-two color-primary" asp-controller="Business" asp-action="index">Read More<i class="far fa-arrow-right"></i></a>
+                                <a class="rts-read-more-two color-primary" asp-controller="Business" asp-action="index"  asp-route-culture="@culture">@SharedResource["Read_More"]<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -65,14 +72,14 @@
                 <!-- single service area -->
                 <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100  mb-3">
                     <div class="service-two-inner">
-                        <a asp-controller="Technology" asp-action="index" class="thumbnail two"><img src="assets/images/service/03.jpg" alt="Business_image"></a>
+                        <a asp-controller="Technology" asp-action="index"  asp-route-culture="@culture" class="thumbnail two"><img src="assets/images/service/03.jpg" alt="Business_image"></a>
                         <div class="body-content  mb-3">
                             <div class="hidden-area">
                                 <h5 class="title">Technology Consultancy </h5>
                                 <p class="dsic">
                                     Embrace the power of technology with our comprehensive technology consultancy.
                                 </p>
-                                <a class="rts-read-more-two color-primary" asp-controller="Technology" asp-action="index">Read More<i class="far fa-arrow-right"></i></a>
+                                <a class="rts-read-more-two color-primary" asp-controller="Technology" asp-action="index"  asp-route-culture="@culture">@SharedResource["Read_More"]<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -81,14 +88,14 @@
                 <!-- single service area -->
                 <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100   mb-3">
                     <div class="service-two-inner">
-                        <a asp-controller="Management" asp-action="index" class="thumbnail three"><img src="assets/images/service/04.jpg" alt="Business_image"></a>
+                        <a asp-controller="Management" asp-action="index"  asp-route-culture="@culture" class="thumbnail three"><img src="assets/images/service/04.jpg" alt="Business_image"></a>
                         <div class="body-content  mb-3">
                             <div class="hidden-area">
                                 <h5 class="title">Project Management </h5>
                                 <p class="dsic">
                                     Successful projects require meticulous planning, execution, and monitoring.
                                 </p>
-                                <a class="rts-read-more-two color-primary" asp-controller="Management" asp-action="index">Read More<i class="far fa-arrow-right"></i></a>
+                                <a class="rts-read-more-two color-primary" asp-controller="Management" asp-action="index"  asp-route-culture="@culture">@SharedResource["Read_More"]<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -128,20 +135,33 @@
                     <div class="tab-content-area mt--50 mt_sm--30">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel">
-                                <!-- tab product area -->
                                 <div class="row g-5">
-                                  
+                                  <div class=" col-12">
+                                        <div class="blog-single-post-listing">
+                                            <div class="thumbnail">
+                                                <img src="assets/images/blog/blog-lg-1.jpg" alt="Business-Blog">
+                                            </div>
+                                            <div class="blog-listing-content">
+                                                <p class="disc">
+                                             Our comprehensive range of consultancy services is designed to empower businesses of all sizes, industries, and aspirations. Our commitment to your success is unwavering. Whether you're a startup looking to establish a strong foundation, a mid-sized company seeking growth strategies, or an established enterprise aiming to stay at the forefront of your industry, we have the expertise to guide you.
+                                    With a comprehensive approach that considers every facet of your organization, from strategy and finance to technology and people, we ensure that you're equipped to thrive in today's dynamic and ever-evolving business landscape.
+                                    Explore our Capabilities and let us be the driving force behind your success story. Welcome to a world of possibilities, welcome to Exceed Consultancy.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                         <!-- single -product area -->
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Organizational-Purpose-1.jpg" alt="Business and Organizational Purpose">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Business" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Business" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Business" asp-action="index">
-                                                    <h5 class="title">Business and Organizational Purpose </h5>
+                                                <a asp-controller="Business" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_Business"]</h5>
                                                 </a>
                                                 @*<p class="disc">
                                                     At Xeed Consulting, we believe that every business should have a clear and compelling purpose.
@@ -154,16 +174,16 @@
                                         <!-- single -product area -->
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
-                                                <img src="assets/images/product/Strategy-.jpg" alt="Corporate Finance and Strategy ">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Finance" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <img src="assets/images/product/Strategy-.jpg" alt="@SharedResource["nav_Finance"] ">
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Finance" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Finance" asp-action="index">
-                                                    <h5 class="title" >Corporate Finance and Strategy </h5>
+                                                <a asp-controller="Finance" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title" >@SharedResource["nav_Finance"] </h5>
                                                 </a>
                                                @* <p class="disc">
-                                                 Corporate Finance and Strategy 
+                                                 @SharedResource["nav_Finance"] 
                                                 </p>*@
                                             </div>
                                         </div>
@@ -173,16 +193,16 @@
                                         <!-- single -product area -->
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
-                                                <img src="assets/images/product/Technology.jpg" alt=" Digital, Technology and Data">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Technology" asp-action="index">><i class="far fa-arrow-right"></i></a>
+                                                <img src="assets/images/product/Technology.jpg" alt=" @SharedResource["nav_Technology"]">
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Technology" asp-action="index"  asp-route-culture="@culture">><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Technology" asp-action="index">
-                                                    <h5 class="title"> Digital, Technology and Data</h5>
+                                                <a asp-controller="Technology" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title"> @SharedResource["nav_Technology"]</h5>
                                                 </a>
                                                @* <p class="disc">
-                                                 Digital, Technology and Data
+                                                 @SharedResource["nav_Technology"]
                                                 </p>*@
                                             </div>
                                         </div>
@@ -192,16 +212,16 @@
                                         <!-- single -product area -->
                                       <div class="rts-product-one">
                                             <div class="thumbnail-area">
-                                                <img src="assets/images/product/AI.jpg" alt="Artificial Intelligence">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="ArtificialIntelligence" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <img src="assets/images/product/AI.jpg" alt="@SharedResource["nav_AI"]">
+                                                <a class="rts-btn btn-primary rounded" asp-controller="ArtificialIntelligence" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="ArtificialIntelligence" asp-action="index">
-                                                    <h5 class="title">Artificial Intelligence </h5>
+                                                <a asp-controller="ArtificialIntelligence" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_AI"] </h5>
                                                 </a>
                                                 @*<p class="disc">
-                                                   Artificial Intelligence 
+                                                   @SharedResource["nav_AI"] 
                                                 </p>*@
                                             </div>
                                         </div>
@@ -211,16 +231,16 @@
                                         <!-- single -product area -->
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
-                                                <img src="assets/images/product/Monitoring-Evaluation-.jpg" alt="Monitoring and Evaluation">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="MonitoringEvaluation" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <img src="assets/images/product/Monitoring-Evaluation-.jpg" alt="@SharedResource["nav_monitoring_Evaluation"]">
+                                                <a class="rts-btn btn-primary rounded" asp-controller="MonitoringEvaluation" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="MonitoringEvaluation" asp-action="index">
-                                                    <h5 class="title">Monitoring and Evaluation</h5>
+                                                <a asp-controller="MonitoringEvaluation" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_monitoring_Evaluation"]</h5>
                                                 </a>
                                               @*  <p class="disc">
-                                                    Monitoring and Evaluation
+                                                    @SharedResource["nav_monitoring_Evaluation"]
                                                 </p>*@
                                             </div>
                                         </div>
@@ -230,16 +250,16 @@
                                         <!-- single -product area -->
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
-                                                <img src="assets/images/product/Manufacturing-.jpg" alt="Manufacturing">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Manufacturing" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <img src="assets/images/product/Manufacturing-.jpg" alt="@SharedResource["nav_manufacturing"]">
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Manufacturing" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Manufacturing" asp-action="index">
-                                                    <h5 class="title"> Manufacturing </h5>
+                                                <a asp-controller="Manufacturing" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title"> @SharedResource["nav_manufacturing"] </h5>
                                                 </a>
                                                @* <p class="disc">
-                                                    Manufacturing 
+                                                    @SharedResource["nav_manufacturing"] 
                                                 </p>*@
                                             </div>
                                         </div>
@@ -250,12 +270,12 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Marketing.jpg" alt="Growth, Marketing and Sales">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Marketing" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Marketing" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Marketing" asp-action="index">
-                                                    <h5 class="title">Growth, Marketing and Sales</h5>
+                                                <a asp-controller="Marketing" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_marketing"]</h5>
                                                 </a>
                                                @* <p class="disc">
                                                     Growth, Marketing and Sales
@@ -270,12 +290,12 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Operations.jpg" alt="Operations">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Operations" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Operations" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Operations" asp-action="index">
-                                                    <h5 class="title">Operations</h5>
+                                                <a asp-controller="Operations" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_operations"]</h5>
                                                 </a>
                                                @* <p class="disc">
                                                     Operations
@@ -289,12 +309,12 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Implementation.jpg" alt="Implementation">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Implementation" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Implementation" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Implementation" asp-action="index">
-                                                    <h5 class="title">Implementation</h5>
+                                                <a asp-controller="Implementation" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_implementation"]</h5>
                                                 </a>
                                                 @*<p class="disc">
                                                     Implementation
@@ -308,12 +328,12 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Organization-Strategy.jpg" alt="Organization Strategy">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="OrganizationStrategy" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="OrganizationStrategy" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="OrganizationStrategy" asp-action="index">
-                                                    <h5 class="title">Organization Strategy</h5>
+                                                <a asp-controller="OrganizationStrategy" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_organization_strategy"]</h5>
                                                 </a>
                                                @* <p class="disc">
                                                    Organization Strategy
@@ -327,12 +347,12 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/People-Strategy.jpg" alt="People Strategy">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="PeopleStrategy" asp-action="index"    ><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="PeopleStrategy" asp-action="index"  asp-route-culture="@culture"    ><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="PeopleStrategy" asp-action="index">
-                                                    <h5 class="title">People Strategy</h5>
+                                                <a asp-controller="PeopleStrategy" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_people"]</h5>
                                                 </a>
                                                 @*<p class="disc">
                                                   People Strategy
@@ -345,16 +365,16 @@
                                         <!-- single -product area -->
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
-                                                <img src="assets/images/product/Pricing.jpg" alt="Pricing and Revenue Management">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Pricing" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <img src="assets/images/product/Pricing.jpg" alt="@SharedResource["nav_pricing"] ">
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Pricing" asp-action="index">
-                                                    <h5 class="title">Pricing and Revenue Management </h5>
+                                                <a asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_pricing"]  </h5>
                                                 </a>
                                                 @*<p class="disc">
-                                                    Pricing and Revenue Management
+                                                    @SharedResource["nav_pricing"] 
                                                 </p>*@
                                             </div>
                                         </div>
@@ -365,13 +385,13 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Zero-Based.jpg" alt="Zero-Based Budgeting ">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Budgeting" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Budgeting" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Budgeting" asp-action="index">
+                                                <a asp-controller="Budgeting" asp-action="index"  asp-route-culture="@culture">
                                                   
-                                                    <h5 class="title">Zero-Based Budgeting </h5>
+                                                    <h5 class="title">@SharedResource["nav_zero_based"]</h5>
                                                 </a>
                                               @*  <p class="disc">
                                                     Zero-Based Budgeting
@@ -385,12 +405,12 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Risk-Management.JPG" alt="Risk Management and Compliance ">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="RiskManagement" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="RiskManagement" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="RiskManagement" asp-action="index">
-                                                    <h5 class="title">Risk Management and Compliance</h5>
+                                                <a asp-controller="RiskManagement" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_risk_management"]</h5>
                                                 </a>
                                                @* <p class="disc">
                                                     Risk Management and Compliance
@@ -404,12 +424,12 @@
                                         <div class="rts-product-one">
                                             <div class="thumbnail-area">
                                                 <img src="assets/images/product/Innovation-Strategy-.jpg" alt="Innovation Strategy and Delivery ">
-                                                <a class="rts-btn btn-primary rounded" asp-controller="Innovation" asp-action="index"><i class="far fa-arrow-right"></i></a>
+                                                <a class="rts-btn btn-primary rounded" asp-controller="Innovation" asp-action="index"  asp-route-culture="@culture"><i class="far fa-arrow-right"></i></a>
                                             </div>
                                             <div class="product-contact-wrapper">
                                                 @*<span>Business Solution</span>*@
-                                                <a asp-controller="Innovation" asp-action="index">
-                                                    <h5 class="title">Innovation Strategy and Delivery </h5>
+                                                <a asp-controller="Innovation" asp-action="index"  asp-route-culture="@culture">
+                                                    <h5 class="title">@SharedResource["nav_innovation"]</h5>
                                                 </a>
                                               @*  <p class="disc">
                                                   Innovation Strategy and Delivery 
@@ -434,79 +454,75 @@
 
     <!-- our service area end -->
     <!-- service accordion area -->
-    <div class="rts-accordion-area service rts-section-gap">
+    <div class="rts-accordion-area service rts-section-gap" style="direction:ltr!important">
         <div class="accordion-service-bg bg_image ptb--120 ptb_md--80 ptb_sm--60">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6">
                         <div class="accordion-service-inner">
-                            <div class="title-area-start">
-                                <span class="sub color-primary"> Business Consultancy </span>
+                            <div class="title-area-start accordion-text-rtl">
+                                <span class="sub color-primary">@SharedResource["Business_Consultancy"]</span>
                                 <h2 class="title">
-                                    We know how to manage
-                                    business globally
+                                    @SharedResource["text_Consultancy"]
+                                   
                                 </h2>
                             </div>
                             <div class="accordion-area">
-                                <div class="accordion" id="accordionExample">
+                                <div class="accordion accordion-text-rtl" id="accordionExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingOne">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Strategy development
+                                                @SharedResource["Strategy_development"]  
                                             </button>
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Crafting a winning strategy is the cornerstone of business success. Our Strategy Development service involves in-depth analysis and collaboration with your leadership team to define clear objectives, identify growth opportunities, and devise a roadmap for sustainable success.
-                                            </div>
+                                                @SharedResource["text_Strategy_development"]    </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingTwo">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Business Planning
+                                                @SharedResource["Business_Planning"] 
                                             </button>
                                         </h2>
                                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Our Business Planning service equips you with comprehensive and actionable business plans that outline the path to achieving your goals.
-                                            </div>
+                                                @SharedResource["text_Business_Planning"]     
+                                                </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingThree">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                Acquisitions
+                                               @SharedResource["Acquisitions"]  
                                             </button>
                                         </h2>
                                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Navigating the complexities of mergers and acquisitions demands expert guidance. Our Acquisitions service offers in-depth due diligence, target analysis, and strategic advisory to support your decision-making process.
-                                            </div>
+                                                @SharedResource["text_Acquisitions"]    </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingFour">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Process optimization
+                                                @SharedResource["Process_optimization"]   
                                             </button>
                                         </h2>
                                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Unlock hidden potential and efficiency within your operations through our Process Optimization service.
-                                            </div>
+                                                @SharedResource["text_Process_optimization"]     </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingFive">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                Financial analysis
+                                               @SharedResource["Financial_analysis"]  
                                             </button>
                                         </h2>
                                         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Numbers tell a story, and our Financial Analysis service provides valuable insights into your organization's financial health.
-                                            </div>
+                                                @SharedResource["text_Financial_analysis"] </div>
                                         </div>
                                     </div>
                                 </div>

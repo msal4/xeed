@@ -1,10 +1,23 @@
 ﻿@model ExceedConsultancy.Models.BusinessModel
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+                                              
 
-    ViewBag.Title = "Xeed Consulting | Corporate Finance and Strategy";
-    ViewBag.MetaDescription = "Our financial experts specialize in crafting comprehensive corporate finance and strategy solutions. We optimize financial performance, capital allocation, and risk management to help you achieve your long-term financial goals.";
+    ViewBag.Title = "Xeed Consulting | @SharedResource nav_Finance";
+    ViewBag.MetaDescription = "Our financial experts specialize in crafting comprehensive @SharedResourcenav_Finance solutions. We optimize financial performance, capital allocation, and risk management to help you achieve your long-term financial goals.";
     ViewBag.MetaKeywords = "Xeed Consulting, Corporate Finance, Strategy Solutions, Financial Performance, Capital Allocation, Risk Management, Long-Term Financial Goals";
+
+
+
+    //ViewBag.Title = "Xeed Consulting | تمويل الشركات واستراتيجيتها";
+    //ViewBag.MetaDescription = "لدينا فريق من الخبراء الماليين متخصص في صياغة حلول تمويل واستراتيجية شاملة للشركات. نحن نساعد الشركات في تحسين أدائها المالي وتخصيص رأس المال وإدارة المخاطر. سواء كنت تتطلع إلى توسيع أو تبسيط العمليات أو التغلب على التحديات المالية المعقدة ، فإننا نقدم إرشادات استراتيجية لمساعدتك في تحقيق أهدافك المالية طويلة الأجل.";
+    //ViewBag.MetaKeywords = "Xeed Consulting, تمويل الشركات, استراتيجية الشركات, الأداء مالي, تخصيص رأس المال, إدارة المخاطر, أهداف مالية طويلة الأجل";
 
 }
 
@@ -20,13 +33,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">Corporate Finance and Strategy</h1>
+                    <h1 class="title">@SharedResource["nav_Finance"]</h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a asp-controller="Home" asp-action="index">Home</a>
+                        <a asp-controller="Home" asp-action="index"  asp-route-culture="@culture"> @SharedResource["nav_home"]</a>
                         <span> / </span>
-                        Corporate Finance and Strategy
+                        @SharedResource["nav_Finance"]
                     </div>
                 </div>
             </div>
@@ -41,12 +54,11 @@
                     <!-- service details left area start -->
                     <div class="service-detials-step-1">
                         <div class="thumbnail">
-                            <img src="assets/images/Strategy-.jpg" alt=" Corporate Finance and Strategy">
+                            <img src="assets/images/Strategy-.jpg" alt=" @SharedResource["nav_Finance"]">
                         </div>
-                        <h4 class="title">Corporate Finance and Strategy</h4>
+                        <h4 class="title">@SharedResource["nav_Finance"]</h4>
                         <p class="disc">
-                            Our team of financial experts specializes in crafting comprehensive corporate finance and strategy solutions. We assist businesses in optimizing their financial performance, capital allocation, and risk management. Whether you're looking to expand, streamline operations, or navigate complex financial challenges, we provide strategic guidance to help you achieve your long-term financial goals.
-                        </p>
+                            @SharedResource["nav_Finance_text"]      </p>
 
                     </div>
                     <!-- service details left area end -->
@@ -58,59 +70,59 @@
                     <div class="rts-single-wized Categories service">
                         <div class="wized-header">
                             <h5 class="title">
-                                Categories
+                                @SharedResource["Categories"]    
                             </h5>
                         </div>
                         <div class="wized-body">
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Business" asp-action="index">Business and Organizational Purpose  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Business" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_Business"] <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <!-- single categoris End -->
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Finance" asp-action="index">Corporate Finance and Strategy  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Finance" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_Finance"]  <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <!-- single categoris End -->
                             <!-- single categoris -->
                             <ul class="single-categories">
-                                <li><a asp-controller="Technology" asp-action="index">Digital, Technology and Data<i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Technology" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_Technology"]<i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="ArtificialIntelligence" asp-action="index">Artificial Intelligence  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="ArtificialIntelligence" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_AI"]  <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="MonitoringEvaluation" asp-action="index">Monitoring and Evaluation  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="MonitoringEvaluation" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_monitoring_Evaluation"]  <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="Manufacturing" asp-action="index">Manufacturing  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Manufacturing" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_manufacturing"]  <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="Marketing" asp-action="index">Growth, Marketing and Sales <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Marketing" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_marketing"]<i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="Operations" asp-action="index">Operations <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Operations" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_operations"] <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="Implementation" asp-action="index">Implementation <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Implementation" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_implementation"] <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="OrganizationStrategy" asp-action="index">Organization Strategy<i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="OrganizationStrategy" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_organization_strategy"]<i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="PeopleStrategy" asp-action="index">People Strategy  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="PeopleStrategy" asp-action="index"  asp-route-culture= "@culture">@SharedResource["nav_people"]  <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="Pricing" asp-action="index">Pricing and Revenue Management  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_pricing"]   <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="Budgeting" asp-action="index">Zero-Based Budgeting<i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Budgeting" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_zero_based"]<i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="RiskManagement" asp-action="index">Risk Management and Compliance  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="RiskManagement" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_risk_management"] <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                             <ul class="single-categories">
-                                <li><a asp-controller="Innovation" asp-action="index">Innovation Strategy and Delivery  <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a asp-controller="Innovation" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_innovation"]  <i class="far fa-long-arrow-right"></i></a></li>
                             </ul>
 
                         </div>

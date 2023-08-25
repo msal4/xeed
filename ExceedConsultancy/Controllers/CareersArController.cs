@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
 using System.Text;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Localization;
+
 
 namespace ExceedConsultancy.Controllers
 {
@@ -37,6 +39,8 @@ namespace ExceedConsultancy.Controllers
             var test = _config.GetSection("reCAPTCHA:SecretKey").Value;
             using (var client = new HttpClient())
             {
+
+                string culture = HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
                 var testData = string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", test, response);
                 var responseData = client.PostAsync(testData, new StringContent("test", Encoding.UTF8, "application/json")).Result;
                 if (responseData.IsSuccessStatusCode)
@@ -46,18 +50,19 @@ namespace ExceedConsultancy.Controllers
 
                     if (result.Success)
                     {
-                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,ahmadghadder@gmail.com",model.CVFile);
+                        //sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,ahmadghadder@gmail.com",model.CVFile, culture);
+                        sendemail(sb.ToString(), "Contact Message", "1997jihad@gmail.com", model.CVFile, culture);
                         TempData["Success"] = "شكرا لك على الاتصال بنا! ونحن سوف نعود اليكم في أقرب وقت ممكن.";
-                        return RedirectToAction("Index", "CareersAr");
+                        return RedirectToAction("Index", "Careers", new { culture = "ar" });
                     }
                 }
 
-                TempData["Success"] = "Please validate that you are not a robot";
-                return RedirectToAction("Index", "CareersAr");
+                TempData["Success"] = "يرجى التحقق من أنك لست روبوت";
+                return RedirectToAction("Index", "Careers", new { culture = "ar" });
             }
         }
 
-        public ActionResult sendemail(string msg, string subject, string email, IFormFile CVFile)
+        public ActionResult sendemail(string msg, string subject, string email, IFormFile CVFile, string culture)
         {
 
             try
@@ -89,13 +94,13 @@ namespace ExceedConsultancy.Controllers
 
                 SmtpServer.Send(mail);
                 TempData["Success"] = "شكرا لك على الاتصال بنا! ونحن سوف نعود اليكم في أقرب وقت ممكن.";
-                return RedirectToAction("Index", "CareersAr");
+                return RedirectToAction("Index", "Careers", new { culture = "ar" });
 
             }
             catch (Exception ex)
             {
                 TempData["Success"] = "آسف لم يتم إرسال البريد ، يرجى المحاولة مرة أخرى!";
-                return RedirectToAction("Index", "CareersAr");
+                return RedirectToAction("Index", "Careers", new { culture = "ar" });
                 throw;
             }
 
