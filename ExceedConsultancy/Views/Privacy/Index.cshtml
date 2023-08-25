@@ -15,6 +15,12 @@
     ViewBag.MetaDescription = "We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website. By accessing or using our Website, you agree to the terms of this Privacy Policy.";
     ViewBag.MetaKeywords = "Privacy Policy, personal information, non-personal information, data sharing, data security, third-party links, rights and choices, Xeed Consulting";
 
+
+
+    //ViewBag.Title = "Xeed Consulting | Privacy Policy";
+    //ViewBag.MetaDescription = "We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website. By accessing or using our Website, you agree to the terms of this Privacy Policy.";
+    //ViewBag.MetaKeywords = "Privacy Policy, personal information, non-personal information, data sharing, data security, third-party links, rights and choices, Xeed Consulting";
+
 }
 
 
@@ -49,60 +55,58 @@
     <div class="rts-typography-style rts-section-gap">
         <div class="container">
             <div class="style">
-                <h1 class="title">Privacy Policy</h1>
+                <h1 class="title">@SharedResource["privacy_policy"]</h1>
                 <p>
-                    We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website. By accessing or using our Website, you agree to the terms of this Privacy Policy. If you do not agree with our practices outlined in this policy, please do not use the Website.
-            
+                    @SharedResource["privacy_policy_text1"] 
                 </p>
-                <h2 class="title">Information We Collect: </h2>
+                <h2 class="title"> @SharedResource["privacy_policy_Personal_Information"]  </h2>
                 <h4 class="title">
-                Personal Information:
+                    @SharedResource["privacy_policy_Personal_info"]  
                 </h4>
                 <p>
-                    We may collect personally identifiable information ("Personal Information") from you when you voluntarily submit it through forms, sign-ups, or other interactions on our Website. Personal Information may include, but is not limited to, your name, email address, postal address, phone number, and other relevant details.
-                </p>
+                    @SharedResource["privacy_policy_Personal_info_text"]     </p>
                 <h4 class="title">
-                    Non-Personal Information:
+                    @SharedResource["privacy_policy_Personal_non_personal"]  
                 </h4>
                 <p>
-                    We may automatically collect certain non-personal information about your visit to our Website. This information may include your IP address, browser type, device information, operating system, and website usage statistics.
-
+                    @SharedResource["privacy_policy_Personal_non_personal_text"]   
                 </p>
                 <h2 class="title">
-                    How We Use Your Information:
+                    @SharedResource["privacy_policy_Personal_how_use_information"]   
                 </h2>
                 <h4 class="title">
-                    We may use the information we collect for various purposes, including but not limited to:
+                    @SharedResource["privacy_policy_Personal_how_use_information_text"]
 
                 </h4><ul>
 
                         <li>
                         <div class="icon">
                             <i class="far fa-check"></i>
-                        </div>  Responding to your inquiries and communication
+                        </div> @SharedResource["privacy_policy_Personal_responding"] 
                         </li>
                     <li>
                         <div class="icon">
                             <i class="far fa-check"></i>
                         </div>
-                            Sending promotional materials and updates with your consent
+                        @SharedResource["privacy_policy_Personal_Sending_promotional"]
                         </li>
                     <li>
                         <div class="icon">
                             <i class="far fa-check"></i>
-                        </div>Analyzing and improving the functionality of our Website
+                        </div>
+                        @SharedResource["privacy_policy_Personal_analyzing_andImproving"]
 </li>
                     <li>
                         <div class="icon">
                             <i class="far fa-check"></i>
                         </div>
-                            Personalizing your experience on our Website
+                        @SharedResource["privacy_policy_Personal_personalizing"]   
                         </li>
                     <li>
                         <div class="icon">
                             <i class="far fa-check"></i>
                         </div>
-                            Complying with legal obligations
+                        @SharedResource["privacy_policy_Personal_complying"] 
                         </li>
                       
                    
@@ -110,42 +114,37 @@
                    
                     </ul>
                      <h4 class="title">
-                    Data Sharing and Disclosure:
+                    @SharedResource["privacy_policy_Personal_DataSharing"] 
 
                 </h4>
                    
                 <p>
-                    We do not sell, trade, or rent your Personal Information to third parties. However, we may share your information with trusted service providers or business partners who assist us in operating our Website, conducting business, or providing services to you. These third parties are bound by confidentiality and data protection agreements.
+                    @SharedResource["privacy_policy_Personal_DataSharing_text1"] 
                     <br/><br/>
 
 
-                    We may also disclose your information if required by law, to protect our rights, privacy, safety, or property, or if we believe it is necessary to enforce our Terms of Service.
-                </p>
+                    @SharedResource["privacy_policy_Personal_DataSharing_text2"]      </p>
                 <h2 class="title">
-                Third-Party Links:
+                    @SharedResource["privacy_policy_thirdParty_links"]
                 </h2>
                 <p>
-                    Our Website may contain links to third-party websites or services that are not controlled or operated by us. We are not responsible for the privacy practices of these websites. We recommend reviewing the privacy policies of any third-party websites you visit.
-
-
+                    @SharedResource["privacy_policy_thirdParty_links_text1"]
                 </p>
 
                 <h2 class="title">
-                    Data Security:
+                    @SharedResource["privacy_policy_Data_security"]
                 </h2>
                 <p>
-                    We implement reasonable security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, please note that no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
-
+                    @SharedResource["privacy_policy_Data_security_text1"]
                 </p>
 
                 <h2 class="title">
 
 
-Your Rights and Choices: 
+                    @SharedResource["privacy_policy_your_rights_andChoices"]
                 </h2>
                 <p>
-                  You have the right to access, correct, update, or delete your Personal Information we hold about you. You can exercise these rights by contacting using our email: contact@xeed-consulting.com
-                </p>
+                    @SharedResource["privacy_policy_your_rights_andChoices_text1"]    </p>
             </div>
             
         </div>

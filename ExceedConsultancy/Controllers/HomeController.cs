@@ -58,10 +58,12 @@ namespace ExceedConsultancy.Controllers
         }
 
 
+
+
         [HttpPost]
         public IActionResult Index(QuoteModel model, ViewContext viewContext)
         {
-            // ... أكواد أخرى لتحضير الرسالة والتحقق من reCAPTCHA
+            
 
             // Get the current culture
             var currentCulture = viewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
@@ -69,12 +71,12 @@ namespace ExceedConsultancy.Controllers
             if (currentCulture.StartsWith("ar"))
             {
                 // If the current culture is Arabic, redirect to QuoteArController
-                return RedirectToAction("Index", "QuoteAr", model); // تأكد من وجود الـ QuoteArController
+                return RedirectToAction("Index", "QuoteAr", model); 
             }
             else
             {
                 // For other cultures, use the regular QuoteController
-                return RedirectToAction("Index", "Quote", model); // تأكد من وجود الـ QuoteController
+                return RedirectToAction("Index", "Quote", model);
             }
         }
 
@@ -82,7 +84,7 @@ namespace ExceedConsultancy.Controllers
         [HttpPost]
         public IActionResult Index(ContactModel model, ViewContext viewContext)
         {
-            // ... أكواد أخرى لتحضير الرسالة والتحقق من reCAPTCHA
+           
 
             // Get the current culture
             var currentCulture = viewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
@@ -90,12 +92,12 @@ namespace ExceedConsultancy.Controllers
             if (currentCulture.StartsWith("ar"))
             {
                 // If the current culture is Arabic, redirect to QuoteArController
-                return RedirectToAction("Index", "QuoteAr", model); // تأكد من وجود الـ QuoteArController
+                return RedirectToAction("Index", "QuoteAr", model);
             }
             else
             {
                 // For other cultures, use the regular QuoteController
-                return RedirectToAction("Index", "Quote", model); // تأكد من وجود الـ QuoteController
+                return RedirectToAction("Index", "Quote", model); 
             }
         }
 

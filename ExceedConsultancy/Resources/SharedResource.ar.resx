@@ -180,6 +180,12 @@
   <data name="Home_bg_text_Contact" xml:space="preserve">
     <value>اتصل بوكيلنا للحصول على أي نوع من الاستشارات</value>
   </data>
+  <data name="home_viewbag_description" xml:space="preserve">
+    <value>مرحبًا بكم في اكسيد للاستشارات! نحن فريق مكرس من المستشارين الخبراء يعزز الأعمال بالاستراتيجيات المبتكرة والحلول المدفوعة بالتكنولوجيا. شارك معنا للتعامل مع التحديات المعقدة، واستغلال فرص النمو، وتحقيق النجاح المستدام</value>
+  </data>
+  <data name="home_viewbag_title" xml:space="preserve">
+    <value>Xeed Consulting | الخبرة الاستراتيجية</value>
+  </data>
   <data name="Industrial_Goods" xml:space="preserve">
     <value>السلع الصناعية</value>
   </data>
@@ -232,7 +238,7 @@
     <value>الغرض من الأعمال والمؤسسات</value>
   </data>
   <data name="nav_Business_text" xml:space="preserve">
-    <value>في “Exceed Consultancy”، نعتقد أن كل شركة يجب أن تمتلك هدفًا واضحًا وجاذبًا. نعمل عن كثب مع عملائنا لتحديد هدف أعمالهم ومؤسساتهم، مساعدينهم في مواءمة قيمهم وأهدافهم لإنشاء بيان مهمة ذو معنى وأثر. خدمات الاستشارة لدينا تمكن الشركات من صياغة هدفها ودمجه في عملياتها اليومية، ما يشجع على شعور بالاتجاه والإلهام لدى الموظفين وأصحاب المصلحة على حد سواء.</value>
+    <value>في “xceed  Consulting”، نعتقد أن كل شركة يجب أن تمتلك هدفًا واضحًا وجاذبًا. نعمل عن كثب مع عملائنا لتحديد هدف أعمالهم ومؤسساتهم، مساعدينهم في مواءمة قيمهم وأهدافهم لإنشاء بيان مهمة ذو معنى وأثر. خدمات الاستشارة لدينا تمكن الشركات من صياغة هدفها ودمجه في عملياتها اليومية، ما يشجع على شعور بالاتجاه والإلهام لدى الموظفين وأصحاب المصلحة على حد سواء.</value>
   </data>
   <data name="nav_capabilities" xml:space="preserve">
     <value>قدراتنا</value>
@@ -373,7 +379,7 @@
     <value>أهدافكم هي مهمتنا</value>
   </data>
   <data name="page_about_us_commitment_YourGoal_OurMission_text" xml:space="preserve">
-    <value>في “Exceed Consultancy”، أهدافكم تصبح مهمتنا. نحن لسنا مجرد مستشارين؛ نحن شركاء في رحلتكم نحو النجاح. التزامنا هو أن نكون معكم في كل خطوة على طول الطريق، نساعدكم على التنقل في تعقيدات منظر الأعمال.</value>
+    <value>في “xceed  Consulting”، أهدافكم تصبح مهمتنا. نحن لسنا مجرد مستشارين؛ نحن شركاء في رحلتكم نحو النجاح. التزامنا هو أن نكون معكم في كل خطوة على طول الطريق، نساعدكم على التنقل في تعقيدات منظر الأعمال.</value>
   </data>
   <data name="page_about_us_how_we_work" xml:space="preserve">
     <value>كيف نعمل</value>
@@ -427,7 +433,7 @@
     <value>باستخدام المعلومات التي تم جمعها من تقييم الاحتياجات، نقوم بتطوير استراتيجية مخصصة مصممة خصيصًا لأهدافكم. استراتيجيتنا ليست حلاً عامًا؛ إنها خريطة طريق مصممة بشكل خاص لنجاح منظمتكم. نشملكم في عملية تطوير الاستراتيجية لضمان التوافق مع رؤيتكم.</value>
   </data>
   <data name="page_about_us_how_we_work_text" xml:space="preserve">
-    <value>في “Exceed Consultancy”، يرتكز نهجنا للاستشارة على التعاون والشفافية وتحقيق نتائج قابلة للقياس. نحن ندرك أن كل منظمة فريدة، ونقوم بتصميم منهجيتنا لتناسب احتياجاتكم الخاصة. إليك نظرة أقرب على كيفية عملنا:</value>
+    <value>في “xceed  Consulting”، يرتكز نهجنا للاستشارة على التعاون والشفافية وتحقيق نتائج قابلة للقياس. نحن ندرك أن كل منظمة فريدة، ونقوم بتصميم منهجيتنا لتناسب احتياجاتكم الخاصة. إليك نظرة أقرب على كيفية عملنا:</value>
   </data>
   <data name="page_about_us_how_we_work_text_Flexibility" xml:space="preserve">
     <value>8.	المرونة</value>
@@ -448,7 +454,7 @@
     <value>توصل معنا</value>
   </data>
   <data name="page_about_us_Leadership_text1" xml:space="preserve">
-    <value>في “Exceed Consultancy”، تُكتب قصة نجاحنا بواسطة الأفراد الديناميين الذين يقودون، والهدف الثابت الذي يدفعنا، والقيم الأساسية التي توجه كل تصرف لدينا.</value>
+    <value>في “xceed  Consulting”، تُكتب قصة نجاحنا بواسطة الأفراد الديناميين الذين يقودون، والهدف الثابت الذي يدفعنا، والقيم الأساسية التي توجه كل تصرف لدينا.</value>
   </data>
   <data name="page_about_us_Leadership_text2" xml:space="preserve">
     <value>القيادة فريق القيادة لدينا يتألف من محترفين ذوي خبرة واسعة لديهم سجل حافل من التميز في مختلف الصناعات. خبرتهم الواسعة ورؤاهم العميقة في تفاصيل الأعمال تجعلهم القوة الدافعة وراء استشاراتنا. إنهم يقدمون القدوة، ويعززون المنظمة بثقافة الابتكار والتعاون والتوجه نحو العميل.</value>
@@ -482,7 +488,7 @@
     <value>تمكين نجاحك</value>
   </data>
   <data name="page_about_us_Our_Aspiration_Empowering_Success_text1" xml:space="preserve">
-    <value>في “Exceed Consultancy”، نطمح لأن نكون أكثر من مجرد شركة استشارية</value>
+    <value>في “xceed  Consulting”، نطمح لأن نكون أكثر من مجرد شركة استشارية</value>
   </data>
   <data name="page_about_us_Our_Aspiration_Empowering_Success_text2" xml:space="preserve">
     <value>نحن نطمح لأن نكون شريكك الاستراتيجي في رحلتك نحو النجاح</value>
@@ -506,7 +512,7 @@
     <value>نطمح لتغذية النمو بكل معنى الكلمة. نحن لا نهدف فقط إلى الربح في الأمد القريب؛ نحن في هذا للأمد البعيد. حلول استشارتنا مصممة لتعزيز النمو المستدام الذي يتجاوز التقلبات السوقية والتحديات الاقتصادية.</value>
   </data>
   <data name="page_about_us_Our_Aspiration_text" xml:space="preserve">
-    <value>في “Exceed Consultancy”، نطمح لأن نكون أكثر من مجرد شركة استشارية؛ نحن نطمح لأن نكون شريكك الاستراتيجي في رحلتك نحو النجاح. تتجذر تطلعاتنا في رؤية عالم أعمال مزدهر، حيث تمتلك كل منظمة الأدوات والمعرفة والدعم ليس فقط للتكيف مع التغيير، ولكن للتفوق فيه.</value>
+    <value>في “xceed  Consulting”، نطمح لأن نكون أكثر من مجرد شركة استشارية؛ نحن نطمح لأن نكون شريكك الاستراتيجي في رحلتك نحو النجاح. تتجذر تطلعاتنا في رؤية عالم أعمال مزدهر، حيث تمتلك كل منظمة الأدوات والمعرفة والدعم ليس فقط للتكيف مع التغيير، ولكن للتفوق فيه.</value>
   </data>
   <data name="page_about_us_Our_Aspiration_Unleashing_Potential" xml:space="preserve">
     <value>إطلاق الإمكانات</value>
@@ -527,7 +533,7 @@
     <value>هدفنا</value>
   </data>
   <data name="page_about_us_Purpose_text" xml:space="preserve">
-    <value>الهدف في “Exceed Consultancy”، هدفنا واضح وثابت: تمكين المؤسسات للازدهار في مناظر الأعمال المتطورة باستمرار. نحن نفهم أن بيئة الأعمال اليومية دينامية وتحدية ومنافسة بشدة. هدفنا هو أن نكون الضوء القائم، مساعدين الشركات ليس فقط على البقاء ولكن على التفوق في هذه المناظر.
+    <value>الهدف في “xceed  Consulting”، هدفنا واضح وثابت: تمكين المؤسسات للازدهار في مناظر الأعمال المتطورة باستمرار. نحن نفهم أن بيئة الأعمال اليومية دينامية وتحدية ومنافسة بشدة. هدفنا هو أن نكون الضوء القائم، مساعدين الشركات ليس فقط على البقاء ولكن على التفوق في هذه المناظر.
 القيم قيمنا هي البوصلة التي توجه أفعالنا وقراراتنا. إنها تعكس التزامنا بممارسات الأعمال الأخلاقية والشفافية والتوجه نحو العميل. تحدد قيمنا الأساسية من نحن وكيف نتعامل:</value>
   </data>
   <data name="page_about_us_Purpose_Value" xml:space="preserve">
@@ -570,7 +576,7 @@
     <value>نضع أنفسنا على أعلى مستويات الصدق والنزاهة. نؤمن بفعل الصواب حتى عندما يكون ذلك صعبًا. النزاهة هي أساس علاقاتنا مع العملاء والثقة التي تشكل أساس استشاراتنا.</value>
   </data>
   <data name="page_about_us_Purpose_Value_text" xml:space="preserve">
-    <value>الهدف في “Exceed Consultancy”، هدفنا واضح وثابت: تمكين المؤسسات للازدهار في مناظر الأعمال المتطورة باستمرار. نحن نفهم أن بيئة الأعمال اليومية دينامية وتحدية ومنافسة بشدة. هدفنا هو أن نكون الضوء القائم، مساعدين الشركات ليس فقط على البقاء ولكن على التفوق في هذه المناظر.
+    <value>الهدف في “xceed  Consulting”، هدفنا واضح وثابت: تمكين المؤسسات للازدهار في مناظر الأعمال المتطورة باستمرار. نحن نفهم أن بيئة الأعمال اليومية دينامية وتحدية ومنافسة بشدة. هدفنا هو أن نكون الضوء القائم، مساعدين الشركات ليس فقط على البقاء ولكن على التفوق في هذه المناظر.
 القيم قيمنا هي البوصلة التي توجه أفعالنا وقراراتنا. إنها تعكس التزامنا بممارسات الأعمال الأخلاقية والشفافية والتوجه نحو العميل. تحدد قيمنا الأساسية من نحن وكيف نتعامل</value>
   </data>
   <data name="page_about_us_Purpose_Value_Transparency" xml:space="preserve">
@@ -583,7 +589,7 @@
     <value>نجاحك هو عملنا</value>
   </data>
   <data name="page_about_us_Success_OurBusiness_text" xml:space="preserve">
-    <value>في “Exceed Consultancy”، التزامنا تجاه عملائنا هو ركيزة ممارسات استشارتنا. نحن ندرك أن الثقة بنا بتحدثكم تحديات وآمال أعمالكم هي قرار هام، ونحن نأخذ هذه المسؤولية على محمل الجد. التزامنا الثابت بكم هو ما يميزنا.</value>
+    <value>في “xceed  Consulting”، التزامنا تجاه عملائنا هو ركيزة ممارسات استشارتنا. نحن ندرك أن الثقة بنا بتحدثكم تحديات وآمال أعمالكم هي قرار هام، ونحن نأخذ هذه المسؤولية على محمل الجد. التزامنا الثابت بكم هو ما يميزنا.</value>
   </data>
   <data name="page_about_us_Understanding_yourUniqu" xml:space="preserve">
     <value>فهم احتياجاتكم الفريدة</value>
@@ -595,7 +601,7 @@
     <value>فريقنا</value>
   </data>
   <data name="page_about_us_Xeed_Consulting_text" xml:space="preserve">
-    <value>في “Exceed Consultancy”، فريقنا هو القوة الدافعة وراء نجاحنا. نحن نفتخر بفريقنا المتنوع والموهوب الذين ملتزمون بمساعدة منظمتكم على الازدهار. تعرفوا على الأفراد الذين سيكونون إلى جانبكم في رحلة النجاح:
+    <value>في xceed  Consulting”، فريقنا هو القوة الدافعة وراء نجاحنا. نحن نفتخر بفريقنا المتنوع والموهوب الذين ملتزمون بمساعدة منظمتكم على الازدهار. تعرفوا على الأفراد الذين سيكونون إلى جانبكم في رحلة النجاح:
 قوة فريقنا تكمن في تنوعهم وخبرتهم والالتزام المشترك بنجاحكم. نحن أكثر من مجرد مستشارين؛ نحن شركاءكم المخصصين في تحقيق أهداف أعمالكم.
 عندما تختارون “Exceed Consultancy”، فإنكم لا تحصلون فقط على شركة استشارية؛ بل تحصلون على فريق من الأفراد المشتاقين الذين مستثمرون بعمق في نموكم. اتصلوا بنا اليوم لمقابلة فريقنا ومعرفة كيف يمكننا العمل معًا لتحويل أعمالكم. نجاحكم هو مهمة فريقنا!</value>
   </data>
@@ -605,11 +611,83 @@
   <data name="page_about_us_Xeed_Work_together" xml:space="preserve">
     <value>توصل معنا</value>
   </data>
+  <data name="page_Capabilities_text" xml:space="preserve">
+    <value>تم تصميم مجموعة خدمات الاستشارة الشاملة لدينا لتمكين الشركات بمختلف الأحجام والصناعات والطموحات. التزامنا بنجاحكم لا يتزعزع. سواء كنتم شركة ناشئة تبحث عن إرساء أساس قوي، أو شركة متوسطة الحجم تبحث عن استراتيجيات النمو، أو شركة مؤسسة تهدف إلى البقاء في مقدمة صناعتكم، لدينا الخبرة لمساعدتكم.
+بنهج شامل يأخذ في اعتباره كل جانب من جوانب منظمتكم، من استراتيجية وتمويل إلى تكنولوجيا وموارد بشرية، نحن نضمن أنكم مجهزون للازدهار في منظر الأعمال الدينامي والمتطور.
+استكشفوا قدراتنا واسمحوا لنا أن نكون القوة الدافعة وراء قصة نجاحكم. مرحبًا بكم في عالم من الإمكانيات، مرحبًا بكم في</value>
+  </data>
   <data name="Phone" xml:space="preserve">
     <value>رقم الهاتف</value>
   </data>
   <data name="privacy_policy" xml:space="preserve">
     <value>سياسة الخصوصية</value>
+  </data>
+  <data name="privacy_policy_Data_security" xml:space="preserve">
+    <value>أمان البيانات:</value>
+  </data>
+  <data name="privacy_policy_Data_security_text1" xml:space="preserve">
+    <value>نقوم بتنفيذ تدابير أمان معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الكشف أو التدمير. ومع ذلك، يرجى ملاحظة أنه لا يمكن ضمان أمان النقل عبر الإنترنت أو التخزين الإلكتروني بنسبة 100%، ولا يمكننا ضمان الأمان المطلق.</value>
+  </data>
+  <data name="privacy_policy_Personal_analyzing_andImproving" xml:space="preserve">
+    <value>تحليل وتحسين وظائف موقعنا على الويب</value>
+  </data>
+  <data name="privacy_policy_Personal_complying" xml:space="preserve">
+    <value>الامتثال لالتزامات قانونية</value>
+  </data>
+  <data name="privacy_policy_Personal_DataSharing" xml:space="preserve">
+    <value>مشاركة البيانات والكشف عنها:</value>
+  </data>
+  <data name="privacy_policy_Personal_DataSharing_text1" xml:space="preserve">
+    <value>نحن لا نبيع ولا نتاجر ولا نؤجر معلوماتك الشخصية لأطراف ثالثة. ومع ذلك، قد نشارك معلوماتك مع مزودي خدمات أو شركاء تجاريين موثوق بهم يساعدوننا في تشغيل موقعنا على الويب أو القيام بالأعمال أو تقديم الخدمات لك. يخضع هؤلاء الأطراف الثالثة لاتفاقيات السرية وحماية البيانات.</value>
+  </data>
+  <data name="privacy_policy_Personal_DataSharing_text2" xml:space="preserve">
+    <value>قد نكشف أيضًا عن معلوماتك إذا كان مطلوبًا بموجب القانون، أو لحماية حقوقنا أو خصوصيتنا أو سلامتنا أو ملكيتنا، أو إذا كنا نعتقد أنه من الضروري تنفيذ شروط خدمتنا.</value>
+  </data>
+  <data name="privacy_policy_Personal_how_use_information" xml:space="preserve">
+    <value>كيفية استخدام معلوماتك:</value>
+  </data>
+  <data name="privacy_policy_Personal_how_use_information_text" xml:space="preserve">
+    <value>قد نستخدم المعلومات التي نجمعها لأغراض متنوعة، بما في ذلك على سبيل المثال لا الحصر:</value>
+  </data>
+  <data name="privacy_policy_Personal_info" xml:space="preserve">
+    <value>المعلومات الشخصية:</value>
+  </data>
+  <data name="privacy_policy_Personal_Information" xml:space="preserve">
+    <value>المعلومات التي نجمعها:</value>
+  </data>
+  <data name="privacy_policy_Personal_info_text" xml:space="preserve">
+    <value>قد نقوم بجمع معلومات شخصية قابلة للتحديد ("المعلومات الشخصية") منك عندما تقدمها طوعًا من خلال النماذج أو التسجيل أو التفاعلات الأخرى على موقعنا على الويب. قد تشمل المعلومات الشخصية اسمك وعنوان بريدك الإلكتروني وعنوانك البريدي ورقم هاتفك وتفاصيل أخرى ذات صلة.</value>
+  </data>
+  <data name="privacy_policy_Personal_non_personal" xml:space="preserve">
+    <value>المعلومات غير الشخصية:</value>
+  </data>
+  <data name="privacy_policy_Personal_non_personal_text" xml:space="preserve">
+    <value>قد نقوم بجمع معلومات غير شخصية معينة عن زيارتك لموقعنا على الويب. يمكن أن تتضمن هذه المعلومات عنوان IP الخاص بك ونوع المتصفح ومعلومات الجهاز ونظام التشغيل وإحصائيات استخدام الموقع.</value>
+  </data>
+  <data name="privacy_policy_Personal_personalizing" xml:space="preserve">
+    <value>تخصيص تجربتك على موقعنا على الويب</value>
+  </data>
+  <data name="privacy_policy_Personal_responding" xml:space="preserve">
+    <value>الرد على استفساراتك والتواصل معك</value>
+  </data>
+  <data name="privacy_policy_Personal_Sending_promotional" xml:space="preserve">
+    <value>إرسال المواد الترويجية والتحديثات بموافقتك</value>
+  </data>
+  <data name="privacy_policy_text1" xml:space="preserve">
+    <value>نحن ملتزمون بحماية خصوصيتك. تشرح سياسة الخصوصية هذه كيفية جمعنا واستخدامنا وكشفنا وحماية معلوماتك الشخصية عند زيارتك لموقعنا على الويب. عند الوصول إلى الموقع أو استخدامه، فإنك توافق على شروط سياسة الخصوصية هذه. إذا لم توافق على ممارساتنا المبينة في هذه السياسة، يرجى عدم استخدام الموقع.</value>
+  </data>
+  <data name="privacy_policy_thirdParty_links" xml:space="preserve">
+    <value>روابط الطرف الثالث:</value>
+  </data>
+  <data name="privacy_policy_thirdParty_links_text1" xml:space="preserve">
+    <value>
+                    قد يحتوي موقعنا على روابط إلى مواقع وخدمات الطرف الثالث التي لا تتحكم فيها أو تديرها نحن. نحن لسنا مسؤولين عن ممارسات الخصوصية في هذه المواقع. نوصي بمراجعة سياسات الخصوصية لأي مواقع طرف ثالث تقوم بزيارتها.</value>
+  </data>
+  <data name="privacy_policy_your_rights_andChoices" xml:space="preserve">
+    <value>حقوقك وخياراتك:</value>
+  </data>
+  <data name="privacy_policy_your_rights_andChoices_text1" xml:space="preserve">
+    <value>لديك الحق في الوصول إلى وتصحيح وتحديث أو حذف المعلومات الشخصية التي نحتفظ بها عنك. يمكنك ممارسة هذه الحقوق عن طريق الاتصال بنا عبر البريد الإلكتروني التالي: contact@xeed-consulting.com</value>
   </data>
   <data name="Process_optimization" xml:space="preserve">
     <value>عملية التحسين</value>
