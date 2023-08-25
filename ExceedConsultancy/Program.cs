@@ -102,6 +102,10 @@ app.UseRequestLocalization(new RequestLocalizationOptions
     DefaultRequestCulture = new RequestCulture("en-US"),
     SupportedCultures = supportedCultures,
     SupportedUICultures = supportedCultures
+    // RequestCultureProviders = new List<IRequestCultureProvider>
+    //{
+    //    new CookieRequestCultureProvider() // Add this line
+    //}
 });
 
 
