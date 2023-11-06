@@ -1,0 +1,337 @@
+
+body {
+  
+    overflow-x: visible !important;
+}
+
+.flexslider {
+    background: #c8bef2;
+}
+
+#CreatePage {
+    height: 100%;
+    padding: 107px 0px;
+    background: linear-gradient(to right, #2093d1, #0e4d81 ) !important;
+}
+#about, #Purchase, #Features, #Terms {
+    background: #c8bef2;
+}
+
+.FormHeight {
+    /*background-size: auto 237px !important;*/
+    /*min-height: calc(auto + 500px) !important;*/
+}
+
+.formCRUD {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /*margin-top: 200px;*/
+    position: relative;
+    z-index: 999;
+    /*display: flex;*/
+    align-items: center;
+    flex-direction: column;
+    /*margin-bottom: 61px;*/
+}
+
+
+
+h1 {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #d2d2d2;
+    border-color: #d2d2d2;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-secondary:hover {
+    background-color: #b3b3b3;
+    border-color: #b3b3b3;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+.flexslider {
+    padding: 240px 0 40px !important;
+    margin: 0 0;
+    min-width: 306px;
+}
+.CreateSlider {
+    color: #fff !important;
+    font-size:25px!important;
+}
+.card-body{
+    padding:17px 0px !important
+}
+.card-text {
+    font-size: 21px !important;
+    text-align: left !important;
+    padding: 10px !important;
+    margin: 0 auto;
+    color: #8c8c8c !important;
+}
+.panel-body{
+    display:flex;
+}
+#Terms .card-footer{
+    font-size:20px;
+    width:30%;
+    text-align:right;
+}
+
+
+#Terms  .panel-group .panel {
+   
+    margin-bottom: 25px;
+}
+.btn-success {
+    background-color: #0e4d81 !important;
+}
+.btn-primary {
+    background: linear-gradient(to right, #2093d1, #0e4d81) !important;
+}
+.btn-danger {
+    background-color: #6488ea !important;
+}
+
+.btn-danger:hover {
+        background-color: #6488ea !important;
+}
+
+.modal.fade .btn-danger {
+    background-color: darkorchid !important;
+}
+
+.btn-secondary {
+    background: #7aa0f1 !important;
+}
+
+
+label {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    background: linear-gradient(to right, #2093d1, #0e4d81) !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+}
+.btn-primary {
+    
+    border-color: #fff !important;
+}
+
+
+
+h1 {
+    font-size: 50px !important;
+    background: linear-gradient(to right, #2093d1, #0e4d81 ) !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+    margin-bottom: 20px !important;
+}
+
+/* Style the form group */
+.form-group {
+    margin-bottom: 20px !important; /* Add space between form groups */
+}
+
+/* Style the file input */
+.form-control-file {
+    width: 100%;
+    border: 1px solid #ccc !important; /* Add a border */
+    padding: 8px !important; /* Add some padding */
+}
+
+
+
+
+.custom-file-input-container {
+    /*background: #f2f2f2;*/
+    background: antiquewhite;
+/*    background: linear-gradient(to right, #FFC0CB, #6488ea ) !important;
+    -webkit-background-clip: text !important;*/
+}
+
+
+.file-input {
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -1 !important;
+}
+
+.custom-file-input {
+    padding: 8px 16px !important;
+    cursor: pointer;
+    display: inline-block;
+}
+
+  
+.custom-file-label {
+    padding-left: 36px;
+    font-size: 20px;
+}
+
+
+.modal-content {
+    background: linear-gradient(to bottom, #2093d1, #0e4d81);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    text-align: center;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.close {
+    color: #fff;
+    font-size: 30px;
+}
+.modal-header {
+    border-bottom: 0px solid #dee2e6 !important;
+}
+.modal-body {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 4rem !important;
+}
+
+.modal-footer {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    border-top: 0px solid #dee2e6!important;
+}
+
+.custom-button {
+    background: linear-gradient(to right, #FFC0CB, #6488ea);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .custom-button:hover {
+        background: linear-gradient(to right, #6488ea, #FFC0CB);
+    }
+
+.modal-dialog {
+     position: relative; 
+     top: 50%; 
+     transform: translate(0%, -50%) !important; 
+}
+
+
+h1 {
+    line-height: 66px !important;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    flex-direction: row;
+    font-size:20px;
+}
+    .main-header .nav-main ul li a {
+        padding: 20px 0 !important;
+    }
+
+    .main-header i {
+        font-size: 24px;
+    }
+    .header-main-one {
+        padding: 14px;
+    }
+
+
+
+.main-header .nav-main ul li a::after {
+  
+    bottom: 18px !important;
+}
+
+
+.modal-footer .btn-delete{
+    padding: 20px !important;
+    width: 100%;
+    background-color: #6488ea !important;
+    margin: 0 auto;
+    color: #fff;
+}
+.btn-danger {
+  
+     border-color: #fff !important; 
+}
+
+.card-text span {
+    color: #0e4d81;
+    font-size:23px
+}
+
+
+
+.business-case-bg-2 {
+    background-repeat: repeat !important;
+}
+.business-case-bg {
+    background-repeat: repeat !important;
+}
+
+
+
+
+.logout {
+
+    text-decoration: underline !important;
+    color: #0045ff !important;
+    font-size: 19px !important;
+}
+
+
+.mainmenu li.has-droupdown .submenu {
+    z-index: 9999!important;
+}
+
+
+@media (max-width: 992px) {
+    .PurchasePadding {
+        margin-top: 120px !important;
+    }
+
+}
+
+
+
+
+

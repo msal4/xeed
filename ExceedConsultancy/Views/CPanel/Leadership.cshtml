@@ -1,0 +1,55 @@
+﻿@model Leadership
+
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<section id="CreatePage" class="FormHeight">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Leadership Section</h1>
+        </div>
+
+        @if (TempData["fail"] != null)
+        {
+            <p class="alert alert-danger d-block">@TempData["fail"]</p>
+        }
+        @if (TempData["success"] != null)
+        {
+            <p class="alert alert-success d-block">@TempData["success"]</p>
+        }
+
+        <form asp-action="Leadership" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="LeadershipId" />
+
+            <div class="form-group">
+                <label asp-for="Description">English Description</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description_Ar">Arabic Description</label>
+                <textarea asp-for="Description_Ar" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description_Ar"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="ImageFile">Select Image </label>
+                <input type="file" id="ImageFile" name="ImageFile" class="form-control-file">
+                <span asp-validation-for="ImageFile"></span>
+            </div>
+          
+
+            <div class="form-group">
+                <a asp-action="Home" class="btn btn-secondary" style="font-size: 25px;">Cancel</a>
+                <button type="submit" class="btn btn-primary w-auto" style="font-size: 25px;">Save Changes</button>
+            </div>
+
+
+        </form>
+    </div>
+</section>
+
+

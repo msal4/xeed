@@ -1,0 +1,101 @@
+﻿@model ExceedConsultancy.Models.HomeModel;
+@using System.Globalization;
+@using Microsoft.AspNetCore.Localization;
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div id="anywhere-home"></div>
+
+<section id="SectionIndustrie">
+    <div class="rts-business-case rts-section-gap business-case-bg-2 Industrie">
+        <div class="container">
+            <div class="row">
+                <div class="title-area text-center business-case">
+                    <div class="HeaderCreate text-center">
+                        <h1>@SharedResource["Industries_Served"]</h1>
+                        <a href="@Url.Action("CreateIndustrie", "CPanel")" class="btn btn-success CreateSlider">Create Industrie</a>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>English Title</th>
+                        <th>Arabic Title</th>
+                        @*<th>Order</th>*@
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Industrie != null)
+                    {
+                        @foreach (var IndustrieItem in Model.Industrie.OrderBy(item => item.Order))
+                        {
+                            <tr>
+                                <td><img src="../assets/images/@IndustrieItem.Image" alt="@IndustrieItem.text"></td>
+                                <td>
+                                    <span>@IndustrieItem.text</span>
+                                </td>
+                                <td>
+                                    <span>@IndustrieItem.text_Ar</span>
+                                </td>
+                               @* <td>
+                                    <span class="card-text">@IndustrieItem.Order</span>
+                                </td>*@
+                                <td>
+
+                                    <div class="card-footer p-4 text-md float-right">
+                                        <a href="@Url.Action("EditIndustries", "CPanel", new { id = IndustrieItem.Id })" class="btn btn-primary btn-edit" style="color:#ffffff">
+                                              <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-danger  btn-delete" style="color:#d9534f" data-toggle="modal" data-target="#deleteConfirmationIndustrieModal-@(IndustrieItem.Id)" data-sliderid="@IndustrieItem.Id" data-delete-type="Industrie">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+
+
+                                    @*<a class="btn-delete" href="@Url.Action("EditIndustries", "CPanel", new { id = IndustrieItem.Id })" class="btn btn-primary">Delete</a>*@
+                                    <div class="modal fade" id="deleteConfirmationIndustrieModal-@(IndustrieItem.Id)" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationIndustrieModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
+                                                    <button type="button" class="close w-auto" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are you sure you want to delete this Industrie?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    @* <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>*@
+
+                                                    <form method="post" id="delete-form">
+                                                        <button type="submit" class="deleteBtn btn-delete btn-width" data-item-id="@IndustrieItem.Id" data-delete-type="Industrie">Delete</button>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <p>No data available.</p>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+

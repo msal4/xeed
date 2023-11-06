@@ -1,7 +1,11 @@
 ﻿@model ExceedConsultancy.Models.AboutModel
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers                                                                                                  @using Microsoft.AspNetCore.Localization;
+@using Microsoft.AspNetCore.Html;
 
+
+
+@using System.Globalization;
 @using Microsoft.AspNetCore.Localization;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
@@ -9,27 +13,17 @@
 }
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-                                              
-    ViewBag.MetaDescription = "";
-    ViewBag.MetaKeywords = "";
 
-    ViewBag.Title = "Xeed Consulting | About Us | Administrative services";
-    ViewBag.MetaDescription = "Providing comprehensive administrative services, health programs, and investments in real estate, industry, and agriculture. Partnered with major international companies.";
-    ViewBag.MetaKeywords = "Xeed Consulting, empowering businesses, innovation, strategic expertise, innovative solutions, complex challenges, growth opportunities, sustainable success"; 
 
-    // ViewBag.Title = "Xeed Consulting | الحلول الابتكارية | الخدمات الإدارية";
-    //ViewBag.MetaDescription = "توفير الخدمات الإدارية الشاملة وبرامج الصحة والاستثمارات في العقارات والصناعة والزراعة. شراكة مع الشركات العالمية الرائدة.";
-    //ViewBag.MetaKeywords = "Xeed Consulting, تمكين الأعمال, الابتكار, الخبرة الاستراتيجية, الحلول الابتكارية, التحديات المعقدة, فرص النمو, النجاح المستدام";
-
+    ViewBag.Title = @SharedResource["title_about_Us"];
+    ViewBag.MetaDescription = @SharedResource["MetaDescription_about_Us"];
+    ViewBag.MetaKeywords = @SharedResource["MetaKeywords_about_Us"];
 
 }
 
 
 <body>
     <!-- End header area -->
-
-  
-
     <div class="search-input-area">
         <div class="container">
             <div class="search-input-inner">
@@ -54,9 +48,9 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a asp-controller="Home" asp-action="index"  asp-route-culture="@culture"> @SharedResource["nav_home"]</a>
+                        <a asp-controller="Home" asp-action="index"> @SharedResource["nav_home"]</a>
                         <span> / </span>
-                     @SharedResource["nav_about_us"]
+                        @SharedResource["nav_about_us"]
                     </div>
                 </div>
             </div>
@@ -67,177 +61,241 @@
     <div class="rts-about-area rts-section-gap">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-5">
-                    <div class="about-image-v-inner">
-                        <div class="image-area">
-                            <img class="mt--110 img-1" src="assets/images/about/main/about-03.jpg" alt="about">
-                            <img class="img-over" src="assets/images/about/main/about-04.jpg" alt="about">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="about-progress-inner">
-                        <div class="title-area">
-                          <h2 class="title">@SharedResource["nav_about_Xeed"]Xeed Consulting</h2>
-                        </div>
 
-                        <div class="inner">
-                            <p class="disc">
-                                @SharedResource["nav_about_Xeed_text1"]
-                                <br/><br/>
-                                  @SharedResource["nav_about_Xeed_text2"]
-                                <br /><br />
-                                  @SharedResource["nav_about_Xeed_text3"]
-                               
-                            </p>
 
-                        </div>
-                        <div class="inner-about-three ">
-
-                            <!-- <h4>Join Us on Your Journey to Success</h4> -->
-                            <p class="disc mt-3">
-                                <!-- <div class="title-area">
-                                    <span>Join Us</span>
-                                    <h2 class="title">Join Us on Your Journey to Success</h2>
-                                </div> -->
-                                <span style="font-size:20px; color: #104e7e;">  @SharedResource["Mission"]</span><br />
-                           @SharedResource["Mission_About_us"]    
-                            </p>
-
-                            <p class="disc">
-                                <span style="font-size:20px; color: #104e7e;">  @SharedResource["Vision"] </span><br />
-                                @SharedResource["Vision_About_us"]   </p>
-
+                @if (Model.AboutUs != null)
+                {
+                    @foreach (var AboutItem in Model.AboutUs)
+                    {
+                        <div class="col-lg-5">
+                            <div class="about-image-v-inner">
+                                <div class="image-area">
+                                    <img class="mt--110 img-1" src="../../assets/images/@AboutItem.Image1" alt="about">
+                                    <img class="img-over" src="../../assets/images/@AboutItem.Image2" alt="about">
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- end -->
-                    </div>
-                </div>
+                        <div class="col-lg-7">
+                            <div class="about-progress-inner">
+                                <div class="title-area">
+                                    <h2 class="title">
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @AboutItem.Title_Ar
+                                        }
+                                        else
+                                        {
+                                            @AboutItem.Title
+                                        }
+                                    </h2>
+                                </div>
+
+                                <div class="inner">
+                                    <p class="disc">
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @(new HtmlString(AboutItem.Description_Ar))
+                                        }
+                                        else
+                                        {
+
+                                            @(new HtmlString(AboutItem.Description))
+                                        }
+                                    </p>
+                                </div>
+                                <div class="inner-about-three ">
+                                    <!-- <h4>Join Us on Your Journey to Success</h4> -->
+                                    <p class="disc mt-3">
+                                        <!-- <div class="title-area">
+                                            <span>Join Us</span>
+                                            <h2 class="title">Join Us on Your Journey to Success</h2>
+                                        </div> -->
+                                        <span style="font-size:20px; color: #104e7e;">  @SharedResource["Mission"]</span><br />
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @AboutItem.Mission_Ar
+                                        }
+                                        else
+                                        {
+                                            @AboutItem.Mission
+                                        }
+                                    </p>
+
+                                    <p class="disc">
+                                        <span style="font-size:20px; color: #104e7e;">  @SharedResource["Vision"] </span><br />
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @AboutItem.Vision_Ar
+                                        }
+                                        else
+                                        {
+                                            @AboutItem.Vision
+                                        }
+                                    </p>
+                                </div>
+                                <!-- end -->
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No data available.</p>
+                }
             </div>
-
         </div>
     </div>
     <!-- rts about us section end -->
     @*<div class="rts-faq-area rts-section-gap inner inner2 bg_image">*@
-    <div class="rts-faq-section rts-section-gap rts-faq-bg bg_image">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="faq-two-inner">
-                        <div class="title-area-faq">
+<div class="rts-faq-section rts-section-gap rts-faq-bg bg_image">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="faq-two-inner">
+                    <div class="title-area-faq">
+                        @foreach (var WhyUsItem in Model.WhyUs)
+                        {
                             <span class="sub"> @SharedResource["Why_Choose_Us"]</span>
                             <h2 class="title">
-                                @SharedResource["Why_Choose_Us_title_about_us"]
-                                
-                                <span class="sm-title"> @SharedResource["Why_Choose_Us_title_about_us_business"] <span>@SharedResource["Why_Choose_Us_title_about_us_business_unique"]</span></span>
+                                      @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                           @(new HtmlString(WhyUsItem.Title_Ar))
+                                        }
+                                        else
+                                        {
+                                               @(new HtmlString(WhyUsItem.Title))
+                                        } 
+
+
+                              @*  <span class="sm-title">
+                                </span>*@
                             </h2>
-
-
                             <p>
-                            @SharedResource["Why_Choose_Us_text_about_us"]    
+                                     @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                        @WhyUsItem.Description_Ar
+                                        }
+                                        else
+                                        {
+                                        @WhyUsItem.Description
+                                        } 
                             </p>
-                           
-                        </div>
-                        <div class="accordion-area inner inner2 pt-4">
-                                           
-                                            <div class="accordion-one-inner inner">
-                                                <div class="accordion" id="accordionExample4">
-                                                    <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="headingOne">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapseOne">
-                                                <span>01. </span>   @SharedResource["Why_Choose_Us_Expert_Team"]    
-                                                            </button>
-                                                        </h2>
-                                                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample4" style="">
-                                            <div class="accordion-body">
-                                            @SharedResource["Why_Choose_Us_Expert_Team_text"]    
+                        }
+                    </div>
 
 
-                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="headingTwo">
-                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapseTwo">
-                                                                <span>02. </span> @SharedResource["Why_Choose_Us_Client_Centric"] 
-                                                            </button>
-                                                        </h2>
-                                                        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample4" style="">
-                                            <div class="accordion-body">
-                                            @SharedResource["Why_Choose_Us_Client_Centric_text"]   
-                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="headingThree">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseThree">
-                                                                <span>03. </span> @SharedResource["Why_Choose_Us_Innovative_Solutions"] 
-                                                            </button>
-                                                        </h2>
-                                                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample4">
-                                                            <div class="accordion-body">
-                                          @SharedResource["Why_Choose_Us_Innovative_Solutions_text"]  
-                                        </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="headingFour">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapseFour">
-                                                                 <span>04. </span> @SharedResource["Why_Choose_Us_Ethical_Practices"]
-                                                            </button>
-                                                        </h2>
-                                                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample4">
-                                                          <div class="accordion-body">
-                                          @SharedResource["Why_Choose_Us_Ethical_Practices_text"]
 
+                    <div class="accordion-area inner inner2 pt-4 mt-3">
+                        <div class="accordion-one-inner inner">
+                           <div class="accordion" id="accordionExample4">
+                                    @foreach (var AccordionWhyUsItem in Model.WhyUsAccordion.OrderBy(item => item.Order))
+                                    {
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading@(AccordionWhyUsItem.AccordionId)">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse@(AccordionWhyUsItem.AccordionId)" aria-expanded="false" aria-controls="collapse@(AccordionWhyUsItem.AccordionId)">
+                                                    <span>0@(AccordionWhyUsItem.AccordionId). </span>
 
-                                        </div>
-                                                        </div>
-                                                    </div>
+                                                           @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                     @AccordionWhyUsItem.TitleAccordion_Ar
+                                        }
+                                        else
+                                        {
+                                       @AccordionWhyUsItem.TitleAccordion
+                                        } 
+
+                                                </button>
+                                            </h2>
+                                            <div id="collapse@(AccordionWhyUsItem.AccordionId)" class="accordion-collapse collapse" aria-labelledby="heading@(AccordionWhyUsItem.AccordionId)" data-bs-parent="#accordionExample4" style="">
+                                                <div class="accordion-body">
+                                                                       @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                     @AccordionWhyUsItem.SubTitleAccordion_Ar
+
+                                        }
+                                        else
+                                        {
+                                       @AccordionWhyUsItem.SubTitleAccordion
+                                        } 
                                                 </div>
                                             </div>
                                         </div>
-                                  @*  </div>
+                                    }
                                 </div>
-                           *@
+                          
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="thumbnail-faq-four">
-                        <img src="assets/images/faq/02.png" alt="business">
-                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="thumbnail-faq-four">
+                    @foreach (var WhyUsItem in Model.WhyUs)
+                    {
+
+                        <img src="../assets/images/@WhyUsItem.Image" alt="business">
+                    }
                 </div>
             </div>
         </div>
     </div>
-    
-       <!-- rts-team details area Start-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- rts-team details area Start-->
     <div class="rts-team-details rts-section-gap">
         <div class="container">
             <div class="row g-5">
-                <div class="col-xl-6 col-lg-12 col-md-12">
-                    <div class="details-thumb">
-                        <img src="assets/images/Leadership.jpg" alt="Leadership">
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-12 col-md-12 pl--35 pl_sm--15">
-                    <div class="details-right-inner">
-                        <div class="title-area">
-                            @*<span class="pre-title">
-                               Leadership 
-                            </span>*@
-                            <h3 class="title"> @SharedResource["page_about_us_Leadership"]</h3>
+                @if (Model.Leadership != null)
+                {
+                    @foreach (var item in Model.Leadership)
+                    {
+                        <div class="col-xl-6 col-lg-12 col-md-12">
+                            <div class="details-thumb">
+                                <img src="../assets/images/@item.Image" alt="Leadership">
+                            </div>
                         </div>
-                        
-                        <p class="disc">
-                          @SharedResource["page_about_us_Leadership_text1"] <br />
-                           @SharedResource["page_about_us_Leadership_text2"]  
-                          <br />@SharedResource["page_about_us_Leadership_text3"]
 
-                        </p>
-                        <a asp-controller="Quote" asp-action="index"  asp-route-culture="@culture" class="rts-btn btn-primary"> @SharedResource["page_about_us_Leadership_getIn_touch"]</a>
-                    </div>
-                </div>
+
+                        <div class="col-xl-6 col-lg-12 col-md-12 pl--35 pl_sm--15">
+                            <div class="details-right-inner">
+                                <div class="title-area">
+
+                                    <h3 class="title"> @SharedResource["page_about_us_Leadership"]</h3>
+                                </div>
+                                <p class="disc">
+
+                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                    {
+                                        @(new HtmlString(item.Description_Ar))
+                                    }
+                                    else
+                                    {
+                                        @(new HtmlString(item.Description))
+                                    }
+
+
+                                </p>
+                                <a asp-controller="Quote" asp-action="index" class="rts-btn btn-primary"> @SharedResource["page_about_us_Leadership_getIn_touch"]</a>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+
+                    <p>no data Available</p>
+                }
             </div>
         </div>
     </div>
@@ -252,259 +310,135 @@
                             <div class="title-area-start">
                                 <h2 class="title">@SharedResource["page_about_us_how_we_work"]</h2>
 
-                                <p>     @SharedResource["page_about_us_how_we_work_text"] </p>
+                                <p>
+
+                                    @foreach (var item in Model.HowWork)
+                                    {
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @item.Description_Ar
+                                        }
+                                        else
+                                        {
+                                            @item.Description
+                                        }
+
+                                    }
+                                </p>
                             </div>
                             <div class="accordion-area">
                                 <div class="accordion" id="accordionExample3">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingFive">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                              @SharedResource["page_about_us_how_we_work_Initial_Consultation"] 
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_how_we_work_Initial_Consultation_text"]      </div>
+                                    @foreach (var item in Model.AccordionTwo.OrderBy(item => item.Order))
+                                    {
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading@(item.Order)">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse@(item.Order)" aria-expanded="false" aria-controls="collapse@(item.Order)">
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @item.TitleAccordion_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.TitleAccordion
+                                                    }
+                                                </button>
+                                            </h2>
+                                            <div id="collapse@(item.Order)" class="accordion-collapse collapse " aria-labelledby="heading@(item.Order)" data-bs-parent="#accordionExample3">
+                                                <div class="accordion-body">
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @item.Description_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.Description
+                                                    }
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSix">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                              @SharedResource["page_about_us_how_we_work_Needs_assessment"]  
-                                            </button>
-                                        </h2>
-                                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_how_we_work_Needs_assessment_text"]          </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSeven">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                              @SharedResource["page_about_us_how_we_work_Strategy"]
-                                            </button>
-                                        </h2>
-                                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_how_we_work_Strategy_text"]     </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingEight">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                               @SharedResource["page_about_us_how_we_work_Implementation"] 
-                                            </button>
-                                        </h2>
-                                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_how_we_work_Implementation_text"]        </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingNine">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                                             @SharedResource["page_about_us_how_we_work_Continuous"] 
-                                            </button>
-                                        </h2>
-                                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_how_we_work_Continuous_text"]   </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTen">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                               @SharedResource["page_about_us_how_we_work_Transparency"] 
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                               @SharedResource["page_about_us_how_we_work_Transparency_text"]   </div>
-                                        </div>
-                                    </div>
-                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingEleven">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                                              @SharedResource["page_about_us_how_we_work_Collaboration"] 
-                                            </button>
-                                        </h2>
-                                        <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_how_we_work_Collaboration_text"]     </div>
-                                        </div>
-                                    </div>
-                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTwelve">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTweleve" aria-expanded="false" aria-controls="collapseTweleve">
-                                              @SharedResource["page_about_us_how_we_work_text_Flexibility"]  
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTweleve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                            @SharedResource["page_about_us_how_we_work_text_Flexibility_text"]  </div>
-                                    </div>
-                                     </div>
-                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingThirtin">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirtin" aria-expanded="false" aria-controls="collapseThirtin">
-                                              @SharedResource["page_about_us_how_we_work_Knowledge"]  
-                                            </button>
-                                        </h2>
-                                        <div id="collapseThirtin" class="accordion-collapse collapse" aria-labelledby="headingThirtin" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                             @SharedResource["page_about_us_how_we_work_Knowledge_text"]  </div>
-                                    </div>
-                                     </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingFoutin">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFoutin" aria-expanded="false" aria-controls="collapseFoutin">
-                                              @SharedResource["page_about_us_how_we_work_Partnership"]  
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFoutin" class="accordion-collapse collapse" aria-labelledby="headingFoutin" data-bs-parent="#accordionExample3">
-                                            <div class="accordion-body">
-                                               @SharedResource["page_about_us_how_we_work_Partnership_text"]   </div>
-                                        </div>
-                                    </div>
+
+
+                                    }
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
 
-             <div class="col-xl-6 pt-sm-4">
+                    <div class="col-xl-6 pt-sm-4">
 
-                    <div class="accordion-service-inner">
-                        <div class="title-area-start">
+                        <div class="accordion-service-inner">
+                            <div class="title-area-start">
                                 @*<span class="sub color-primary"> Xeed Consulting</span>*@
-                            <h2 class="title">
-                                  @SharedResource["page_about_us_Our_Commitment"]  
-                            </h2>
-                                <p> @SharedResource["page_about_us_Our_Commitment_text"]  
-                                   </p>
-                        </div>
-                        <div class="accordion-area">
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                @SharedResource["page_about_us_Success_OurBusiness"]    
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                                @SharedResource["page_about_us_Success_OurBusiness_text"]         </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                @SharedResource["page_about_us_Understanding_yourUniqu"]      
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                         @SharedResource["page_about_us_Understanding_yourUniqu_text"]         </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                               @SharedResource["page_about_us_commitment_Crafting"]       
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                           @SharedResource["page_about_us_commitment_Crafting_text"]          </div>
-                                    </div>
-                                </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingFour">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                @SharedResource["page_about_us_commitment_Crafting_Transparency"]    
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                 @SharedResource["page_about_us_commitment_Crafting_Transparency_text"]         </div>
-                                        </div>
-                                    </div>
+                                <h2 class="title">
+                                    @SharedResource["page_about_us_Our_Commitment"]
+                                </h2>
+                                <p>
+                                    @foreach (var item in Model.Commitment)
+                                    {
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @item.Description_Ar
+                                        }
+                                        else
+                                        {
+                                            @item.Description
+                                        }
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSIX">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSIX" aria-expanded="false" aria-controls="collapseSIX">
-                                                @SharedResource["page_about_us_commitment_Measuring_Adaptation"]   
-                                            </button>
-                                        </h2>
-                                        <div id="collapseSIX" class="accordion-collapse collapse" aria-labelledby="headingSIX" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                               @SharedResource["page_about_us_commitment_Measuring_Adaptation_text"]      </div>
-                                        </div>
-                                    </div>
+                                    }
+                                </p>
+                            </div>
+                            <div class="accordion-area">
+                                <div class="accordion" id="accordionExample">
 
+                                    @foreach (var item in Model.AccordionThree.OrderBy(item => item.Order))
+                                    {
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSEVEN">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSEVEN" aria-expanded="false" aria-controls="collapseSEVEN">
-                                                @SharedResource["page_about_us_commitment_Dedicated"]    
-                                            </button>
-                                        </h2>
-                                        <div id="collapseSEVEN" class="accordion-collapse collapse" aria-labelledby="headingSEVEN" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                           @SharedResource["page_about_us_commitment_Dedicated_text"]        </div>
-                                        </div>
-                                    </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading@(item.Order)">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse@(item.Order)" aria-expanded="false" aria-controls="collapse@(item.Order)">
+                                                   @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @item.TitleAccordion_Ar
+                                        }
+                                        else
+                                        {
+                                            @item.TitleAccordion
+                                        }
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingEIGHT">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEIGHT" aria-expanded="false" aria-controls="collapseEIGHT">
-                                                @SharedResource["page_about_us_commitment_Business_Practices"]      
-                                            </button>
-                                        </h2>
-                                        <div id="collapseEIGHT" class="accordion-collapse collapse" aria-labelledby="headingEIGHT" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_commitment_Business_Practices_text"]    </div>
-                                        </div>
-                                    </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapse@(item.Order)" class="accordion-collapse collapse " aria-labelledby="heading@(item.Order)" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                         @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            @item.Description_Ar
+                                        }
+                                        else
+                                        {
+                                            @item.Description
+                                        }
 
-
-                                      <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingNEINE">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNEINE" aria-expanded="false" aria-controls="collapseNEINE">
-                                              @SharedResource["page_about_us_commitment_Long_term_Partnership"]    
-                                            </button>
-                                        </h2>
-                                        <div id="collapseNEINE" class="accordion-collapse collapse" aria-labelledby="headingNEINE" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                          @SharedResource["page_about_us_commitment_Long_term_Partnership_text"]</div>
-                                        </div>
-                                    </div>
-
-                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTEN">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTEN" aria-expanded="false" aria-controls="collapseTEN">
-                                                @SharedResource["page_about_us_commitment_YourGoal_OurMission"]    
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTEN" class="accordion-collapse collapse" aria-labelledby="headingTEN" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                @SharedResource["page_about_us_commitment_YourGoal_OurMission_text"] 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
+                                </div>
                             </div>
                         </div>
-                      </div>
-              </div>
-           
-              <p class="mb-0 pt-4"> @SharedResource["page_about_us_Our_Commitment_Lasttext"]  </p>
-                  <div class="details-right-inner">
-                            <a asp-controller="Quote" asp-action="index" asp-route-culture="@culture" class="rts-btn btn-primary"> @SharedResource["page_about_us_Leadership_getIn_touch"] </a>
-                                    </div>
+                    </div>
+
+                    <p class="mb-0 pt-4"> @SharedResource["page_about_us_Our_Commitment_Lasttext"]  </p>
+                    <div class="details-right-inner">
+                        <a asp-controller="Quote" asp-action="index" class="rts-btn btn-primary"> @SharedResource["page_about_us_Leadership_getIn_touch"] </a>
+                    </div>
                 </div>
-             </div>
-         </div>
-  </div>
-   
+            </div>
+        </div>
+    </div>
+
 
     <div class="rts-about-area rts-section-gap bg-about-sm-shape Purpose" id="about-us">
         <div class="container">
@@ -516,99 +450,85 @@
                             Xeed Consulting
                         </p>
                         <h2 class="title">
-                        @SharedResource["page_about_us_Our_Aspiration"]  
+                            @SharedResource["page_about_us_Our_Aspiration"]
                         </h2>
                     </div>
                     <div class="about-inner">
-                        <p class="disc">
-                            @SharedResource["page_about_us_Our_Aspiration_text"]      </p>
-                        <p class="disc">
-                            <span style="font-size:20px; color: #104e7e;">@SharedResource["page_about_us_Our_Aspiration_Empowering_Success"] </span>
-                            <br>
-                          @SharedResource["page_about_us_Our_Aspiration_Empowering_Success_text1"]    <span style="font-size:20px; color: #104e7e;">
-                                                  @SharedResource["page_about_us_Our_Aspiration_Empowering_Success_text2"]   </span> 
-                                                       @SharedResource["page_about_us_Our_Aspiration_Empowering_Success_text3"]
+                        @foreach (var item in Model.Aspiration)
+                        {
+                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                            {
+
+
+                                @(new HtmlString(item.Text_Ar))
+                            }
+                            else
+                            {
+                                @(new HtmlString(item.Text))
+                            }
+
+                        }
+
+                        @*    <p class="disc">
                         </p>
+                        <p class="disc">
+                        <span style="font-size:20px; color: #104e7e;">@SharedResource["page_about_us_Our_Aspiration_Empowering_Success"] </span>
+                        <br>
+                        @SharedResource["page_about_us_Our_Aspiration_Empowering_Success_text1"]    <span style="font-size:20px; color: #104e7e;">
+                        @SharedResource["page_about_us_Our_Aspiration_Empowering_Success_text2"]
+                        </span>
+                        @SharedResource["page_about_us_Our_Aspiration_Empowering_Success_text3"]
+                        </p>*@
 
-                      <div class="accordion-area inner inner2">
-                        <div class="accordion-one-inner inner">
-                            <div class="accordion" id="accordionExample4">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwelve">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapseTwelve">
-                                                <span>01.</span>  @SharedResource["page_about_us_Our_Aspiration_Nurturing_Growth"] 
-                                        </button>
-                                    </h2>
-                                    <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample4" style="">
-                                        <div class="accordion-body">
-                                             @SharedResource["page_about_us_Our_Aspiration_Nurturing_Growth_text"]   </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThirty">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapseThirty">
-                                                <span>02.</span>@SharedResource["page_about_us_Our_Aspiration_Driving_Innovation"] 
-                                        </button>
-                                    </h2>
-                                    <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="headingThirty" data-bs-parent="#accordionExample4" style="">
-                                        <div class="accordion-body">
-                                             @SharedResource["page_about_us_Our_Aspiration_Driving_Innovation_text"]   I   </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFourty">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapsegFourty">
-                                                <span>03.</span>@SharedResource["page_about_us_Our_Aspiration_Building_Resilience"] 
-                                        </button>
-                                    </h2>
+                        <div class="accordion-area inner inner2">
+                            <div class="accordion-one-inner inner">
+                                <div class="accordion" id="accordionExample4">
+                                    @foreach (var item in Model.AccordionFour.OrderBy(item => item.Order))
+                                    {
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading@(item.Order)">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse@(item.Order)" aria-expanded="false" aria-controls="collapse@(item.Order)">
+                                                    <span>@(item.Order).</span>
 
-
-                                    <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="headingFourty" data-bs-parent="#accordionExample4">
-                                        <div class="accordion-body">
-                                               @SharedResource["page_about_us_Our_Aspiration_Building_Resilience_text"]      </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFivty">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapseFivty">
-                                            <span>04.</span>@SharedResource["page_about_us_Our_Aspiration_Creating_Impact"] 
-                                        </button>
-                                    </h2>
-                                    <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="headingFivty" data-bs-parent="#accordionExample4" style="">
-                                        <div class="accordion-body">
-                                          @SharedResource["page_about_us_Our_Aspiration_Creating_Impact_text"] 
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @item.TitleAccordion_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.TitleAccordion
+                                                    }
+                                                </button>
+                                            </h2>
+                                            <div id="collapse@(item.Order)" class="accordion-collapse collapse" aria-labelledby="heading@(item.Order)" data-bs-parent="#accordionExample4" style="">
+                                                <div class="accordion-body">
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @item.Description_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.Description
+                                                    }
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    }
                                 </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSixty">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapseSixty">
-                                            <span>05.</span>@SharedResource["page_about_us_Our_Aspiration_Fostering_Collaborative"] 
-                                    </h2>
-                                    <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="headingSixty" data-bs-parent="#accordionExample4" style="">
-                                        <div class="accordion-body">
-                                       @SharedResource["page_about_us_Our_Aspiration_Fostering_Collaborative_text"] 
-                                        </div>
-                                    </div>
-                                </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSeventy">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapseSeventy">
-                                                <span>06.</span>@SharedResource["page_about_us_Our_Aspiration_Unleashing_Potential"] 
-                                            </button>
-                                        </h2>
-                                        <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="headingSeventy" data-bs-parent="#accordionExample4" style="">
-                                            <div class="accordion-body">
-                                                @SharedResource["page_about_us_Our_Aspiration_Unleashing_Potential_text"]           </div>
-                                        </div>
-                                    </div>
                             </div>
                         </div>
-                      </div>
                         <p class="disc">
-                            @SharedResource["page_about_us_Our_Aspiration_last_text"]         
+                            @foreach (var item in Model.Aspiration)
+                            {
+                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                {
+                                    @item.Text1_Ar
+                                }
+                                else
+                                {
+                                    @item.Text1
+                                }
+                            }
                         </p>
                     </div>
                 </div>
@@ -617,13 +537,17 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
                     <div class="about-one-thumbnail">
                         <img src=" assets/images/aspiration.jpg" alt="aspiration">
-                     
                     </div>
                 </div>
                 <!-- about-right end -->
             </div>
         </div>
     </div>
+
+
+
+
+
     <div class="rts-service-area rts-section-gapBottom" id="services">
         <div class="container-fluid service-main plr--120-service mt--50 plr_md--0 pl_sm--0 pr_sm--0">
             <div class="row">
@@ -632,198 +556,146 @@
                         <div class="cta-left">
                             <h3 class="title animated fadeIn">
                                 @SharedResource["page_about_us_Xeed_discuss"]
-                               
                             </h3>
                         </div>
                         <div class="cta-right">
-                            <a class="rts-btn btn-white" asp-controller="Quote" asp-action="index" asp-route-culture="@culture"> @SharedResource["page_about_us_Xeed_Work_together"]</a>
+                            <a class="rts-btn btn-white" asp-controller="Quote" asp-action="index"> @SharedResource["page_about_us_Xeed_Work_together"]</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <div class="rts-business-goal mt--0 rts-section-gapBottom">
         <div class="container">
-            <div class="row">
-                <!-- business goal left -->
-                <div class="col-lg-6">
-                    <div class="business-goal-one">
-                        <img src="assets/images/team.jpg" alt="Teams">
-                        <img class="small" src="assets/images/team1.jpg" alt="Teams">
-                    </div>
-                </div>
-                <!-- business goal right -->
-                <!-- right area business -->
-                <div class="col-lg-6 mt--35 mt_md--70 mt_sm--70">
-                    <div class="business-goal-right">
-                        <div class="rts-title-area business  pl--30">
-                            <p class="pre-title">
-                               Xeed Consulting
-                            </p>
-                            <h2 class="title">
-                               @SharedResource["page_about_us_Xeed_Consulting_Our_team"]      
-                            </h2>
+            @foreach (var item in Model.Team)
+            {
+                <div class="row">
+                    <!-- business goal left -->
+                    <div class="col-lg-6">
+                        <div class="business-goal-one">
+                            <img src="../assets/images/@item.Image1" alt="Teams">
+                            <img class="small" src="../assets/images/@item.Image2" alt="Teams">
                         </div>
-                        <div class="rts-business-goal ">
-                            <div class="single-goal">
+                    </div>
+                    <!-- business goal right -->
+                    <!-- right area business -->
+                    <div class="col-lg-6 mt--35 mt_md--70 mt_sm--70">
+                        <div class="business-goal-right">
+                            <div class="rts-title-area business  pl--30">
+                                <p class="pre-title">
+                                    Xeed Consulting
+                                </p>
+                                <h2 class="title">
+                                    @SharedResource["page_about_us_Xeed_Consulting_Our_team"]
+                                </h2>
+                            </div>
+                            <div class="rts-business-goal ">
+                                <div class="single-goal">
 
-                                <div class="goal-wrapper">
-                                    @*<h6 class="title">Best Business Consulting</h6>*@
-                                    <p class="disc">
-                                        @SharedResource["page_about_us_Xeed_Consulting_text"]  
-                                    </p>
+                                    <div class="goal-wrapper">
+                                        @*<h6 class="title">Best Business Consulting</h6>*@
+                                        <p class="disc">
+
+                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                            {
+                                                @item.Description_Ar
+                                            }
+                                            else
+                                            {
+                                                @item.Description
+                                            }
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
-                          
                         </div>
                     </div>
+                    <!-- right area business ENd -->
                 </div>
-                <!-- right area business ENd -->
-            </div>
+            }
         </div>
     </div>
 
-
     <!-- end team section -->
-
     <!-- rts features area start -->
     <div class="rts-feature-area rts-section-gap Purpose">
         <div class="container-fluid padding-controler plr--120">
             <div class="row bg-white-feature  pt--120 pb--120">
-                <div class="col-xl-6 col-lg-12">
-                    <div class="feature-left-area">
-                        <img src="assets/images/purpose.jpg" alt="purpose">
+                @foreach (var item in Model.Purpose)
+                {
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="feature-left-area">
+                            <img src="../assets/images/@item.Image" alt="purpose">
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-6 col-lg-12">
-                    <div class="rts-title-area feature  pl--30 pl_sm--0">
-                        <p class="pre-title">
-                            @*Boost Your Business Today*@
-                        </p>
-                        <h2 class="title feature-title">@SharedResource["page_about_us_Purpose"]</h2>
-                        <p>@SharedResource["page_about_us_Purpose_text"]</p>
+                    <div class="col-xl-6 col-lg-12">
+                        @*      <div class="rts-title-area feature  pl--30 pl_sm--0">
 
-
-                        <p class="disc">
-                            <span style="font-size:20px; color: #104e7e;">@SharedResource["page_about_us_Purpose_Value"]</span>
-                            <br />
-                          @SharedResource["page_about_us_Purpose_Value_text"] </p>
-
-
-
-
-
+                    <h2 class="title feature-title">@SharedResource["page_about_us_Purpose"]</h2>
+                    <p>@SharedResource["page_about_us_Purpose_text"]</p>
+                    <p class="disc">
+                    <span style="font-size:20px; color: #104e7e;">@SharedResource["page_about_us_Purpose_Value"]</span>
+                    <br />
+                    @SharedResource["page_about_us_Purpose_Value_text"]
+                    </p>
+                    </div>*@
+                        <div class="rts-title-area feature  pl--30 pl_sm--0">
+                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                            {
+                                @(new HtmlString(item.Text_Ar))
+                            }
+                            else
+                            {
+                                @(new HtmlString(item.Text))
+                            }
+                        </div>
                     </div>
+                }
 
-                </div>
-                  <div class="col-xl-12 col-lg-12">
+
+
+
+                <div class="col-xl-12 col-lg-12">
                     <div class="rts-faq-area rts-section-gap inner">
-                       
-                                    <div class="accordion-area inner inner2">
-
-                                        <div class="accordion-one-inner inner inner2">
-                                            <div class="accordion" id="accordionExample5">
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingOnez">
-                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapseOne">
-                                                <span>01.</span> @SharedResource["page_about_us_Purpose_Value_Integrity"]  
-                                                        </button>
-                                                    </h2>
-                                                    <div id="collapse5" class="accordion-collapse collapse show" aria-labelledby="headingOnez" data-bs-parent="#accordionExample5">
-                                                        <div class="accordion-body">
-                                             @SharedResource["page_about_us_Purpose_Value_Integrity_text"]       </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingTwoo">
-                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapseTwo">
-                                                <span>02.</span> @SharedResource["page_about_us_Purpose_Value_Transparency"] 
-                                                        </button>
-                                                    </h2>
-                                                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample5">
-                                                        <div class="accordion-body">
-                                                       @SharedResource["page_about_us_Purpose_Value_Transparency_text"]       </div>
-                                                    </div>
-                                                </div>
-
-
-
-
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingThree">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                                                <span>03.</span> @SharedResource["page_about_us_Purpose_Value_Client_Centricity"]  
-                                                </button>
-                                                </h2>
-                                                <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample5">
-                                                <div class="accordion-body">
-                                            @SharedResource["page_about_us_Purpose_Value_Client_Centricity_text"]             </div>
-                                                </div>
-                                        </div>
+                        <div class="accordion-area inner inner2">
+                            <div class="accordion-one-inner inner inner2">
+                                <div class="accordion" id="accordionExample5">
+                                    @foreach (var item in Model.AccordionFive.OrderBy(item => item.Order))
+                                    {
                                         <div class="accordion-item">
-                                                <h2 class="accordion-header" id="headingFour">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapseFour">
-                                                <span>04.</span> @SharedResource["page_about_us_Purpose_Value_Innovation"]  
+                                            <h2 class="accordion-header" id="heading@(item.Order)">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse@(item.Order)" aria-expanded="false" aria-controls="collapse@(item.Order)">
+                                                    <span>@(item.Order).</span>           @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @item.TitleAccordion_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.TitleAccordion
+                                                    }
                                                 </button>
-                                                </h2>
-                                                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample5">
-                                                        <div class="accordion-body">
-                                             @SharedResource["page_about_us_Purpose_Value_Innovation_text"]       </div>
-                                                    </div>
+                                            </h2>
+                                            <div id="collapse@(item.Order)" class="accordion-collapse collapse " aria-labelledby="heading@(item.Order)" data-bs-parent="#accordionExample5">
+                                                <div class="accordion-body">
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @item.Description_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.Description
+                                                    }
                                                 </div>
-
-
-
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingFive">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapseFive">
-                                                <span>05.</span> @SharedResource["page_about_us_Purpose_Value_Collaboration"]  
-                                            </button>
-                                        </h2>
-                                        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample5">
-                                            <div class="accordion-body">
-                                               @SharedResource["page_about_us_Purpose_Value_Collaboration_text"]    </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSix">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapseSix">
-                                                <span>06.</span>  @SharedResource["page_about_us_Purpose_Value_Continuous_Learning"]
-                                            </button>
-                                        </h2>
-                                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample5">
-                                            <div class="accordion-body">
-                                           @SharedResource["page_about_us_Purpose_Value_Continuous_Learning_text"]          </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingSeven">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapseSeven">
-                                                <span>07.</span> @SharedResource["page_about_us_Purpose_Value_Diversity_Inclusion"]  
-                                            </button>
-                                        </h2>
-                                        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample5">
-                                            <div class="accordion-body">
-                                              @SharedResource["page_about_us_Purpose_Value_Diversity_Inclusion_text"]    
                                             </div>
                                         </div>
-                                    </div>
-
+                                    }
                                 </div>
-                              </div>
-                               
-                         </div>
-                       </div>
-                     </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

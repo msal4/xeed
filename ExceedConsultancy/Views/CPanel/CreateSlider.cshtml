@@ -1,0 +1,44 @@
+﻿@model ExceedConsultancy.Models.HomeSliderViewModel;
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<section id="CreatePage" class="FormHeight" style="background-color: #c8bef2;">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Create Slider</h1>
+        </div>
+
+        <form asp-action="CreateSlider" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Title_EN">  English Title</label>
+                <input asp-for="Title_EN" class="form-control">
+                <span asp-validation-for="Title_EN"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title_AR">Arabic Title</label>
+                <input asp-for="Title_AR" class="form-control">
+                <span asp-validation-for="Title_AR"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order"></label>
+                <input asp-for="Order" class="form-control">
+                <span asp-validation-for="Order"></span>
+            </div>
+            <div class="form-group">
+                <label for="ImageFile">Select Image</label>
+                <input type="file" id="ImageFile" name="ImageFile" class="form-control-file">
+                <span asp-validation-for="ImageFile"></span>
+            </div>
+          
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary w-auto" style="font-size: 25px;">Create Slider</button>
+                <a asp-action="Home" class="btn btn-secondary" style="font-size: 25px;">Cancel</a>
+            </div>
+       
+        </form>
+    </div>
+</section>
+
+
+

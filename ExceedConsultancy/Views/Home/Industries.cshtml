@@ -1,0 +1,113 @@
+﻿@model ExceedConsultancy.Models.HomeModel;
+
+
+@using System.Globalization;
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    ViewBag.Title = @SharedResource["title_Industries"];
+    ViewBag.MetaDescription = @SharedResource["MetaDescription_Industries"];
+    ViewBag.MetaKeywords = @SharedResource["MetaKeywords_Industries"];
+}
+
+<body>
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input id="searchInput1" class="search-input" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+
+    <div id="anywhere-home">
+    </div>
+    <!-- ENd Header Area -->
+    <!-- start breadcrumb area -->
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Industries</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a asp-controller="Home" asp-action="index" > @SharedResource["nav_home"]</a>
+                        <span> / </span>
+                        Industries
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="rts-project-area rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                 
+                    <div class="tab-content-area mt--50 mt_sm--30">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel">
+                                <!-- tab product area -->
+                                <div class="row g-5">
+                                    @if (Model.Industrie != null)
+                                    {
+                                        @foreach (var IndustrieItem in Model.Industrie.OrderBy(item => item.Order))
+                                        {
+
+
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                                <!-- single -product area -->
+                                                <div class="rts-product-one">
+                                                    <div class="thumbnail-area">
+                                                        <img src="../assets/images/@IndustrieItem.Image" alt="@IndustrieItem.text">
+
+                                                    </div>
+                                                    <div class="product-contact-wrapper">
+                                                        @*<span>Business Solution</span>*@
+
+                                                        <h5 class="title">
+                                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                            {
+                                                                <span>@IndustrieItem.text_Ar</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span>@IndustrieItem.text</span>
+                                                            }
+                                                        
+                                                        </h5>
+
+                                                    </div>
+                                                </div>
+                                                <!-- single -product area End -->
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p>No data available.</p>
+                                    }
+                                </div>
+                                <!-- tab product area end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our service area end -->
+    <!-- service accordion area -->
+</body>
+

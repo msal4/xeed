@@ -1,0 +1,60 @@
+﻿@model Team
+
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<section id="CreatePage" class="FormHeight">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Our Team Section</h1>
+        </div>
+
+        @if (TempData["fail"] != null)
+        {
+            <p class="alert alert-danger d-block">@TempData["fail"]</p>
+        }
+        @if (TempData["success"] != null)
+        {
+            <p class="alert alert-success d-block">@TempData["success"]</p>
+        }
+
+        <form asp-action="Team" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="TeamId" />
+
+            <div class="form-group">
+                <label asp-for="Description">English Description</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description_Ar">Arabic Description</label>
+                <textarea asp-for="Description_Ar" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description_Ar"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="Image1Id">Select Image 1</label>
+                <input type="file" id="Image1Id" name="Image1Id" class="form-control-file">
+                <span asp-validation-for="Image1Id"></span>
+            </div>
+          
+            <div class="form-group">
+                <label for="Image2Id">Select Image 2</label>
+                <input type="file" id="Image2Id" name="Image2Id" class="form-control-file">
+                <span asp-validation-for="Image2Id"></span>
+            </div>
+
+            <div class="form-group">
+                <a asp-action="Home" class="btn btn-secondary" style="font-size: 25px;">Cancel</a>
+                <button type="submit" class="btn btn-primary w-auto" style="font-size: 25px;">Save Changes</button>
+            </div>
+
+
+        </form>
+    </div>
+</section>
+
+

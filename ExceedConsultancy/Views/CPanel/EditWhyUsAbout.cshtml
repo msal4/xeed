@@ -1,0 +1,65 @@
+﻿@model WhyUsViewModel
+
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<section id="CreatePage" class="FormHeight">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Edit Why Us</h1>
+        </div>
+
+        @if (TempData["fail"] != null)
+        {
+            <p class="alert alert-danger d-block">@TempData["fail"]</p>
+        }
+        @if (TempData["success"] != null)
+        {
+            <p class="alert alert-success d-block">@TempData["success"]</p>
+        }
+
+        <form asp-action="EditWhyUsAbout" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Title">English Title</label>
+                <input asp-for="Title" class="form-control">
+                <span asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title_Ar">Arabic Title</label>
+                <input asp-for="Title_Ar" class="form-control">
+                <span asp-validation-for="Title_Ar"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Description">English Description</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description_Ar">Arabic Description</label>
+                <textarea asp-for="Description_Ar" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description_Ar"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="ImageId">Select Image 1</label>
+                <input type="file" id="ImageId" name="ImageId" class="form-control-file">
+                <span asp-validation-for="ImageId"></span>
+            </div>
+
+
+            <div class="form-group">
+                <a asp-action="WhyUsAbout" class="btn btn-secondary" style="font-size: 25px;">Cancel</a>
+                <button type="submit" class="btn btn-primary w-auto" style="font-size: 25px;">Save Changes</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+

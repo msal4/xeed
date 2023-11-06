@@ -1,5 +1,10 @@
-﻿@model ExceedConsultancy.Models.HomeModel
+﻿
+@model ExceedConsultancy.Models.HomeModel;
+@using Microsoft.AspNetCore.Html;
 
+
+
+@using System.Globalization;
 @using Microsoft.AspNetCore.Localization;
 
 @{
@@ -8,91 +13,58 @@
 }
 
 @{
-    
     Layout = "~/Views/Shared/_Layout.cshtml";
-     ViewBag.Title = @SharedResource["home_viewbag_title"];
-    ViewBag.MetaDescription = @SharedResource["home_viewbag_description"];
-    ViewBag.MetaKeywords = "Xeed Consulting, empowering businesses, innovation, strategic expertise, innovative solutions, complex challenges, growth opportunities, sustainable success, business consultancy, strategy development, business planning, acquisitions, process optimization, financial analysis, market analysis";
-
-    // ViewBag.Title = "Xeed Consulting | الخبرة الاستراتيجية";
-    //ViewBag.MetaDescription = "مرحبًا بكم في اكسيد للاستشارات! نحن فريق مكرس من المستشارين الخبراء يعزز الأعمال بالاستراتيجيات المبتكرة والحلول المدفوعة بالتكنولوجيا. شارك معنا للتعامل مع التحديات المعقدة، واستغلال فرص النمو، وتحقيق النجاح المستدام.";
-    //ViewBag.MetaKeywords = "اكسيد للاستشارات، تمكين الأعمال، الابتكار، الخبرة الاستراتيجية، الحلول المبتكرة، التحديات المعقدة، فرص النمو، النجاح المستدام، استشارات الأعمال، تطوير الاستراتيجية، التخطيط الاستراتيجي، الاستحواذات، تحسين العمليات، تحليل مالي، تحليل السوق";
-
+    ViewBag.Title = @SharedResource["title_home"];
+    ViewBag.MetaDescription = @SharedResource["MetaDescription_home"];
+    ViewBag.MetaKeywords = @SharedResource["MetaKeywords_home"];
 }
-
-@*<!DOCTYPE html>
-<html lang="en">
-
-
-<body class="home-blue">*@
-
     <div id="anywhere-home"></div>
 
-    <!-- ENd Header Area -->
-
-    <!-- rts banner area start -->
+<div>
+    @*@Html.Partial("_CreateSliderForm", Model.Slider)*@
+</div>
     <div class="rts-banner-area-two">
         <div class="swiper mySwiperh2_banner">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="banner-two">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="banner-two-content text-center">
-                                        <div class="wrapper">
-                                            <h1 class="title">
-                                                <span>@SharedResource["nav_Business"]</span> 
-                                            </h1>
-                                        <a class="rts-btn btn-primary-2" asp-controller="Business" asp-action="index" asp-route-culture="@culture">@SharedResource["Read_More"]</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="banner-two slide-2">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="banner-two-content text-center">
-                                        <div class="wrapper">
-                                            <h1 class="title">
-                                                <span> @SharedResource["nav_Technology"] </span>
-                                            </h1>
-                                            <a class="rts-btn btn-primary-2" asp-controller="Technology" asp-action="index"  asp-route-culture="@culture">@SharedResource["Read_More"]</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="banner-two slide-3">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="banner-two-content text-center">
-                                        <div class="wrapper">
-                                            <h1 class="title">
+            @if (Model.Slider != null)
+            {
+                @foreach (var sliderItem in Model.Slider.OrderBy(item => item.Order))
+                {
+                    <div class="swiper-slide">
+                        <div class="banner-two" style="background-image: url('../assets/images/@sliderItem.Image');">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="banner-two-content text-center">
+                                            <div class="wrapper">
+                                                <h1 class="title">
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        <span>@sliderItem.Title_AR</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@sliderItem.Title_EN</span>
+                                                    }
+                                                </h1>
 
 
-                                                <span> @SharedResource["nav_pricing"]  </span> 
-                                            </h1>
-                                            <a class="rts-btn btn-primary-2" asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture">@SharedResource["Read_More"]</a>
+                                                <a class="rts-btn btn-primary-2" asp-controller="Home" asp-action="Services" >@SharedResource["Read_More"]</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
+            }
+            else
+            {
+                <p>No data available.</p>
+            }
             </div>
         </div>
-
     </div>
     <!-- rts banner area end -->
     <!-- business case start -->
@@ -108,102 +80,44 @@
         <div class="container-cusiness-case-h2 mt--50">
             <div class="row">
                 <div class="col-12">
-                    <div class="swiper mySwiperh2_Business_Cases">
-                        <div class="swiper-wrapper Industries">
-                            <div class="swiper-slide">
-                                <div class="rts-business-case-s-2">
-                                    <img src="assets/images/business-case/04.jpg" alt="Health Care Industry">
-                                    <div class="inner">
-                                        <h5 class="title">
-                                           @SharedResource["Health_Care"]  
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="rts-business-case-s-2">
-                                    <img src="assets/images/business-case/05.jpg" alt="Industrial Goods">
-                                    <div class="inner">
-                                        <h5 class="title">
-                                          @SharedResource["Industrial_Goods"]     
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="swiper mySwiperh2_Business_Cases">
+                  
+                            <div class="swiper-wrapper Industries">
+                              @if (Model.Industrie != null)
+                                {
+                                    @foreach (var IndustrieItem in Model.Industrie.OrderBy(item => item.Order))
+                                    {
+                                <div class="swiper-slide">
+                                    <div class="rts-business-case-s-2">
 
-                            <div class="swiper-slide">
-                                <!-- single business case -->
-                                <div class="rts-business-case-s-2">
-                                    <img src="assets/images/business-case/Insurance.jpg" alt="Business_case">
-                                    <div class="inner">
-                                        <h5 class="title">
+                                        <img src="../../assets/images/@IndustrieItem.Image" alt="@IndustrieItem.text">
+                                        <div class="inner">
+                                            <h5 class="title">
+                                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                {
+                                                    <span>@IndustrieItem.text_Ar</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@IndustrieItem.text</span>
+                                                }
+                                            </h5>
+                                        </div>
 
-                                           @SharedResource["Insurance_Industry"]    
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                               <div class="swiper-slide">
-                                <div class="rts-business-case-s-2">
-                                    <img src="assets/images/business-case/Real-Estate.jpg" alt="Real Estate">
-                                    <div class="inner">
-                                    
-                                        <h5 class="title">
-                                            @SharedResource["Real_Estate"]   
-                                        </h5>
+                            
+
 
                                     </div>
-                         
                                 </div>
-                         
+                            }
+                        }
+                        else
+                        {
+                            <p>No data available.</p>
+                        }
                             </div>
-                            <div class="swiper-slide">
-                                <div class="rts-business-case-s-2">
-                                  
-                                    <img src="assets/images/business-case/Media.jpg" alt="Media">
-                                  
-                                    <div class="inner">
-                                      
-                                        <h5 class="title">
-                                        @SharedResource["Technology_Media"]   
-                                        </h5>
-                                       
-                                    </div>
-                                   
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="rts-business-case-s-2">
-                                    <img src="assets/images/business-case/Travel.jpg" alt="Travel">
-                                    <div class="inner">
-                                        <h5 class="title">
-                                           @SharedResource["Travel_tourism"]    
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="rts-business-case-s-2">
-                                    <img src="assets/images/business-case/07.jpg" alt="  Engineering, Construction">
-                                    <div class="inner">
-                                        <h5 class="title">
-                                           @SharedResource["Engineering_Construction"]   
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="rts-business-case-s-2">
-                                    <img src="assets/images/business-case/09.jpg" alt=" Financial Services">
-                                    <div class="inner">
-                                        <h5 class="title">
-                                           @SharedResource["Financial_Services"]    
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                </div>
                 </div>
             </div>
         </div>
@@ -218,11 +132,13 @@
                     </div>
                     <div class="body">
                         <p class="info">@SharedResource["Home_bg_text_Contact"] <span>@*(24/7 Available)*@</span></p>
-                        <a asp-controller="Quote" asp-action="index"  asp-route-culture="@culture" class="rts-btn btn-primary-2">@SharedResource["nav_Contact"]</a>
+                        <a asp-controller="Quote" asp-action="index"  class="rts-btn btn-primary-2">@SharedResource["nav_Contact"]</a>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
     <div class="rts-business-case-area rts-section-gapTop business-case-bg">
         <div class="container">
@@ -237,279 +153,348 @@
             </div>
         </div>
         <div class="container-2 mt--65">
-            <div class="row g-5">
-                <div class="swiper mySwiperh3_business-case">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <!-- single case study -->
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Organizational-Purpose-1.jpg" alt="Business and Organizational Purpose">
-                                    <a asp-controller="Business" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Business" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_Business"]</h5>
-                                            </a>
+              
+                <div class="row g-5">
+
+                    <div class="swiper mySwiperh3_business-case">
+
+                        <div class="swiper-wrapper">
+                                 @if (Model.Capabilitie != null)
+                                {
+                                    @foreach (var CapabilitieItem in Model.Capabilitie.OrderBy(item => item.Order))
+                                    {
+
+                            <div class="swiper-slide">
+                                <!-- single case study -->
+                                <div class="rts-cse-study-3-wrapper">
+                                    <div class="thumbnail">
+                           
+                                        <img src="assets/images/@CapabilitieItem.Image" alt="@CapabilitieItem.text">
+                                        <a asp-controller="Home" asp-action="Business" asp-route-id="@CapabilitieItem.Id" class="icon">
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <div class="content">
+                                            <div class="content-wrap">
+                                                <a asp-controller="Home" asp-action="Business" asp-route-id="@CapabilitieItem.Id">
+
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        <span>@CapabilitieItem.text_Ar</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@CapabilitieItem.text</span>
+                                                    }
+                                                </a>
+                                            </div>
                                         </div>
+                                        <a asp-controller="Home" asp-action="Business" asp-route-id="@CapabilitieItem.Id" class="over_link"></a>
+                               
                                     </div>
-                                    <a asp-controller="Business" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Strategy-.jpg" alt="=Strategy">
-                                    <a asp-controller="Finance" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Finance" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_Finance"] </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <a asp-controller="Finance" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Technology.jpg" alt="Technology">
-                                    <a asp-controller="Technology" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Technology" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_Technology"]</h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <a asp-controller="Technology" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/AI.jpg" alt="AI">
-                                    <a asp-controller="ArtificialIntelligence" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="ArtificialIntelligence" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_AI"] </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <a asp-controller="ArtificialIntelligence" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Monitoring-Evaluation .jpg" alt="Monitoring-Evaluation">
-                                    <a asp-controller="MonitoringEvaluation" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="MonitoringEvaluation" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_monitoring_Evaluation"] </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <a asp-controller="MonitoringEvaluation" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images//Manufacturing-.jpg" alt="@SharedResource["nav_manufacturing"]">
-                                    <a asp-controller="Manufacturing" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Manufacturing" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_manufacturing"] </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <a asp-controller="Manufacturing" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Marketing.jpg" alt="Marketing">
-                                    <a asp-controller="Marketing" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Marketing" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_marketing"]</h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <a asp-controller="Marketing" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
-                                </div>
-                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No data available.</p>
+                    }
+
                         </div>
 
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Operations.jpg" alt="Operations">
-                                    <a asp-controller="Operations" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Operations" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_operations"]</h5>
-                                            </a>
-                                        </div>
+                    </div>
+
+                </div>
+           
+                
+        </div>
+    </div>
+@*
+<div class="rts-business-case-area rts-section-gapTop business-case-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-area-business-case-3">
+                    <div class="title-area">
+                        <h2 class="title">@SharedResource["nav_capabilities"]</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-2 mt--65">
+        <div class="row g-5">
+            <div class="swiper mySwiperh3_business-case">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!-- single case study -->
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Organizational-Purpose-1.jpg" alt="Business and Organizational Purpose">
+                                <a asp-controller="Business" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Business" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_Business"]</h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="Operations" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="Business" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Implementation.jpg" alt="Implementation">
-                                    <a asp-controller="Implementation" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Implementation" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_implementation"]</h5>
-                                            </a>
-                                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Strategy-.jpg" alt="=Strategy">
+                                <a asp-controller="Finance" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Finance" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_Finance"] </h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="Implementation" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="Finance" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Organization-Strategy.jpg" alt="Organization-Strategy">
-                                    <a asp-controller="OrganizationStrategy" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="OrganizationStrategy" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_organization_strategy"]</h5>
-                                            </a>
-                                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Technology.jpg" alt="Technology">
+                                <a asp-controller="Technology" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Technology" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_Technology"]</h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="OrganizationStrategy" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="Technology" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/People-Strategy.jpg" alt="People Strategy">
-                                    <a asp-controller="PeopleStrategy" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="PeopleStrategy" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_people"]</h5>
-                                            </a>
-                                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/AI.jpg" alt="AI">
+                                <a asp-controller="ArtificialIntelligence" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="ArtificialIntelligence" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_AI"] </h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="PeopleStrategy" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="ArtificialIntelligence" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Pricing.jpg" alt="@SharedResource["nav_pricing"] ">
-                                    <a asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_pricing"] </h5>
-                                            </a>
-                                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Monitoring-Evaluation .jpg" alt="Monitoring-Evaluation">
+                                <a asp-controller="MonitoringEvaluation" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="MonitoringEvaluation" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_monitoring_Evaluation"] </h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="Pricing" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="MonitoringEvaluation" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Zero-Based.jpg" alt="Zero-Based budgeting">
-                                    <a asp-controller="Budgeting" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Budgeting" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_zero_based"]</h5>
-                                            </a>
-                                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images//Manufacturing-.jpg" alt="@SharedResource["nav_manufacturing"]">
+                                <a asp-controller="Manufacturing" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Manufacturing" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_manufacturing"] </h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="Budgeting" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="Manufacturing" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Risk-Management.jpg" alt="Risk-Management">
-                                    <a asp-controller="RiskManagement" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="RiskManagement" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_risk_management"]</h5>
-                                            </a>
-                                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Marketing.jpg" alt="Marketing">
+                                <a asp-controller="Marketing" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Marketing" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_marketing"]</h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="RiskManagement" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="Marketing" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="rts-cse-study-3-wrapper">
-                                <div class="thumbnail">
-                                    <img src="assets/images/Innovation-Strategy-.jpg" alt="Innovation-Strategy">
-                                    <a asp-controller="Innovation" asp-action="index"  asp-route-culture="@culture" class="icon">
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <div class="content">
-                                        <div class="content-wrap">
-                                            <a asp-controller="Innovation" asp-action="index"  asp-route-culture="@culture">
-                                                <h5 class="title">@SharedResource["nav_innovation"]</h5>
-                                            </a>
-                                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Operations.jpg" alt="Operations">
+                                <a asp-controller="Operations" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Operations" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_operations"]</h5>
+                                        </a>
                                     </div>
-                                    <a asp-controller="Innovation" asp-action="index"  asp-route-culture="@culture" class="over_link"></a>
                                 </div>
+                                <a asp-controller="Operations" asp-action="index" class="over_link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Implementation.jpg" alt="Implementation">
+                                <a asp-controller="Implementation" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Implementation" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_implementation"]</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a asp-controller="Implementation" asp-action="index" class="over_link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Organization-Strategy.jpg" alt="Organization-Strategy">
+                                <a asp-controller="OrganizationStrategy" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="OrganizationStrategy" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_organization_strategy"]</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a asp-controller="OrganizationStrategy" asp-action="index" class="over_link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/People-Strategy.jpg" alt="People Strategy">
+                                <a asp-controller="PeopleStrategy" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="PeopleStrategy" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_people"]</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a asp-controller="PeopleStrategy" asp-action="index" class="over_link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Pricing.jpg" alt="@SharedResource["nav_pricing"] ">
+                                <a asp-controller="Pricing" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Pricing" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_pricing"] </h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a asp-controller="Pricing" asp-action="index" class="over_link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Zero-Based.jpg" alt="Zero-Based budgeting">
+                                <a asp-controller="Budgeting" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Budgeting" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_zero_based"]</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a asp-controller="Budgeting" asp-action="index" class="over_link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Risk-Management.jpg" alt="Risk-Management">
+                                <a asp-controller="RiskManagement" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="RiskManagement" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_risk_management"]</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a asp-controller="RiskManagement" asp-action="index" class="over_link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rts-cse-study-3-wrapper">
+                            <div class="thumbnail">
+                                <img src="assets/images/Innovation-Strategy-.jpg" alt="Innovation-Strategy">
+                                <a asp-controller="Innovation" asp-action="index" class="icon">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                                <div class="content">
+                                    <div class="content-wrap">
+                                        <a asp-controller="Innovation" asp-action="index">
+                                            <h5 class="title">@SharedResource["nav_innovation"]</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a asp-controller="Innovation" asp-action="index" class="over_link"></a>
                             </div>
                         </div>
                     </div>
@@ -517,59 +502,113 @@
             </div>
         </div>
     </div>
-    <div class="rts-about-our-company-h2 rts-section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2 mt_sm--30">
-                    <div class="title-area about-company">
-                        <span>@SharedResource["About_company"]</span>
-                    <h2 class="title">
-                        @SharedResource["Professional_Dedicated"]<br>
-                          @SharedResource["Consulting_Services"]  </h2>
-                    </div>
-                    <div class="about-company-wrapper">
-                        <p class="disc">
-                        @SharedResource["text_about_company"]  
-                        </p>
-                        <div class="rts-tab-style-one">
-                            <div class="d-flex align-items-start contoler-company">
-                                <div class="nav flex-column nav-pills me-3 button-area" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"> @SharedResource["Mission"]</button>
-                                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"> @SharedResource["Vision"]</button>
-                                    </div>
-                                <div class="tab-content" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                        <div class="rts-tab-content-one">
-                                            <p class="disc">
-                                             @SharedResource["advantage1_company"]  
-                                            </p>
+</div>
+*@
+<div class="rts-about-our-company-h2 rts-section-gap">
+    <div class="container">
+        @if (Model.AboutCompany != null)
+        {
 
-                                        <a class="rts-btn btn-primary-2 color-h-black" asp-controller="About" asp-action="index" asp-route-culture="@culture"> @SharedResource["nav_about_us"]</a>
-                                        </div>
+            @foreach (var AboutCompanyItem in Model.AboutCompany)
+            {
+                <div class="row">
+                    <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2 mt_sm--30">
+                        <div class="title-area about-company">
+                            <span>@SharedResource["About_company"]</span>
+                            <h2 class="title">
+
+                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                {
+                                    @(new HtmlString(AboutCompanyItem.Title_Ar))
+                                }
+                                else
+                                {
+                                    @(new HtmlString(AboutCompanyItem.Title))
+                                }
+                            </h2>
+                        </div>
+                        <div class="about-company-wrapper">
+                            <p class="disc">
+                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                {
+
+                                    @(new HtmlString(AboutCompanyItem.Description_Ar))
+                                }
+                                else
+                                {
+
+                                    @(new HtmlString(AboutCompanyItem.Description))
+                                }
+                            </p>
+                            <div class="rts-tab-style-one">
+                                <div class="d-flex align-items-start contoler-company">
+                                    <div class="nav flex-column nav-pills me-3 button-area" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"> @SharedResource["Mission"]</button>
+                                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"> @SharedResource["Vision"]</button>
                                     </div>
-                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                        <div class="rts-tab-content-one">
-                                            <p class="disc">
-                                           @SharedResource["advantage2_company"]     
-                                            </p>
-                                           
-                                            <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Quote" asp-action="index"  asp-route-culture="@culture">@SharedResource["nav_Contact"]</a>
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <div class="rts-tab-content-one">
+                                                <p class="disc">
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @AboutCompanyItem.Mission_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @AboutCompanyItem.Mission
+                                                    }
+                                                </p>
+
+                                                <a class="rts-btn btn-primary-2 color-h-black" asp-controller="About" asp-action="index"> @SharedResource["nav_about_us"]</a>
+                                            </div>
                                         </div>
+                                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                            <div class="rts-tab-content-one">
+                                                <p class="disc">
+                                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                    {
+                                                        @AboutCompanyItem.Vision_Ar
+                                                    }
+                                                    else
+                                                    {
+                                                        @AboutCompanyItem.Vision
+                                                    }
+                                                </p>
+
+                                                <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Quote" asp-action="index">@SharedResource["nav_Contact"]</a>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-1 order-sm-1 order-1">
-                    <div class="about-company-thumbnail">
-                        <img src="assets/images/about/01.png" alt="Business_company">
+                    <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-1 order-sm-1 order-1">
+                        <div class="about-company-thumbnail">
+                            <img src="../assets/images/@AboutCompanyItem.Image" alt="Business_company">
+                        </div>
                     </div>
+
                 </div>
-            </div>
-        </div>
+               
+            }
+        }
+        else
+        {
+            <p>No Data Available</p>
+        }
     </div>
+</div>
+
+
+
+
+
+
+
+
     <div class="working-process-area rts-section-gap working-process-bg">
         <div class="container">
             <div class="row mt--40">
@@ -633,26 +672,59 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
     <div class="rts-service-areah2-im-3 rts-section-gap mb-lg-5">
         <div class="container">
+        @if (Model.WhyUsHome != null)
+        {
+
+            @foreach (var WhyUsitem in Model.WhyUsHome)
+            {
+
+
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
                     <div class="image-area">
-                        <img src="assets/images/service/h2/03.jpg" alt="Service_Image">
-                        <img class="two" src="assets/images/service/h2/02.jpg" alt="Service_Image">
-                        <img class="three" src="assets/images/service/h2/01.jpg" alt="Service_Image">
+                            <img src="../assets/images/@WhyUsitem.Image1" alt="Service_Image">
+                            <img class="two" src="../assets/images/@WhyUsitem.Image2" alt="Service_Image">
+                            <img class="three" src="../assets/images/@WhyUsitem.Image4" alt="Service_Image">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="service-h2-content pl--30">
                         <div class="title-area  service-h2 service">
                             <span>@SharedResource["Why_Choose_Us"]</span>
+
+
                         <h2 class="title">
-                            @SharedResource["Why_Choose_perfromance"] </h2>
+                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                    {
+                                        @WhyUsitem.Title_Ar
+                                    }
+                                    else
+                                    {
+                                        @WhyUsitem.Title
+                                    }
+                        </h2>
                         </div>
                         <div class="content-wrapper">
                             <p class="disc">
-                               @SharedResource["Why_Choose_Us_text"]
+                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                    {
+                                        @WhyUsitem.Description_Ar
+                                    }
+                                    else
+                                    {
+                                           @WhyUsitem.Description
+                                    }
                             </p>
                             <div class="feature-one-wrapper mt--40">
                                 <div class="single-feature-one">
@@ -676,5 +748,11 @@
                     </div>
                 </div>
             </div>
+            }
+        }
+        else{
+
+            <p>No Data Avialable</p>
+         }
         </div>
     </div>

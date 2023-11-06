@@ -10,16 +10,10 @@
 }
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-                                              
-    ViewBag.Title = "Xeed Consulting | Privacy Policy";
-    ViewBag.MetaDescription = "We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website. By accessing or using our Website, you agree to the terms of this Privacy Policy.";
-    ViewBag.MetaKeywords = "Privacy Policy, personal information, non-personal information, data sharing, data security, third-party links, rights and choices, Xeed Consulting";
-
-
-
-    //ViewBag.Title = "Xeed Consulting | Privacy Policy";
-    //ViewBag.MetaDescription = "We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website. By accessing or using our Website, you agree to the terms of this Privacy Policy.";
-    //ViewBag.MetaKeywords = "Privacy Policy, personal information, non-personal information, data sharing, data security, third-party links, rights and choices, Xeed Consulting";
+                           
+    ViewBag.Title = @SharedResource["title_Privacy"];
+    ViewBag.MetaDescription = @SharedResource["MetaDescription_Privacy"];
+    ViewBag.MetaKeywords = @SharedResource["MetaKeywords_Privacy"];
 
 }
 
@@ -42,7 +36,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bread-tag">
-                        <a asp-controller="Home" asp-action="index"  asp-route-culture="@culture"> @SharedResource["nav_home"]</a>
+                        <a asp-controller="Home" asp-action="index" > @SharedResource["nav_home"]</a>
                         <span> / </span>
                        Privacy policy
                     </div>

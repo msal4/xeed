@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<section id="CreatePage" class="FormHeight" style="background-color: #c8bef2;">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Error Page</h1>
+        </div>
+        <div class="formContainer bglogin">
+
+
+            <div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Code: @ViewBag.Code</h5>
+                                <p class="card-text">Message: @ViewBag.ErrorMessage</p>
+                                <p class="card-text">Original Path Base: @ViewBag.OriginalPathBase</p>
+                                <p class="card-text">Original Path: @ViewBag.OriginalPath</p>
+                                <p class="card-text">Original Query String: @ViewBag.OriginalQueryString</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

@@ -1,0 +1,53 @@
+﻿@model AddressInfo
+
+
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<section id="CreatePage" class="FormHeight" style="background-color: #c8bef2;">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Edit Addres Info</h1>
+        </div>
+
+        @if (TempData["fail"] != null)
+        {
+                <p class="alert alert-danger d-block">@TempData["fail"]</p>
+        }
+        @if (TempData["success"] != null)
+        {
+                <p class="alert alert-success d-block">@TempData["success"]</p>
+        }
+
+        <form asp-action="AddressInfo" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="AddressInfoId" />
+            <div class="form-group">
+                <label asp-for="Location"></label>
+                <input asp-for="Location" class="form-control">
+                <span asp-validation-for="Location"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Location_Ar">Arabic Location</label>
+                <input asp-for="Location_Ar" class="form-control">
+                <span asp-validation-for="Location_Ar"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control">
+                <span asp-validation-for="Email"></span>
+            </div>
+           
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary w-auto" style="font-size: 25px;">Save Changes</button>
+                <a asp-action="Home" class="btn btn-secondary" style="font-size: 25px;">Cancel</a>
+            </div>
+        </form>
+    </div>
+</section>
+
+

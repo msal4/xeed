@@ -207,6 +207,132 @@
   <data name="Make_Plan" xml:space="preserve">
     <value>Make a Plan</value>
   </data>
+  <data name="MetaDescription_about_Us" xml:space="preserve">
+    <value>Providing comprehensive administrative services, health programs, and investments in real estate, industry, and agriculture. Partnered with major international companies.</value>
+  </data>
+  <data name="MetaDescription_Ai" xml:space="preserve">
+    <value>Discover the potential of AI with our consultancy services. We assist businesses in harnessing the power of artificial intelligence to optimize processes, automate tasks, and gain deeper insights from data. Our AI solutions are designed to enhance productivity, reduce costs, and drive innovation across various industries.</value>
+  </data>
+  <data name="MetaDescription_Budgeting" xml:space="preserve">
+    <value>Zero-Based Budgeting - Achieve cost efficiency and financial transparency through zero-based budgeting. We guide businesses in implementing this innovative budgeting approach, helping them reallocate resources to areas that generate the most value and eliminate unnecessary costs.</value>
+  </data>
+  <data name="MetaDescription_Business" xml:space="preserve">
+    <value>At Xeed Consulting, we help businesses define their purpose and align their values for meaningful growth.</value>
+  </data>
+  <data name="MetaDescription_Careers" xml:space="preserve">
+    <value>Submit Your CV - Submit your CV and contact information for available career opportunities.</value>
+  </data>
+  <data name="MetaDescription_Finance" xml:space="preserve">
+    <value>Our financial experts specialize in crafting comprehensive corporate finance and strategy solutions. We optimize financial performance, capital allocation, and risk management to help you achieve your long-term financial goals.</value>
+  </data>
+  <data name="MetaDescription_home" xml:space="preserve">
+    <value>Welcome to Xeed Consulting! We are a dedicated team of seasoned consultants empowering businesses with innovative strategies and technology-driven solutions. Partner with us to navigate complex challenges, seize growth opportunities, and achieve sustainable success.</value>
+  </data>
+  <data name="MetaDescription_Industries" xml:space="preserve">
+    <value>Our business consultancy services are tailored to address your unique challenges and opportunities. Embrace the power of technology with our comprehensive technology consultancy.</value>
+  </data>
+  <data name="MetaDescription_Innovation" xml:space="preserve">
+    <value>Innovation Strategy and Delivery - Innovation drives sustainable growth. We assist businesses in developing innovation strategies and delivering on their innovative initiatives. Our solutions foster a culture of creativity and entrepreneurship, ensuring that your organization remains at the forefront of innovation in your industry.</value>
+  </data>
+  <data name="MetaDescription_manufacturing" xml:space="preserve">
+    <value>Achieve operational excellence in manufacturing with our consultancy services. We help businesses streamline their manufacturing processes, enhance quality control, and reduce waste. Our expertise ensures that your manufacturing operations are efficient, cost-effective, and capable of meeting the highest industry standards.</value>
+  </data>
+  <data name="MetaDescription_Marketing" xml:space="preserve">
+    <value>Unlock your business's growth potential with our strategic marketing and sales solutions. We work closely with clients to identify market opportunities, develop marketing strategies, and optimize sales processes. Our proven methods drive revenue growth and help businesses thrive in competitive markets.</value>
+  </data>
+  <data name="MetaDescription_monitoring" xml:space="preserve">
+    <value>Effective monitoring and evaluation are crucial for measuring the impact of your initiatives. We offer customized monitoring and evaluation frameworks to track progress, assess performance, and make data-driven adjustments. Our approach ensures that your organization remains agile and responsive to changing circumstances.</value>
+  </data>
+  <data name="MetaDescription_Operations" xml:space="preserve">
+    <value>Efficient operations are the backbone of a successful business. We specialize in optimizing operational processes, enhancing supply chain management, and reducing operational costs. Our consultancy services are designed to ensure that your operations run smoothly and deliver consistent value.</value>
+  </data>
+  <data name="MetaDescription_Organization" xml:space="preserve">
+    <value>Organization Strategy - Craft a winning organization strategy with our consultancy services. We help businesses define their organizational structure, roles, and responsibilities to align with their strategic goals.</value>
+  </data>
+  <data name="MetaDescription_People" xml:space="preserve">
+    <value>People Strategy - Your people are your most valuable asset. We assist businesses in developing comprehensive people strategies, including talent acquisition, development, and retention. Our approach ensures that your workforce is aligned with your business objectives, fostering a culture of engagement and growth.</value>
+  </data>
+  <data name="MetaDescription_pricing" xml:space="preserve">
+    <value>Pricing and Revenue Management - Maximize your profitability with our pricing and revenue management expertise. We help businesses optimize pricing strategies, revenue models, and demand forecasting. Our solutions enable you to capture market value and enhance your bottom line.</value>
+  </data>
+  <data name="MetaDescription_Privacy" xml:space="preserve">
+    <value>We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website. By accessing or using our Website, you agree to the terms of this Privacy Policy.</value>
+  </data>
+  <data name="MetaDescription_Quote" xml:space="preserve">
+    <value>Request a free quote from Xeed Consulting by filling out the appointment form. We are dedicated to providing expert guidance and solutions tailored to your business needs.</value>
+  </data>
+  <data name="MetaDescription_risk_management" xml:space="preserve">
+    <value>Risk Management and Compliance - Mitigating risks and ensuring compliance are paramount in today's business environment. Our consultancy services provide a holistic approach to risk management and compliance, safeguarding your business against potential threats and regulatory challenges.</value>
+  </data>
+  <data name="MetaDescription_risk_Services" xml:space="preserve">
+    <value>Our business consultancy services are tailored to address your unique challenges and opportunities. Embrace the power of technology with our comprehensive technology consultancy.</value>
+  </data>
+  <data name="MetaDescription_Technology" xml:space="preserve">
+    <value>In today's digital age, staying competitive requires leveraging cutting-edge technology and harnessing the power of data. We help businesses adapt and thrive in the digital landscape by providing expert guidance on digital transformation, technology adoption, and data-driven decision-making. Our tailored solutions enable organizations to maximize efficiency and stay ahead of the curve.</value>
+  </data>
+  <data name="MetaKeywords_about_Us" xml:space="preserve">
+    <value>Xeed Consulting, empowering businesses, innovation, strategic expertise, innovative solutions, complex challenges, growth opportunities, sustainable success</value>
+  </data>
+  <data name="MetaKeywords_Ai" xml:space="preserve">
+    <value>Xeed Consulting, Artificial Intelligence, AI, consultancy services, optimize processes, automate tasks, data insights, productivity, innovation</value>
+  </data>
+  <data name="MetaKeywords_Budgeting" xml:space="preserve">
+    <value>Zero - Based Budgeting, cost efficiency, financial transparency, innovative budgeting, reallocate resources, generate value, eliminate costs</value>
+  </data>
+  <data name="MetaKeywords_Business" xml:space="preserve">
+    <value>Xeed Consulting, Business Purpose, Organizational Purpose, Values Alignment, Mission Statement</value>
+  </data>
+  <data name="MetaKeywords_Careers" xml:space="preserve">
+    <value>Submit Your CV, Career Opportunities, Your Name, Email Address, Your Subject, Type Your Message, Upload CV</value>
+  </data>
+  <data name="MetaKeywords_Finance" xml:space="preserve">
+    <value>Xeed Consulting, Corporate Finance, Strategy Solutions, Financial Performance, Capital Allocation, Risk Management, Long-Term Financial Goals</value>
+  </data>
+  <data name="MetaKeywords_home" xml:space="preserve">
+    <value>Xeed Consulting, empowering businesses, innovation, strategic expertise, innovative solutions, complex challenges, growth opportunities, sustainable success, business consultancy, strategy development, business planning, acquisitions, process optimization, financial analysis, market analysis</value>
+  </data>
+  <data name="MetaKeywords_Industries" xml:space="preserve">
+    <value>Business Consultancy, Technology Consultancy, Project Management, Strategy development, Business Planning, Acquisitions, Process optimization, Financial analysis, Xeed Consulting</value>
+  </data>
+  <data name="MetaKeywords_Innovation" xml:space="preserve">
+    <value>Innovation Strategy and Delivery, innovation strategies, creativity, entrepreneurship, sustainable growth</value>
+  </data>
+  <data name="MetaKeywords_manufacturing" xml:space="preserve">
+    <value>Xeed Consulting, Manufacturing, operational excellence, manufacturing processes, quality control, waste reduction, efficient operations, industry standards</value>
+  </data>
+  <data name="MetaKeywords_Marketing" xml:space="preserve">
+    <value>Xeed Consulting, Growth, Marketing, Sales, strategic marketing, sales solutions, market opportunities, marketing strategies, sales processes, revenue growth, competitive markets</value>
+  </data>
+  <data name="MetaKeywords_monitoring" xml:space="preserve">
+    <value>Xeed Consulting, Monitoring and Evaluation, impact measurement, performance assessment, data-driven adjustments, organizational agility</value>
+  </data>
+  <data name="MetaKeywords_Operations" xml:space="preserve">
+    <value>Xeed Consulting, Operations, efficient operations, operational processes, supply chain management, operational costs, consultancy services, deliver consistent value</value>
+  </data>
+  <data name="MetaKeywords_Organization" xml:space="preserve">
+    <value>Organization strategy, consultancy services, organizational structure, roles, responsibilities, strategic goals</value>
+  </data>
+  <data name="MetaKeywords_People" xml:space="preserve">
+    <value>People Strategy, talent acquisition, development, retention, workforce, business objectives, engagement, growth</value>
+  </data>
+  <data name="MetaKeywords_pricing" xml:space="preserve">
+    <value>Pricing and Revenue Management, profitability, pricing strategies, revenue models, demand forecasting, market value, bottom line</value>
+  </data>
+  <data name="MetaKeywords_Privacy" xml:space="preserve">
+    <value>Privacy Policy, personal information, non-personal information, data sharing, data security, third-party links, rights and choices, Xeed Consulting</value>
+  </data>
+  <data name="MetaKeywords_Quote" xml:space="preserve">
+    <value>Make An Appointment, Request a free quote, Xeed Consulting, appointment form, expert guidance, business needs</value>
+  </data>
+  <data name="MetaKeywords_risk_management" xml:space="preserve">
+    <value>Risk Management and Compliance, mitigating risks, ensuring compliance, consultancy services, holistic approach, potential threats, regulatory challenges</value>
+  </data>
+  <data name="MetaKeywords_risk_Services" xml:space="preserve">
+    <value>Business Consultancy, Technology Consultancy, Project Management, Strategy development, Business Planning, Acquisitions, Process optimization, Financial analysis, Xeed Consulting</value>
+  </data>
+  <data name="MetaKeywords_Technology" xml:space="preserve">
+    <value>Xeed Consulting, Digital, Technology, Data, Digital Transformation, Technology Adoption, Data-Driven Decision-Making, Efficiency, Competitive Advantage</value>
+  </data>
   <data name="Mission" xml:space="preserve">
     <value>Mission</value>
   </data>
@@ -614,7 +740,7 @@
   <data name="page_about_us_Xeed_Consulting_text" xml:space="preserve">
     <value>At Xeed Consulting, our team is the driving force behind our success. We take pride in our diverse and talented group of professionals who are committed to helping your organization thrive. Get to know the individuals who will be by your side on the journey to success:
                                      Our team's strength lies in their diversity, expertise, and shared commitment to your success. We are more than just consultants; we are your dedicated partners in achieving your business objectives.
-                                     When you choose Xeed Consulting, you're not just getting a consultancy firm; you're gaining a team of passionate individuals who are deeply invested in your growth. @SharedResource["nav_Contact"] today to meet our team and learn how we can work together to transform your business. Your success is our team's mission!</value>
+                                     When you choose Xeed Consulting, you're not just getting a consultancy firm; you're gaining a team of passionate individuals who are deeply invested in your growth. Contact Us today to meet our team and learn how we can work together to transform your business. Your success is our team's mission!</value>
   </data>
   <data name="page_about_us_Xeed_discuss" xml:space="preserve">
     <value>Let’s discuss about how we can help
@@ -626,7 +752,7 @@
   <data name="page_Capabilities_text" xml:space="preserve">
     <value>Our comprehensive range of consultancy services is designed to empower businesses of all sizes, industries, and aspirations. Our commitment to your success is unwavering. Whether you're a startup looking to establish a strong foundation, a mid-sized company seeking growth strategies, or an established enterprise aiming to stay at the forefront of your industry, we have the expertise to guide you.
                                     With a comprehensive approach that considers every facet of your organization, from strategy and finance to technology and people, we ensure that you're equipped to thrive in today's dynamic and ever-evolving business landscape.
-                                    Explore our Capabilities and let us be the driving force behind your success story. Welcome to a world of possibilities, welcome to Exceed Consultancy.</value>
+                                    Explore our Capabilities and let us be the driving force behind your success story. Welcome to a world of possibilities, welcome to Xeed Consulting.</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
@@ -763,6 +889,69 @@
   <data name="text_Strategy_development" xml:space="preserve">
     <value>Crafting a winning strategy is the cornerstone of business success. Our Strategy Development service involves in-depth analysis and collaboration with your leadership team to define clear objectives, identify growth opportunities, and devise a roadmap for sustainable success.</value>
   </data>
+  <data name="title_about_Us" xml:space="preserve">
+    <value>Xeed Consulting | About Us | Administrative services</value>
+  </data>
+  <data name="title_Ai_meta" xml:space="preserve">
+    <value>Xeed Consulting | Artificial Intelligence</value>
+  </data>
+  <data name="title_Budgeting" xml:space="preserve">
+    <value>Xeed Consulting | Zero - Based Budgeting</value>
+  </data>
+  <data name="title_Business" xml:space="preserve">
+    <value>Xeed Consulting | Business and Organizational Purpose</value>
+  </data>
+  <data name="title_Careers" xml:space="preserve">
+    <value>Xeed Consulting | Careers</value>
+  </data>
+  <data name="title_Finance" xml:space="preserve">
+    <value>Xeed Consulting | Corporate Finance and Strategy</value>
+  </data>
+  <data name="title_home" xml:space="preserve">
+    <value>Xeed Consulting | Empowering Businesses through Innovation</value>
+  </data>
+  <data name="title_Industries" xml:space="preserve">
+    <value>Xeed Consulting | Industries</value>
+  </data>
+  <data name="title_Innovation" xml:space="preserve">
+    <value>Xeed Consulting | Innovation Strategy and Delivery</value>
+  </data>
+  <data name="title_manufacturing" xml:space="preserve">
+    <value>Xeed Consulting | Manufacturing</value>
+  </data>
+  <data name="title_Marketing" xml:space="preserve">
+    <value>Xeed Consulting |  Growth, Marketing and Sales</value>
+  </data>
+  <data name="title_monitoring" xml:space="preserve">
+    <value>Xeed Consulting | Monitoring and Evaluation</value>
+  </data>
+  <data name="title_Operations" xml:space="preserve">
+    <value>Xeed Consulting | Operations</value>
+  </data>
+  <data name="title_Organization" xml:space="preserve">
+    <value>Xeed Consulting | Organization Strategy</value>
+  </data>
+  <data name="title_People" xml:space="preserve">
+    <value>Xeed Consulting | People Strategy</value>
+  </data>
+  <data name="title_pricing" xml:space="preserve">
+    <value>Xeed Consulting | Pricing and Revenue Managements</value>
+  </data>
+  <data name="title_Privacy" xml:space="preserve">
+    <value>Xeed Consulting | Privacy Policy</value>
+  </data>
+  <data name="title_Quote" xml:space="preserve">
+    <value>Xeed Consulting | Make An Appointment</value>
+  </data>
+  <data name="title_risk_management" xml:space="preserve">
+    <value>Xeed Consulting | Risk Management and Compliance</value>
+  </data>
+  <data name="title_risk_Services" xml:space="preserve">
+    <value>Xeed Consulting | Capabilities</value>
+  </data>
+  <data name="title_Technology" xml:space="preserve">
+    <value>Xeed Consulting | Digital, Technology and Data</value>
+  </data>
   <data name="Travel_tourism" xml:space="preserve">
     <value>Travel, Transportation and Tourism</value>
   </data>
@@ -817,7 +1006,7 @@
                                             constantly stay updated with the latest industry trends and emerging
                                             technologies to offer innovative solutions that give you a competitive edge.
                                             Whether it's harnessing the power of data analytics or integrating
-                                            @SharedResource["nav_AI"], our solutions are future-proof and designed to
+                                           artificial intelligence, our solutions are future-proof and designed to
                                             drive sustainable growth.</value>
   </data>
   <data name="Why_Choose_Us_text" xml:space="preserve">
