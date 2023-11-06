@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ExceedConsultancy.Models.CapabilitiesViewModel> 
+@using System.Globalization;
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var capabilitie in Model.OrderBy(item => item.Order))
+        {
+            <li>
+                <a asp-controller="Home" asp-action="Business" asp-route-id="@capabilitie.Id">
+                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                    {
+                        <span>@capabilitie.text_Ar</span>
+                    }
+                    else
+                    {
+                        <span>@capabilitie.text</span>
+                    }
+                </a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No data available.</p>
+}

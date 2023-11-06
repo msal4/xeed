@@ -1,0 +1,134 @@
+﻿@using System.Globalization;
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var capabilitiesData = ViewBag.Capabilities as List<CapabilitiesViewModel>;
+}
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "ltr" : "ltr";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/assets/css/Admin.css" asp-append-version="true">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/png">
+    @{
+        await Html.RenderPartialAsync("StylesPartial");
+    }
+</head>
+<body class="@textDirection">
+
+    <div>
+       
+           @if (signinManager.IsSignedIn(User))
+           {
+        <header >
+        <div class="header-main-one bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-12">
+                        <div class="main-header">
+                                <nav class="nav-main mainmenu-nav  d-xl-block navbar navbar-expand-lg bg-body-tertiary">
+                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                                        
+                                        <ul class="mainmenu navbar-nav">
+                                         
+                                                <li class="has-droupdown" @(IsCurrentPage("CPanel", "Home") ? "class=active" : "")>
+                                                    <a asp-controller="CPanel" asp-action="Home">Home/Admin</a>
+                                                    <ul class="submenu menu-link3 ">
+                                                        <li class="sub-droupdown">
+                                                            <a asp-controller="CPanel" asp-action="AboutCompany">About Company</a>
+                                                            <a asp-controller="CPanel" asp-action="WhyUsHome">Why Us / Home </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li @(IsCurrentPage("CPanel", "Industrie") ? "class=active" : "")><a asp-controller="CPanel" asp-action="Industrie">Industries</a></li>
+                                                <li @(IsCurrentPage("CPanel", "Capabilitie") ? "class=active" : "")><a asp-controller="CPanel" asp-action="Capabilitie">Capabilities</a></li>
+                                                <li class="has-droupdown" @(IsCurrentPage("CPanel", "About") ? "class=active" : "")>
+                                                    <a asp-controller="CPanel" asp-action="About">About Us</a>
+                                                    <ul class="submenu menu-link3 ">
+                                                        <li class="sub-droupdown">
+                                                            <a asp-controller="CPanel" asp-action="WhyUsAbout">Why Choose US</a>
+                                                            <a asp-controller="CPanel" asp-action="Leadership">Leadership</a>
+                                                            <a asp-controller="CPanel" asp-action="HowWork">How We Work</a>
+                                                            <a asp-controller="CPanel" asp-action="OurCommitment">Our Commitment</a>
+                                                            <a asp-controller="CPanel" asp-action="Aspiration">Our Aspiration </a>
+                                                            <a asp-controller="CPanel" asp-action="Team">Our Team</a>
+                                                            <a asp-controller="CPanel" asp-action="Purpose">Purpose</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li @(IsCurrentPage("CPanel", "AddressInfo") ? "class=active" : "")> <a asp-controller="CPanel" asp-action="AddressInfo">Address Info </a> </li>
+                                                <li @(IsCurrentPage("CPanel", "Footer") ? "class=active" : "")> <a asp-controller="CPanel" asp-action="Footer">Footer </a> </li>
+                                                <li @(IsCurrentPage("Account", "ChangePassword") ? "class=active" : "")><a asp-controller="Account" asp-action="ChangePassword"> Settings</a></li>
+                                                <li>
+                                                    <form method="post" asp-action="Logout" asp-controller="Account">
+                                                        <button type="submit" class="nav-link btn btn-link logout">logout</button>
+                                                    </form>
+                                                </li>
+                                          
+                                        </ul>
+                                        </div>
+                                </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+        }
+        else{
+            <header>
+                <div class="header-main-one bg-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4 m-auto">
+                                <div class="thumbnail">
+                                    <a asp-controller="Home" asp-action="index">
+                                        <img src="../../assets/images/logo/logo.png" alt="finbiz-logo">
+                                    </a>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </header>
+        }
+    
+        @RenderBody()
+
+
+        
+        @{
+            await Html.RenderPartialAsync("ScriptsPartial");
+           
+        }
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+@functions {
+    bool IsCurrentPage(string controller, string action)
+    {
+        var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+        var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+
+        return string.Equals(controller, currentController, StringComparison.OrdinalIgnoreCase)
+            && string.Equals(action, currentAction, StringComparison.OrdinalIgnoreCase);
+    }
+}

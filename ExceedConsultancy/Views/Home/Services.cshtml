@@ -1,0 +1,203 @@
+﻿@model ExceedConsultancy.Models.HomeModel
+
+@using System.Globalization;
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = @SharedResource["title_risk_Services"];
+    ViewBag.MetaDescription = @SharedResource["MetaDescription_risk_Services"];
+    ViewBag.MetaKeywords = @SharedResource["MetaKeywords_risk_Services"];
+}
+
+
+<body>
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input id="searchInput1" class="search-input" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+
+    <div id="anywhere-home">
+    </div>
+    <!-- ENd Header Area -->
+    <!-- start breadcrumb area -->
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">@SharedResource["nav_capabilities"]</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a asp-controller="Home" asp-action="index"> @SharedResource["nav_home"]</a>
+                        <span> / </span>
+                        @SharedResource["nav_capabilities"]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rts-project-area rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tab-content-area mt--50 mt_sm--30">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel">
+                                <div class="row g-5">
+                                    <div class=" col-12">
+                                        <div class="blog-single-post-listing">
+                                            <div class="thumbnail">
+                                                <img src="../assets/images/Capabilitie.jpg" alt="Business-Capabilitie">
+                                            </div>
+                                            <div class="blog-listing-content">
+                                                <p class="disc">
+                                                    @SharedResource["page_Capabilities_text"]
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    @if (Model.Capabilitie != null)
+                                    {
+                                        @foreach (var CapabilitieItem in Model.Capabilitie.OrderBy(item => item.Order))
+                                        {
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                                <!-- single -product area -->
+                                                <div class="rts-product-one">
+                                                    <div class="thumbnail-area">
+                                                        <img src="../assets/images/@CapabilitieItem.Image" alt="@CapabilitieItem.text">
+                                                        <a class="rts-btn btn-primary rounded" asp-controller="Home" asp-action="Business" asp-route-id="@CapabilitieItem.Id"><i class="far fa-arrow-right"></i></a>
+                                                    </div>
+                                                    <div class="product-contact-wrapper">
+                                                        @*<span>Business Solution</span>*@
+                                                        <a asp-controller="Home" asp-action="Business" asp-route-id="@CapabilitieItem.Id">
+                                                            <h5 class="title">
+                                                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                                {
+                                                                    <span>@CapabilitieItem.text_Ar</span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span>@CapabilitieItem.text</span>
+                                                                }
+                                                            </h5>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p>No data available.</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- our service area end -->
+        <!-- service accordion area -->
+        <div class="rts-accordion-area service rts-section-gap" style="direction:ltr!important">
+            <div class="accordion-service-bg bg_image ptb--120 ptb_md--80 ptb_sm--60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="accordion-service-inner">
+                                <div class="title-area-start accordion-text-rtl">
+                                    <span class="sub color-primary">@SharedResource["Business_Consultancy"]</span>
+                                    <h2 class="title">
+                                        @SharedResource["text_Consultancy"]
+
+                                    </h2>
+                                </div>
+                                <div class="accordion-area">
+                                    <div class="accordion accordion-text-rtl" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    @SharedResource["Strategy_development"]
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    @SharedResource["text_Strategy_development"]
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    @SharedResource["Business_Planning"]
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    @SharedResource["text_Business_Planning"]
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    @SharedResource["Acquisitions"]
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    @SharedResource["text_Acquisitions"]
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    @SharedResource["Process_optimization"]
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    @SharedResource["text_Process_optimization"]
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFive">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                    @SharedResource["Financial_analysis"]
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    @SharedResource["text_Financial_analysis"]
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

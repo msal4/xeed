@@ -1,108 +1,165 @@
 ﻿using ExceedConsultancy.Models;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Net.Mail;
-using System.Text;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Drawing.Drawing2D;
+using System.Reflection.Metadata;
 using System.Web;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly IConfiguration _config;
-
-        public HomeController(IConfiguration config)
+        public HomeController(AppDbContext context) : base(context)
         {
-            _config = config;
+
         }
+
+
+
+        private List<HomeSliderViewModel> GetSliderData()
+        {
+            var sliderData = _context.Sliders.ToList();
+            return sliderData;
+        }
+
+        public List<IndustriesViewModel> GetIndustrieData()
+        {
+            var industrieData = _context.Industries.ToList();
+            return industrieData;
+        }
+
+
+        public List<CapabilitiesViewModel> GetCapabilitieData()
+        {
+            var capabilitieData = _context.Capabilities.ToList();
+            return capabilitieData;
+        }
+
+
+        public List<WhyUsHomeModel> GetWhyUsHomeData()
+        {
+            var WhyUsHomeData = _context.WhyUsHome.ToList();
+            return WhyUsHomeData;
+        }
+
+
+        public List<AboutCompanyModel> GetAboutCompanyData()
+        {
+            var AboutCompanyData = _context.AboutCompany.ToList();
+            return AboutCompanyData;
+        }
+
 
         public IActionResult Index()
         {
-            return View();
+            var capabilitiesData = GetCapabilitieData(); // Load your data
+
+            // Set the capabilities data in HttpContext.Items
+            HttpContext.Items["CapabilitiesData"] = capabilitiesData;
+
+            var sliderModels = GetSliderData();
+            var IndustrieModels = GetIndustrieData();
+            var capabilitieModels = GetCapabilitieData();
+            var AboutCompanyModels = GetAboutCompanyData();
+            var WhyUsHomeModels = GetWhyUsHomeData();
+
+
+            var viewModel = new HomeModel
+            {
+                Slider = sliderModels,
+                Industrie = IndustrieModels,
+                Capabilitie = capabilitieModels,
+                AboutCompany = AboutCompanyModels,
+                WhyUsHome = WhyUsHomeModels
+            };
+
+            return View(viewModel);
+
         }
 
 
-        //[Route("change")]
-        //public IActionResult Change(string culture)
-        //{
-        //    Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName, CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-        //        new CookieOptions { Expires = DateTime.UtcNow.AddDays(14) });
-        //    return RedirectToAction("index", "Home");
-        //}
+        public IActionResult Business(Guid id)
+        {
+            // Fetch the Capabilitie item based on the 'id' parameter
+            var capabilitie = _context.Capabilities.FirstOrDefault(c => c.Id == id);
+            var capabilitieModels = GetCapabilitieData();
+
+            if (capabilitie == null)
+            {
+                return NotFound(); // Handle the case when the Capabilitie item is not found
+            }
+
+            // Create a model to pass to the view
+            var combinedModel = new CombinedModel
+            {
+                Capabilities = new CapabilitiesViewModel
+                {
+                    Id = capabilitie.Id,
+                    Image = capabilitie.Image,
+                    text = capabilitie.text,
+                    text_Ar = capabilitie.text_Ar,
+                    Description = capabilitie.Description,
+                    Description_Ar = capabilitie.Description_Ar,
+                    Order = capabilitie.Order
+                },
+
+                Home = new HomeModel
+                {
+                    Capabilitie = capabilitieModels
+                }
+
+            };
+            return View("Business", combinedModel);
+        }
+
+        public IActionResult Industries()
+        {
+            var IndustrieModels = GetIndustrieData();
+
+            var viewModel = new HomeModel
+            {
+                Industrie = IndustrieModels
+            };
+
+            return View(viewModel);
+        }
+
+        public IActionResult Services()
+        {
+            var CapabilitieModels = GetCapabilitieData();
+
+            var viewModel = new HomeModel
+            {
+                Capabilitie = CapabilitieModels
+            };
+
+            return View(viewModel);
+        }
+
+
+
+
         [Route("change")]
         public IActionResult Change(string culture)
         {
-            // Get the current URL
-            string currentUrl = Request.Headers["Referer"].ToString();
+            // Set the desired culture in a cookie
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
 
-            // Remove the culture parameter from the query string if present
-            var uriBuilder = new UriBuilder(currentUrl);
+            // Get the referring URL without the culture parameter
+            string returnUrl = Request.Headers["Referer"].ToString();
+            var uriBuilder = new UriBuilder(returnUrl);
             var queryParams = HttpUtility.ParseQueryString(uriBuilder.Query);
             queryParams.Remove("culture");
             uriBuilder.Query = queryParams.ToString();
-            currentUrl = uriBuilder.ToString();
+            returnUrl = uriBuilder.Uri.ToString();
 
-            // Append the new culture parameter to the URL
-            if (currentUrl.Contains("?"))
-            {
-                currentUrl += $"&culture={culture}";
-            }
-            else
-            {
-                currentUrl += $"?culture={culture}";
-            }
-
-            return Redirect(currentUrl);
+            // Redirect to the modified URL
+            return Redirect(returnUrl);
         }
-
-
-
-
-        [HttpPost]
-        public IActionResult Index(QuoteModel model, ViewContext viewContext)
-        {
-            
-
-            // Get the current culture
-            var currentCulture = viewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
-
-            if (currentCulture.StartsWith("ar"))
-            {
-                // If the current culture is Arabic, redirect to QuoteArController
-                return RedirectToAction("Index", "QuoteAr", model); 
-            }
-            else
-            {
-                // For other cultures, use the regular QuoteController
-                return RedirectToAction("Index", "Quote", model);
-            }
-        }
-
-
-        [HttpPost]
-        public IActionResult Index(ContactModel model, ViewContext viewContext)
-        {
-           
-
-            // Get the current culture
-            var currentCulture = viewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
-
-            if (currentCulture.StartsWith("ar"))
-            {
-                // If the current culture is Arabic, redirect to QuoteArController
-                return RedirectToAction("Index", "QuoteAr", model);
-            }
-            else
-            {
-                // For other cultures, use the regular QuoteController
-                return RedirectToAction("Index", "Quote", model); 
-            }
-        }
-
-
     }
-
-
 }

@@ -7,15 +7,14 @@ using Newtonsoft.Json;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class QuoteController : Controller
+    public class QuoteController : BaseController
     {
         private readonly IConfiguration _config;
 
-        public QuoteController(IConfiguration config)
+        public QuoteController(AppDbContext context, IConfiguration config) : base(context)
         {
             _config = config;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -42,15 +41,13 @@ namespace ExceedConsultancy.Controllers
                 {
                     var jsonString = responseData.Content.ReadAsStringAsync().Result;
                     var result = JsonConvert.DeserializeObject<CaptchaResponseModel>(jsonString);
-
                     if (result.Success)
                     {
-                        sendemail(sb.ToString(), "Contact Message", "1997jihad@gmail.com");
+                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,1997jihad@gmail.com");
                         TempData["SuccessQuote"] = "Thank you for contacting us! We will get back to you as soon as possible.";
                         return RedirectToAction("Index", "Quote");
                     }
                 }
-
                 TempData["Success"] = "Please validate that you are not a robot";
                 return RedirectToAction("Index", "Quote");
             }

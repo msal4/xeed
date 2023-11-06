@@ -1,0 +1,44 @@
+﻿@model ExceedConsultancy.Models.IndustriesViewModel
+
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<section id="CreatePage" class="FormHeight" style="background-color: #c8bef2;">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Edit Industries</h1>
+        </div>
+
+        <form asp-action="EditIndustries" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="text">English Title</label>
+                <input asp-for="text" class="form-control">
+                <span asp-validation-for="text"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="text_Ar">Arabic Title</label>
+                <input asp-for="text_Ar" class="form-control">
+                <span asp-validation-for="text_Ar"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order"></label>
+                <input asp-for="Order" class="form-control">
+                <span asp-validation-for="Order"></span>
+            </div>
+            <div class="form-group">
+                <label for="ImageFile">Select Image</label>
+                <input type="file" id="ImageFile" name="ImageFile" class="form-control-file">
+                <span asp-validation-for="ImageFile"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="font-size: 25px;">Save Changes</button>
+                <a asp-action="Home" class="btn btn-secondary" style="font-size: 25px;">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+</section>
+

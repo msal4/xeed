@@ -6,14 +6,26 @@ using Newtonsoft.Json;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class CareersController : Controller
-    {
-        private readonly IConfiguration _config;
-
-        public CareersController(IConfiguration config)
+   public class CareersController : BaseController
         {
-            _config = config;
-        }
+            private readonly IConfiguration _config;
+
+            public CareersController(AppDbContext context, IConfiguration config) : base(context)
+            {
+                _config = config;
+            }
+
+
+
+        //public List<CapabilitiesViewModel> GetCapabilitieData()
+        //{
+        //    var capabilitieData = _context.Capabilities.ToList();
+        //    return capabilitieData;
+        //}
+
+
+
+
 
         public IActionResult Index()
         {

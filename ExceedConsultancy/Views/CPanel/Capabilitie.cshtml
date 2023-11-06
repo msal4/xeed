@@ -1,0 +1,107 @@
+﻿@model ExceedConsultancy.Models.HomeModel;
+@using System.Globalization;
+@using Microsoft.AspNetCore.Localization;
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div id="anywhere-home"></div>
+<section id="SectionIndustrie">
+    <div class="rts-business-case-area rts-section-gapTop business-case-bg">
+        <div class="container">
+            <div class="row">
+                <div class="title-area text-center business-case">
+                    <div class="HeaderCreate text-center">
+                        <h1>Capabilities</h1>
+                        <a href="@Url.Action("CreateCapabilitie", "CPanel")" class="btn btn-success CreateSlider">Create Capabilitie</a>
+                    </div>
+                </div>
+            </div>
+     
+         
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>English Title</th>
+                            <th>Arabic Title</th>
+                         @*   <th>Description</th>
+                            <th>Description_Ar</th>*@
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Capabilitie != null)
+                        {
+                            @foreach (var CapabilitieItem in Model.Capabilitie.OrderBy(item => item.Order))
+                            {
+                                <tr>
+                                    <td><img src="../assets/images/@CapabilitieItem.Image" alt="@CapabilitieItem.text"></td>
+                                    <td>
+                                        <span>@CapabilitieItem.text</span>
+                                    </td>
+                                    <td>
+                                        <span>@CapabilitieItem.text_Ar</span>
+                                    </td>
+                            @*        <td>
+                                        <span class="card-text">@CapabilitieItem.Order</span>
+                                    </td>
+                                    <td>
+                                        <span>@CapabilitieItem.Description</span>
+                                    </td>
+                                    <td>
+                                        <span>@CapabilitieItem.Description_Ar</span>
+                                    </td>*@
+                                    <td>
+
+                                    <div class="card-footer p-4 text-md float-right">
+                                        <a href="@Url.Action("EditCapabilitie", "CPanel", new { id = CapabilitieItem.Id })" class="btn btn-primary btn-edit" style="color:#ffffff">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-danger  btn-delete" style="color:#d9534f" data-toggle="modal" data-target="#deleteConfirmationCapabilitieModal-@(CapabilitieItem.Id)" data-sliderid="@CapabilitieItem.Id" data-delete-type="Capabilitie">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                    <div class="modal fade" id="deleteConfirmationCapabilitieModal-@(CapabilitieItem.Id)" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationCapabilitieModal" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Deletion</h5>
+                                                    <button type="button" class="close w-auto" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Are you sure you want to delete this Capabilitie?
+                                                    </div>
+                                                    <div class="modal-footer">
+
+                                                        <form method="post" id="delete-form">
+                                                        <button type="submit" class="deleteBtn btn-delete btn-width" data-item-id="@CapabilitieItem.Id" data-delete-type="Capabilitie">Delete</button>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <p>No data available.</p>
+                        }
+
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</section>
+
+

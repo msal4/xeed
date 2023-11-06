@@ -4,15 +4,16 @@ using System.Net.Mail;
 using System.Text;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace ExceedConsultancy.Controllers
 {
-    public class CareersArController : Controller
+    public class CareersArController : BaseController
     {
         private readonly IConfiguration _config;
 
-        public CareersArController(IConfiguration config)
+        public CareersArController(AppDbContext context, IConfiguration config) : base(context)
         {
             _config = config;
         }
@@ -22,7 +23,7 @@ namespace ExceedConsultancy.Controllers
             return View();
         }
 
-    
+      
         [HttpPost]
         public IActionResult Index(CareersArModel model)
         {
@@ -51,7 +52,7 @@ namespace ExceedConsultancy.Controllers
                     if (result.Success)
                     {
                         //sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,ahmadghadder@gmail.com",model.CVFile, culture);
-                        sendemail(sb.ToString(), "Contact Message", "1997jihad@gmail.com", model.CVFile, culture);
+                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,1997jihad@gmail.com", model.CVFile, culture);
                         TempData["Success"] = "شكرا لك على الاتصال بنا! ونحن سوف نعود اليكم في أقرب وقت ممكن.";
                         return RedirectToAction("Index", "Careers", new { culture = "ar" });
                     }

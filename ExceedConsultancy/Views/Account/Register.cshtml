@@ -1,0 +1,59 @@
+﻿@model ExceedConsultancy.Models.RegisterViewModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers                                                                                                  @using Microsoft.AspNetCore.Localization;
+
+@using Microsoft.AspNetCore.Localization;
+
+@{
+    var culture = ViewContext.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name;
+    var textDirection = culture.StartsWith("ar") ? "rtl" : "ltr";
+}
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<section id="CreatePage" class="FormHeight" >
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>REGISTER</h1>
+        </div>
+        <div class="formContainer bglogin">
+            @if (TempData["fail"] != null)
+            {
+                <p class="alert alert-danger d-block">@TempData["fail"]</p>
+            }
+            <form method="post" id="form-id" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="name">UserName*</label>
+                    <input class="form-control form-control-lg" type="text" id="UserName" name="UserName" />
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Email*</label>
+                    <input type="text" class="form-control" id="Email" name="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Password">Password*</label>
+                    <input type="password" class="form-control" id="Password" name="Password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ConfirmPassword">Confirm Password*</label>
+                    <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary p-4">Register</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+

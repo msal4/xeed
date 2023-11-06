@@ -1,0 +1,61 @@
+﻿
+@model Aspiration
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<section id="CreatePage" class="FormHeight" style="background-color: #c8bef2;">
+    <div class="container formCRUD">
+        <div class=" text-center">
+            <h1>Edit Text</h1>
+        </div>
+
+        @if (TempData["fail"] != null)
+        {
+                <p class="alert alert-danger d-block">@TempData["fail"]</p>
+        }
+        @if (TempData["success"] != null)
+        {
+                <p class="alert alert-success d-block">@TempData["success"]</p>
+        }
+
+        <form asp-action="EditAspiration" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Text">English First Paraghraph</label>
+                <textarea asp-for="Text" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Text"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text_Ar">Arabic First Paraghraph</label>
+                <textarea asp-for="Text_Ar" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Text_Ar"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text1">English Second Paraghraph</label>
+                <textarea asp-for="Text1" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Text1"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text1_Ar">Arabic Second Paraghraph</label>
+                <textarea asp-for="Text1_Ar" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Text1_Ar"></span>
+            </div>
+            <div class="form-group">
+                <label for="ImageId">Select Image </label>
+                <input type="file" id="ImageId" name="ImageId" class="form-control-file">
+                <span asp-validation-for="ImageId"></span>
+            </div>
+
+         
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary w-auto" style="font-size: 25px;">Save Changes</button>
+                <a asp-action="Aspiration" class="btn btn-secondary" style="font-size: 25px;">Cancel</a>
+            </div>
+        </form>
+    </div>
+</section>
+

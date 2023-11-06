@@ -9,20 +9,18 @@ using System.Text.RegularExpressions;
 
 namespace ExceedConsultancy.Controllers
 {
-    public class QuoteArController : Controller
-    {
-        private readonly IConfiguration _config;
-
-        public QuoteArController(IConfiguration config)
+   public class QuoteArController : BaseController
         {
-            _config = config;
-        }
+            private readonly IConfiguration _config;
 
+            public QuoteArController(AppDbContext context, IConfiguration config) : base(context)
+            {
+                _config = config;
+            }
         public IActionResult Index()
         {
             return View();
         }
-
 
         [HttpPost]
         public IActionResult Index(QuoteArModel model)
@@ -54,7 +52,7 @@ namespace ExceedConsultancy.Controllers
                     if (result.Success)
                     {
                        
-                        sendemail(sb.ToString(), "Contact Message", "1997jihad@gmail.com", culture);
+                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,1997jihad@gmail.com", culture);
                         TempData["SuccessQuote"] = "شكرا لك على الاتصال بنا! ونحن سوف نعود اليكم في أقرب وقت ممكن.";
                         return RedirectToAction("Index", "Quote", new { culture = "ar" });
                     }
@@ -69,7 +67,6 @@ namespace ExceedConsultancy.Controllers
         {
             try
             {
-
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient();
                 mail.From = new MailAddress("al-salama@outlook.com");

@@ -207,6 +207,132 @@
   <data name="Make_Plan" xml:space="preserve">
     <value>وضع خطة</value>
   </data>
+  <data name="MetaDescription_about_Us" xml:space="preserve">
+    <value>توفير الخدمات الإدارية الشاملة وبرامج الصحة والاستثمارات في العقارات والصناعة والزراعة. شراكة مع الشركات العالمية الرائدة.</value>
+  </data>
+  <data name="MetaDescription_Ai" xml:space="preserve">
+    <value>اكتشف إمكانات الذكاء الاصطناعي من خلال خدماتنا الاستشارية. نحن نساعد الشركات في تسخير قوة الذكاء الاصطناعي لتحسين العمليات وأتمتة المهام واكتساب رؤى أعمق من البيانات. تم تصميم حلول الذكاء الاصطناعي لدينا لتعزيز الإنتاجية وخفض التكاليف ودفع الابتكار عبر مختلف الصناعات.</value>
+  </data>
+  <data name="MetaDescription_Budgeting" xml:space="preserve">
+    <value>تنظيم الميزانية والمصاريف - تحقيق كفاءة التكلفة والشفافية المالية من خلال الميزنة الصفرية. نحن نوجه الشركات في تنفيذ نهج الميزانية المبتكر هذا ، ونساعدها على إعادة تخصيص الموارد للمناطق التي تولد أكبر قيمة وتزيل التكاليف غير الضرورية.</value>
+  </data>
+  <data name="MetaDescription_Business" xml:space="preserve">
+    <value>في شركة Xeed Consulting، نعمل عن كثب مع عملائنا لتحديد أعمالهم والغرض التنظيمي، ومساعدتهم على مواءمة قيمهم وأهدافهم لإنشاء بيانات مهمة هادفة ومؤثرة. تمكن خدماتنا الاستشارية الشركات من توضيح غرضها ودمجها في عملياتها اليومية، مما يعزز الشعور بالاتجاه والإلهام للموظفين وأصحاب المصلحة على حد سواء.</value>
+  </data>
+  <data name="MetaDescription_Careers" xml:space="preserve">
+    <value>أرسل ملفك - قم بإرسال ملفك ومعلومات الاتصال لفرص الوظائف المتاحة.</value>
+  </data>
+  <data name="MetaDescription_Finance" xml:space="preserve">
+    <value>لدينا فريق من الخبراء الماليين متخصص في صياغة حلول تمويل واستراتيجية شاملة للشركات. نحن نساعد الشركات في تحسين أدائها المالي وتخصيص رأس المال وإدارة المخاطر. سواء كنت تتطلع إلى توسيع أو تبسيط العمليات أو التغلب على التحديات المالية المعقدة ، فإننا نقدم إرشادات استراتيجية لمساعدتك في تحقيق أهدافك المالية طويلة الأجل.</value>
+  </data>
+  <data name="MetaDescription_home" xml:space="preserve">
+    <value>مرحبًا بكم في اكسيد للاستشارات! نحن فريق مكرس من المستشارين الخبراء يعزز الأعمال بالاستراتيجيات المبتكرة والحلول المدفوعة بالتكنولوجيا. شارك معنا للتعامل مع التحديات المعقدة، واستغلال فرص النمو، وتحقيق النجاح المستدام.</value>
+  </data>
+  <data name="MetaDescription_Industries" xml:space="preserve">
+    <value>تتم تصميم خدمات الاستشارات الخاصة بنا لمعالجة التحديات والفرص الفريدة التي تواجهها. اعتمد على قوة التكنولوجيا مع استشارتنا الشاملة للتكنولوجيا.</value>
+  </data>
+  <data name="MetaDescription_Innovation" xml:space="preserve">
+    <value>استراتيجية الابتكار والتسليم - الابتكار يدفع النمو المستدام. نحن نساعد الشركات في تطوير استراتيجيات الابتكار وتقديم مبادراتها المبتكرة. تعزز حلولنا ثقافة الإبداع وريادة الأعمال ، مما يضمن بقاء مؤسستك في طليعة الابتكار في مجال عملك.</value>
+  </data>
+  <data name="MetaDescription_manufacturing" xml:space="preserve">
+    <value>تحقيق التميز التشغيلي في الصناعة من خلال خدماتنا الاستشارية. نحن نساعد الشركات على تبسيط عمليات الصناعة الخاصة بها ، وتعزيز مراقبة الجودة ، وتقليل النفايات. تضمن خبرتنا أن تكون عمليات الصناعة الخاصة بك فعالة وفعالة من حيث التكلفة وقادرة على تلبية أعلى معايير الصناعة.</value>
+  </data>
+  <data name="MetaDescription_Marketing" xml:space="preserve">
+    <value>أطلق العنان لإمكانات نمو عملك من خلال حلول التسويق والمبيعات الاستراتيجية الخاصة بنا. نحن نعمل عن كثب مع العملاء لتحديد فرص السوق ، وتطوير استراتيجيات التسويق ، وتحسين عمليات المبيعات. أساليبنا التي أثبتت جدواها تدفع نمو الإيرادات وتساعد الشركات على الازدهار في الأسواق التنافسية.</value>
+  </data>
+  <data name="MetaDescription_monitoring" xml:space="preserve">
+    <value>ومراقبة وتطوير الشركات الفعالان أمران حاسمان لقياس أثر مبادراتكم. نحن نقدم أطرا مخصصة للرصد والتقييم لتتبع التقدم وتقييم الأداء وإجراء تعديلات تعتمد على البيانات. يضمن نهجنا أن تظل مؤسستك رشيقة ومتجاوبة مع الظروف المتغيرة.</value>
+  </data>
+  <data name="MetaDescription_Operations" xml:space="preserve">
+    <value>العمليات الفعالة هي العمود الفقري للأعمال التجارية الناجحة. نحن متخصصون في تحسين العمليات التشغيلية ، وتعزيز إدارة سلسلة التوريد ، وخفض التكاليف التشغيلية. تم تصميم خدماتنا الاستشارية لضمان أن العمليات الخاصة بك بسلاسة وتقديم قيمة متسقة.</value>
+  </data>
+  <data name="MetaDescription_Organization" xml:space="preserve">
+    <value>وضع الإسترايجيات - صياغة استراتيجية منظمة الفوز مع الخدمات الاستشارية لدينا. نحن نساعد الشركات على تحديد هيكلها التنظيمي وأدوارها ومسؤولياتها لتتماشى مع أهدافها الاستراتيجية. تعمل حلولنا على تعزيز المرونة وتمكين المؤسسات من التكيف مع ديناميكيات السوق المتغيرة.</value>
+  </data>
+  <data name="MetaDescription_People" xml:space="preserve">
+    <value>الموارد البشرية - الناس هي الأصول الأكثر قيمة. نحن نساعد الشركات في تطوير استراتيجيات شاملة للأفراد ، بما في ذلك اكتساب المواهب وتطويرها والاحتفاظ بها. نهجنا يضمن أن القوى العاملة الخاصة بك تتماشى مع أهداف عملك ، وتعزيز ثقافة المشاركة والنمو.</value>
+  </data>
+  <data name="MetaDescription_pricing" xml:space="preserve">
+    <value>وضع الأسعار وإدارة الموارد - تحقيق أقصى قدر من الربحية الخاصة بك مع شركائنا في وضع الأسعار وإدارة الموارد الخبرة. نحن نساعد الشركات على تحسين استراتيجيات التسعير ونماذج الإيرادات والتنبؤ بالطلب. حلولنا تمكنك من التقاط القيمة السوقية وتعزيز الخط الخاص بك.</value>
+  </data>
+  <data name="MetaDescription_Privacy" xml:space="preserve">
+    <value>نحن ملتزمون بحماية خصوصيتك. تشرح سياسة الخصوصية هذه كيفية جمعنا واستخدامنا وكشفنا وحماية معلوماتك الشخصية عند زيارتك لموقعنا على الويب. من خلال الوصول إلى موقعنا أو استخدامه، فإنك توافق على شروط سياسة الخصوصية هذه.</value>
+  </data>
+  <data name="MetaDescription_Quote" xml:space="preserve">
+    <value>اطلب عرض سعر مجاني من اXeed Consulting عن طريق ملء نموذج الحجز. نحن ملتزمون بتقديم التوجيه الصحيح والحلول المصممة خصيصًا لاحتياجات عملك.</value>
+  </data>
+  <data name="MetaDescription_risk_management" xml:space="preserve">
+    <value>إدارة المخاطر وتجاوزها - يعد التخفيف من المخاطر وضمان الامتثال أمرا بالغ الأهمية في بيئة الأعمال اليوم. توفر خدماتنا الاستشارية نهجا شاملا لإدارة المخاطر وتجاوزها ، وحماية عملك ضد التهديدات المحتملة والتحديات التنظيمية.</value>
+  </data>
+  <data name="MetaDescription_risk_Services" xml:space="preserve">
+    <value>تم تصميم خدمات استشارات الأعمال لدينا لمعالجة تحدياتك وفرصك الفريدة. اعتنق قوة التكنولوجيا مع استشارات التكنولوجيا الشاملة التي نقدمها.</value>
+  </data>
+  <data name="MetaDescription_Technology" xml:space="preserve">
+    <value>في العصر الرقمي اليوم ، يتطلب الحفاظ على القدرة التنافسية الاستفادة من أحدث التقنيات وتسخير قوة البيانات. نحن نساعد الشركات على التكيف والازدهار في المشهد الرقمي من خلال توفير إرشادات الخبراء حول التحول الرقمي واعتماد التكنولوجيا واتخاذ القرارات القائمة على البيانات. تمكن حلولنا المصممة المؤسسات من تحقيق أقصى قدر من الكفاءة والبقاء في الطليعة.</value>
+  </data>
+  <data name="MetaKeywords_about_Us" xml:space="preserve">
+    <value>Xeed Consulting, تمكين الأعمال, الابتكار, الخبرة الاستراتيجية, الحلول الابتكارية, التحديات المعقدة, فرص النمو, النجاح المستدام</value>
+  </data>
+  <data name="MetaKeywords_Ai" xml:space="preserve">
+    <value>Xeed Consulting, الذكاء الاصطناعي, استشارات, تحسين العمليات, أتمتة المهام, تحليل البيانات, الإنتاجية, الابتكار</value>
+  </data>
+  <data name="MetaKeywords_Budgeting" xml:space="preserve">
+    <value>تنظيم الميزانية والمصاريف, كفاءة التكلفة, شفافية مالية, الميزانة الصفرية, تخصيص الموارد, توليد القيمة, التكاليف غير الضرورية</value>
+  </data>
+  <data name="MetaKeywords_Business" xml:space="preserve">
+    <value>القطاع التجاري، الغرض التنظيمي، قيم الشركة،</value>
+  </data>
+  <data name="MetaKeywords_Careers" xml:space="preserve">
+    <value>أرسل ملفك, فرص الوظائف, الإسم, البريد الإلكتروني, الموضوع, الرسالة, تحميل السيرة الذاتية</value>
+  </data>
+  <data name="MetaKeywords_Finance" xml:space="preserve">
+    <value>Xeed Consulting, تمويل الشركات, استراتيجية الشركات, الأداء مالي, تخصيص رأس المال, إدارة المخاطر, أهداف مالية طويلة الأجل</value>
+  </data>
+  <data name="MetaKeywords_home" xml:space="preserve">
+    <value>Xeed Consulting، تمكين الأعمال، الابتكار، الخبرة الاستراتيجية، الحلول المبتكرة، التحديات المعقدة، فرص النمو، النجاح المستدام، استشارات الأعمال، تطوير الاستراتيجية، التخطيط الاستراتيجي، الاستحواذات، تحسين العمليات، تحليل مالي، تحليل السوق</value>
+  </data>
+  <data name="MetaKeywords_Industries" xml:space="preserve">
+    <value>استشارات الأعمال، استشارات التكنولوجيا، إدارة المشاريع، تطوير الاستراتيجيات، تخطيط الأعمال، الاستحواذات، تحسين العمليات، تحليل مالي</value>
+  </data>
+  <data name="MetaKeywords_Innovation" xml:space="preserve">
+    <value>استراتيجية الابتكار والتسليم, الابتكار, نمو مستدام, ثقافة الإبداع, ريادة الأعمال</value>
+  </data>
+  <data name="MetaKeywords_manufacturing" xml:space="preserve">
+    <value>Xeed Consulting, الصناعة, التميز التشغيلي, عمليات الصناعة, مراقبة الجودة, تقليل النفايات, فعالية التكلفة, معايير الصناعة</value>
+  </data>
+  <data name="MetaKeywords_Marketing" xml:space="preserve">
+    <value>Xeed Consulting, النمو والتسويق والمبيعات, حلول التسويق والمبيعات الاستراتيجية, فرص السوق, استراتيجيات التسويق, عمليات المبيعات, نمو الإيرادات, الأسواق التنافسية</value>
+  </data>
+  <data name="MetaKeywords_monitoring" xml:space="preserve">
+    <value>Xeed Consulting, مراقبة وتطوير الشركات, تقييم الأداء, تعديلات قائمة على البيانات, رشاقة المؤسسة, استجابة للتغيرات</value>
+  </data>
+  <data name="MetaKeywords_Operations" xml:space="preserve">
+    <value>استشارات Exceed، العمليات، العمليات الفعالة، العمليات التشغيلية، إدارة سلسلة التوريد، تكاليف التشغيل، خدمات استشارية، تقديم قيمة متسقة</value>
+  </data>
+  <data name="MetaKeywords_Organization" xml:space="preserve">
+    <value>وضع الإسترايجيات, صياغة استراتيجية, منظمة الفوز, الشركات, هيكل التنظيم, مسؤوليات, أهداف استراتيجية, المرونة, ديناميكيات السو</value>
+  </data>
+  <data name="MetaKeywords_People" xml:space="preserve">
+    <value>الموارد البشرية، استراتيجيات الأفراد، اكتساب المواهب، تطوير الأفراد، الاحتفاظ بالمواهب، قوى العمل، ثقافة المشاركة، النمو</value>
+  </data>
+  <data name="MetaKeywords_pricing" xml:space="preserve">
+    <value>وضع الأسعار وإدارة الموارد, الربحية, استراتيجيات التسعير, نماذج الإيرادات, التنبؤ بالطلب, القيمة السوقية</value>
+  </data>
+  <data name="MetaKeywords_Privacy" xml:space="preserve">
+    <value>سياسة الخصوصية، معلومات شخصية، معلومات غير شخصية، مشاركة البيانات، أمان البيانات، روابط جهات خارجية، حقوق واختيارات، شركة Xeed Consulting</value>
+  </data>
+  <data name="MetaKeywords_Quote" xml:space="preserve">
+    <value>حجز موعد، طلب عرض سعر مجاني، نموذج الحجز، التوجيه الخبير، احتياجات العمل.</value>
+  </data>
+  <data name="MetaKeywords_risk_management" xml:space="preserve">
+    <value>إدارة المخاطر وتجاوزها, التخفيف من المخاطر, الامتثال التنظيمي, خدمات استشارية, نهج شامل, التهديدات المحتملة, التحديات التنظيمية</value>
+  </data>
+  <data name="MetaKeywords_risk_Services" xml:space="preserve">
+    <value>استشارات الأعمال، استشارات التكنولوجيا، إدارة المشاريع، تطوير الاستراتيجيات، تخطيط الأعمال، الاستحواذات، تحسين العمليات، تحليل مالي، شركة Xeed Consulting</value>
+  </data>
+  <data name="MetaKeywords_Technology" xml:space="preserve">
+    <value>Xeed Consulting, قطاع التكنولوجيا, التحول الرقمي, تكنولوجيا, بيانات, كفاءة, التنافسية</value>
+  </data>
   <data name="Mission" xml:space="preserve">
     <value>مهمتنا</value>
   </data>
@@ -749,6 +875,69 @@
   </data>
   <data name="text_Strategy_development" xml:space="preserve">
     <value>صياغة استراتيجية رابحة هي حجر الزاوية لنجاح الأعمال. تتضمن خدمة تطوير الإستراتيجية لدينا تحليلًا متعمقًا وتعاونًا مع فريق القيادة الخاص بك لتحديد أهداف واضحة، وتحديد فرص النمو، ووضع خارطة طريق للنجاح المستدام.</value>
+  </data>
+  <data name="title_about_Us" xml:space="preserve">
+    <value>Xeed Consulting | الحلول الابتكارية | الخدمات الإدارية</value>
+  </data>
+  <data name="title_Ai_meta" xml:space="preserve">
+    <value>Xeed Consulting | الذكاء الاصطناعي</value>
+  </data>
+  <data name="title_Budgeting" xml:space="preserve">
+    <value>Xeed Consulting | تنظيم الميزانية والمصاريف</value>
+  </data>
+  <data name="title_Business" xml:space="preserve">
+    <value>Xeed Consulting  |   القطاع التجاري</value>
+  </data>
+  <data name="title_Careers" xml:space="preserve">
+    <value>Xeed Consulting | الوظائف</value>
+  </data>
+  <data name="title_Finance" xml:space="preserve">
+    <value>Xeed Consulting | تمويل الشركات واستراتيجيتها</value>
+  </data>
+  <data name="title_home" xml:space="preserve">
+    <value>Xeed Consulting | الخبرة الاستراتيجية</value>
+  </data>
+  <data name="title_Industries" xml:space="preserve">
+    <value>Xeed Consulting  | خدمات صناعية</value>
+  </data>
+  <data name="title_Innovation" xml:space="preserve">
+    <value>Xeed Consulting | استراتيجية الابتكار والتسليم</value>
+  </data>
+  <data name="title_manufacturing" xml:space="preserve">
+    <value>Xeed Consulting | الصناعة</value>
+  </data>
+  <data name="title_Marketing" xml:space="preserve">
+    <value>Xeed Consulting | النمو والتسويق والمبيعات</value>
+  </data>
+  <data name="title_monitoring" xml:space="preserve">
+    <value>Xeed Consulting | مراقبة وتطوير الشركات</value>
+  </data>
+  <data name="title_Operations" xml:space="preserve">
+    <value>Xeed Consulting | قطاع العمليات</value>
+  </data>
+  <data name="title_Organization" xml:space="preserve">
+    <value>Xeed Consulting | وضع الإسترايجيات</value>
+  </data>
+  <data name="title_People" xml:space="preserve">
+    <value>Xeed Consulting | الموارد البشرية</value>
+  </data>
+  <data name="title_pricing" xml:space="preserve">
+    <value>Xeed Consulting | وضع الأسعار وإدارة الموارد</value>
+  </data>
+  <data name="title_Privacy" xml:space="preserve">
+    <value>Xeed Consulting | سياسة الخصوصية</value>
+  </data>
+  <data name="title_Quote" xml:space="preserve">
+    <value>Xeed Consulting | حجز موعد</value>
+  </data>
+  <data name="title_risk_management" xml:space="preserve">
+    <value>Xeed Consulting | إدارة المخاطر وتجاوزها</value>
+  </data>
+  <data name="title_risk_Services" xml:space="preserve">
+    <value>Xeed Consulting | قدرتنا</value>
+  </data>
+  <data name="title_Technology" xml:space="preserve">
+    <value>Xeed Consulting | قطاع التكنولوجيا</value>
   </data>
   <data name="Travel_tourism" xml:space="preserve">
     <value>السفر والنقل والسياحة والخدمات</value>
