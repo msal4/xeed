@@ -18,8 +18,8 @@
                             <img src="../../assets/images/logo/logo.png">
                         </a>
                     </h3>
-                      @if (ViewBag.Footer != null)
-                        {
+                    @if (ViewBag.Footer != null)
+                    {
 
                         @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                         {
@@ -29,11 +29,12 @@
                         {
                             <p class="disc">@ViewBag.Footer.Description</p>
                         }
-                       
-                        }
-                 else{
+
+                    }
+                    else
+                    {
                         <p class="disc">No Data Available</p>
-                 }
+                    }
                     <a class="rts-btn btn-primary-2 color-h-black" asp-controller="Quote" asp-action="index">@SharedResource["nav_get_Quote"]</a>
                 </div>
             </div>
@@ -45,12 +46,81 @@
                     </div>
                     <div class="wized-2-body">
                         <ul>
+                            @if (ViewBag.CapabilitiesItems is List<ExceedConsultancy.Models.CapabilitiesViewModel> capabilitiesList)
+                            {
+                                var itemsToShow = capabilitiesList.Take(6);
+
+                                foreach (var capabilitieItem in itemsToShow)
+                                {
+                                    <li>
+                                        <a asp-controller="Home" asp-action="Business" asp-route-id="@capabilitieItem.Id">
+                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                            {
+                                                <span>@capabilitieItem.text_Ar</span>
+                                            }
+                                            else
+                                            {
+                                                <span>@capabilitieItem.text</span>
+                                            }
+                                        </a>
+                                    </li>
+                                }
+
+                           
+                            }
+                            else
+                            {
+                                <p>No data available.</p>
+                            }
+
+                          @*  var filteredItems = new List
+                            <ExceedConsultancy.Models.CapabilitiesViewModel>
+                                ();
+                                var count = 0;
+
+                                foreach (var capabilitieItem in ViewBag.CapabilitiesItems)
+                                {
+                                if (capabilitieItem.text == "Operations" ||
+                                capabilitieItem.text == "Manufacturing" ||
+                                capabilitieItem.text == "Artificial Intelligence" ||
+                                capabilitieItem.text == "People Strategy" ||
+                                capabilitieItem.text == "Organization Strategy")
+                                {
+                                filteredItems.Add(capabilitieItem);
+                                count++;
+
+                                if (count >= 5)
+                                {
+                                break;
+                                }
+                                }
+                                }
+
+                                foreach (var capabilitieItem in filteredItems)
+                                {
+                                <li>
+                                    <a asp-controller="Home" asp-action="Business" asp-route-id="@capabilitieItem.Id">
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            <span>@capabilitieItem.text_Ar</span>
+                                        }
+                                        else
+                                        {
+                                            <span>@capabilitieItem.text</span>
+                                        }
+                                    </a>
+                                </li>
+                                }*@
+
+                            @*
+
+
                             <li><a asp-controller="Operations" asp-action="index">@SharedResource["nav_operations"]</a></li>
                             <li><a asp-controller="Manufacturing" asp-action="index">@SharedResource["nav_manufacturing"] </a></li>
                             <li><a asp-controller="ArtificialIntelligence" asp-action="index">@SharedResource["nav_AI"] </a></li>
                             <li><a asp-controller="PeopleStrategy" asp-action="index">@SharedResource["nav_people"]</a></li>
                             <li><a asp-controller="OrganizationStrategy" asp-action="index">@SharedResource["nav_organization_strategy"]</a></li>
-                            <li><a asp-controller="PeopleStrategy" asp-action="index">@SharedResource["nav_people"]</a></li>
+                            <li><a asp-controller="PeopleStrategy" asp-action="index">@SharedResource["nav_people"]</a></li>*@
                         </ul>
                     </div>
                 </div>
