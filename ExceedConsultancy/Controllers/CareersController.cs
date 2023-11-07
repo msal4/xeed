@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
 using System.Text;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace ExceedConsultancy.Controllers
 {
@@ -15,17 +16,11 @@ namespace ExceedConsultancy.Controllers
                 _config = config;
             }
 
-
-
         //public List<CapabilitiesViewModel> GetCapabilitieData()
         //{
         //    var capabilitieData = _context.Capabilities.ToList();
         //    return capabilitieData;
         //}
-
-
-
-
 
         public IActionResult Index()
         {
@@ -46,7 +41,7 @@ namespace ExceedConsultancy.Controllers
             sb.AppendLine("<br/>CV: ");
 
             var response = Request.Form["g-Recaptcha-Response"];
-            var test = _config.GetSection("reCAPTCHA:SecretKey").Value;
+            var test = _config.GetSection("recaptchaPrivateKey").Value;
             using (var client = new HttpClient())
             {
                 var testData = string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", test, response);
@@ -59,13 +54,30 @@ namespace ExceedConsultancy.Controllers
                     if (result.Success)
                     {
                         //info @xeed-consulting.com,ahmadghadder @gmail.com
-                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,1997jihad@gmail.com", model.CVFile);
-                        TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                        /*contact@xeed-consulting.com,*/
+                        sendemail(sb.ToString(), "Contact Message", "xeed-consulting.com,1997jihad@gmail.com,ahmadghadder @gmail.com", model.CVFile);
+                        if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                        {
+                            TempData["Success"] = "شكرا لك على الاتصال بنا!  سوف نعود اليكم في أقرب وقت ممكن.";
+                        }
+                        else
+                        {
+                            TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                        }
                         return RedirectToAction("Index", "Careers");
                     }
                 }
 
-                TempData["Success"] = "Please validate that you are not a robot";
+           
+                if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    TempData["Success"] = "يرجى التحقق من أنك لست روبوت";
+                }
+                else
+                {
+                    TempData["Success"] = "Please validate that you are not a robot";
+                }
+
                 return RedirectToAction("Index", "Careers");
             }
         }
@@ -104,13 +116,31 @@ namespace ExceedConsultancy.Controllers
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
-                TempData["Success"] = "Thank you for contacting us, We will get back to you as soon as possible.";
+
+
+                if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    TempData["Success"] = "شكرا لك على الاتصال بنا!  سوف نعود اليكم في أقرب وقت ممكن.";
+                }
+                else
+                {
+                    TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                }
+
                 return RedirectToAction("Index", "Careers");
 
             }
             catch (Exception ex)
             {
-                TempData["Success"] = "Sorry mail not sent,Please try again!";
+                if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    TempData["Success"] = "يرجى التحقق من أنك لست روبوت";
+                }
+                else
+                {
+                    TempData["Success"] = "Please validate that you are not a robot";
+                }
+
                 return RedirectToAction("Index", "Careers");
                 throw;
             }
