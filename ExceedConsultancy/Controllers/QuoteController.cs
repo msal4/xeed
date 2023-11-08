@@ -4,6 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
 using System.Text;
 using Newtonsoft.Json;
+using System.Globalization;
+using System;
+using System.Net.NetworkInformation;
+
+
+
+
 
 namespace ExceedConsultancy.Controllers
 {
@@ -32,7 +39,7 @@ namespace ExceedConsultancy.Controllers
             sb.AppendLine("<br/>Message: " + model.Message);
 
             var response = Request.Form["g-Recaptcha-Response"];
-            var test = _config.GetSection("reCAPTCHA:SecretKey").Value;
+            var test = _config.GetSection("recaptchaPrivateKey").Value;
             using (var client = new HttpClient())
             {
                 var testData = string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", test, response);
@@ -43,12 +50,29 @@ namespace ExceedConsultancy.Controllers
                     var result = JsonConvert.DeserializeObject<CaptchaResponseModel>(jsonString);
                     if (result.Success)
                     {
-                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,1997jihad@gmail.com");
-                        TempData["SuccessQuote"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                        sendemail(sb.ToString(), "Contact Message", "xeed-consulting.com,1997jihad@gmail.com,ahmadghadder @gmail.com");
+
+                        if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                        {
+                            TempData["SuccessQuote"] = "شكرا لك على الاتصال بنا!  سوف نعود اليكم في أقرب وقت ممكن.";
+                        }
+                        else
+                        {
+                            TempData["SuccessQuote"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                        }
+
                         return RedirectToAction("Index", "Quote");
                     }
                 }
-                TempData["Success"] = "Please validate that you are not a robot";
+
+                if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    TempData["Success"] = "يرجى التحقق من أنك لست روبوت";
+                }
+                else
+                {
+                    TempData["Success"] = "Please validate that you are not a robot";
+                }
                 return RedirectToAction("Index", "Quote");
             }
         }
@@ -76,13 +100,29 @@ namespace ExceedConsultancy.Controllers
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
-                TempData["Success"] = "Thank you for contacting us, We will get back to you as soon as possible.";
+
+                if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    TempData["Success"] = "شكرا لك على الاتصال بنا!  سوف نعود اليكم في أقرب وقت ممكن.";
+                }
+                else
+                {
+                    TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
+                }
+
                 return RedirectToAction("Index", "Quote");
 
             }
             catch (Exception ex)
             {
-                TempData["Success"] = "Sorry mail not sent,Please try again!";
+                if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    TempData["Success"] = "يرجى التحقق من أنك لست روبوت";
+                }
+                else
+                {
+                    TempData["Success"] = "Please validate that you are not a robot";
+                }
                 return RedirectToAction("Index", "Quote");
                 throw;
             }

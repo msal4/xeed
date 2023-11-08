@@ -68,7 +68,7 @@
                         <div class="form-wrapper">
                             @*<form method="post" enctype="multipart/form-data">*@
 
-                            <form method="post" asp-controller="@(culture.StartsWith("ar") ? "CareersAr" : "Careers")" asp-action="Index" enctype="multipart/form-data">
+                            <form method="post" asp-controller="Careers" asp-action="Index" enctype="multipart/form-data">
                                 <div class="name-email">
                                     <input type="text" name="Name" placeholder="@SharedResource["Your_name"]" required="" aria-required="true">
                                     <input type="email" name="Email" placeholder="@SharedResource["Email_addrs"]">
@@ -91,7 +91,7 @@
                                     });
                                 </script>
                                 <br /><br />
-                                <div class="g-recaptcha" data-sitekey="6LfWIkknAAAAAOUo2d_GVScC3Z-2JKuVZW1d7ykv"></div>
+                                <div class="g-recaptcha" data-sitekey="6LfnniwmAAAAAEPYWvvUCMjLueUDWVfC-6WU2a0S"></div>
                                 <button type="submit" class="rts-btn btn-primary">@SharedResource["Apply"]</button>
                             </form>
                             @if (TempData["Success"] != null)

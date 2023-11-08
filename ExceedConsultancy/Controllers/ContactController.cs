@@ -33,7 +33,7 @@ namespace ExceedConsultancy.Controllers
             sb.AppendLine("<br/>Message: " + model.Message);
 
             var response = Request.Form["g-Recaptcha-Response"];
-            var test = _config.GetSection("reCAPTCHA:SecretKey").Value;
+            var test = _config.GetSection("recaptchaPublickey").Value;
             using (var client = new HttpClient())
             {
                 var testData = string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", test, response);
