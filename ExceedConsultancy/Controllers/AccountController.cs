@@ -70,64 +70,64 @@ namespace ExceedConsultancy.Controllers
             }
         }
 
-        //[HttpGet]
-        //[AllowAnonymous]
-        //[Route("Admin/Register")]
-        //[Route("[controller]/[action]")]
-        //public IActionResult Register()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        [Authorize]
+        [Route("Admin/Register")]
+        [Route("[controller]/[action]")]
+        public IActionResult Register()
+        {
+            return View();
+        }
 
-        //[HttpPost]
-        //[AllowAnonymous]
-        //[Route("Admin/Register")]
-        //[Route("[controller]/[action]")]
-        //public async Task<IActionResult> Register(RegisterViewModel model)
-        //{
-        //    if (string.IsNullOrEmpty(model.UserName))
-        //    {
-        //        TempData["fail"] = "UserName Is Required.";
-        //        return View();
-        //    }
-        //    else if (string.IsNullOrEmpty(model.Password))
-        //    {
-        //        TempData["fail"] = "Password Is Required.";
-        //        return View();
-        //    }
-        //    else if(model.ConfirmPassword != model.Password)
-        //    {
-        //        TempData["fail"] = "Password Mismatch.";
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        var existing = await _userManager.FindByEmailAsync(model.Email);
-        //        if (existing != null)
-        //        {
-        //            TempData["fail"] = "Email Already Exists.";
-        //            return View();
-        //        }
+        [HttpPost]
+        [Authorize]
+        [Route("Admin/Register")]
+        [Route("[controller]/[action]")]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (string.IsNullOrEmpty(model.UserName))
+            {
+                TempData["fail"] = "UserName Is Required.";
+                return View();
+            }
+            else if (string.IsNullOrEmpty(model.Password))
+            {
+                TempData["fail"] = "Password Is Required.";
+                return View();
+            }
+            else if (model.ConfirmPassword != model.Password)
+            {
+                TempData["fail"] = "Password Mismatch.";
+                return View();
+            }
+            else
+            {
+                var existing = await _userManager.FindByEmailAsync(model.Email);
+                if (existing != null)
+                {
+                    TempData["fail"] = "Email Already Exists.";
+                    return View();
+                }
 
-        //        var user = new ApplicationUser(model.Email)
-        //        {
-        //            UserName = model.UserName,
-        //            Email = model.Email,
-        //        };
-        //        var results = await _userManager.CreateAsync(user, model.Password);
-        //        if (!results.Succeeded)
-        //        {
-        //            TempData["fail"] = "Something Went Wrong. Please Try Again.";
-        //            return View();
-        //        }
+                var user = new ApplicationUser(model.Email)
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                };
+                var results = await _userManager.CreateAsync(user, model.Password);
+                if (!results.Succeeded)
+                {
+                    TempData["fail"] = "Something Went Wrong. Please Try Again.";
+                    return View();
+                }
 
-        //        await _userManager.AddToRoleAsync(user, "Admin");
-        //        await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim("CanEdit", "CanEdit"));
-        //        await _signInManager.SignInAsync(user, isPersistent: true);
+                await _userManager.AddToRoleAsync(user, "Admin");
+                await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim("CanEdit", "CanEdit"));
+                await _signInManager.SignInAsync(user, isPersistent: true);
 
-        //        return RedirectToAction("index", "Home");
-        //    }
-        //}
+                return RedirectToAction("index", "Home");
+            }
+        }
 
         [Authorize]
         public IActionResult ChangePassword()
