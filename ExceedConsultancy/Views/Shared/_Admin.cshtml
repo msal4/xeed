@@ -70,16 +70,16 @@
                                                 </li>
                                                 <li @(IsCurrentPage("CPanel", "AddressInfo") ? "class=active" : "")> <a asp-controller="CPanel" asp-action="AddressInfo">Address Info </a> </li>
                                                 <li @(IsCurrentPage("CPanel", "Footer") ? "class=active" : "")> <a asp-controller="CPanel" asp-action="Footer">Footer </a> </li>
-                                                @*<li @(IsCurrentPage("Account", "ChangePassword") ? "class=active" : "")><a asp-controller="Account" asp-action="ChangePassword"> Settings</a></li>*@
-                                                <li class="has-droupdown" @(IsCurrentPage("Account", "ChangePassword") ? "class=active" : "")>
-                                                    <a asp-controller="Account" asp-action="ChangePassword">Settings Us</a>
+                                                <li @(IsCurrentPage("Account", "ChangePassword") ? "class=active" : "")><a asp-controller="Account" asp-action="ChangePassword"> Settings</a></li>
+                                               @* <li class="has-droupdown" @(IsCurrentPage("Account", "ChangePassword") ? "class=active" : "")>
+                                                    <a asp-controller="Account" asp-action="ChangePassword">Settings </a>
                                                     <ul class="submenu menu-link3 ">
                                                         <li class="sub-droupdown">
                                                             <a asp-controller="Account" asp-action="Register">Add Admin</a>
                                                             
                                                         </li>
                                                     </ul>
-                                                </li>
+                                                </li>*@
                                                 <li>
                                                     <form method="post" asp-action="Logout" asp-controller="Account">
                                                         <button type="submit" class="nav-link btn btn-link logout">logout</button>

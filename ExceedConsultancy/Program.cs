@@ -75,7 +75,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-
+app.UseHttpsRedirection();
 app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
 app.UseRequestLocalization(new RequestLocalizationOptions
