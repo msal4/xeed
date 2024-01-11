@@ -7,14 +7,14 @@ using System.Globalization;
 
 namespace ExceedConsultancy.Controllers
 {
-   public class CareersController : BaseController
-        {
-            private readonly IConfiguration _config;
+    public class CareersController : BaseController
+    {
+        private readonly IConfiguration _config;
 
-            public CareersController(AppDbContext context, IConfiguration config) : base(context)
-            {
-                _config = config;
-            }
+        public CareersController(AppDbContext context, IConfiguration config) : base(context)
+        {
+            _config = config;
+        }
 
         //public List<CapabilitiesViewModel> GetCapabilitieData()
         //{
@@ -27,7 +27,7 @@ namespace ExceedConsultancy.Controllers
             return View();
         }
 
-    
+
         [HttpPost]
         public IActionResult Index(CareersModel model)
         {
@@ -55,7 +55,7 @@ namespace ExceedConsultancy.Controllers
                     {
                         //info @xeed-consulting.com,ahmadghadder @gmail.com
                         /*contact@xeed-consulting.com,*/
-                        sendemail(sb.ToString(), "Contact Message", "xeed-consulting.com,1997jihad@gmail.com,ahmadghadder @gmail.com", model.CVFile);
+                        sendemail(sb.ToString(), "Contact Message", "ahmadghadder@gmail.com", model.CVFile);
                         if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                         {
                             TempData["Success"] = "شكرا لك على الاتصال بنا!  سوف نعود اليكم في أقرب وقت ممكن.";
@@ -68,7 +68,7 @@ namespace ExceedConsultancy.Controllers
                     }
                 }
 
-           
+
                 if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                 {
                     TempData["Success"] = "يرجى التحقق من أنك لست روبوت";
@@ -82,7 +82,7 @@ namespace ExceedConsultancy.Controllers
             }
         }
 
-        public ActionResult sendemail(string msg, string subject, string email,IFormFile CVFile)
+        public ActionResult sendemail(string msg, string subject, string email, IFormFile CVFile)
         {
 
             try
@@ -193,7 +193,7 @@ namespace ExceedConsultancy.Controllers
         //        TempData["SubscribeSuccess"] = "Please validate that you are not a robot";
         //        return RedirectToAction("Index", "Contact");
         //    }
-        }
-
-
     }
+
+
+}
