@@ -9,9 +9,8 @@ namespace ExceedConsultancy.Controllers
    
      public class AboutController : BaseController
      {
-        public AboutController(AppDbContext context) : base(context)
-       {
-        }
+        public AboutController(AppDbContext context) : base(context) {}
+
         private List<AboutUsViewModel> GetAbout1Data()
         {
             var About1Data = _context.AboutUs.ToList();

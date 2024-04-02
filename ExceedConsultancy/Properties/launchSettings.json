@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://xeed-consulting.com",
+      "applicationUrl": "http://xeediq.com",
       "sslPort": 0
     }
   },

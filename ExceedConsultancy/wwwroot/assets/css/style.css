@@ -45,8 +45,19 @@
 
 ----------------------------*/
 /* Default  */
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@font-face {
+    font-family: 'Dubai';
+    font-style: normal;
+    font-weight: normal;
+    src: url(assets/fonts/DubaiW23-Regular.ttf);
+}
+@font-face {
+    font-family: 'Dubai';
+    font-style: normal;
+    font-weight: bold;
+    src: url(assets/fonts/DubaiW23-Bold.ttf);
+}
+
 :root {
     --color-primary: #104e7e;
     --color-primary-2: #104e7e;
@@ -95,8 +106,8 @@
     --s-extra-bold: 800;
     --s-black: 900;
     --transition: 0.3s;
-    --font-primary: "DM Sans", sans-serif;
-    --font-secondary: "Red Hat Display", sans-serif;
+    --font-primary: "Dubai", sans-serif;
+    --font-secondary: "Dubai", sans-serif;
     --font-size-b1: 16px;
     --font-size-b2: 18px;
     --font-size-b3: 22px;
@@ -129,7 +140,7 @@ body {
   line-height: var(--line-height-b1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Dubai", sans-serif;
   color: var(--color-body);
   font-weight: var(--p-regular);
   position: relative;
@@ -587,7 +598,7 @@ h6,
 .h5,
 .h6 {
   word-break: break-word;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Dubai", sans-serif;
   line-height: 1.4074;
   color: var(--color-heading-1);
 }
@@ -834,7 +845,7 @@ cite,
 }
 
 var {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Dubai", sans-serif;
 }
 
 /*---------------------------
@@ -21879,7 +21890,7 @@ p.disc.banner-para {
   line-height: 21px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Dubai", sans-serif;
 }
 .rts-service-area4 .container .title-service-three .title {
   text-transform: none;
@@ -21917,7 +21928,7 @@ p.disc.banner-para {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Dubai", sans-serif;
 }
 .rts-service-area4 .container .service-one-inner-four .big-thumbnail-area .content .disc {
   color: #5D666F;
@@ -22503,7 +22514,7 @@ p.disc.banner-para {
 }
 .case-study-area .item .item-content .text-heding3 {
   color: #1c2539;
-  font-family: "Red Hat Display", Sans-serif;
+  font-family: "Dubai", Sans-serif;
   font-size: 22px;
   font-weight: 700;
 }
@@ -22893,7 +22904,7 @@ p.disc.banner-para {
 }
 .rts-business-goal2 .container .business-goal-right .single-goal .goal-wrapper .title {
   color: #0B101C;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Dubai", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;

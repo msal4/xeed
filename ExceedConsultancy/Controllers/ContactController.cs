@@ -32,27 +32,12 @@ namespace ExceedConsultancy.Controllers
             sb.AppendLine("<br/>Subject: " + model.Subject);
             sb.AppendLine("<br/>Message: " + model.Message);
 
-            var response = Request.Form["g-Recaptcha-Response"];
-            var test = _config.GetSection("recaptchaPublickey").Value;
+        
             using (var client = new HttpClient())
             {
-                var testData = string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", test, response);
-                var responseData = client.PostAsync(testData, new StringContent("test", Encoding.UTF8, "application/json")).Result;
-                if (responseData.IsSuccessStatusCode)
-                {
-                    var jsonString = responseData.Content.ReadAsStringAsync().Result;
-                    var result = JsonConvert.DeserializeObject<CaptchaResponseModel>(jsonString);
-
-                    if (result.Success)
-                    {
-                        sendemail(sb.ToString(), "Contact Message", "contact@xeed-consulting.com,ahmadghadder@gmail.com");
+                        sendemail(sb.ToString(), "Contact Message", "info@xeediq.com");
                         TempData["Success"] = "Thank you for contacting us! We will get back to you as soon as possible.";
                         return RedirectToAction("Index", "Contact");
-                    }
-                }
-
-                TempData["Success"] = "Please validate that you are not a robot";
-                return RedirectToAction("Index", "Contact");
             }
         }
 
@@ -111,8 +96,8 @@ namespace ExceedConsultancy.Controllers
         //                    string email = model.Email;
         //                    MailMessage mail = new MailMessage();
         //                    SmtpClient smtpServer = new SmtpClient();
-        //                    mail.From = new MailAddress("al-salama@outlook.com");
-        //                    mail.To.Add("contact@xeed-consulting.com,ahmadghadder@gmail.com");
+        //                    mail.From = new MailAddress("");
+        //                    mail.To.Add("info@xeediq.com");
         //                    mail.Subject = "Newsletter Subscription";
         //                    mail.Body = "Email: " + email;
         //                    mail.IsBodyHtml = true;
@@ -138,7 +123,7 @@ namespace ExceedConsultancy.Controllers
         //        TempData["SubscribeSuccess"] = "Please validate that you are not a robot";
         //        return RedirectToAction("Index", "Contact");
         //    }
-        }
-
-
     }
+
+
+}

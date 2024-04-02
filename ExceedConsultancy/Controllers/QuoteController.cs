@@ -38,18 +38,10 @@ namespace ExceedConsultancy.Controllers
             sb.AppendLine("<br/>Phone: " + model.Phone);
             sb.AppendLine("<br/>Message: " + model.Message);
 
-            var response = Request.Form["g-Recaptcha-Response"];
-            var test = _config.GetSection("recaptchaPrivateKey").Value;
+          
             using (var client = new HttpClient())
             {
-                var testData = string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", test, response);
-                var responseData = client.PostAsync(testData, new StringContent("test", Encoding.UTF8, "application/json")).Result;
-                if (responseData.IsSuccessStatusCode)
-                {
-                    var jsonString = responseData.Content.ReadAsStringAsync().Result;
-                    var result = JsonConvert.DeserializeObject<CaptchaResponseModel>(jsonString);
-                    if (result.Success)
-                    {
+              
                         sendemail(sb.ToString(), "Contact Message", "xeed-consulting.com,1997jihad@gmail.com,ahmadghadder @gmail.com");
 
                         if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
@@ -63,18 +55,6 @@ namespace ExceedConsultancy.Controllers
 
                         return RedirectToAction("Index", "Quote");
                     }
-                }
-
-                if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                {
-                    TempData["Success"] = "يرجى التحقق من أنك لست روبوت";
-                }
-                else
-                {
-                    TempData["Success"] = "Please validate that you are not a robot";
-                }
-                return RedirectToAction("Index", "Quote");
-            }
         }
 
         public ActionResult sendemail(string msg, string subject, string email)
