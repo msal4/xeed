@@ -49,7 +49,7 @@ namespace ExceedConsultancy.Controllers
 
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient();
-                mail.From = new MailAddress("al-salama@outlook.com");
+                mail.From = new MailAddress("websitexeediq@outlook.com");
 
                 mail.To.Add(email);
 

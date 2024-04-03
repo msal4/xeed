@@ -90,7 +90,7 @@ namespace ExceedConsultancy.Controllers
 
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient();
-                mail.From = new MailAddress("al-salama@outlook.com");
+                mail.From = new MailAddress("websitexeediq@outlook.com");
 
                 mail.To.Add(email);
 
@@ -112,7 +112,7 @@ namespace ExceedConsultancy.Controllers
                 SmtpServer.Host = "smtp.office365.com";
                 SmtpServer.Port = 587;
 
-                SmtpServer.Credentials = new System.Net.NetworkCredential(_config.GetSection("ApiKey").Value, _config.GetSection("ApiKeyPass").Value, "xeed-consulting.com");
+                SmtpServer.Credentials = new System.Net.NetworkCredential(_config.GetSection("ApiKey").Value, _config.GetSection("ApiKeyPass").Value, "xeediq.com");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
